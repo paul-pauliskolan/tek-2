@@ -32,8 +32,7 @@ function applyBranding() {
 
   const homeSubtitle = document.querySelector(".home-page .subtitle");
   if (homeSubtitle) {
-    homeSubtitle.textContent =
-      "En kursbok byggd för läsning, övning och kodning sida vid sida med VS Code eller IDLE.";
+    homeSubtitle.textContent = "En kursbok byggd för läsning och övning.";
   }
 
   const previewHeader = document.querySelector(".preview-header h1");
