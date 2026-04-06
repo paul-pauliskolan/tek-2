@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Teknik 2 information och medieteknik - kapitelvy med dynamiskt innehåll och innehållsförteckning.">
+    <title>Kapitel - Teknik 2 information och medieteknik</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">⚙️ Teknik 2</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="../index.html" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero">
+                <p class="eyebrow">Teknik 2</p>
+                <h1><a href="../index.html">⚙️ Teknik 2</a></h1>
+                <p class="subtitle">Läs kapitlet och håll reda på innehållet i en smal parallell vy.</p>
+            </header>
+
+            <div class="chapter-header"></div>
+
+            <section id="chapter-content"></section>
+            <section id="chapter-summary"></section>
+
+            <div class="chapter-nav"></div>
+        </article>
+
+        <aside class="chapter-aside">
+            <section class="aside-card">
+                <p class="eyebrow">Innehåll</p>
+                <h2>Klickbar innehållsförteckning</h2>
+                <p>Hoppa direkt till valfri del i kapitlet.</p>
+                <nav id="chapter-toc" class="chapter-toc" aria-label="Innehållsförteckning för kapitlet"></nav>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="../index.html">Till startsidan</a></p>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script>
+        const match = window.location.pathname.match(/chapter-(\d+)\.html/)
+        if (match) {
+            const chapterNumber = parseInt(match[1], 10)
+            const interval = setInterval(() => {
+                if (window.pythonbook && window.pythonbook.getChapter(chapterNumber)) {
+                    clearInterval(interval)
+                    window.pythonbook.renderChapterPage(chapterNumber)
+                }
+            }, 100)
+        }
+    </script>
+</body>
+
+</html>
