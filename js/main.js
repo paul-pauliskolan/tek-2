@@ -1,6 +1,6 @@
 // Teknik 2 - shared site logic
 
-const BOOK_TITLE = "Teknik 2 information och medieteknik";
+const BOOK_TITLE = "Teknik 2 - IN";
 const BOOK_SHORT_TITLE = "Teknik 2";
 
 let chaptersData = [];
