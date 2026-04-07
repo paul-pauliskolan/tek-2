@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Teknik 2 information och medieteknik - kapitelvy med dynamiskt innehåll och innehållsförteckning.">
+    <meta name="description"
+        content="Teknik 2 information och medieteknik - kapitelvy med dynamiskt innehåll och innehållsförteckning.">
     <title>Kapitel - Teknik 2 information och medieteknik</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
@@ -53,6 +54,44 @@
 
     <script src="../js/main.js"></script>
     <script>
+        function insertDevelopmentLinkUnderHeading() {
+            const content = document.getElementById('chapter-content')
+            if (!content) return false
+
+            const headings = content.querySelectorAll('h2, h3')
+            const targetHeading = Array.from(headings).find((el) => {
+                const txt = el.textContent.trim().toLowerCase()
+                return txt === 'teknikutvecklingsprocessens steg' || txt === 'teknikkutvecklingsprocessens steg'
+            })
+
+            if (!targetHeading) return false
+            if (content.querySelector('.development-link-under-steps')) return true
+
+            const wrapper = document.createElement('div')
+            wrapper.className = 'development-link-under-steps'
+            const link = document.createElement('a')
+            link.href = 'chapter-1-development.html'
+            link.target = '_blank'
+            link.rel = 'noopener noreferrer'
+            link.textContent = 'Öppna Teknikutvecklingsprocessens steg (ny flik)'
+            const linkRow = document.createElement('p')
+            linkRow.appendChild(link)
+
+            const image = document.createElement('img')
+            image.src = '../assets/images/teknikutveckling.png'
+            image.alt = 'Flödesschema för teknikutvecklingsprocessen'
+            image.style.display = 'block'
+            image.style.maxWidth = '100%'
+            image.style.height = 'auto'
+            image.style.marginTop = '12px'
+
+            wrapper.appendChild(linkRow)
+            wrapper.appendChild(image)
+
+            targetHeading.insertAdjacentElement('afterend', wrapper)
+            return true
+        }
+
         const match = window.location.pathname.match(/chapter-(\d+)\.html/)
         if (match) {
             const chapterNumber = parseInt(match[1], 10)
@@ -60,6 +99,13 @@
                 if (window.pythonbook && window.pythonbook.getChapter(chapterNumber)) {
                     clearInterval(interval)
                     window.pythonbook.renderChapterPage(chapterNumber)
+                    let tries = 0
+                    const insertInterval = setInterval(() => {
+                        tries += 1
+                        if (insertDevelopmentLinkUnderHeading() || tries > 40) {
+                            clearInterval(insertInterval)
+                        }
+                    }, 100)
                 }
             }, 100)
         }
