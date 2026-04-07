@@ -237,7 +237,7 @@ function renderChapterToc() {
     return;
   }
 
-  const headings = Array.from(content.querySelectorAll("h2, h3")).filter(
+  const headings = Array.from(content.querySelectorAll("h2")).filter(
     (heading) => heading.textContent.trim().length > 0,
   );
 
@@ -267,9 +267,7 @@ function renderChapterToc() {
         existingIds.add(nextId);
       }
 
-      const isSubHeading = heading.tagName.toLowerCase() === "h3";
-      const linkClass = isSubHeading ? "toc-link toc-link-sub" : "toc-link";
-      return `<li><a class="${linkClass}" href="#${heading.id}">${heading.textContent.trim()}</a></li>`;
+      return `<li><a class="toc-link" href="#${heading.id}">${heading.textContent.trim()}</a></li>`;
     })
     .join("");
 
