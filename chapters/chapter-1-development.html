@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teknikutvecklingsprocessen</title>
+    <!-- Laddar in Mermaid.js för att rita diagrammet -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 18px;
+            /* Tvingar hela sidans text att bli större */
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #1a73e8;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.2em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .diagram-section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #333;
+            border-bottom: 3px solid #1a73e8;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+        }
+
+        .diagram-container {
+            display: flex;
+            justify-content: flex-start;
+            /* Ändrat för att tillåta scroll utan att klippa bilden */
+            margin-top: 20px;
+            padding: 40px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+            overflow-x: auto;
+        }
+
+        .mermaid {
+            min-width: 850px;
+            /* Förhindrar att diagrammet krymper ihop och gör texten liten */
+            margin: 0 auto;
+        }
+
+        /* Stilar för textblocken (stegen) */
+        .step-container {
+            display: grid;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .step-box {
+            background: #ffffff;
+            border-left: 5px solid #1a73e8;
+            padding: 25px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
+            border-top: 1px solid #eee;
+            border-right: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .step-box h3 {
+            margin-top: 0;
+            color: #1a73e8;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-box h3 span {
+            background: #1a73e8;
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+
+        .step-box h4 {
+            color: #444;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        .example-box {
+            background: #e8f0fe;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+            border-left: 4px solid #8ab4f8;
+        }
+
+        .example-box p {
+            margin: 0;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Teknikutvecklingsprocessen</h1>
+        <p class="subtitle">En visuell modell av hur teknik utvecklas, testas och förbättras. Det viktiga är att förstå
+            att teknik sällan blir perfekt direkt – man provar, testar, upptäcker problem och förbättrar i flera varv
+            (iteration).</p>
+
+        <!-- FLÖDESSCHEMAT -->
+        <div class="diagram-section">
+            <h2>Flödesschema över processen</h2>
+            <p>Här visualiseras hela arbetsgången. Lägg särskilt märke till <strong>den gula beslutsromben
+                    (Iteration)</strong>. Pilen för "Ja" går tillbaka uppåt i flödet, vilket visar hur processen går i
+                loopar för att förbättra produkten.</p>
+
+            <div class="diagram-container">
+                <div id="mermaid-diagram"></div>
+            </div>
+            <script>
+                const mermaidCode = `graph TD
+classDef startslut fill:#d4edda,stroke:#28a745,stroke-width:2px,color:#000,font-size:18px,font-weight:bold;
+classDef process fill:#e2e3e5,stroke:#495057,stroke-width:2px,color:#000,font-size:18px;
+classDef iteration fill:#fff3cd,stroke:#ffc107,stroke-width:3px,color:#000,font-size:18px,font-weight:bold;
+classDef lansering fill:#cce5ff,stroke:#0056b3,stroke-width:2px,color:#000,font-size:18px,font-weight:bold;
+Start([Start projekt]):::startslut
+S1[1. Identifiera problem]:::process
+S2[2. Research och analys]:::process
+S3[3. Idégenerering]:::process
+S4[4. Konstruktion och design]:::process
+S5[5. Prototyp]:::process
+S6[6. Testning]:::process
+S7{7. Behövs förbättring?}:::iteration
+S8[8. Produktion]:::lansering
+S9[9. Livscykel]:::process
+Start --> S1
+S1 --> S2
+S2 --> S3
+S3 --> S4
+S4 --> S5
+S5 --> S6
+S6 --> S7
+S7 -->|Ja justera design| S4
+S7 -->|Ja ändra prototyp| S5
+S7 -->|Ja sök nya idéer| S3
+S7 -->|Ja fel grundproblem| S1
+S7 -->|Nej den fungerar bra| S8
+S8 --> S9
+S9 -.->|Underhåll och uppdatering| S1`
+                document.getElementById('mermaid-diagram').innerHTML = '<pre class="mermaid">' + mermaidCode + '</pre>'
+                if (typeof mermaid !== 'undefined') {
+                    mermaid.contentLoaded()
+                }
+            </script>
+        </div>
+    </div>
+
+    <!-- TEXTMATERIALET (DIN TEXT) -->
+    <div class="diagram-section">
+        <h2>De 9 stegen i detalj</h2>
+        <p>En teknikutvecklingsprocess kan se lite olika ut beroende på projekt, men detta är en vanlig modell.</p>
+
+        <div class="step-container">
+            <!-- Steg 1 -->
+            <div class="step-box">
+                <h3><span>1</span> Identifiera ett problem</h3>
+                <p>Det första steget är att förstå vilket problem som ska lösas. Teknik utvecklas nästan alltid för
+                    att något saknas eller fungerar dåligt. Därför behöver man ställa frågor som:</p>
+                <ul>
+                    <li>Vad är problemet?</li>
+                    <li>Vem påverkas?</li>
+                    <li>Vad behöver förbättras?</li>
+                    <li>Vad ska lösningen klara av?</li>
+                </ul>
+                <p>Att formulera problemet tydligt är viktigt, eftersom hela resten av arbetet bygger på detta.</p>
+                <div class="example-box">
+                    <strong>Exempel:</strong>
+                    <p>En förening kanske inte har någon fungerande hemsida. Medlemmarna hittar inte information,
+                        och nya besökare får inget bra första intryck. I ett spelprojekt kan problemet istället vara
+                        att det saknas ett enkelt rymdspel för unga spelare.</p>
+                </div>
+            </div>
+
+            <!-- Steg 2 -->
+            <div class="step-box">
+                <h3><span>2</span> Research och analys</h3>
+                <p>När problemet är identifierat behöver man samla information. Då undersöker man vad som redan
+                    finns, vilka behov användarna har och vilka tekniska lösningar som kan fungera. Det kan innebära
+                    att man:</p>
+                <ul>
+                    <li>tittar på liknande produkter</li>
+                    <li>jämför funktioner</li>
+                    <li>undersöker målgruppen</li>
+                    <li>läser om tekniska möjligheter och begränsningar</li>
+                </ul>
+                <div class="example-box">
+                    <strong>Exempel:</strong>
+                    <p>Ska du göra ett spel kan du studera liknande spel. Hur fungerar spelmekaniken? Hur styr man?
+                        Vad gör spelet roligt eller frustrerande?</p>
+                </div>
+            </div>
+
+            <!-- Steg 3 -->
+            <div class="step-box">
+                <h3><span>3</span> Idégenerering</h3>
+                <p>Här försöker man komma på olika sätt att lösa problemet. Vanliga metoder är brainstorming,
+                    skisser och diskussioner i grupp. Det är smart att ta fram flera idéer i början i stället för
+                    att låsa sig direkt vid en enda lösning.</p>
+                <div class="example-box">
+                    <strong>Exempel:</strong>
+                    <p>Till ett spel kanske idéerna är: ett rymdspel, ett plattformsspel, eller ett
+                        multiplayer-spel. Målet är att hitta möjliga vägar framåt.</p>
+                </div>
+            </div>
+
+            <!-- Steg 4 -->
+            <div class="step-box">
+                <h3><span>4</span> Konstruktion och design</h3>
+                <p>Nu börjar lösningen ta form mer konkret. Man planerar struktur, layout, funktioner, navigering
+                    och tekniska val.</p>
+                <p>För ett program eller spel kan det handla om att planera klasser, beskriva hur användaren
+                    interagerar och vilka regler som ska styra programmet. En bra plan gör programmeringen enklare.
+                </p>
+            </div>
+
+            <!-- Steg 5 -->
+            <div class="step-box">
+                <h3><span>5</span> Prototyp</h3>
+                <p>En prototyp är en tidig version av lösningen. Den behöver inte vara perfekt, men ska vara
+                    tillräcklig för att prova idén i praktiken. Syftet är att testa funktioner och upptäcka problem
+                    tidigt.</p>
+                <div class="example-box">
+                    <strong>Exempel:</strong>
+                    <p>En prototyp av ett spel kan vara en enkel demo där spelaren kan röra sig, hoppa eller skjuta,
+                        även om grafik och ljud ännu inte är klara.</p>
+                </div>
+            </div>
+
+            <!-- Steg 6 -->
+            <div class="step-box">
+                <h3><span>6</span> Testning</h3>
+                <p>Testning handlar om att kontrollera att lösningen fungerar. Man testar användbarhet, buggar och
+                    prestanda.</p>
+                <ul>
+                    <li>För webbplatser: länkar, webbläsare, mobilanpassning.</li>
+                    <li>För spel: styrning, spelbalans, prestanda, krascher.</li>
+                </ul>
+            </div>
+
+            <!-- Steg 7 -->
+            <div class="step-box">
+                <h3><span>7</span> Iteration och förbättring</h3>
+                <p>Efter testning hittar man nästan alltid saker som behöver ändras. Man rättar buggar och justerar
+                    funktioner. Ofta får man gå tillbaka till tidigare steg – <strong>ibland ända tillbaka till ruta
+                        ett om man inser att man försöker lösa fel problem!</strong></p>
+                <p><strong>Detta kallas iteration.</strong> Utvecklingen sker i omgångar: bygga, testa, förbättra
+                    och testa igen. Teknikutveckling är inte en rak väg, utan lösningen växer fram.</p>
+                <div class="example-box">
+                    <strong>Exempel:</strong>
+                    <p>Ett spelmoment kanske är för svårt och måste balanseras om, eller en knapp behöver flyttas
+                        för att bli tydligare.</p>
+                </div>
+            </div>
+
+            <!-- Steg 8 -->
+            <div class="step-box">
+                <h3><span>8</span> Produktion</h3>
+                <p>När lösningen fungerar tillräckligt bra lanseras den. För digitala produkter betyder det att
+                    webbplatsen publiceras (på en webbserver) eller att programmet distribueras (t.ex. en app läggs
+                    upp för nedladdning).</p>
+            </div>
+
+            <!-- Steg 9 -->
+            <div class="step-box">
+                <h3><span>9</span> Livscykel</h3>
+                <p>En teknisk lösning har en livscykel. Den behöver underhållas, uppdateras och ibland ersättas. Det
+                    kan handla om patchar, säkerhetsuppdateringar, buggrättningar eller nya nivåer i ett spel.</p>
+                <p>Bra teknik handlar om att ta ansvar för hur lösningen fungerar över tid.</p>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        // Startar ritverktyget och tvingar fram större text och stänger av auto-krympning
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: { useMaxWidth: false },
+            themeVariables: { fontSize: '18px' }
+        });
+    </script>
+</body>
+
+</html>

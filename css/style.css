@@ -3,15 +3,15 @@
 /* Programmering nivå 1 med Python */
 
 :root {
-  --bg: #0f1220;
-  --bg-alt: #151a2e;
-  --surface: #1a2040;
-  --surface-2: #20284a;
-  --accent: #7bd389;
-  --accent-strong: #f6c453;
-  --text: #f4f7fb;
-  --text-muted: #a8b0c7;
-  --border: rgba(168, 176, 199, 0.18);
+  --bg: #0b1711;
+  --bg-alt: #102218;
+  --surface: #163125;
+  --surface-2: #1b3a2c;
+  --accent: #6fd88a;
+  --accent-strong: #b6f17c;
+  --text: #f3f8f4;
+  --text-muted: #a7b8ac;
+  --border: rgba(167, 184, 172, 0.2);
   --shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
   --reading-width: 72ch;
 }
@@ -33,15 +33,15 @@ body {
   background:
     radial-gradient(
       circle at top left,
-      rgba(123, 211, 137, 0.12),
+      rgba(111, 216, 138, 0.16),
       transparent 28%
     ),
     radial-gradient(
       circle at top right,
-      rgba(246, 196, 83, 0.1),
+      rgba(182, 241, 124, 0.1),
       transparent 26%
     ),
-    linear-gradient(180deg, var(--bg) 0%, #11162a 100%);
+    linear-gradient(180deg, var(--bg) 0%, #0f1f16 100%);
 }
 
 body.menu-open {
@@ -52,7 +52,7 @@ body.menu-open::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(4, 6, 10, 0.56);
+  background: rgba(3, 8, 6, 0.56);
   z-index: 95;
 }
 
@@ -105,7 +105,7 @@ ol {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.95rem 1.25rem;
-  background: rgba(15, 18, 32, 0.86);
+  background: rgba(11, 23, 17, 0.86);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--border);
 }
@@ -145,7 +145,7 @@ ol {
   width: 22rem;
   max-width: 92vw;
   padding: 1.25rem;
-  background: rgba(14, 18, 33, 0.98);
+  background: rgba(10, 21, 15, 0.98);
   border-right: 1px solid var(--border);
   box-shadow: var(--shadow);
   transform: translateX(-102%);
@@ -194,8 +194,8 @@ ol {
 
 .chapter-link:hover {
   text-decoration: none;
-  border-color: rgba(123, 211, 137, 0.45);
-  background: rgba(123, 211, 137, 0.08);
+  border-color: rgba(111, 216, 138, 0.45);
+  background: rgba(111, 216, 138, 0.08);
 }
 
 .chapter-number {
@@ -237,7 +237,7 @@ ol {
 .chapter-header,
 .nav-button,
 .site-footer {
-  background: rgba(26, 32, 64, 0.9);
+  background: rgba(22, 49, 37, 0.9);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
@@ -304,8 +304,8 @@ ol {
 
 .primary-link,
 .preview-link {
-  color: #091016;
-  background: linear-gradient(135deg, var(--accent) 0%, #c7f07e 100%);
+  color: #08140d;
+  background: linear-gradient(135deg, var(--accent) 0%, #9ce067 100%);
 }
 
 .secondary-link {
@@ -382,7 +382,7 @@ ol {
   padding: 1.25rem 1.25rem 1.4rem;
   border: 1px solid var(--border);
   border-radius: 28px;
-  background: rgba(26, 32, 64, 0.68);
+  background: rgba(22, 49, 37, 0.68);
 }
 
 .section-heading {
@@ -478,8 +478,8 @@ ol {
   margin-bottom: 1rem;
   background: linear-gradient(
     135deg,
-    rgba(123, 211, 137, 0.08),
-    rgba(246, 196, 83, 0.06)
+    rgba(111, 216, 138, 0.08),
+    rgba(182, 241, 124, 0.06)
   );
   border: 1px solid var(--border);
 }
@@ -536,9 +536,9 @@ ol {
 .key-topics span {
   padding: 0.42rem 0.72rem;
   border-radius: 999px;
-  border: 1px solid rgba(123, 211, 137, 0.26);
-  background: rgba(123, 211, 137, 0.08);
-  color: #dff8e5;
+  border: 1px solid rgba(111, 216, 138, 0.3);
+  background: rgba(111, 216, 138, 0.12);
+  color: #e7f8ea;
   font:
     700 0.82rem/1 "Trebuchet MS",
     "Segoe UI",
@@ -583,7 +583,7 @@ ol {
   width: 100%;
   height: auto;
   object-fit: contain;
-  background: #06080d;
+  background: #050e09;
 }
 
 .chapter-nav {
@@ -603,7 +603,7 @@ ol {
 
 .nav-button:hover {
   text-decoration: none;
-  border-color: rgba(123, 211, 137, 0.45);
+  border-color: rgba(111, 216, 138, 0.45);
   transform: translateY(-1px);
 }
 
@@ -671,8 +671,8 @@ ol {
 
 .chapter-toc .toc-link:hover {
   text-decoration: none;
-  background: rgba(123, 211, 137, 0.09);
-  border-color: rgba(123, 211, 137, 0.35);
+  background: rgba(111, 216, 138, 0.1);
+  border-color: rgba(111, 216, 138, 0.35);
 }
 
 .chapter-toc .toc-link-sub {
@@ -695,7 +695,7 @@ pre {
   overflow-x: auto;
   padding: 1rem;
   border-radius: 18px;
-  background: #090d18;
+  background: #0a160f;
   border: 1px solid var(--border);
 }
 
@@ -714,7 +714,7 @@ blockquote {
   margin: 1rem 0;
   padding: 0.9rem 1rem;
   border-left: 4px solid var(--accent-strong);
-  background: rgba(246, 196, 83, 0.07);
+  background: rgba(182, 241, 124, 0.09);
   color: var(--text-muted);
 }
 
@@ -806,7 +806,7 @@ th {
 }
 
 .nav-button:hover {
-  background: #252a40;
+  background: #234533;
   border-color: var(--accent);
   text-decoration: none;
 }
