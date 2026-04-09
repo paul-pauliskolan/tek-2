@@ -101,6 +101,7 @@ ol {
   top: 0;
   z-index: 90;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
@@ -111,10 +112,111 @@ ol {
 }
 
 .logo {
+  order: 1;
   font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--text);
+}
+
+.site-search {
+  order: 2;
+  flex: 1 1 320px;
+  max-width: 480px;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.site-search .gcse-search {
+  width: 100%;
+}
+
+.site-search .gsc-control-cse,
+.site-search .gsc-control-cse-en {
+  background: transparent !important;
+  border: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.site-search table.gsc-search-box {
+  margin: 0 !important;
+}
+
+.site-search .gsc-search-box td {
+  padding: 0 !important;
+}
+
+.site-search .gsc-input-box {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid var(--border) !important;
+  box-shadow: none !important;
+  border-radius: 999px !important;
+  padding: 0.15rem 0.45rem !important;
+}
+
+.site-search input.gsc-input {
+  background: transparent !important;
+  color: var(--text) !important;
+}
+
+.site-search input.gsc-input::placeholder {
+  color: var(--text-muted) !important;
+}
+
+.site-search .gsc-search-button-v2,
+.site-search .gsc-search-button-v2:hover,
+.site-search .gsc-search-button-v2:focus {
+  background: var(--accent) !important;
+  border: 1px solid var(--accent) !important;
+  border-radius: 999px !important;
+  box-shadow: none !important;
+}
+
+.site-search .gsc-search-button-v2 svg,
+.site-search .gsc-search-button-v2 path {
+  fill: #08140d !important;
+}
+
+.site-search .gsc-results-wrapper-visible,
+.site-search .gsc-results-wrapper-overlay {
+  max-height: 70vh !important;
+  min-height: 420px !important;
+  overflow-y: auto !important;
+}
+
+.site-search .gsc-results-wrapper-visible {
+  width: 92vw !important;
+  max-width: 680px !important;
+}
+
+.site-search .gsc-resultsbox-visible,
+.site-search .gsc-results {
+  width: 100% !important;
+}
+
+.site-search .gsc-webResult.gsc-result,
+.site-search .gsc-result {
+  background: rgba(22, 49, 37, 0.96) !important;
+  border-color: var(--border) !important;
+}
+
+.site-search .gscb_a {
+  color: var(--text) !important;
+}
+
+.page-search-shell {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 0.75rem 1rem 0;
+}
+
+.page-search-shell .gcse-search {
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .menu-toggle,
@@ -129,6 +231,7 @@ ol {
 }
 
 .menu-toggle {
+  order: 3;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.02);
@@ -763,6 +866,26 @@ th {
 
   .navbar {
     padding-inline: 0.85rem;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .menu-toggle {
+    order: 2;
+    margin-left: auto;
+  }
+
+  .site-search {
+    order: 3;
+    flex-basis: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .page-search-shell {
+    padding-inline: 0.5rem;
   }
 
   .hero-copy,

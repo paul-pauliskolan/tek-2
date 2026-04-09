@@ -8,8 +8,47 @@ let chaptersData = [];
 document.addEventListener("DOMContentLoaded", () => {
   loadChaptersData();
   setupMenuToggle();
+  injectSiteSearch();
   applyBranding();
 });
+
+function injectSiteSearch() {
+  if (document.querySelector(".site-search, .page-search-shell")) {
+    return;
+  }
+
+  const searchWrapper = document.createElement("div");
+  searchWrapper.className = "site-search";
+
+  const searchScript = document.createElement("script");
+  searchScript.async = true;
+  searchScript.src = "https://cse.google.com/cse.js?cx=714e09b881eff46fd";
+
+  const searchBox = document.createElement("div");
+  searchBox.className = "gcse-search";
+
+  searchWrapper.append(searchScript, searchBox);
+
+  const navbar = document.querySelector(".navbar");
+  if (navbar) {
+    const menuToggle = navbar.querySelector(".menu-toggle");
+    if (menuToggle) {
+      navbar.insertBefore(searchWrapper, menuToggle);
+    } else {
+      navbar.appendChild(searchWrapper);
+    }
+    return;
+  }
+
+  searchWrapper.classList.add("page-search-shell");
+  const body = document.body;
+  const firstBlock = body.querySelector(".container, main, .page-stack");
+  if (firstBlock) {
+    body.insertBefore(searchWrapper, firstBlock);
+  } else {
+    body.prepend(searchWrapper);
+  }
+}
 
 function applyBranding() {
   const logo = document.querySelector(".navbar .logo");

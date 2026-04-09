@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://paul-pauliskolan.github.io/tek-2/sitemap.xml
