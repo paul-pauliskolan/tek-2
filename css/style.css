@@ -126,13 +126,39 @@ ol {
   min-width: 220px;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
   position: relative;
 }
 
-.site-search .gcse-search {
+.site-search-toggle {
+  display: none;
+  order: 1;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.site-search-panel {
+  order: 2;
+  flex: 1 1 320px;
+  min-width: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.site-search-panel .gcse-search {
   width: 100%;
 }
 
+.site-search-panel .gsc-control-cse,
+.site-search-panel .gsc-control-cse-en,
 .site-search .gsc-control-cse,
 .site-search .gsc-control-cse-en {
   background: transparent !important;
@@ -141,14 +167,17 @@ ol {
   margin: 0 !important;
 }
 
+.site-search-panel table.gsc-search-box,
 .site-search table.gsc-search-box {
   margin: 0 !important;
 }
 
+.site-search-panel .gsc-search-box td,
 .site-search .gsc-search-box td {
   padding: 0 !important;
 }
 
+.site-search-panel .gsc-input-box,
 .site-search .gsc-input-box {
   background: rgba(255, 255, 255, 0.04) !important;
   border: 1px solid var(--border) !important;
@@ -157,15 +186,20 @@ ol {
   padding: 0.15rem 0.45rem !important;
 }
 
+.site-search-panel input.gsc-input,
 .site-search input.gsc-input {
   background: transparent !important;
   color: var(--text) !important;
 }
 
+.site-search-panel input.gsc-input::placeholder,
 .site-search input.gsc-input::placeholder {
   color: var(--text-muted) !important;
 }
 
+.site-search-panel .gsc-search-button-v2,
+.site-search-panel .gsc-search-button-v2:hover,
+.site-search-panel .gsc-search-button-v2:focus,
 .site-search .gsc-search-button-v2,
 .site-search .gsc-search-button-v2:hover,
 .site-search .gsc-search-button-v2:focus {
@@ -175,11 +209,15 @@ ol {
   box-shadow: none !important;
 }
 
+.site-search-panel .gsc-search-button-v2 svg,
+.site-search-panel .gsc-search-button-v2 path,
 .site-search .gsc-search-button-v2 svg,
 .site-search .gsc-search-button-v2 path {
   fill: #08140d !important;
 }
 
+.site-search-panel .gsc-results-wrapper-visible,
+.site-search-panel .gsc-results-wrapper-overlay,
 .site-search .gsc-results-wrapper-visible,
 .site-search .gsc-results-wrapper-overlay {
   max-height: 70vh !important;
@@ -187,22 +225,28 @@ ol {
   overflow-y: auto !important;
 }
 
+.site-search-panel .gsc-results-wrapper-visible,
 .site-search .gsc-results-wrapper-visible {
   width: 92vw !important;
   max-width: 680px !important;
 }
 
+.site-search-panel .gsc-resultsbox-visible,
+.site-search-panel .gsc-results,
 .site-search .gsc-resultsbox-visible,
 .site-search .gsc-results {
   width: 100% !important;
 }
 
+.site-search-panel .gsc-webResult.gsc-result,
+.site-search-panel .gsc-result,
 .site-search .gsc-webResult.gsc-result,
 .site-search .gsc-result {
   background: rgba(22, 49, 37, 0.96) !important;
   border-color: var(--border) !important;
 }
 
+.site-search-panel .gscb_a,
 .site-search .gscb_a {
   color: var(--text) !important;
 }
@@ -212,9 +256,13 @@ ol {
   margin: 0 auto;
   max-width: 1180px;
   padding: 0.75rem 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-.page-search-shell .gcse-search {
+.page-search-shell .site-search-panel {
   max-width: 520px;
   margin: 0 auto;
 }
@@ -872,20 +920,59 @@ th {
     order: 1;
   }
 
+  .site-search {
+    order: 2;
+    flex: 0 0 auto;
+    min-width: 0;
+    max-width: none;
+    position: relative;
+  }
+
+  .site-search-toggle {
+    display: inline-flex;
+  }
+
+  .site-search-panel {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.55rem);
+    left: 0;
+    right: 0;
+    z-index: 95;
+    padding: 0.75rem;
+    background: rgba(10, 21, 15, 0.98);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+  }
+
+  body.site-search-open .site-search-panel {
+    display: flex;
+  }
+
+  body.site-search-open .site-search {
+    flex-basis: 100%;
+  }
+
   .menu-toggle {
     order: 2;
     margin-left: auto;
   }
 
-  .site-search {
-    order: 3;
-    flex-basis: 100%;
-    max-width: none;
-    min-width: 0;
+  .page-search-shell {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    padding-inline: 0.5rem;
   }
 
-  .page-search-shell {
-    padding-inline: 0.5rem;
+  .page-search-shell .site-search-panel {
+    display: none;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    position: static;
   }
 
   .hero-copy,

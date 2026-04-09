@@ -13,12 +13,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function injectSiteSearch() {
-  if (document.querySelector(".site-search, .page-search-shell")) {
+  if (document.querySelector(".site-search-panel, .page-search-shell")) {
     return;
   }
-
-  const searchWrapper = document.createElement("div");
-  searchWrapper.className = "site-search";
 
   const searchScript = document.createElement("script");
   searchScript.async = true;
@@ -27,27 +24,93 @@ function injectSiteSearch() {
   const searchBox = document.createElement("div");
   searchBox.className = "gcse-search";
 
-  searchWrapper.append(searchScript, searchBox);
+  let searchToggle = null;
+  let searchPanel = null;
+
+  const buildSearchPanel = () => {
+    const panel = document.createElement("div");
+    panel.className = "site-search-panel";
+    panel.id = "site-search-panel";
+    panel.append(searchScript, searchBox);
+    return panel;
+  };
+
+  const buildSearchToggle = () => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "site-search-toggle";
+    button.setAttribute("aria-label", "Öppna sök");
+    button.setAttribute("aria-expanded", "false");
+    button.setAttribute("aria-controls", "site-search-panel");
+    button.textContent = "🔍";
+    return button;
+  };
 
   const navbar = document.querySelector(".navbar");
   if (navbar) {
+    searchToggle = buildSearchToggle();
+    searchPanel = buildSearchPanel();
     const menuToggle = navbar.querySelector(".menu-toggle");
     if (menuToggle) {
-      navbar.insertBefore(searchWrapper, menuToggle);
+      navbar.insertBefore(searchToggle, menuToggle);
+      navbar.insertBefore(searchPanel, menuToggle);
     } else {
-      navbar.appendChild(searchWrapper);
+      navbar.append(searchToggle, searchPanel);
     }
-    return;
+  } else {
+    const searchWrapper = document.createElement("div");
+    searchWrapper.className = "site-search page-search-shell";
+    searchToggle = buildSearchToggle();
+    searchPanel = buildSearchPanel();
+    searchWrapper.append(searchToggle, searchPanel);
+    const body = document.body;
+    const firstBlock = body.querySelector(".container, main, .page-stack");
+    if (firstBlock) {
+      body.insertBefore(searchWrapper, firstBlock);
+    } else {
+      body.prepend(searchWrapper);
+    }
   }
 
-  searchWrapper.classList.add("page-search-shell");
-  const body = document.body;
-  const firstBlock = body.querySelector(".container, main, .page-stack");
-  if (firstBlock) {
-    body.insertBefore(searchWrapper, firstBlock);
-  } else {
-    body.prepend(searchWrapper);
-  }
+  const closeSiteSearch = () => {
+    document.body.classList.remove("site-search-open");
+    searchToggle.setAttribute("aria-expanded", "false");
+  };
+
+  const openSiteSearch = () => {
+    document.body.classList.add("site-search-open");
+    searchToggle?.setAttribute("aria-expanded", "true");
+    window.setTimeout(() => {
+      const input = searchPanel?.querySelector("input.gsc-input");
+      if (input) {
+        input.focus();
+      }
+    }, 50);
+  };
+
+  searchToggle?.addEventListener("click", () => {
+    if (document.body.classList.contains("site-search-open")) {
+      closeSiteSearch();
+    } else {
+      openSiteSearch();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!document.body.classList.contains("site-search-open")) return;
+    if (
+      searchToggle?.contains(event.target) ||
+      searchPanel?.contains(event.target)
+    )
+      return;
+    closeSiteSearch();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeSiteSearch();
+    }
+  });
 }
 
 function applyBranding() {
