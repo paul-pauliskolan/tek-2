@@ -166,10 +166,6 @@ function applyBranding() {
   if (chapterHomeTitle) {
     chapterHomeTitle.textContent = `⚙️ ${BOOK_SHORT_TITLE}`;
   }
-
-  const chapterSubtitle = document.querySelector(
-    ".chapter-page .chapter-hero .subtitle",
-  );
 }
 
 function setupMenuToggle() {

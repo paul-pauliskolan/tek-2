@@ -823,7 +823,7 @@ Det första steget är att förstå vilket problem som ska lösas. Teknik utveck
 
 ### **Exempel** {#exempel}
 
-En förening kanske inte har någon fungerande hemsida. Medlemmarna hittar inte information, och nya besökare får inget bra första intryck. Då finns ett tydligt problem att lösa.
+En förening kanske inte har någon fungerande webbplats. Medlemmarna hittar inte information, och nya besökare får inget bra första intryck. Då finns ett tydligt problem att lösa.
 
 I ett spelprojekt kan problemet istället vara att det saknas ett spel som erbjuder en viss typ av upplevelse, till exempel ett enkelt rymdspel för unga spelare.
 
