@@ -170,10 +170,6 @@ function applyBranding() {
   const chapterSubtitle = document.querySelector(
     ".chapter-page .chapter-hero .subtitle",
   );
-  if (chapterSubtitle) {
-    chapterSubtitle.textContent =
-      "Läs kapitlet och håll reda på innehållet i en smal parallell vy.";
-  }
 }
 
 function setupMenuToggle() {

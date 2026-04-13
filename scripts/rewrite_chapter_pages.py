@@ -29,7 +29,6 @@ HTML = """<!DOCTYPE html>
             <header class=\"chapter-hero\">
                 <p class=\"eyebrow\">Teknik 2</p>
                 <h1><a href=\"../index.html\">⚙️ Teknik 2</a></h1>
-                <p class=\"subtitle\">Läs kapitlet och håll reda på innehållet i en smal parallell vy.</p>
             </header>
 
             <div class=\"chapter-header\"></div>
