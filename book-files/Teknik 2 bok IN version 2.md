@@ -40,7 +40,7 @@
 
 [9\. Livscykel](#9.-livscykel)
 
-[Exempel: teknikutvecklingsprocess i ett webbplatsprojekt](#exempel:-teknikutvecklingsprocess-i-ett-webbplatsprojekt)
+[Exempel: teknikutvecklingsprocess i ett skolappprojekt](#exempel:-teknikutvecklingsprocess-i-ett-skolappprojekt)
 
 [Problem](#problem)
 
@@ -968,45 +968,45 @@ För ett spel kan det handla om:
 
 Livscykelperspektivet är viktigt, eftersom bra teknik inte bara handlar om att bygga något nytt, utan också om att ta ansvar för hur lösningen fungerar över tid.
 
-## **Exempel: teknikutvecklingsprocess i ett webbplatsprojekt** {#exempel:-teknikutvecklingsprocess-i-ett-webbplatsprojekt}
+## **Exempel: teknikutvecklingsprocess i ett skolappprojekt** {#exempel:-teknikutvecklingsprocess-i-ett-skolappprojekt}
 
 Här är ett enkelt exempel på hur processen kan användas i ett riktigt projekt.
 
 ### **Problem** {#problem}
 
-En skolklass behöver en webbplats där elever och lärare kan hitta information om schema, uppgifter och kontaktuppgifter.
+En gymnasieskola behöver en ny skolapp där elever snabbt kan se inställda lektioner, dagens lunch, prövningar och schema samt rapportera frånvaro.
 
 ### **Research** {#research}
 
-Man tittar på andra skolsidor och funderar på vad användarna behöver kunna göra.
+Man tittar på andra skolappar och intervjuar elever, lärare och administratörer om vilka funktioner som är viktigast i vardagen.
 
 ### **Idégenerering** {#idégenerering}
 
-Gruppen diskuterar olika lösningar: en enkel informationssida, en sida med nyhetsflöde eller en sida med inloggning.
+Gruppen diskuterar olika lösningar: en app med snabbkort för inställda lektioner, en tydlig lunchvy och en enkel frånvarorapportering.
 
 ### **Design** {#design}
 
-Man bestämmer hur startsidan ska se ut, vilka undersidor som behövs och hur menyn ska fungera.
+Man bestämmer appens startsida, vilka vyer som behövs (schema, lunch, prövningar och frånvaro) och hur navigeringen ska fungera.
 
 ### **Prototyp** {#prototyp}
 
-En första version byggs i HTML och CSS.
+En första klickbar prototyp tas fram för att visa flödet mellan appens viktigaste funktioner.
 
 ### **Testning** {#testning}
 
-Man testar om länkar fungerar, om sidan ser bra ut i mobil och om informationen är lätt att hitta.
+Man testar om informationen är lätt att hitta, om frånvarorapporteringen fungerar och om appen är tydlig i mobilen.
 
 ### **Förbättring** {#förbättring}
 
-Man justerar layout, förbättrar navigeringen och rättar fel.
+Man justerar gränssnittet, förenklar navigeringen och rättar fel som upptäckts i testerna.
 
 ### **Produktion** {#produktion}
 
-Webbplatsen publiceras.
+Skolappen lanseras för elever och personal.
 
 ### **Livscykel** {#livscykel}
 
-Sidan uppdateras när schema eller information ändras.
+Appen uppdateras löpande när schema, lunchdata, prövningar och frånvarofunktioner förändras.
 
 ## **Exempel: teknikutvecklingsprocess i ett spelprojekt** {#exempel:-teknikutvecklingsprocess-i-ett-spelprojekt}
 
@@ -1072,10 +1072,6 @@ En tydlig process ökar alltså chansen att resultatet blir bra.
  **Iteration** – att förbättra något steg för steg i flera omgångar.  
  **Produktion** – att göra lösningen tillgänglig för användare.  
  **Livscykel** – tiden från att en teknisk lösning skapas tills den uppdateras eller avvecklas.
-
-## **Sammanfattning** {#sammanfattning}
-
-Teknikutvecklingsprocessen beskriver hur tekniska lösningar växer fram från idé till färdig produkt. Processen innehåller ofta steg som problemidentifiering, research, idégenerering, design, prototyp, testning, förbättring, produktion och livscykel. Inom informationsteknik används processen när man utvecklar exempelvis webbplatser, appar, spel och digitala system. Genom att arbeta steg för steg blir det lättare att skapa lösningar som fungerar bra och uppfyller användarnas behov.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med}
 
@@ -1156,8 +1152,8 @@ En innovation är en idé som används i verkligheten och skapar värde för anv
 
 Man kan alltså säga så här:
 
-**Uppfinning \= ny idé**  
- **Innovation \= idé som används**
+**Uppfinning = ny idé**  
+ **Innovation = idé som används**
 
 Det här är en viktig skillnad i teknikämnen, eftersom många bra idéer aldrig blir verklighet om de inte går att använda, sprida eller vidareutveckla.
 
@@ -1171,7 +1167,7 @@ En elev eller entreprenör kan få idén att skapa en webbplats för lokala för
 
 ### **Exempel: spelutveckling** {#exempel:-spelutveckling}
 
-En annan idé kan vara att utveckla ett datorspel. Tekniken kanske bygger på Unity, C\#, grafik och ljud. Affären kan vara att sälja spelet, visa reklam i spelet eller tjäna pengar på nedladdningar.
+En annan idé kan vara att utveckla ett datorspel. Tekniken kanske bygger på Unity, C#, grafik och ljud. Affären kan vara att sälja spelet, visa reklam i spelet eller tjäna pengar på nedladdningar.
 
 Det som är gemensamt i båda fallen är att tekniken används för att skapa något som andra människor faktiskt vill använda eller betala för.
 
@@ -1303,10 +1299,6 @@ Det gör ämnet teknik mer verklighetsnära och visar hur idéer kan påverka b�
  **Finansiering** – resurser eller pengar som behövs för att utveckla en lösning.  
  **Risk** – osäkerhet kring om en idé kommer att fungera eller lyckas.  
  **Kreativitet** – förmågan att tänka nytt, prova idéer och skapa lösningar.
-
-## **Sammanfattning** {#sammanfattning-1}
-
-Entreprenörskap inom teknik handlar om att se möjligheter, utveckla idéer och skapa lösningar som används i verkligheten. Det hänger nära ihop med innovation, kreativitet och problemlösning. En viktig skillnad är att en uppfinning är en ny idé, medan en innovation är en idé som faktiskt används. För att lyckas med entreprenörskap behöver man förstå användare, behov, marknad, ekonomi, risker och tekniska möjligheter. På så sätt kan tekniska idéer bli produkter, tjänster eller företag.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-1}
 
@@ -1502,10 +1494,6 @@ Det här arbetssättet sparar ofta tid och gör att man lär sig mer än om man 
  **Testning** – att kontrollera att en lösning fungerar och inte skapar nya fel.  
  **Optimering** – att förbättra hur ett system fungerar, till exempel snabbhet eller stabilitet.
 
-## **Sammanfattning** {#sammanfattning-2}
-
-Problemlösning inom informationsteknik handlar om att identifiera problem, analysera orsaker, föreslå lösningar, implementera förändringar och testa resultatet. Den processen används inom programmering, webbplatser, spel, appar och andra IT-system. Genom att arbeta strukturerat kan man lösa problem på ett effektivt sätt och samtidigt förbättra tekniska lösningar. Problemlösning är därför en av de viktigaste färdigheterna inom teknik och programmering.
-
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-2}
 
 1. Vad är ett tekniskt problem?
@@ -1642,11 +1630,11 @@ I praktiken används ofta en blandning av olika arbetssätt beroende på projekt
 
 Agila arbetssätt har blivit vanliga inom programmering och systemutveckling. Tanken är att man inte försöker göra allt färdigt direkt, utan att man arbetar steg för steg. Man utvecklar lite i taget, testar ofta och förbättrar efter hand.
 
-I den första iterationen pratar man ofta om en **MVP** (Minimum Viable Product), alltså en minsta livskraftig produkt. En MVP innehåller precis tillräckligt många funktioner för att kunna testas av riktiga användare och ge feedback. Målet är inte att allt ska vara klart, utan att snabbt få en fungerande version som visar om idén håller i praktiken.
+I den första iterationen arbetar man ofta mot en **MVP** (Minimum Viable Product), alltså en minsta livskraftig produkt. En MVP har bara de funktioner som krävs för att kunna användas och ge relevant feedback.
 
-En **prototyp** och en **MVP** liknar varandra eftersom båda används tidigt i utvecklingen för att testa en idé. Skillnaden är att en prototyp oftast är intern och experimentell, medan en MVP är en faktisk produktversion som används av riktiga användare.
+**Prototyp** och **MVP** används båda tidigt i utvecklingen, men med olika syfte. En prototyp är oftast intern och experimentell. En MVP är en fungerande produktversion som testas av riktiga användare.
 
-En vanlig progression i agila projekt är därför: låg-trohets-prototyp (skisser och wireframes), hög-trohets-prototyp (fungerande intern testversion) och därefter MVP (minsta fungerande version ute hos användare).
+En vanlig progression i agila projekt är: låg-trohets-prototyp (skisser och wireframes), hög-trohets-prototyp (fungerande intern testversion) och därefter MVP (minsta fungerande version ute hos användare).
 
 Fördelar med agila arbetssätt är att:
 
@@ -1743,10 +1731,6 @@ Det handlar alltså inte bara om att “göra klart” något, utan om att arbet
  **Iterativ utveckling** – att bygga, testa och förbättra i flera omgångar.  
  **Dokumentation** – information som beskriver projektet och gör det lättare att följa och utveckla vidare.
 
-## **Sammanfattning** {#sammanfattning-3}
-
-Projektarbete inom teknik innebär att planera arbetet, dela upp arbetsuppgifter, samarbeta i team och testa samt förbättra lösningar. Många tekniska projekt följer faser som planering, design, utveckling, testning och lansering. I projekt behövs tydliga mål, bra samarbete, fungerande roller och dokumentation. Genom att använda genomtänkta arbetsmetoder blir det lättare att genomföra projekt på ett strukturerat och effektivt sätt.
-
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-3}
 
 1. Vad är ett projekt?
@@ -1769,7 +1753,7 @@ Efter det här kapitlet ska du kunna:
 
 ## **Vad är programmering?** {#vad-är-programmering?}
 
-Programmering innebär att skriva instruktioner till en dator så att den kan utföra en uppgift. Genom programmering kan vi skapa program som löser problem, automatiserar arbete och gör det möjligt att bygga digitala system. Program skrivs i programmeringsspråk, till exempel Python, JavaScript och C\#.
+Programmering innebär att skriva instruktioner till en dator så att den kan utföra en uppgift. Genom programmering kan vi skapa program som löser problem, automatiserar arbete och gör det möjligt att bygga digitala system. Program skrivs i programmeringsspråk, till exempel Python, JavaScript och C#.
 
 En dator kan inte tänka själv, men den kan följa instruktioner mycket snabbt och noggrant. Därför är programmering ett sätt att tala om exakt vad datorn ska göra.
 
@@ -1910,7 +1894,7 @@ Det här visar att programmering inte bara används för stora program. Den anv�
 
 ## **Exempel: programmering i Unity-spel** {#exempel:-programmering-i-unity-spel}
 
-Ett annat exempel handlar om att styra en spelkaraktär i ett Unity-spel. Lösningen är att skriva kod i C\#. Med hjälp av programmering kan man skapa:
+Ett annat exempel handlar om att styra en spelkaraktär i ett Unity-spel. Lösningen är att skriva kod i C#. Med hjälp av programmering kan man skapa:
 
 - rörelse
 - hopp
@@ -1986,7 +1970,7 @@ Detta gör programmet lättare att utveckla vidare och enklare för andra att l�
 ## **Centrala begrepp** {#centrala-begrepp-4}
 
 **Programmering** – att skriva instruktioner till en dator.  
- **Programmeringsspråk** – språk som används för att skriva kod, till exempel Python, JavaScript eller C\#.  
+ **Programmeringsspråk** – språk som används för att skriva kod, till exempel Python, JavaScript eller C#.  
  **Variabel** – en plats där information lagras i ett program.  
  **Villkor** – en kontroll som låter programmet välja mellan olika alternativ.  
  **Loop** – en upprepning i ett program.  
@@ -1994,10 +1978,6 @@ Detta gör programmet lättare att utveckla vidare och enklare för andra att l�
  **Testning** – att kontrollera att programmet fungerar korrekt.  
  **Automatisering** – att låta datorn utföra uppgifter automatiskt.  
  **Bugg** – ett fel i ett program.
-
-## **Sammanfattning** {#sammanfattning-4}
-
-Programmering används för att lösa problem, automatisera uppgifter och skapa digitala system. Processen innehåller ofta att förstå problemet, planera lösningen, skriva kod, testa programmet och förbättra resultatet. Genom programmering kan man skapa allt från interaktiva webbplatser till spel och appar. Programmering är därför ett centralt verktyg inom informationsteknik och en viktig del av modern problemlösning.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-4}
 
@@ -2236,10 +2216,6 @@ Sådana frågor har inte alltid enkla svar, men de är viktiga att diskutera eft
  **Arbetsmiljö** – hur arbetsförhållanden påverkar människors hälsa, trivsel och prestation.  
  **Ergonomi** – att anpassa arbete och arbetsmiljö så att kroppen belastas på ett bra sätt.
 
-## **Sammanfattning** {#sammanfattning-5}
-
-Systematiskt kvalitetsarbete innebär att säkerställa kvalitet, analysera risker, minska miljöpåverkan och skapa en säker arbetsmiljö. Kvalitetssäkring och testning hjälper till att upptäcka fel tidigt och skapa stabila system. Riskanalys gör det möjligt att förebygga problem som dataförlust och säkerhetsintrång. Miljösäkring påminner oss om att även digital teknik påverkar miljön, och arbetsmiljö visar att människorna i projektet också är en viktig del av kvaliteten. Tillsammans gör detta kvalitetsarbete till en central del av teknisk utveckling.
-
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-5}
 
 1. Vad menas med kvalitet i ett tekniskt system?
@@ -2475,10 +2451,6 @@ Det är just den kombinationen som gör att tekniska lösningar kan bli både ge
  **Rimlighetsbedömning** – att kontrollera om en lösning verkar realistisk och trovärdig.  
  **Bandbredd** – mängden data som kan överföras under en viss tid.
 
-## **Sammanfattning** {#sammanfattning-6}
-
-Begrepp, teorier och modeller används för att förstå tekniska system, konstruera lösningar, dimensionera resurser, göra beräkningar och bedöma rimligheten i lösningar. Inom informationsteknik är detta viktigt eftersom system ofta är komplexa och måste fungera under verkliga förhållanden. Genom att använda modeller och beräkningar kan man planera bättre och undvika problem innan de uppstår. Rimlighetsbedömning hjälper dessutom till att avgöra om en teknisk lösning verkligen verkar fungera i praktiken.
-
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-6}
 
 1. Varför är tekniska begrepp viktiga?
@@ -2696,10 +2668,6 @@ Det gör att utvecklaren kan förbättra lösningen innan den når användarna.
  **Flödesschema** – en modell som visar steg och beslut i en process eller ett program.  
  **Pseudokod** – en förenklad beskrivning av ett programs logik.  
  **Fysiksimulering** – simulering av till exempel gravitation, rörelse och kollisioner.
-
-## **Sammanfattning** {#sammanfattning-7}
-
-Modellering innebär att beskriva system med modeller, medan simulering innebär att testa hur system fungerar. Båda används för att planera tekniska lösningar, analysera system och förbättra design. Inom informationsteknik används modeller till exempel för att beskriva webbplatser, databaser, nätverk och programflöden. Simulering används bland annat för att testa användarflöden, prestanda och fysik i spel. Tillsammans gör modellering och simulering det lättare att förstå och utveckla tekniska system.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-7}
 
@@ -2932,10 +2900,6 @@ Det gör att kunskap om framtidens teknik inte bara handlar om teknik i sig, uta
  **Integritet** – skydd för individens personliga information.  
  **Elektroniskt avfall** – gamla eller kasserade elektroniska produkter.
 
-## **Sammanfattning** {#sammanfattning-8}
-
-Tekniska framsteg innebär utveckling av nya eller förbättrade tekniska lösningar. Informationsteknik har utvecklats snabbt och påverkar i dag arbete, kommunikation, utbildning och ekonomi. Framtidens teknik, som AI, VR, robotik och kvantdatorer, kan skapa stora möjligheter men också nya problem. Teknik behöver därför kopplas till hållbar utveckling, där resurser används ansvarsfullt och miljöpåverkan minskas. Samtidigt visar kapitlet att även hållbara idéer, som cirkulär ekonomi, behöver granskas kritiskt. Nya affärsmodeller och digitala tjänster är också en viktig del av hur teknik förändrar samhället.
-
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-8}
 
 1. Vad menas med tekniska framsteg?
@@ -3153,10 +3117,6 @@ Det här är en viktig del av teknikkunskap, särskilt i en tid då digitala sys
  **Integritet** – skydd för personliga uppgifter och privat information.  
  **Hållbar utveckling** – utveckling som tar hänsyn till miljö, resurser och långsiktighet.  
  **Rimlig bedömning** – att väga olika perspektiv mot varandra och avgöra om en lösning verkar klok och realistisk.
-
-## **Sammanfattning** {#sammanfattning-9}
-
-Tekniska lösningar bör värderas utifrån flera olika aspekter, bland annat funktion, säkerhet, etik och hållbar utveckling. Att värdera teknik innebär att analysera fördelar och nackdelar, bedöma konsekvenser och jämföra olika alternativ. Etiska frågor blir viktiga när teknik påverkar människors integritet, dataanvändning och vardag. Samtidigt behöver teknik utvecklas med hänsyn till miljö och långsiktig hållbarhet. Genom att göra genomtänkta värderingar kan man välja bättre lösningar och minska risker.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-9}
 
@@ -3414,10 +3374,6 @@ Sådana frågor blir allt viktigare i ett samhälle där digitalisering påverka
  **Digital kompetens** – förmågan att använda, förstå och kritiskt granska digital teknik och information.  
  **IoT** – Internet of Things, alltså uppkopplade enheter som kan kommunicera med varandra.  
  **Integritet** – skydd för personlig information och privatliv i digitala system.
-
-## **Sammanfattning** {#sammanfattning-10}
-
-Digitalisering innebär att teknik används för att hantera information och processer på ett digitalt sätt. Den påverkar produktion genom automatisering, dataanalys och uppkopplade system. Den förändrar också kommunikation genom e-post, sociala medier, videomöten och digitala samarbetsverktyg. I vardagen märks digitalisering i bland annat onlinehandel, streaming, betalningar och smarta system. Samtidigt skapar digitalisering utmaningar som säkerhetsrisker, integritetsproblem och ökat beroende av teknik. Därför blir digital kompetens allt viktigare i ett digitaliserat samhälle.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-10}
 
@@ -3678,10 +3634,6 @@ Bra teknisk kommunikation handlar alltså inte om att låta avancerad, utan om a
  **Git** – ett system för versionshantering.  
  **GitHub** – en plattform där kod kan lagras, delas och hanteras med versionshantering.
 
-## **Sammanfattning** {#sammanfattning-11}
-
-Kommunikation innebär att dela information i projekt, dokumentation innebär att beskriva hur teknik fungerar och presentation innebär att visa och förklara tekniska lösningar. I tekniska projekt är detta viktigt för att människor ska kunna samarbeta, förstå system i efterhand och utveckla dem vidare. Dokumentation kan bestå av rapporter, projektplaner, systembeskrivningar och kodkommentarer. Versionshantering hjälper till att spara olika versioner av kod och följa förändringar. Genom tydlig kommunikation, bra dokumentation och genomtänkta presentationer blir tekniska projekt mer begripliga och mer professionella.
-
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-11}
 
 1. Varför är kommunikation viktig i tekniska projekt?
@@ -3908,10 +3860,6 @@ Det gör dem särskilt viktiga när flera personer arbetar tillsammans eller nä
  **2D-modell** – en tvådimensionell modell.  
  **3D-modell** – en tredimensionell modell.  
  **Wireframe** – en enkel skiss över strukturen i en webbplats eller app.
-
-## **Sammanfattning** {#sammanfattning-12}
-
-Digitala ritningar används för att beskriva tekniska system, och modeller används för att planera och analysera lösningar. Inom informationsteknik används bland annat systemdiagram, flödesscheman, databasscheman och nätverksdiagram. Digitala ritningar är lätta att ändra, dela och visa i både 2D och 3D. De hjälper till att planera system, kommunicera idéer och upptäcka problem tidigt. Därför är både tolkning och framställning av digitala ritningar och modeller viktiga delar av tekniskt arbete.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-12}
 
