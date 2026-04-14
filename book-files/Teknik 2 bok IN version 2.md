@@ -1253,7 +1253,7 @@ Det gör projektet mer realistiskt och hjälper dig att koppla teknik till samh�
 
 ## **Exempel: från idé till enkel affär** {#exempel:-från-idé-till-enkel-affär}
 
-Tänk dig att en elev märker att små föreningar ofta har gamla eller röriga hemsidor. Eleven får då en idé: att skapa enkla, tydliga webbplatser som är lätta att uppdatera.
+Tänk dig att en elev märker att små föreningar ofta har gamla eller röriga webbplatser. Eleven får då en idé: att skapa enkla, tydliga webbplatser som är lätta att uppdatera.
 
 ### **Så kan entreprenörskapet se ut:** {#så-kan-entreprenörskapet-se-ut:}
 
@@ -1431,7 +1431,7 @@ Det här är viktigt eftersom en ändring ibland kan skapa nya problem. Därför
 
 ## **Exempel: problemlösning på en webbplats** {#exempel:-problemlösning-på-en-webbplats}
 
-Ett konkret exempel från materialet handlar om en knapp på en webbplats som inte fungerar. Problemet är att användaren klickar, men inget händer. Analysen visar att en JavaScript-funktion inte körs som den ska. Lösningen blir då att korrigera koden. När detta är gjort testas sidan igen, och resultatet är att knappen fungerar.
+Ett konkret exempel handlar om en knapp på en webbplats som inte fungerar. Problemet är att användaren klickar, men inget händer. Analysen visar att en JavaScript-funktion inte körs som den ska. Lösningen blir då att korrigera koden. När detta är gjort testas sidan igen, och resultatet är att knappen fungerar.
 
 Det här exemplet visar tydligt hur problemlösning går från observation till analys, lösning och testning.
 
