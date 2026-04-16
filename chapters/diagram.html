@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System, Databas och UML</title>
+    <!-- Laddar in Mermaid.js för att rita diagrammen -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        }
+        
+        h1 {
+            color: #0f172a;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #64748b;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .diagram-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        h2 {
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 0;
+        }
+
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 40px 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+            overflow-x: auto;
+        }
+
+        .mermaid {
+            margin: 0 auto;
+        }
+
+        .info-text {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid #3b82f6;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Vanliga Diagram inom IT</h1>
+        <p class="subtitle">Här är tre vanliga sätt att visuellt beskriva hur system fungerar, hur data lagras och hur kod interagerar. Allt uppritat med Mermaid.js.</p>
+
+        <!-- 1. SYSTEMDIAGRAM -->
+        <div class="diagram-section">
+            <h2>1. Systemdiagram (Arkitektur)</h2>
+            <p>Ett systemdiagram visar de stora byggstenarna i en applikation och hur de kommunicerar med varandra. Det är perfekt för att få en överblick över infrastrukturen (t.ex. frontend, backend, databaser och externa tjänster).</p>
+            
+            <div class="diagram-container">
+                <div class="mermaid">
+                    graph LR
+                        %% Stilar %%
+                        classDef client fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#000
+                        classDef server fill:#dcfce7,stroke:#10b981,stroke-width:2px,color:#000
+                        classDef db fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000
+                        classDef ext fill:#f3e8ff,stroke:#a855f7,stroke-width:2px,color:#000
+
+                        %% Noder %%
+                        A[Webbläsare / Klient]:::client
+                        B[Webbserver / API]:::server
+                        C[(Huvuddatabas)]:::db
+                        D[Betaltjänst / Stripe]:::ext
+
+                        %% Pilar med strikt syntax %%
+                        A -->|HTTPS REST| B
+                        B -->|SQL Queries| C
+                        B -->|API Anrop| D
+                </div>
+            </div>
+            <div class="info-text">
+                <strong>Användningsområde:</strong> När du ska förklara för en kund eller nya utvecklare hur systemet är uppbyggt "från ovan". Cylindern representerar traditionellt en databas.
+            </div>
+        </div>
+
+        <!-- 2. DATABASSCHEMA (ER-DIAGRAM) -->
+        <div class="diagram-section">
+            <h2>2. Databasschema (ER-diagram)</h2>
+            <p>Ett Entity-Relationship (ER) diagram visar hur data är strukturerad i en databas. Det visar tabellerna (entiteterna), vilka kolumner de har, och hur de är kopplade till varandra (t.ex. "en kund kan ha flera ordrar").</p>
+            
+            <div class="diagram-container">
+                <div class="mermaid">
+                    erDiagram
+                        %% Definierar relationerna %%
+                        KUND ||--o{ ORDER : "placerar"
+                        ORDER ||--|{ PRODUKT : "innehaller"
+
+                        %% Definierar tabellerna och deras kolumner %%
+                        KUND {
+                            int kund_id PK
+                            string namn
+                            string epost
+                        }
+                        ORDER {
+                            int order_id PK
+                            int kund_id FK
+                            date skapad_datum
+                            float total_pris
+                        }
+                        PRODUKT {
+                            int produkt_id PK
+                            string produktnamn
+                            float pris
+                        }
+                </div>
+            </div>
+            <div class="info-text">
+                <strong>Syntax-förklaring:</strong> 
+                <ul>
+                    <li><code>PK</code> står för Primary Key (unik identifikation).</li>
+                    <li><code>FK</code> står för Foreign Key (länk till en annan tabell).</li>
+                    <li>Symbolen <code>||--o{</code> betyder "En-till-många" (En kund kan ha noll eller flera ordrar).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 3. UML-DIAGRAM (KLASSDIAGRAM) -->
+        <div class="diagram-section">
+            <h2>3. UML-diagram (Klassdiagram)</h2>
+            <p>UML (Unified Modeling Language) består egentligen av flera olika diagramtyper. När man pratar om UML inom objektorienterad programmering menar man dock oftast <strong>Klassdiagram</strong>. Det visar systemets klasser, deras attribut (variabler), metoder (funktioner) och hur de relaterar till varandra (t.ex. genom arv).</p>
+            
+            <div class="diagram-container">
+                <div class="mermaid">
+                    classDiagram
+                        %% Relationer mellan klasser %%
+                        Anvandare <|-- Kund : Arv (Inheritance)
+                        Kund "1" --> "0..*" Order : Placerar (Association)
+
+                        %% Klassdefinitioner %%
+                        class Anvandare {
+                            -String namn
+                            -String epost
+                            +loggaIn() bool
+                            +loggaUt() void
+                        }
+                        
+                        class Kund {
+                            -String leveransAdress
+                            -String betalningsMetod
+                            +laggTillOrder(Order o) void
+                        }
+                        
+                        class Order {
+                            -int orderId
+                            -float totalPris
+                            -Date datum
+                            +beraknaMoms() float
+                            +skickaKvitto() void
+                        }
+                </div>
+            </div>
+            <div class="info-text">
+                <strong>Syntax-förklaring för Klassdiagram:</strong> 
+                <ul>
+                    <li><code>-</code> (Minus) betyder <strong>Private</strong> (endast klassen själv kan komma åt variabeln/metoden).</li>
+                    <li><code>+</code> (Plus) betyder <strong>Public</strong> (alla klasser kan komma åt den).</li>
+                    <li>Den obrutna pilen med vit triangel (<code><|--</code>) betyder <strong>Arv / Inheritance</strong> (En Kund <em>är</em> en Användare).</li>
+                    <li>Den vanliga pilen (<code>--></code>) betyder <strong>Association</strong> (En Kund <em>har</em> Ordrar). Siffrorna <code>1</code> till <code>0..*</code> betyder att "en kund kan ha noll till obegränsat antal ordrar".</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Startar Mermaid med en lite rymligare inställning och större text för tydlighet
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'default',
+            flowchart: { useMaxWidth: false },
+            sequence: { useMaxWidth: false, noteMargin: 10 },
+            themeVariables: { fontSize: '16px', fontFamily: 'Segoe UI' } 
+        });
+    </script>
+</body>
+</html>
