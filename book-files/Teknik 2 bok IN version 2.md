@@ -2476,10 +2476,10 @@ En modell visar inte allt i detalj. I stället lyfter den fram det viktigaste. D
 
 Vanliga modeller inom informationsteknik är:
 
-- systemdiagram
-- databasscheman
-- nätverksdiagram, till exempel OSI
-- programflöden, till exempel UML
+- [systemdiagram](diagram.html)
+- [databasscheman](diagram.html)
+- [nätverksdiagram, till exempel OSI](osi.html)
+- [programflöden, till exempel UML](diagram.html)
 
 Dessa modeller hjälper till att beskriva struktur, samband och funktion. De gör det lättare att planera, analysera och kommunicera idéer.
 
@@ -2497,7 +2497,7 @@ Ett nätverksdiagram visar hur enheter och nätverk är kopplade till varandra. 
 
 ### **Programflöden** {#programflöden}
 
-Programflöden, till exempel i UML eller flödesscheman, visar hur ett program arbetar steg för steg. Det gör logiken lättare att följa.
+Programflöden, till exempel i UML eller [flödesscheman](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s35), visar hur ett program arbetar steg för steg. Det gör logiken lättare att följa.
 
 ## **Vad är simulering?** {#vad-är-simulering?}
 
@@ -2520,19 +2520,19 @@ Det här är en stor fördel i tekniska projekt. Om man upptäcker ett problem f
 
 Även program kan beskrivas med modeller. Här nämns till exempel:
 
-- flödesscheman
-- pseudokod
+- [flödesscheman](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s35)
+- [pseudokod](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s34)
 - algoritmer
 
 Det betyder att modellering inte bara används för stora tekniska system utan också för att planera kod. Innan ett program skrivs kan man alltså beskriva hur det ska fungera steg för steg.
 
-### **Flödesscheman** {#flödesscheman}
+### **[Flödesscheman](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s35)** {#flödesscheman}
 
-Ett flödesschema visar ordningen mellan olika steg i ett program. Det kan till exempel visa när ett beslut fattas eller när en loop upprepas.
+Ett [flödesschema](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s35) visar ordningen mellan olika steg i ett program. Det kan till exempel visa när ett beslut fattas eller när en loop upprepas.
 
-### **Pseudokod** {#pseudokod}
+### **[Pseudokod](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s34)** {#pseudokod}
 
-Pseudokod är en förenklad beskrivning av ett program med vanliga ord och struktur, utan att följa exakt syntax i ett programmeringsspråk. Det är ett bra sätt att planera logiken innan man börjar koda.
+[Pseudokod](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s34) är en förenklad beskrivning av ett program med vanliga ord och struktur, utan att följa exakt syntax i ett programmeringsspråk. Det är ett bra sätt att planera logiken innan man börjar koda.
 
 ### **Algoritmer** {#algoritmer}
 
@@ -2540,14 +2540,12 @@ En algoritm är en serie steg som leder till ett resultat. När man beskriver en
 
 ## **Exempel: modellering och simulering i en webbplats** {#exempel:-modellering-och-simulering-i-en-webbplats}
 
-Materialet ger exempel från webbplatsutveckling.
-
 ### **Modell** {#modell}
 
 En modell av en webbplats kan visa:
 
 - struktur över webbplatsens sidor, till exempel wireframes
-- diagram över hur användaren navigerar, till exempel i Figma
+- diagram över hur användaren navigerar, till exempel i [Figma](https://www.figma.com/design/djesQdt7SOdKEX81yyDzQM/Uppg-6---layout-till-hotellet?node-id=4-141)
 
 Detta gör det lättare att planera innehåll och användarflöde innan webbplatsen byggs färdigt.
 
@@ -2561,8 +2559,6 @@ Simulering i ett webbplatsprojekt kan innebära att:
 På så sätt kan man tidigt undersöka om sidan är lätt att använda och om den fungerar tillräckligt snabbt.
 
 ## **Exempel: modellering och simulering i Pythonprojekt** {#exempel:-modellering-och-simulering-i-spelutveckling}
-
-Materialet ger också exempel från Python-program.
 
 ### **Modell** {#modell-1}
 
@@ -2613,7 +2609,7 @@ Modellering hjälper till att:
 - kommunicera idéer
 - upptäcka problem tidigt
 
-När man använder modeller blir det lättare att diskutera en lösning med andra. En skiss, ett diagram eller ett flödesschema är ofta mycket tydligare än en lång muntlig förklaring.
+När man använder modeller blir det lättare att diskutera en lösning med andra. En skiss, ett diagram eller ett [flödesschema](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s35) är ofta mycket tydligare än en lång muntlig förklaring.
 
 ## **Begränsningar med modeller** {#begränsningar-med-modeller}
 
@@ -2636,7 +2632,7 @@ I ett tekniskt projekt kan modellering användas redan från början. Till exemp
 
 - skissa en webbplats innan man bygger den
 - rita ett systemdiagram innan man programmerar
-- beskriva ett program med pseudokod innan man skriver koden
+- beskriva ett program med [pseudokod](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s34) innan man skriver koden
 - planera ett spel med nivåskisser innan man bygger banorna
 
 Det sparar ofta tid och gör arbetet mer strukturerat.
@@ -2659,8 +2655,8 @@ Det gör att utvecklaren kan förbättra lösningen innan den når användarna.
  **Simulering** – att testa hur ett system fungerar genom att köra en modell eller prova scenarier.  
  **Systemdiagram** – en modell som visar hur olika delar i ett system hänger ihop.  
  **Databasschema** – en modell som visar hur data organiseras.  
- **Flödesschema** – en modell som visar steg och beslut i en process eller ett program.  
- **Pseudokod** – en förenklad beskrivning av ett programs logik.  
+ **[Flödesschema](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s35)** – en modell som visar steg och beslut i en process eller ett program.  
+ **[Pseudokod](https://paul-pauliskolan.github.io/prog1-python/chapters/chapter-3.html#s34)** – en förenklad beskrivning av ett programs logik.  
  **Fysiksimulering** – simulering av till exempel gravitation, rörelse och kollisioner.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-7}
