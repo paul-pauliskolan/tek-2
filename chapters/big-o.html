@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmers Komplexitet (Big O)</title>
+    <!-- Laddar in Chart.js för att rita grafen -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            color: #0f172a;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 40px;
+        }
+
+        /* Intro-textens styling */
+        .intro-text {
+            background-color: #f1f5f9;
+            border-left: 6px solid #3b82f6;
+            padding: 25px 30px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 40px;
+            font-size: 1.15em;
+            color: #1e293b;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #3b82f6;
+        }
+
+        /* Grafens container */
+        .chart-container {
+            position: relative;
+            height: 500px;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        /* Textblock styling */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .info-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+        }
+
+        .info-card h3 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Färgkodade rubriker i korten */
+        .c-log h3 {
+            color: #10b981;
+        }
+
+        /* Grön */
+        .c-n h3 {
+            color: #f59e0b;
+        }
+
+        /* Gul/Orange */
+        .c-n2 h3 {
+            color: #ef4444;
+        }
+
+        /* Röd */
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Algoritmers Tidskomplexitet</h1>
+
+        <div class="intro-text">
+            <p><strong>Algoritmers komplexitet</strong> handlar om att beskriva hur effektiv en algoritm är, särskilt
+                när mängden data växer. Istället för att bara mäta exakt tid på en specifik dator, analyserar man hur
+                antalet operationer ökar i förhållande till datamängden.</p>
+            <p>Detta kallas ofta för tidskomplexitet och uttrycks med så kallad <span class="highlight">Big
+                    O-notation</span>, till exempel <strong>O(n)</strong>, <strong>O(n²)</strong> eller <strong>O(log
+                    n)</strong>.</p>
+        </div>
+
+        <h2>Hur en algoritm skalar</h2>
+        <p>Poängen är att förstå hur en algoritm skalar. En algoritm som fungerar snabbt för små datamängder kan bli
+            mycket långsam när datan blir stor. Genom att analysera komplexiteten kan man därför jämföra olika lösningar
+            och välja en algoritm som är effektiv även vid stora datamängder.</p>
+
+        <!-- Här ritas grafen ut -->
+        <div class="chart-container">
+            <canvas id="bigOChart"></canvas>
+        </div>
+
+        <h2>Varför gör det skillnad?</h2>
+        <p>Till exempel är en algoritm med komplexiteten <strong>O(n)</strong> oftast mer effektiv än en med
+            <strong>O(n²)</strong> när datamängden växer, eftersom antalet beräkningar ökar mycket långsammare. Här
+            nedan ser du en djupare förklaring av de vanligaste komplexiteterna:</p>
+
+        <div class="content-grid">
+
+            <div class="info-card c-log">
+                <h3>O(log n) – Mycket effektiv</h3>
+                <p>En algoritm som skalar extremt bra. Även om datamängden fördubblas ökar antalet operationer bara
+                    minimalt (med ett enda steg). Det är den ljusgröna linjen i grafen som planar ut nästan direkt.</p>
+                <p><strong>Exempel:</strong> Binärsökning, där du letar efter ett namn i en sorterad telefonkatalog
+                    genom att hela tiden slå upp mitten och halvera antalet återstående sidor.</p>
+            </div>
+
+            <div class="info-card c-n">
+                <h3>O(n) – Linjär tid</h3>
+                <p>Antalet operationer växer exakt i takt med datamängden. Har du 10 element tar det 10 steg, har du 100
+                    element tar det 100 steg. Detta är den gula, raka linjen i grafen.</p>
+                <p><strong>Exempel:</strong> Att läsa igenom en oorganiserad lista från början till slut för att hitta
+                    ett specifikt värde.</p>
+            </div>
+
+            <div class="info-card c-n2">
+                <h3>O(n²) – Kvadratisk tid</h3>
+                <p>Detta skalar väldigt dåligt. För varje nytt element du lägger till måste algoritmen göra
+                    exponentiellt fler operationer. Har du 10 element tar det 100 steg (10*10). Har du 100 element tar
+                    det 10 000 steg. Detta är den röda linjen som skjuter rakt uppåt.</p>
+                <p><strong>Exempel:</strong> Enkla sorteringsalgoritmer som Bubble Sort, där du måste jämföra varje sak
+                    i listan med varje annan sak i listan (loopar inuti loopar).</p>
+            </div>
+
+            <div class="info-card">
+                <h3 style="color: #64748b;">O(1) – Konstant tid</h3>
+                <p>Det spelar ingen roll om du har 10 eller 10 miljoner element; algoritmen tar exakt lika lång tid att
+                    köra oavsett (en helt platt linje längst ner).</p>
+                <p><strong>Exempel:</strong> Att slå upp det allra första elementet i en färdig array. Du går direkt
+                    till position 0.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JavaScript för att rita grafen -->
+    <script>
+        // Förbereder data: X-axeln (datamängd från 1 till 20)
+        const elements = Array.from({ length: 20 }, (_, i) => i + 1)
+
+        // Skapar matematiska serier för de olika komplexiteterna
+        const dataO1 = elements.map(x => 2) // Konstant (satt till 2 för att synas över x-axeln)
+        const dataOLogN = elements.map(x => Math.log2(x) * 4) // Skalad logaritm för visuell tydlighet
+        const dataON = elements.map(x => x) // Linjär
+        const dataONLogN = elements.map(x => x * Math.log2(x)) // N log N
+        const dataON2 = elements.map(x => x * x) // Kvadratisk (n^2)
+        const dataO2N = elements.map(x => Math.pow(1.5, x)) // Exponentiell (Något mildrad för att rymmas i grafen)
+
+        // Konfigurerar Chart.js
+        const ctx = document.getElementById('bigOChart').getContext('2d')
+        const bigOChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: elements, // X-axeln
+                datasets: [
+                    {
+                        label: 'O(1) - Konstant (Utmärkt)',
+                        data: dataO1,
+                        borderColor: '#10b981', // Grön
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'O(log n) - Logaritmisk (Mycket bra)',
+                        data: dataOLogN,
+                        borderColor: '#34d399', // Ljusgrön
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'O(n) - Linjär (Okej)',
+                        data: dataON,
+                        borderColor: '#f59e0b', // Gul
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'O(n log n) - (Dålig)',
+                        data: dataONLogN,
+                        borderColor: '#f97316', // Orange
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 0
+                    },
+                    {
+                        label: 'O(n²) - Kvadratisk (Hemsk)',
+                        data: dataON2,
+                        borderColor: '#ef4444', // Röd
+                        borderWidth: 3,
+                        tension: 0.4,
+                        pointRadius: 0
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Graf: Hur antalet operationer (Tid) ökar i förhållande till Datamängd',
+                        font: { size: 18 }
+                    },
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Datamängd (Antal element: n)',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Antal operationer (Tid: O)',
+                            font: { size: 14, weight: 'bold' }
+                        },
+                        min: 0,
+                        max: 60, // Sätter ett max-tak så att inte O(n^2) plattar ut de andra linjerna totalt
+                        ticks: { display: false } // Döljer de exakta siffrorna eftersom principen är det viktiga
+                    }
+                },
+                interaction: {
+                    mode: 'nearest',
+                    axis: 'x',
+                    intersect: false
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
