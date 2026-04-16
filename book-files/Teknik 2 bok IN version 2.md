@@ -168,7 +168,7 @@
 
 [Exempel: problemlösning på en webbplats](#exempel:-problemlösning-på-en-webbplats)
 
-[Exempel: problemlösning i ett Unity-spel](#exempel:-problemlösning-i-ett-unity-spel)
+[Exempel: problemlösning i ett Python-program](#exempel:-problemlösning-i-ett-unity-spel)
 
 [Praktisk problemlösning i IT](#praktisk-problemlösning-i-it)
 
@@ -222,7 +222,7 @@
 
 [Exempel: webbplatsprojekt](#exempel:-webbplatsprojekt)
 
-[Exempel: spelprojekt i Unity](#exempel:-spelprojekt-i-unity)
+[Exempel: Python-projekt](#exempel:-spelprojekt-i-unity)
 
 [Dokumentation i projekt](#dokumentation-i-projekt)
 
@@ -276,7 +276,7 @@
 
 [Exempel: programmering på en webbplats](#exempel:-programmering-på-en-webbplats)
 
-[Exempel: programmering i Unity-spel](#exempel:-programmering-i-unity-spel)
+[Exempel: programmering i Python](#exempel:-programmering-i-unity-spel)
 
 [Automatisering](#automatisering)
 
@@ -396,7 +396,7 @@
 
 [Exempel: webbplats](#exempel:-webbplats)
 
-[Exempel: spel i Unity](#exempel:-spel-i-unity)
+[Exempel: program i Python](#exempel:-spel-i-unity)
 
 [Rimlighetsbedömning](#rimlighetsbedömning)
 
@@ -690,7 +690,7 @@
 
 [Presentation](#presentation)
 
-[Exempel: spel i Unity](#exempel:-spel-i-unity-1)
+[Exempel: program i Python](#exempel:-spel-i-unity-1)
 
 [Kommunikation](#kommunikation-2)
 
@@ -748,7 +748,7 @@
 
 [Exempel: webbplats](#exempel:-webbplats-1)
 
-[Exempel: spel i Unity](#exempel:-spel-i-unity-2)
+[Exempel: program i Python](#exempel:-spel-i-unity-2)
 
 [Varför är ritningar och modeller viktiga?](#varför-är-ritningar-och-modeller-viktiga?)
 
@@ -1165,9 +1165,9 @@ Många tekniska idéer börjar smått. Kanske finns det ett problem som behöver
 
 En elev eller entreprenör kan få idén att skapa en webbplats för lokala företag som inte syns bra online. Tekniken kan bygga på HTML, CSS och JavaScript. Själva affären kan bestå av att erbjuda webbdesign, support och uppdateringar.
 
-### **Exempel: spelutveckling** {#exempel:-spelutveckling}
+### **Exempel: automatisering med Python** {#exempel:-spelutveckling}
 
-En annan idé kan vara att utveckla ett datorspel. Tekniken kanske bygger på Unity, C#, grafik och ljud. Affären kan vara att sälja spelet, visa reklam i spelet eller tjäna pengar på nedladdningar.
+En annan idé kan vara att utveckla ett Python-program för schemaläggning och rapporter. Tekniken kan bygga på Python, bibliotek och datahantering. Affären kan vara att erbjuda tjänsten till skolor eller småföretag som abonnemang.
 
 Det som är gemensamt i båda fallen är att tekniken används för att skapa något som andra människor faktiskt vill använda eller betala för.
 
@@ -1187,7 +1187,7 @@ Ju bättre man förstår användaren, desto större chans att lösningen faktisk
 
 ## **Villkor för entreprenörskap** {#villkor-för-entreprenörskap}
 
-Entreprenörskap sker inte i ett tomrum. Det finns flera faktorer som påverkar om en idé kan lyckas. I materialet lyfts bland annat följande villkor fram:
+Entreprenörskap sker inte i ett tomrum. Det finns flera faktorer som påverkar om en idé kan lyckas. Här lyfts bland annat följande villkor fram:
 
 - ekonomi
 - konkurrens
@@ -1320,6 +1320,8 @@ Efter det här kapitlet ska du kunna:
 - koppla problemlösning till praktiska exempel inom programmering, webb och spel
 - förklara varför testning och förbättring är viktiga delar av processen
 
+👉 [Praktiska problemlösningsexempel (webb, Python och AI-felsökning)](/chapters/problemlosningsmetoder-exempel.html)
+
 ## **Vad är ett tekniskt problem?** {#vad-är-ett-tekniskt-problem?}
 
 Ett tekniskt problem uppstår när något inte fungerar som det ska, när ett behov saknar en lösning eller när ett system behöver förbättras. Inom informationsteknik kan det handla om många olika typer av problem. Det kan till exempel vara en webbplats som laddar långsamt, ett spel som innehåller buggar eller ett system som saknar viktiga funktioner.
@@ -1339,9 +1341,15 @@ Vanliga problem inom informationsteknik kan vara:
 
 Det här visar att problemlösning inom teknik ofta handlar om att kombinera analys, logiskt tänkande och praktiskt arbete.
 
+Två viktiga delar i algoritmiskt tänkande är **dekomposition** och **abstraktion**:
+
+**Dekomposition** betyder att bryta ner ett stort problem i mindre delar, så att det blir lättare att förstå och lösa. **Webb:** Bygga en webbplats delas upp i HTML-struktur, CSS-design och JavaScript-funktioner. **Python:** Skapa ett Python-program delas upp i input, bearbetning, villkor och utskrift.
+
+**Abstraktion** betyder att bortse från oviktiga detaljer och i stället fokusera på det som är viktigast för lösningen. **Webb:** Du använder `<button>` utan att behöva veta exakt hur webbläsaren renderar knappen. **Python:** Du använder `input()` och funktioner utan att behöva förstå alla detaljer i hur Python tolkar koden.
+
 ## **Problemlösningsprocessen** {#problemlösningsprocessen}
 
-När man arbetar med tekniska problem är det bra att följa en tydlig process. I materialet beskrivs en vanlig problemlösningsprocess med följande steg:
+När man arbetar med tekniska problem är det bra att följa en tydlig process. Här beskrivs en vanlig problemlösningsprocess med följande steg:
 
 - identifiera problemet
 - analysera orsaken
@@ -1435,9 +1443,9 @@ Ett konkret exempel handlar om en knapp på en webbplats som inte fungerar. Prob
 
 Det här exemplet visar tydligt hur problemlösning går från observation till analys, lösning och testning.
 
-## **Exempel: problemlösning i ett Unity-spel** {#exempel:-problemlösning-i-ett-unity-spel}
+## **Exempel: problemlösning i ett Python-program** {#exempel:-problemlösning-i-ett-unity-spel}
 
-Ett annat exempel gäller ett spel där spelkaraktären faller genom marken. Problemet syns tydligt i spelet, men orsaken måste undersökas. Analysen visar att en collider saknas eller är fel inställd. Lösningen blir att justera collidern och fysikinställningarna. Efter testning fungerar karaktären korrekt igen.
+Ett annat exempel gäller ett Python-program som kraschar vid inmatning. Problemet syns när användaren skriver text där ett tal förväntas. Analysen visar att programmet saknar felhantering kring indata. Lösningen blir att lägga till kontroll av inmatningen och hantering av undantag. Efter testning fungerar programmet korrekt igen.
 
 Det här visar att problemlösning inte bara handlar om kod, utan också om hur olika delar i ett system samverkar.
 
@@ -1486,13 +1494,13 @@ Det här arbetssättet sparar ofta tid och gör att man lär sig mer än om man 
 
 ## **Centrala begrepp** {#centrala-begrepp-2}
 
-**Tekniskt problem** – något som inte fungerar, saknar en lösning eller behöver förbättras.  
- **Problemlösning** – processen att förstå, analysera och lösa ett problem.  
- **Analys** – att undersöka varför ett problem uppstår.  
- **Felsökning** – att leta efter orsaken till ett fel i ett system.  
- **Implementera** – att genomföra en lösning i praktiken.  
- **Testning** – att kontrollera att en lösning fungerar och inte skapar nya fel.  
- **Optimering** – att förbättra hur ett system fungerar, till exempel snabbhet eller stabilitet.
+**Tekniskt problem** – något som inte fungerar, saknar en lösning eller behöver förbättras.
+**Problemlösning** – processen att förstå, analysera och lösa ett problem.
+**Analys** – att undersöka varför ett problem uppstår.
+**Felsökning** – att leta efter orsaken till ett fel i ett system.
+**Implementera** – att genomföra en lösning i praktiken.
+**Testning** – att kontrollera att en lösning fungerar och inte skapar nya fel.
+**Optimering** – att förbättra hur ett system fungerar, till exempel snabbhet eller stabilitet.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-2}
 
@@ -1502,6 +1510,8 @@ Det här arbetssättet sparar ofta tid och gör att man lär sig mer än om man 
 4. Varför behöver man testa efter att man har gjort en förändring?
 5. Ge ett exempel på ett tekniskt problem i en webbplats, ett spel eller ett program.
 6. Vad menas med att arbeta systematiskt vid problemlösning?
+
+👉 [Praktiska problemlösningsexempel (webb, Python och AI-felsökning)](/chapters/problemlosningsmetoder-exempel.html)
 
 # **Kapitel 4 – Metodik och arbetsformer i projekt** {#kapitel-4-–-metodik-och-arbetsformer-i-projekt}
 
@@ -1606,7 +1616,7 @@ I tekniska projekt är det vanligt att olika delar hänger ihop. Om en person ä
 
 ## **Arbetsmetoder i projekt** {#arbetsmetoder-i-projekt}
 
-Det finns olika sätt att organisera projektarbete. I materialet nämns till exempel:
+Det finns olika sätt att organisera projektarbete. Här nämns till exempel:
 
 - traditionell projektplanering
 - agila metoder
@@ -1655,16 +1665,16 @@ Ett webbplatsprojekt kan ha som mål att skapa en webbplats för ett företag. D
 
 Här ser man tydligt hur ett projekt kan delas upp i mindre delar. Någon kanske arbetar mest med designen, någon annan med kod och någon tredje med att testa att allt fungerar.
 
-## **Exempel: spelprojekt i Unity** {#exempel:-spelprojekt-i-unity}
+## **Exempel: Python-projekt** {#exempel:-spelprojekt-i-unity}
 
-Ett spelprojekt kan ha som mål att skapa ett spel. Då kan arbetsmomenten vara:
+Ett Python-projekt kan ha som mål att skapa ett program. Då kan arbetsmomenten vara:
 
-- designa spelmekanik
-- skapa grafik och nivåer
+- planera programmets funktioner
+- strukturera kod och moduler
 - programmera funktioner
-- testa spelet
+- testa programmet
 
-Även här syns projektets olika delar tydligt. För att spelet ska bli bra behöver arbetet organiseras så att grafik, kod och testning hänger ihop.
+Även här syns projektets olika delar tydligt. För att programmet ska bli bra behöver arbetet organiseras så att funktioner, kod och testning hänger ihop.
 
 ## **Dokumentation i projekt** {#dokumentation-i-projekt}
 
@@ -1723,13 +1733,13 @@ Det handlar alltså inte bara om att “göra klart” något, utan om att arbet
 
 ## **Centrala begrepp** {#centrala-begrepp-3}
 
-**Projekt** – ett arbete med tydligt mål, tidsplan och slutpunkt.  
- **Planering** – att bestämma mål, arbetsuppgifter, resurser och tidsplan.  
- **Roller** – olika ansvarsområden i ett projekt, till exempel projektledare eller programmerare.  
- **Samarbete** – att arbeta tillsammans mot ett gemensamt mål.  
- **Agila metoder** – arbetssätt där man utvecklar i korta cykler och förbättrar steg för steg.  
- **Iterativ utveckling** – att bygga, testa och förbättra i flera omgångar.  
- **Dokumentation** – information som beskriver projektet och gör det lättare att följa och utveckla vidare.
+**Projekt** – ett arbete med tydligt mål, tidsplan och slutpunkt.
+**Planering** – att bestämma mål, arbetsuppgifter, resurser och tidsplan.
+**Roller** – olika ansvarsområden i ett projekt, till exempel projektledare eller programmerare.
+**Samarbete** – att arbeta tillsammans mot ett gemensamt mål.
+**Agila metoder** – arbetssätt där man utvecklar i korta cykler och förbättrar steg för steg.
+**Iterativ utveckling** – att bygga, testa och förbättra i flera omgångar.
+**Dokumentation** – information som beskriver projektet och gör det lättare att följa och utveckla vidare.
 
 ## **Frågor att arbeta med** {#frågor-att-arbeta-med-3}
 
@@ -1777,7 +1787,7 @@ Det visar att programmering inte bara handlar om kod i sig, utan om att skapa l�
 
 ## **Programmeringsprocessen** {#programmeringsprocessen}
 
-När man programmerar följer man ofta en problemlösningsprocess. I materialet beskrivs den med följande steg:
+När man programmerar följer man ofta en problemlösningsprocess. Här beskrivs den med följande steg:
 
 - förstå problemet
 - planera lösningen
@@ -1884,7 +1894,7 @@ Det betyder att programmering sällan är något man gör klart i ett enda steg.
 
 ## **Exempel: programmering på en webbplats** {#exempel:-programmering-på-en-webbplats}
 
-I materialet ges ett exempel där problemet är att visa information dynamiskt på en webbplats. Lösningen är att använda JavaScript. Med hjälp av kod kan webbplatsen:
+Här ges ett exempel där problemet är att visa information dynamiskt på en webbplats. Lösningen är att använda JavaScript. Med hjälp av kod kan webbplatsen:
 
 - visa meddelanden
 - reagera på knapptryckningar
@@ -1892,15 +1902,15 @@ I materialet ges ett exempel där problemet är att visa information dynamiskt p
 
 Det här visar att programmering inte bara används för stora program. Den används också för att ge liv åt vanliga webbsidor och göra dem mer interaktiva.
 
-## **Exempel: programmering i Unity-spel** {#exempel:-programmering-i-unity-spel}
+## **Exempel: programmering i Python** {#exempel:-programmering-i-unity-spel}
 
-Ett annat exempel handlar om att styra en spelkaraktär i ett Unity-spel. Lösningen är att skriva kod i C#. Med hjälp av programmering kan man skapa:
+Ett annat exempel handlar om att skapa ett Python-program som reagerar på indata. Lösningen är att skriva kod i Python. Med hjälp av programmering kan man skapa:
 
-- rörelse
-- hopp
-- interaktion med objekt
+- inläsning av data
+- villkor
+- loopar
 
-Här ser man tydligt hur programmering används för att styra vad som händer i spelet och hur spelaren kan påverka världen.
+Här ser man tydligt hur programmering används för att styra hur programmet reagerar på indata och olika situationer.
 
 ## **Automatisering** {#automatisering}
 
@@ -2048,7 +2058,7 @@ Kvalitetssäkring är alltså både tekniskt och praktiskt.
 
 ## **Testning som del av kvalitetssäkring** {#testning-som-del-av-kvalitetssäkring}
 
-Testning är en viktig del av kvalitetssäkring. I materialet nämns flera olika typer av tester:
+Testning är en viktig del av kvalitetssäkring. Här nämns flera olika typer av tester:
 
 - funktionstest
 - användartest
@@ -2081,7 +2091,7 @@ Riskanalys är viktig eftersom tekniska system ofta är beroende av att fungera 
 
 ## **Vanliga risker inom IT** {#vanliga-risker-inom-it}
 
-I materialet nämns flera exempel på vanliga risker:
+Här nämns flera exempel på vanliga risker:
 
 - dataförlust
 - säkerhetsintrång
@@ -2130,13 +2140,13 @@ Det är lätt att tro att digital teknik nästan inte påverkar miljön, men det
 
 ## **AI och energiförbrukning** {#ai-och-energiförbrukning}
 
-I materialet tas också AI och energiförbrukning upp. Där står att stora AI-modeller körs i datacenter och att varje prompt kräver beräkningar på kraftfulla servrar. Det står också att en enkel AI-fråga kan använda ungefär 2–10 gånger mer energi än en vanlig Google-sökning, och att miljöpåverkan beror på hur datacentren producerar sin el.
+Stora AI-modeller körs i datacenter och varje prompt kräver beräkningar på kraftfulla servrar. En enkel AI-fråga kan därför använda ungefär 2–10 gånger mer energi än en vanlig Google-sökning, och miljöpåverkan beror på hur datacentren producerar sin el.
 
 Det här visar att ny teknik ofta ger stora möjligheter, men också nya frågor om energianvändning och hållbarhet. Därför blir miljösäkring allt viktigare i takt med att digital teknik utvecklas.
 
 ## **Arbetsmiljö** {#arbetsmiljö}
 
-Arbetsmiljö handlar om hur människor påverkas när de arbetar. I tekniska projekt är arbetsmiljö också en viktig del av kvalitetsarbetet. Vanliga arbetsmiljöfrågor som nämns i materialet är:
+Arbetsmiljö handlar om hur människor påverkas när de arbetar. I tekniska projekt är arbetsmiljö också en viktig del av kvalitetsarbetet. Vanliga arbetsmiljöfrågor som nämns här är:
 
 - ergonomi vid datorarbete
 - stress och arbetsbelastning
@@ -2159,7 +2169,7 @@ Arbetsmiljö är alltså inte något separat från teknikprojektet — det påve
 
 ## **Exempel: kvalitetsarbete i ett webbplatsprojekt** {#exempel:-kvalitetsarbete-i-ett-webbplatsprojekt}
 
-I materialet finns ett exempel kopplat till webbplatsprojekt. Där lyfts flera perspektiv fram:
+Här finns ett exempel kopplat till webbplatsprojekt. Där lyfts flera perspektiv fram:
 
 - **Kvalitet:** sidan fungerar i olika webbläsare
 - **Risk:** säkerhetsproblem
@@ -2194,8 +2204,6 @@ Det betyder att teknikutveckling alltid innehåller fler perspektiv än bara “
 Det här gör kvalitetsarbete till en viktig del av professionellt tekniskt arbete.
 
 ## **Frågor att fundera och diskutera** {#frågor-att-fundera-och-diskutera}
-
-Materialet lyfter flera viktiga diskussionsfrågor om miljö och teknik. Exempel är:
 
 - Kan länder som prioriterar snabb teknisk utveckling framför miljökrav få ett tekniskt försprång?
 - Hur kan teknisk utveckling kombineras med minskad miljöpåverkan?
@@ -2243,31 +2251,19 @@ När man arbetar med teknik räcker det inte att bara prova sig fram. För att k
 
 Inom informationsteknik är detta extra viktigt eftersom många system är komplexa. Man kan inte alltid se hela systemet direkt, utan behöver förenkla, strukturera och resonera steg för steg.
 
-## **Tekniska begrepp** {#tekniska-begrepp}
+### **Tekniska begrepp** {#tekniska-begrepp}
 
-Tekniska begrepp används för att beskriva system och deras delar. Exempel på begrepp som nämns i materialet är:
-
-- algoritm
-- databas
-- server
-- nätverk
-- bandbredd
-
-Begrepp gör det lättare att analysera teknik, eftersom de ger oss ord för att prata om hur system fungerar.
-
-### **Exempel på begrepp** {#exempel-på-begrepp}
-
-**Algoritm** – en beskrivning av steg som leder till ett resultat.  
- **Databas** – en struktur för att lagra och organisera information.  
- **Server** – en dator eller tjänst som levererar data eller funktioner till andra datorer.  
- **Nätverk** – flera enheter som är kopplade till varandra och kan kommunicera.  
- **Bandbredd** – hur mycket data som kan överföras under en viss tid.
+**Algoritm** – en beskrivning av steg som leder till ett resultat.
+**Databas** – en struktur för att lagra och organisera information.
+**Server** – en dator eller tjänst som levererar data eller funktioner till andra datorer.
+**Nätverk** – flera enheter som är kopplade till varandra och kan kommunicera.
+**Bandbredd** – hur mycket data som kan överföras under en viss tid.
 
 Ju bättre man förstår dessa begrepp, desto lättare blir det att förstå större tekniska sammanhang.
 
 ## **Teorier i informationsteknik** {#teorier-i-informationsteknik}
 
-Teorier hjälper oss att förstå hur system fungerar. I materialet nämns till exempel teorier om:
+Teorier hjälper oss att förstå hur system fungerar. Här nämns till exempel teorier om:
 
 - hur data överförs i nätverk
 - hur algoritmer fungerar
@@ -2285,7 +2281,7 @@ Teorier hjälper alltså till att koppla det praktiska arbetet till ett djupare 
 
 ## **Vad är en modell?** {#vad-är-en-modell?}
 
-En modell är en förenklad beskrivning av ett system. Modeller används för att förstå komplexa system, planera lösningar och analysera funktioner. Exempel på modeller som nämns i materialet är:
+En modell är en förenklad beskrivning av ett system. Modeller används för att förstå komplexa system, planera lösningar och analysera funktioner. Exempel på modeller som nämns här är:
 
 - systemdiagram
 - databasscheman
@@ -2350,7 +2346,7 @@ Dimensionering är alltså ett sätt att anpassa tekniken till verkliga behov.
 
 ## **Beräkningar i informationsteknik** {#beräkningar-i-informationsteknik}
 
-Beräkningar används inom informationsteknik för att uppskatta prestanda, planera resurser och analysera system. Exempel som nämns i materialet är:
+Beräkningar används inom informationsteknik för att uppskatta prestanda, planera resurser och analysera system. Exempel som nämns här är:
 
 - lagringskapacitet
 - dataöverföring
@@ -2369,7 +2365,7 @@ Beräkningar hjälper till att undvika att man bygger system på fel antaganden.
 
 ## **Exempel: webbplats** {#exempel:-webbplats}
 
-I materialet finns ett exempel där problemet är att avgöra hur många användare en webbplats klarar. Då behöver man göra beräkningar kring:
+Här finns ett exempel där problemet är att avgöra hur många användare en webbplats klarar. Då behöver man göra beräkningar kring:
 
 - serverkapacitet
 - antal samtidiga användare
@@ -2377,21 +2373,21 @@ I materialet finns ett exempel där problemet är att avgöra hur många använd
 
 Målet är att webbplatsen ska fungera stabilt även när många använder den samtidigt. Här blir det tydligt hur begrepp, modeller och beräkningar hänger ihop. Man behöver förstå vad kapacitet betyder, kunna beskriva systemet och räkna på hur belastningen påverkar det.
 
-## **Exempel: spel i Unity** {#exempel:-spel-i-unity}
+## **Exempel: program i Python** {#exempel:-spel-i-unity}
 
-Ett annat exempel gäller ett spel som måste fungera på olika datorer. Då handlar dimensioneringen om:
+Ett annat exempel gäller ett Python-program som ska fungera med stora datamängder. Då handlar dimensioneringen om:
 
-- grafiknivå
-- processorbelastning
+- datamängd
+- körningstid
 - minnesanvändning
 
-Spelet måste fungera utan att lagga. Om spelet är för tungt för vissa datorer blir användarupplevelsen dålig. Därför behöver utvecklaren tänka på hur mycket resurser spelet kräver.
+Programmet måste fungera snabbt och stabilt. Om programmet är för tungt för vissa datorer blir användarupplevelsen dålig. Därför behöver utvecklaren tänka på hur mycket resurser programmet kräver.
 
 Det här visar att tekniska lösningar måste anpassas till verkliga förutsättningar, inte bara fungera i teorin.
 
 ## **Rimlighetsbedömning** {#rimlighetsbedömning}
 
-Rimlighetsbedömning innebär att kontrollera om en lösning verkar realistisk, upptäcka fel i beräkningar och jämföra med verkliga system. Exempel på frågor som nämns i materialet är:
+Rimlighetsbedömning innebär att kontrollera om en lösning verkar realistisk, upptäcka fel i beräkningar och jämföra med verkliga system. Exempel på frågor som nämns här är:
 
 - Är servern tillräckligt kraftfull?
 - Klarar systemet många användare?
@@ -2406,8 +2402,6 @@ Om någon säger att en enkel server ska klara hundratusentals användare samtid
 Rimlighetsbedömning hjälper alltså till att upptäcka orimliga antaganden innan problemen uppstår i verkligheten.
 
 ## **Exempel på rimlighetsbedömning i en webbplats** {#exempel-på-rimlighetsbedömning-i-en-webbplats}
-
-Materialet tar upp frågor som kan ställas om en webbplats får många besökare:
 
 - räcker serverns kapacitet
 - klarar databasen belastningen
@@ -2524,7 +2518,7 @@ Det här är en stor fördel i tekniska projekt. Om man upptäcker ett problem f
 
 ## **Modellering inom programmering** {#modellering-inom-programmering}
 
-Även program kan beskrivas med modeller. I materialet nämns till exempel:
+Även program kan beskrivas med modeller. Här nämns till exempel:
 
 - flödesscheman
 - pseudokod
@@ -2566,42 +2560,42 @@ Simulering i ett webbplatsprojekt kan innebära att:
 
 På så sätt kan man tidigt undersöka om sidan är lätt att använda och om den fungerar tillräckligt snabbt.
 
-## **Exempel: modellering och simulering i spelutveckling** {#exempel:-modellering-och-simulering-i-spelutveckling}
+## **Exempel: modellering och simulering i Pythonprojekt** {#exempel:-modellering-och-simulering-i-spelutveckling}
 
-Materialet ger också exempel från Unity-spel.
+Materialet ger också exempel från Python-program.
 
 ### **Modell** {#modell-1}
 
-En modell i spelutveckling kan visa:
+En modell i ett Python-projekt kan visa:
 
-- spelvärldens struktur
-- nivådesign
+- programmets struktur
+- funktionsflöde
 
-Det hjälper utvecklaren att planera hur banor, objekt och olika delar av spelet ska hänga ihop.
+Det hjälper utvecklaren att planera hur funktioner, data och olika delar av programmet ska hänga ihop.
 
 ### **Simulering** {#simulering-1}
 
-Simulering i spel kan innebära:
+Simulering i Python kan innebära:
 
-- fysik i spelet
-- rörelse och kollisioner
-- test av spelmekanik
+- test av indata
+- test av villkor och loopar
+- test av programlogik
 
-Det gör det möjligt att prova hur spelet känns innan allt innehåll är färdigt.
+Det gör det möjligt att prova hur programmet fungerar innan allt innehåll är färdigt.
 
-## **Fysiksimulering** {#fysiksimulering}
+## **Simulering av körfall** {#fysiksimulering}
 
-Spelmotorer kan simulera fysik. Exempel på detta är:
+I Python används simulering ofta för att testa olika körfall. Exempel på detta är:
 
-- gravitation
-- kollisioner
-- rörelse
+- olika inmatningsvärden
+- gränsvärden
+- felaktig inmatning
 
-Det gör spel mer realistiska. Om en figur hoppar, faller eller stöter ihop med ett objekt kan spelmotorn räkna ut hur det ska se ut. Fysiksimulering används därför ofta för att skapa trovärdiga rörelser och händelser i spel.
+Det gör programmet mer robust. Om användaren skriver oväntade värden kan programmet fortfarande ge tydliga felmeddelanden och fortsätta fungera.
 
 ## **Simulering i andra teknikområden** {#simulering-i-andra-teknikområden}
 
-Simulering används inte bara i informationsteknik. I materialet nämns även:
+Simulering används inte bara i informationsteknik. Här nämns även:
 
 - flygsimulatorer
 - trafiksystem
@@ -2692,7 +2686,7 @@ Efter det här kapitlet ska du kunna:
 
 ## **Vad menas med tekniska framsteg?** {#vad-menas-med-tekniska-framsteg?}
 
-Tekniska framsteg innebär att nya uppfinningar utvecklas, att tekniska lösningar förbättras och att system blir mer effektiva. Exempel som nämns i materialet är internet, smartphones, molntjänster och artificiell intelligens.
+Tekniska framsteg innebär att nya uppfinningar utvecklas, att tekniska lösningar förbättras och att system blir mer effektiva. Exempel som nämns här är internet, smartphones, molntjänster och artificiell intelligens.
 
 Tekniska framsteg betyder alltså inte bara att något helt nytt uppfinns. Det kan också handla om att redan befintlig teknik blir bättre, snabbare, billigare eller enklare att använda.
 
@@ -2711,7 +2705,7 @@ Det är alltså vanligt att teknikutveckling sker som en kedja där varje steg b
 
 ## **Informationsteknikens utveckling** {#informationsteknikens-utveckling}
 
-Informationsteknik har utvecklats mycket snabbt. I materialet nämns bland annat:
+Informationsteknik har utvecklats mycket snabbt. Här nämns bland annat:
 
 - datorer
 - internet
@@ -2722,7 +2716,7 @@ Den här utvecklingen har förändrat samhället på djupet. Många saker som ti
 
 ## **Framtidens teknik** {#framtidens-teknik}
 
-I materialet lyfts flera exempel på teknik som utvecklas snabbt och som kan påverka framtiden:
+Här lyfts flera exempel på teknik som utvecklas snabbt och som kan påverka framtiden:
 
 - artificiell intelligens
 - virtuell verklighet
@@ -2754,7 +2748,7 @@ Kvantdatorer är ett exempel på framtida teknik som skulle kunna lösa vissa ty
 
 ## **Teknik och hållbar utveckling** {#teknik-och-hållbar-utveckling}
 
-Hållbar utveckling innebär att använda resurser på ett ansvarsfullt sätt, minska miljöpåverkan och skapa långsiktiga lösningar. I materialet betonas att teknik kan bidra till mer hållbara system.
+Hållbar utveckling innebär att använda resurser på ett ansvarsfullt sätt, minska miljöpåverkan och skapa långsiktiga lösningar. Här betonas att teknik kan bidra till mer hållbara system.
 
 Det betyder att teknik inte bara ska utvecklas för att vara snabb eller lönsam, utan också för att fungera på ett sätt som är hållbart över tid.
 
@@ -2774,7 +2768,7 @@ Men teknik löser inte automatiskt hållbarhetsproblem. Hur tekniken används sp
 
 I kapitlet nämns cirkulär ekonomi som ett exempel på hur teknik och hållbar utveckling kan kopplas ihop. Tanken med cirkulär ekonomi är att resurser ska användas längre, återvinnas bättre och cirkulera i systemet i stället för att snabbt bli avfall.
 
-Samtidigt lyfter materialet också fram risker med cirkulär ekonomi. Exempel som nämns är:
+Exempel som nämns är:
 
 - återvinning kan kräva mycket energi
 - återvunnet material kan ha lägre kvalitet
@@ -2786,7 +2780,7 @@ Det här visar att hållbar teknik också måste granskas kritiskt. Bara för at
 
 ## **Nya affärsmodeller** {#nya-affärsmodeller}
 
-Teknik har också skapat nya sätt att driva företag. I materialet nämns:
+Teknik har också skapat nya sätt att driva företag. Här nämns:
 
 - digitala tjänster
 - prenumerationsmodeller
@@ -2808,7 +2802,7 @@ I stället för att sälja en fysisk produkt en gång kan företag i dag erbjuda
 
 ## **Teknikens påverkan på samhället** {#teknikens-påverkan-på-samhället}
 
-Teknik påverkar många delar av samhället. I materialet nämns:
+Teknik påverkar många delar av samhället. Här nämns:
 
 - arbete
 - kommunikation
@@ -2833,7 +2827,7 @@ Nya tekniska lösningar kan skapa nya marknader, nya företag och nya sätt att 
 
 ## **Utmaningar med ny teknik** {#utmaningar-med-ny-teknik}
 
-Teknisk utveckling skapar inte bara möjligheter. Den kan också ge upphov till problem. I materialet nämns till exempel:
+Teknisk utveckling skapar inte bara möjligheter. Den kan också ge upphov till problem. Här nämns till exempel:
 
 - energiförbrukning
 - elektroniskt avfall
@@ -2943,7 +2937,7 @@ Det här är viktigt både i små skolprojekt och i stora samhällsfrågor.
 
 ## **Olika aspekter att värdera** {#olika-aspekter-att-värdera}
 
-I materialet nämns flera aspekter som tekniska lösningar kan bedömas utifrån:
+Här nämns flera aspekter som tekniska lösningar kan bedömas utifrån:
 
 - funktion
 - säkerhet
@@ -2955,7 +2949,7 @@ Det betyder att en lösning sällan är “bra” eller “dålig” på ett enk
 
 ## **Funktion och effektivitet** {#funktion-och-effektivitet}
 
-En teknisk lösning bör fungera stabilt, lösa problemet den är skapad för och vara effektiv. Exempel som nämns i materialet är att en webbplats ska vara snabb och att ett program ska ge rätt resultat.
+En teknisk lösning bör fungera stabilt, lösa problemet den är skapad för och vara effektiv. Exempel som nämns här är att en webbplats ska vara snabb och att ett program ska ge rätt resultat.
 
 ### **Exempel** {#exempel-13}
 
@@ -2967,7 +2961,7 @@ Funktion är alltså en grundläggande aspekt. Om tekniken inte fungerar som den
 
 ## **Säkerhet** {#säkerhet}
 
-Tekniska system måste också vara säkra. I materialet nämns risker som:
+Tekniska system måste också vara säkra. Här nämns risker som:
 
 - dataintrång
 - dataförlust
@@ -2985,7 +2979,7 @@ En teknisk lösning kan alltså vara snabb och smart, men ändå dålig om säke
 
 ## **Etiska frågor i teknik** {#etiska-frågor-i-teknik}
 
-Etik handlar om vad som är rätt och fel, och om hur teknik påverkar människor. I materialet ges exempel som:
+Etik handlar om vad som är rätt och fel, och om hur teknik påverkar människor. Här ges exempel som:
 
 - integritet på internet
 - användning av artificiell intelligens
@@ -3004,7 +2998,7 @@ Det här visar att teknikutveckling inte bara är en teknisk fråga, utan också
 
 ## **Integritet och data** {#integritet-och-data}
 
-Många digitala system samlar in data om användare. Därför är integritet en viktig del av att värdera teknik. Materialet lyfter frågor som:
+Många digitala system samlar in data om användare. Därför är integritet en viktig del av att värdera teknik.
 
 - vilken information samlas in
 - hur används informationen
@@ -3022,7 +3016,7 @@ När man värderar teknik behöver man därför inte bara fråga vad systemet ka
 
 ## **Teknik och hållbar utveckling** {#teknik-och-hållbar-utveckling-1}
 
-Teknik bör utvecklas med hänsyn till miljö, resurser och långsiktig påverkan. I materialet betonas att det är viktigt att analysera miljöpåverkan, använda resurser effektivt och tänka långsiktigt.
+Teknik bör utvecklas med hänsyn till miljö, resurser och långsiktig påverkan. Här betonas att det är viktigt att analysera miljöpåverkan, använda resurser effektivt och tänka långsiktigt.
 
 Det betyder att en teknisk lösning inte bara ska fungera idag, utan också vara rimlig ur ett längre perspektiv.
 
@@ -3148,7 +3142,7 @@ Digitalisering handlar alltså inte bara om att använda datorer. Det handlar om
 
 ## **Digital teknik** {#digital-teknik}
 
-Digital teknik bygger enligt materialet på:
+Digital teknik bygger på
 
 - datorer
 - nätverk
@@ -3170,8 +3164,6 @@ Digital teknik används i produktion för att:
 Det betyder att produktion i dag ofta är mycket mer uppkopplad och automatiserad än tidigare. I stället för att människor gör varje moment manuellt kan digitala system övervaka, styra och anpassa processer.
 
 ### **Exempel på digitalisering i produktion** {#exempel-på-digitalisering-i-produktion}
-
-Materialet nämner:
 
 - industrirobotar
 - automatiserade fabriker
@@ -3203,7 +3195,7 @@ Det här visar hur digitalisering förändrar industri från att vara mer mekani
 
 ## **Digitalisering och kommunikation** {#digitalisering-och-kommunikation}
 
-Digital teknik har förändrat hur människor kommunicerar. I materialet nämns exempel som:
+Digital teknik har förändrat hur människor kommunicerar. Här nämns exempel som:
 
 - e-post
 - sociala medier
@@ -3232,7 +3224,7 @@ Digital teknik används också i arbetslivet för:
 - delning av information
 - projektarbete online
 
-Exempel som nämns i materialet är:
+Exempel som nämns här är:
 
 - videokonferenser
 - gemensamma dokument
@@ -3262,7 +3254,7 @@ Det här visar att digitalisering inte bara påverkar företag och industri, uta
 
 ## **Smarta system** {#smarta-system}
 
-Digital teknik gör det möjligt att skapa smarta system. I materialet nämns:
+Digital teknik gör det möjligt att skapa smarta system. Här nämns:
 
 - smarta hem
 - uppkopplade bilar
@@ -3300,7 +3292,7 @@ Det här betyder att digital teknik öppnar många möjligheter. Arbetsuppgifter
 
 ## **Utmaningar med digitalisering** {#utmaningar-med-digitalisering}
 
-Digitalisering skapar också problem och utmaningar. I materialet nämns:
+Digitalisering skapar också problem och utmaningar. Här nämns:
 
 - säkerhetsrisker
 - integritetsproblem
@@ -3405,7 +3397,7 @@ Ett projekt består ofta av flera delar och ibland flera personer. Då behöver 
 
 ## **Kommunikation inom informationsteknik** {#kommunikation-inom-informationsteknik}
 
-I materialet beskrivs att kommunikation inom informationsteknik kan ske genom:
+Här beskrivs att kommunikation inom informationsteknik kan ske genom:
 
 - möten
 - digitala verktyg
@@ -3440,7 +3432,7 @@ Man kan säga att dokumentation är projektets minne. Den gör att man inte mås
 
 ## **Varför är dokumentation viktig?** {#varför-är-dokumentation-viktig?}
 
-I materialet står att dokumentation gör det möjligt att:
+Här står att dokumentation gör det möjligt att:
 
 - förstå system i efterhand
 - underhålla program
@@ -3456,8 +3448,6 @@ Det här är väldigt viktigt i tekniska projekt. Om ett program eller en webbpl
 - Om ett fel uppstår blir det lättare att felsöka om det finns beskrivningar och kommentarer.
 
 ## **Exempel på dokumentation** {#exempel-på-dokumentation}
-
-Materialet nämner flera vanliga typer av dokumentation:
 
 - tekniska rapporter
 - projektplaner
@@ -3484,7 +3474,7 @@ Tillsammans gör dessa dokument det lättare att förstå både helheten och det
 
 ## **Dokumentation i programmering** {#dokumentation-i-programmering}
 
-I materialet står att kod bör innehålla kommentarer. Kommentarer kan förklara:
+Här står att kod bör innehålla kommentarer. Kommentarer kan förklara:
 
 - vad koden gör
 - varför en lösning används
@@ -3532,7 +3522,7 @@ Att kunna presentera teknik tydligt är viktigt eftersom en bra lösning inte hj
 
 ## **Visuell presentation** {#visuell-presentation}
 
-I materialet står att tekniska idéer kan visualiseras med:
+Här står att tekniska idéer kan visualiseras med:
 
 - diagram
 - modeller
@@ -3551,8 +3541,6 @@ Det här gör presentationen tydligare, särskilt för personer som inte själva
 
 ## **Exempel: webbplatsprojekt** {#exempel:-webbplatsprojekt-1}
 
-I kapitlet ges ett exempel på ett webbplatsprojekt.
-
 ### **Kommunikation** {#kommunikation-1}
 
 Man behöver diskutera design och funktioner.
@@ -3567,13 +3555,11 @@ Man kan visa webbplatsen och förklara dess funktioner.
 
 Det här visar hur kommunikation, dokumentation och presentation följer hela projektet från idé till färdig lösning.
 
-## **Exempel: spel i Unity** {#exempel:-spel-i-unity-1}
-
-Kapitlet ger också ett exempel från spelutveckling.
+## **Exempel: program i Python** {#exempel:-spel-i-unity-1}
 
 ### **Kommunikation** {#kommunikation-2}
 
-Man behöver planera spelmekanik och nivåer.
+Man behöver planera funktioner och programflöde.
 
 ### **Dokumentation** {#dokumentation-1}
 
@@ -3581,7 +3567,7 @@ Man behöver beskriva system och kod. Materialet kopplar detta till loggboken i 
 
 ### **Presentation** {#presentation-1}
 
-Man kan visa spelet och demonstrera funktioner. Materialet kopplar även detta till gymnasiearbetet.
+Man kan visa programmet och demonstrera funktioner. Materialet kopplar även detta till gymnasiearbetet.
 
 Här blir det tydligt att tekniskt arbete inte bara handlar om att bygga något, utan också om att kunna förklara det för andra.
 
@@ -3664,7 +3650,7 @@ En teknisk ritning hjälper alltså människor att förstå hur en lösning är 
 
 ## **Digitala ritningar** {#digitala-ritningar}
 
-Digitala ritningar skapas med datorprogram. I materialet lyfts flera fördelar fram:
+Digitala ritningar skapas med datorprogram. Här lyfts flera fördelar fram:
 
 - de är enkla att ändra
 - de är enkla att dela
@@ -3673,8 +3659,6 @@ Digitala ritningar skapas med datorprogram. I materialet lyfts flera fördelar f
 Det här gör digitala ritningar mycket användbara i moderna teknikprojekt. Om något behöver ändras kan man snabbt uppdatera ritningen utan att börja om från början.
 
 ## **Exempel på digitala ritningar** {#exempel-på-digitala-ritningar}
-
-Materialet nämner bland annat:
 
 - CAD-ritningar
 - systemdiagram
@@ -3706,7 +3690,7 @@ En modell visar alltså det viktigaste utan att ta med alla detaljer. På så s�
 
 ## **Typer av modeller i informationsteknik** {#typer-av-modeller-i-informationsteknik}
 
-I materialet nämns flera vanliga modeller inom informationsteknik:
+Här nämns flera vanliga modeller inom informationsteknik:
 
 - systemdiagram
 - flödesscheman
@@ -3739,7 +3723,7 @@ Detta gör programlogiken tydligare innan man börjar koda.
 
 ## **Databasmodeller** {#databasmodeller}
 
-Databasmodeller visar hur data organiseras och vilka relationer som finns mellan information. Exempel som nämns i materialet är:
+Databasmodeller visar hur data organiseras och vilka relationer som finns mellan information. Exempel som nämns här är:
 
 - tabeller
 - relationer
@@ -3759,7 +3743,7 @@ Relationerna visar hur dessa hör ihop. En elev kan läsa flera kurser, och en l
 
 ## **Nätverksdiagram** {#nätverksdiagram-2}
 
-Nätverksdiagram visar hur datorer och servrar är kopplade och hur data skickas i ett nätverk. Vanliga delar som nämns i materialet är:
+Nätverksdiagram visar hur datorer och servrar är kopplade och hur data skickas i ett nätverk. Vanliga delar som nämns här är:
 
 - klienter
 - servrar
@@ -3799,19 +3783,19 @@ Materialet ger exempel på hur modeller kan användas i ett webbplatsprojekt. En
 
 Det gör webbplatsen lättare att planera innan den byggs. I stället för att börja med kod direkt kan man först visa hur sidan ska vara organiserad och hur användaren ska röra sig mellan olika delar.
 
-## **Exempel: spel i Unity** {#exempel:-spel-i-unity-2}
+## **Exempel: program i Python** {#exempel:-spel-i-unity-2}
 
-I materialet finns också exempel från spelutveckling. Där används modeller till exempel för:
+Här finns också exempel från Python-programmering. Där används modeller till exempel för:
 
-- 3D-modeller av objekt
-- nivådesign
-- spelvärldens struktur
+- datamodeller
+- funktionsflöde
+- programmets struktur
 
-Modeller hjälper till att planera spelet och gör det enklare att förstå hur världen ska byggas upp. I ett spelprojekt kan man till exempel först skapa en enkel modell av banan eller placeringen av objekt innan hela spelet programmeras.
+Modeller hjälper till att planera programmet och gör det enklare att förstå hur lösningen ska byggas upp. I ett Python-projekt kan man till exempel först skapa en enkel modell av dataflödet innan hela programmet skrivs.
 
 ## **Varför är ritningar och modeller viktiga?** {#varför-är-ritningar-och-modeller-viktiga?}
 
-I materialet betonas att ritningar och modeller hjälper till att:
+Här betonas att ritningar och modeller hjälper till att:
 
 - planera system
 - kommunicera idéer

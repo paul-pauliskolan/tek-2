@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Utförliga konkreta problemlösningsexempel med kod från webb och Python.">
+    <title>Konkreta problemlösningsexempel - Teknik 2</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .examples-main {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 1.2rem 0 3rem;
+        }
+
+        .examples-hero,
+        .method-card,
+        .ai-card {
+            background: rgba(22, 49, 37, 0.86);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            padding: 1rem 1.1rem;
+        }
+
+        .examples-hero {
+            margin-bottom: 1rem;
+        }
+
+        .hero-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .hero-links a {
+            border: 1px solid var(--accent);
+            border-radius: 999px;
+            padding: 0.35rem 0.8rem;
+            text-decoration: none;
+        }
+
+        .methods-grid {
+            display: grid;
+            gap: 0.9rem;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        }
+
+        .method-card h2,
+        .ai-card h2 {
+            margin: 0 0 0.45rem;
+            font-size: 1.15rem;
+        }
+
+        .method-card h2 {
+            margin-top: 1.1rem;
+        }
+
+        .method-card h2:first-child {
+            margin-top: 0;
+        }
+
+        .method-card p,
+        .ai-card p {
+            margin-bottom: 0.5rem;
+        }
+
+        .example-list {
+            margin: 0;
+            padding-left: 1.15rem;
+        }
+
+        .example-list li {
+            margin-bottom: 0.45rem;
+        }
+
+        .code-block {
+            margin: 0.75rem 0;
+            background: rgba(11, 23, 17, 0.88);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+
+        .code-block code {
+            display: block;
+            padding: 0.85rem 0.9rem;
+            font-family: Menlo, Consolas, Monaco, "Courier New", monospace;
+            font-size: 0.92rem;
+            line-height: 1.5;
+            color: #d9f5e1;
+        }
+
+        .method-card ul,
+        .ai-card ul {
+            margin-bottom: 0.95rem;
+        }
+
+        .ai-card {
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+
+<body class="chapter-page">
+    <nav class="navbar">
+        <a href="../index.html" class="logo">Teknik 2</a>
+        <a href="chapter-3.html">Till kapitel 3</a>
+    </nav>
+
+    <main class="container examples-main">
+        <header class="examples-hero">
+            <p class="eyebrow">Kapitel 3 - extra sida</p>
+            <h1>Problemlösningsmetoder - med exempel</h1>
+            <p>Kort och konkret översikt med exempel från webb och Python.</p>
+            <div class="hero-links">
+                <a href="chapter-3.html">Tillbaka till kapitel 3</a>
+                <a href="../index.html">Till startsidan</a>
+            </div>
+        </header>
+
+        <section class="methods-grid" aria-label="Utförliga problemlösningsexempel med kod">
+            <article class="method-card">
+                <h2>1. Rubber Ducking</h2>
+                <p>Förklara problemet högt.</p>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> "Min knapp funkar inte... den ska köra en funktion... men jag kanske inte
+                        har kopplat onclick?"</li>
+                    <li><strong>Python:</strong> "Programmet kraschar... jag skrev in text... men jag kanske inte
+                        hanterar
+                        fel i input()?"</li>
+                </ul>
+
+                <h2>2. Dela upp problemet</h2>
+                <p>Bryt ner i mindre delar.</p>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Får jag klick på knappen? Körs JavaScript? Ändras HTML?</li>
+                    <li><strong>Python:</strong> Läser programmet input()? Uppdateras variabler? Körs rätt villkor?</li>
+                </ul>
+
+                <h2>3. Arbeta baklänges</h2>
+                <p>Börja från målet.</p>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Mål: Visa text -> behöver funktion -> behöver event -> behöver knapp.
+                    </li>
+                    <li><strong>Python:</strong> Mål: Programmet ska ge rätt svar -> behöver input -> behöver
+                        beräkning -> behöver utskrift.</li>
+                </ul>
+
+                <h2>4. Testa med enkla exempel</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Byt ut avancerad kod mot: <code>console.log("funkar?");</code></li>
+                    <li><strong>Python:</strong> <code>print("input mottagen")</code></li>
+                    <li>Funkar detta? Då vet du var felet inte är.</li>
+                </ul>
+
+                <h2>5. Steg-för-steg (Tracing)</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Följ vad som händer när du klickar: <code>console.log("1");</code>
+                        <code>console.log("2");</code>
+                    </li>
+                    <li><strong>Python:</strong> Kolla värden: <code>print(anvandar_input)</code></li>
+                </ul>
+
+                <h2>6. Rita upp problemet</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Knapp -> JS-funktion -> ändra DOM.</li>
+                    <li><strong>Python:</strong> Input -> Funktion -> Variabel -> Resultat.</li>
+                </ul>
+
+                <h2>7. Pseudokod</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Om knapp klickas: visa text.</li>
+                    <li><strong>Python:</strong> Om användaren skriver "ja": kör funktionen.</li>
+                </ul>
+
+                <h2>8. Googla smart</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> "javascript button click not working"</li>
+                    <li><strong>Python:</strong> "python input valueerror example"</li>
+                </ul>
+
+                <h2>9. Läs felmeddelanden</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Console: <code>Uncaught TypeError: ...</code> -> något är undefined.</li>
+                    <li><strong>Python:</strong> <code>ValueError</code> -> fel datatyp i inmatning.
+                    </li>
+                </ul>
+            </article>
+
+            <article class="method-card">
+                <h2>10. Ändra en sak i taget</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Ändra bara CSS - inte HTML + JS samtidigt.</li>
+                    <li><strong>Python:</strong> Testa bara en funktion - inte hela programmet samtidigt.</li>
+                </ul>
+
+                <h2>11. Debugverktyg</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> DevTools: Inspect element, Console.</li>
+                    <li><strong>Python:</strong> Breakpoints i VS Code och <code>print()</code> för att se värden.</li>
+                </ul>
+
+                <h2>12. Jämför med fungerande kod</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Din kod: <code>onclick="myFunction"</code> - fungerande:
+                        <code>onclick="myFunction()"</code>
+                    </li>
+                    <li><strong>Python:</strong> Din kod saknar: <code>import random</code></li>
+                </ul>
+
+                <h2>13. Be om hjälp</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> "Min knapp gör inget när jag klickar, här är min kod."</li>
+                    <li><strong>Python:</strong> "Min funktion körs inte trots att jag anropar den."</li>
+                </ul>
+
+                <h2>14. Ta en paus</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Efter paus: "Just det... jag glömde länka JS-filen!"</li>
+                    <li><strong>Python:</strong> Efter paus: "Jag glömde anropa funktionen..."</li>
+                </ul>
+
+                <h2>15. Bygg en minimal version</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> Bara:
+                        <code>&lt;button onclick="alert('hej')"&gt;Test&lt;/button&gt;</code>
+                    </li>
+                    <li><strong>Python:</strong> Bara:
+                        <code>if alder &gt;= 18: print("Vuxen")</code>
+                    </li>
+                </ul>
+
+                <h2>16. Använd analogier</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> DOM = ett träd (du plockar grenar).</li>
+                    <li><strong>Python:</strong> Funktion = ett "recept" med instruktioner.</li>
+                </ul>
+
+                <h2>17. Gissa och testa (kontrollerat)</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> "Jag tror felet är i CSS -> testar att ta bort style."</li>
+                    <li><strong>Python:</strong> "Jag tror felet är i villkoret -> testar att ändra if-satsen."</li>
+                </ul>
+
+                <h2>18. Kontrollera antaganden</h2>
+                <ul class="example-list">
+                    <li><strong>Webb:</strong> "Jag antar att JS-filen är kopplad... men är den det?"</li>
+                    <li><strong>Python:</strong> "Jag antar att variabeln har rätt värde... men har den det?"</li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="ai-card" aria-label="AI som en punkt i processen">
+            <h2>AI som en punkt i processen</h2>
+            <ul>
+                <li><strong>AI:</strong> Beskriv problemet kort, visa minimal kod och be om 2-3 hypoteser att testa en i
+                    taget.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="chapter-3.html">Till kapitel 3</a> | <a href="../index.html">Till startsidan</a></p>
+    </footer>
+</body>
+
+</html>

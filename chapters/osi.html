@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSI-modellen och Komplexitet</title>
+    <!-- Laddar in Mermaid.js (Fungerar även lokalt i VS Code) -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Intro-textens styling */
+        .intro-text {
+            background-color: #f1f5f9;
+            border-left: 6px solid #3b82f6;
+            padding: 25px 30px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 40px;
+            font-size: 1.15em;
+            color: #1e293b;
+        }
+
+        h2 {
+            color: #0f172a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 10px;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .diagram-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 40px 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.02);
+            overflow-x: auto;
+        }
+
+        .mermaid {
+            min-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Lista med detaljerade exempel */
+        .layer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .layer-card {
+            display: flex;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+        }
+
+        .layer-number {
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            font-weight: bold;
+            color: white;
+        }
+
+        /* Färgkodning för de olika grupperna i OSI */
+        .host-layer {
+            background-color: #3b82f6;
+        }
+
+        /* Mjukvara */
+        .transport-layer {
+            background-color: #10b981;
+        }
+
+        /* Transport */
+        .media-layer {
+            background-color: #f59e0b;
+        }
+
+        /* Hårdvara */
+
+        .layer-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+
+        .layer-content h3 {
+            margin: 0 0 10px 0;
+            color: #0f172a;
+        }
+
+        .layer-content p {
+            margin: 0 0 10px 0;
+            color: #475569;
+            font-size: 0.95em;
+        }
+
+        .layer-content .example-tag {
+            display: inline-block;
+            background: #e2e8f0;
+            color: #334155;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+
+        <h2>OSI-modellen i praktiken</h2>
+        <p>Här visas hur nätverkskommunikation och webbutveckling mappas mot OSI-modellens 7 lager. Data vandrar
+            uppifrån och ner (från applikation till kabel) när du skickar den, och nerifrån och upp när du tar emot den.
+        </p>
+
+        <!-- FLÖDESSCHEMAT -->
+        <div class="diagram-container">
+            <div class="mermaid">
+                graph TD
+                %% -- Stilar (Helt utan specialtecken för maximal kompatibilitet) -- %%
+                classDef hostLayer
+                fill:#dbeafe,stroke:#3b82f6,stroke-width:2px,color:#000,font-size:18px,font-weight:bold;
+                classDef transportLayer
+                fill:#dcfce7,stroke:#10b981,stroke-width:2px,color:#000,font-size:18px,font-weight:bold;
+                classDef mediaLayer
+                fill:#fef3c7,stroke:#f59e0b,stroke-width:2px,color:#000,font-size:18px,font-weight:bold;
+
+                %% -- Deklarera Noder med inbakade exempel (Citattecken gör br-taggen säker) -- %%
+                L7["7. Applikation <br> (Webbläsare HTTPS REST-API)"]:::hostLayer
+                L6["6. Presentation <br> (JSON Kryptering SSL TLS)"]:::hostLayer
+                L5["5. Session <br> (WebSockets Sessions-ID)"]:::hostLayer
+                L4["4. Transport <br> (TCP UDP Port 443)"]:::transportLayer
+                L3["3. Nätverk <br> (Routrar IPv4 IPv6 IP-adresser)"]:::mediaLayer
+                L2["2. Datalänk <br> (Switchar MAC-adresser Ethernet)"]:::mediaLayer
+                L1["1. Fysisk <br> (Nätverkskabel Fiber Wi-Fi)"]:::mediaLayer
+
+                %% -- Bygg ryggraden (Koppla lagren uppifrån och ner) -- %%
+                L7 --> L6
+                L6 --> L5
+                L5 --> L4
+                L4 --> L3
+                L3 --> L2
+                L2 --> L1
+            </div>
+        </div>
+
+        <h2>Detaljerade exempel: Webb & Nätverk</h2>
+
+        <div class="layer-grid">
+
+            <!-- Lager 7 -->
+            <div class="layer-card">
+                <div class="layer-number host-layer">7</div>
+                <div class="layer-content">
+                    <h3>Applikation (Application)</h3>
+                    <p>Detta är nivån som användaren och programmen interagerar med direkt. Det är här din kod skapar
+                        förfrågningar över nätverket.</p>
+                    <span class="example-tag">Webbutveckling:</span> En webbläsare gör ett HTTP-anrop eller ditt
+                    JavaScript gör en `fetch()` mot ett REST API.<br>
+                    <span class="example-tag">Nätverk:</span> Protokoll som HTTP, FTP, SMTP (e-post) och DNS.
+                </div>
+            </div>
+
+            <!-- Lager 6 -->
+            <div class="layer-card">
+                <div class="layer-number host-layer">6</div>
+                <div class="layer-content">
+                    <h3>Presentation (Presentation)</h3>
+                    <p>Formaterar, komprimerar och krypterar datan så att systemet på andra sidan förstår den, oavsett
+                        vilket operativsystem de använder.</p>
+                    <span class="example-tag">Webbutveckling:</span> Datan formateras till JSON eller XML. Här sker även
+                    SSL/TLS-krypteringen så att hemsidan får "https" (hänglåset).<br>
+                    <span class="example-tag">Nätverk:</span> JPEG, ASCII, teckenkodning (UTF-8).
+                </div>
+            </div>
+
+            <!-- Lager 5 -->
+            <div class="layer-card">
+                <div class="layer-number host-layer">5</div>
+                <div class="layer-content">
+                    <h3>Session (Session)</h3>
+                    <p>Etablerar, hanterar och avslutar anslutningar (sessioner) mellan två datorer.</p>
+                    <span class="example-tag">Webbutveckling:</span> Ett Sessions-ID i en cookie som håller användaren
+                    inloggad, eller en öppen WebSocket-anslutning för en chatt.<br>
+                    <span class="example-tag">Nätverk:</span> Sockets, NetBIOS, hantering av avbrott i nätverket.
+                </div>
+            </div>
+
+            <!-- Lager 4 -->
+            <div class="layer-card">
+                <div class="layer-number transport-layer">4</div>
+                <div class="layer-content">
+                    <h3>Transport (Transport)</h3>
+                    <p>Ser till att datan levereras felfritt. Datan delas upp i mindre paket och numreras så att de kan
+                        sättas ihop i rätt ordning.</p>
+                    <span class="example-tag">Webbutveckling:</span> Webbservern lyssnar på Port 80 (HTTP) eller Port
+                    443 (HTTPS). TCP-protokollet garanterar att hela webbsidan laddas in utan att kodrader tappas
+                    bort.<br>
+                    <span class="example-tag">Nätverk:</span> TCP (säkert men långsamt) och UDP (snabbt men opålitligt,
+                    bra för video/gaming).
+                </div>
+            </div>
+
+            <!-- Lager 3 -->
+            <div class="layer-card">
+                <div class="layer-number media-layer">3</div>
+                <div class="layer-content">
+                    <h3>Nätverk (Network)</h3>
+                    <p>Bestämmer vilken väg (routing) paketen ska ta över det globala internet för att komma fram till
+                        rätt mottagare.</p>
+                    <span class="example-tag">Webbutveckling:</span> När din server på AWS (t.ex. IP 13.24.55.1) ska
+                    skicka tillbaka hemsidan till din IP-adress.<br>
+                    <span class="example-tag">Nätverk:</span> IPv4 och IPv6-adresser, Routrar, ICMP (När du använder
+                    kommandot "ping").
+                </div>
+            </div>
+
+            <!-- Lager 2 -->
+            <div class="layer-card">
+                <div class="layer-number media-layer">2</div>
+                <div class="layer-content">
+                    <h3>Datalänk (Data Link)</h3>
+                    <p>Hanterar den lokala leveransen av data inom samma nätverk. Den översätter de logiska
+                        IP-adresserna till fysiska adresser.</p>
+                    <span class="example-tag">Webbutveckling:</span> Oftast osynligt för webbutvecklare, men avgörande
+                    för att datan överhuvudtaget ska lämna serverhallen.<br>
+                    <span class="example-tag">Nätverk:</span> MAC-adresser, Switchar, Ethernet-frames och lokala
+                    nätverkskort.
+                </div>
+            </div>
+
+            <!-- Lager 1 -->
+            <div class="layer-card">
+                <div class="layer-number media-layer">1</div>
+                <div class="layer-content">
+                    <h3>Fysisk (Physical)</h3>
+                    <p>Det faktiska fysiska mediet som skickar ettorna och nollorna som elektriska pulser, ljus eller
+                        radiovågor.</p>
+                    <span class="example-tag">Felsökning (från texten):</span> "Ligger felet i fysisk anslutning?" – Har
+                    någon dragit ut sladden?<br>
+                    <span class="example-tag">Nätverk:</span> Fiberoptikkablar, kopparkablar (CAT6), Wi-Fi (radiovågor),
+                    hubbar.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Initierar Mermaid med inställningar som förhindrar mikroskopisk text
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'default',
+            flowchart: { useMaxWidth: false },
+            themeVariables: { fontSize: '18px' }
+        });
+    </script>
+</body>
+
+</html>
