@@ -2762,7 +2762,7 @@ Men teknik löser inte automatiskt hållbarhetsproblem. Hur tekniken används sp
 
 ## **Cirkulär ekonomi** {#cirkulär-ekonomi}
 
-I kapitlet nämns cirkulär ekonomi som ett exempel på hur teknik och hållbar utveckling kan kopplas ihop. Tanken med cirkulär ekonomi är att resurser ska användas längre, återvinnas bättre och cirkulera i systemet i stället för att snabbt bli avfall.
+Cirkulär ekonomi är ett exempel på hur teknik och hållbar utveckling kan kopplas ihop. Tanken med cirkulär ekonomi är att resurser ska användas längre, återvinnas bättre och cirkulera i systemet i stället för att snabbt bli avfall.
 
 Exempel som nämns är:
 
@@ -3027,7 +3027,7 @@ Det här blir allt viktigare när digital teknik växer snabbt och används i n�
 
 ## **Balans mellan hållbarhet och teknisk utveckling** {#balans-mellan-hållbarhet-och-teknisk-utveckling}
 
-Materialet lyfter också att miljö och hållbarhet inte bör stoppa teknisk utveckling, hindra innovation och nya lösningar, utan att dessa faktorer behöver balanseras mot behovet av tekniska framsteg.
+Miljö och hållbarhet inte bör stoppa teknisk utveckling, hindra innovation och nya lösningar, utan att dessa faktorer behöver balanseras mot behovet av tekniska framsteg.
 
 Det här är ett viktigt resonemang. Det betyder inte att miljöfrågor är mindre viktiga, utan att utveckling ofta handlar om att väga olika behov mot varandra.
 
@@ -3169,7 +3169,15 @@ Det här gör att företag kan producera snabbare, mer exakt och ofta med färre
 
 ## **Industri 4.0** {#industri-4.0}
 
-I kapitlet tas också begreppet **Industri 4.0** upp. Det innebär:
+Det syftar på den fjärde industriella revolutionen. För att förstå vad det innebär behöver man känna till de tidigare stegen i industrins utveckling.
+
+Den första industriella revolutionen (Industri 1.0) handlade om mekanisering, där maskiner som drevs av ångkraft började ersätta manuellt arbete.
+Den andra (Industri 2.0) handlade om massproduktion med hjälp av elektricitet och löpande band.
+Den tredje (Industri 3.0) innebar automatisering, där datorer och robotar började styra produktionen.
+
+Industri 4.0 bygger vidare på detta, men fokuserar på digitalisering och uppkoppling.
+
+Begreppet innebär:
 
 - digitala fabriker
 - uppkopplade maskiner
@@ -3186,8 +3194,6 @@ Det kan till exempel innebära att:
 - produktionen anpassas efter efterfrågan
 - data används för att förbättra kvalitet
 - driftstopp upptäcks tidigare
-
-Det här visar hur digitalisering förändrar industri från att vara mer mekanisk till att bli mer datastyrd och intelligent.
 
 ## **Digitalisering och kommunikation** {#digitalisering-och-kommunikation}
 
@@ -3486,16 +3492,13 @@ Det betyder inte att varje rad måste kommenteras. För mycket kommentarer kan o
 
 ## **Versionshantering** {#versionshantering}
 
-Kapitlet tar också upp **versionshantering**. Versionshantering används för att:
+Versionshantering används för att:
 
 - spara olika versioner av kod
 - samarbeta i projekt
 - följa förändringar
 
-Exempel som nämns är:
-
-- Git
-- GitHub
+Git är ett versionshanteringssystem som sparar ändringar i kod över tid, så att man kan jämföra versioner, gå tillbaka till tidigare lägen och arbeta i grenar utan att förstöra huvudkoden. GitHub är en webbaserad plattform där Git-repositorier kan lagras, delas och hanteras tillsammans med andra. Skillnaden är alltså att Git är själva verktyget för versionshantering, medan GitHub är en tjänst för samarbete och publicering ovanpå Git. Andra versionshanteringssystem är till exempel Subversion (SVN), Mercurial och Perforce.
 
 Versionshantering är viktig eftersom kod ofta förändras många gånger under ett projekt. Genom att spara olika versioner kan man:
 
