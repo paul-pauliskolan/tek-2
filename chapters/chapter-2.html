@@ -52,6 +52,149 @@
 
     <script src="../js/main.js"></script>
     <script>
+        function insertChapterQuiz() {
+            const content = document.getElementById('chapter-content')
+            if (!content) return false
+            if (content.querySelector('.chapter-quiz')) return true
+
+            const headings = content.querySelectorAll('h2')
+            const targetHeading = Array.from(headings).find((el) => {
+                const txt = el.textContent.trim().toLowerCase()
+                return txt === 'reflektionsfrågor' || txt === 'refelktionsfrågor' || txt === 'frågor att arbeta med'
+            })
+
+            if (!targetHeading) return false
+
+            const questions = [
+                {
+                    text: 'Vad handlar entreprenörskap om inom teknik?',
+                    options: [
+                        'Att se möjligheter, utveckla idéer och skapa lösningar som kan användas i verkligheten.',
+                        'Att bara skriva kod utan att undersöka användarnas behov.',
+                        'Att undvika risker genom att aldrig testa nya idéer.',
+                        'Att endast kopiera tekniska lösningar som redan finns.'
+                    ],
+                    answer: 'A',
+                    explanation: 'Entreprenörskap handlar om att upptäcka möjligheter och utveckla idéer till lösningar som skapar värde i verkligheten.'
+                },
+                {
+                    text: 'Vad är skillnaden mellan en uppfinning och en innovation?',
+                    options: [
+                        'En uppfinning måste alltid vara digital, men en innovation måste vara fysisk.',
+                        'En uppfinning är en ny idé, medan en innovation är en idé som används och skapar värde.',
+                        'En uppfinning är alltid lönsam, medan en innovation bara är en prototyp.',
+                        'Det finns ingen skillnad mellan begreppen.'
+                    ],
+                    answer: 'B',
+                    explanation: 'En uppfinning kan vara en ny idé eller teknik, men en innovation används i praktiken och skapar nytta.'
+                },
+                {
+                    text: 'Varför behöver en entreprenör förstå marknad och användare?',
+                    options: [
+                        'För att kunna hoppa över testning och lansering.',
+                        'För att tekniska lösningar alltid säljer sig själva.',
+                        'För att veta vilka behov som finns och om lösningen skapar värde för någon.',
+                        'För att undvika att behöva anpassa produkten.'
+                    ],
+                    answer: 'C',
+                    explanation: 'En teknisk idé lyckas lättare om den bygger på verkliga behov och passar de användare eller kunder den är tänkt för.'
+                },
+                {
+                    text: 'Vad kan finansiering användas till i ett teknikprojekt?',
+                    options: [
+                        'Att ersätta kreativitet helt.',
+                        'Att göra juridiska krav oviktiga.',
+                        'Att garantera att projektet lyckas utan risk.',
+                        'Att betala för till exempel utveckling, verktyg, marknadsföring eller drift.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Finansiering kan behövas för resurser som tid, teknik, verktyg, drift och marknadsföring, men den tar inte bort alla risker.'
+                },
+                {
+                    text: 'Varför är risk och osäkerhet viktiga att tänka på?',
+                    options: [
+                        'För att nya idéer kan misslyckas tekniskt, ekonomiskt eller för att användare inte behöver lösningen.',
+                        'För att risk alltid betyder att idén ska stoppas direkt.',
+                        'För att risk bara finns i stora företag.',
+                        'För att osäkerhet visar att planering är onödigt.'
+                    ],
+                    answer: 'A',
+                    explanation: 'Entreprenörskap innebär osäkerhet. Därför behöver man testa, analysera och förbättra idéer innan man satsar för mycket.'
+                }
+            ]
+
+            const quiz = document.createElement('section')
+            quiz.className = 'content-section chapter-quiz'
+            quiz.setAttribute('aria-labelledby', 'chapter-quiz-title')
+            quiz.innerHTML = `
+                <h2 id="chapter-quiz-title">Quiz</h2>
+                <form class="chapter-quiz-form">
+                    ${questions.map((question, questionIndex) => `
+                        <fieldset class="quiz-question">
+                            <legend>${questionIndex + 1}. ${question.text}</legend>
+                            <div class="quiz-options">
+                                ${question.options.map((option, optionIndex) => {
+                                    const letter = String.fromCharCode(65 + optionIndex)
+                                    const inputId = `quiz-q${questionIndex + 1}-${letter}`
+                                    return `
+                                        <label class="quiz-option" for="${inputId}">
+                                            <input type="radio" id="${inputId}" name="quiz-q${questionIndex + 1}" value="${letter}">
+                                            <span class="quiz-option-letter">${letter}</span>
+                                            <span>${option}</span>
+                                        </label>
+                                    `
+                                }).join('')}
+                            </div>
+                            <p class="quiz-feedback" data-feedback-for="quiz-q${questionIndex + 1}"></p>
+                        </fieldset>
+                    `).join('')}
+                    <button type="button" class="quiz-submit">Rätta quizet</button>
+                    <p class="quiz-result" aria-live="polite"></p>
+                </form>
+            `
+
+            const form = quiz.querySelector('.chapter-quiz-form')
+            const result = quiz.querySelector('.quiz-result')
+            const submit = quiz.querySelector('.quiz-submit')
+
+            submit.addEventListener('click', () => {
+                let score = 0
+
+                questions.forEach((question, questionIndex) => {
+                    const name = `quiz-q${questionIndex + 1}`
+                    const selected = form.querySelector(`input[name="${name}"]:checked`)
+                    const feedback = form.querySelector(`[data-feedback-for="${name}"]`)
+                    const options = form.querySelectorAll(`input[name="${name}"]`)
+
+                    options.forEach((option) => {
+                        option.closest('.quiz-option').classList.remove('is-correct', 'is-wrong')
+                    })
+
+                    if (selected && selected.value === question.answer) {
+                        score += 1
+                        selected.closest('.quiz-option').classList.add('is-correct')
+                        feedback.textContent = 'Rätt.'
+                        feedback.className = 'quiz-feedback is-correct'
+                    } else {
+                        const correctInput = form.querySelector(`input[name="${name}"][value="${question.answer}"]`)
+                        correctInput.closest('.quiz-option').classList.add('is-correct')
+                        if (selected) {
+                            selected.closest('.quiz-option').classList.add('is-wrong')
+                            feedback.textContent = `Fel. Rätt svar är ${question.answer}. ${question.explanation}`
+                        } else {
+                            feedback.textContent = `Inget svar valt. Rätt svar är ${question.answer}. ${question.explanation}`
+                        }
+                        feedback.className = 'quiz-feedback is-wrong'
+                    }
+                })
+
+                result.textContent = `Du fick ${score} av ${questions.length} rätt.`
+            })
+
+            targetHeading.insertAdjacentElement('beforebegin', quiz)
+            return true
+        }
+
         const match = window.location.pathname.match(/chapter-(\d+)\.html/)
         if (match) {
             const chapterNumber = parseInt(match[1], 10)
@@ -59,6 +202,13 @@
                 if (window.pythonbook && window.pythonbook.getChapter(chapterNumber)) {
                     clearInterval(interval)
                     window.pythonbook.renderChapterPage(chapterNumber)
+                    let tries = 0
+                    const insertInterval = setInterval(() => {
+                        tries += 1
+                        if (insertChapterQuiz() || tries > 40) {
+                            clearInterval(insertInterval)
+                        }
+                    }, 100)
                 }
             }, 100)
         }

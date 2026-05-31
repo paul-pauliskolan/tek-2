@@ -93,6 +93,149 @@
             return true
         }
 
+        function insertChapterQuiz() {
+            const content = document.getElementById('chapter-content')
+            if (!content) return false
+            if (content.querySelector('.chapter-quiz')) return true
+
+            const headings = content.querySelectorAll('h2')
+            const targetHeading = Array.from(headings).find((el) => {
+                const txt = el.textContent.trim().toLowerCase()
+                return txt === 'reflektionsfrågor' || txt === 'refelktionsfrågor' || txt === 'frågor att arbeta med'
+            })
+
+            if (!targetHeading) return false
+
+            const questions = [
+                {
+                    text: 'Vad kännetecknar ett projekt?',
+                    options: [
+                        'Ett arbete med tydligt mål, tidsplan och slut.',
+                        'Ett arbete som aldrig avslutas.',
+                        'En samling löpande uppgifter utan gemensamt mål.',
+                        'Ett spontant arbete utan planering.'
+                    ],
+                    answer: 'A',
+                    explanation: 'Ett projekt är avgränsat i tid och har ett tydligt mål, en tidsplan och ett slut.'
+                },
+                {
+                    text: 'Varför är planering viktig i ett tekniskt projekt?',
+                    options: [
+                        'För att projektet ska kunna undvika all testning.',
+                        'För att mål, arbetsuppgifter, resurser och tidsplan blir tydliga.',
+                        'För att alla ska arbeta med samma uppgift samtidigt.',
+                        'För att dokumentation inte längre behövs.'
+                    ],
+                    answer: 'B',
+                    explanation: 'Planering gör arbetet tydligare och minskar risken för stress, missförstånd och förseningar.'
+                },
+                {
+                    text: 'Vad innebär iterativ utveckling?',
+                    options: [
+                        'Att hela projektet görs färdigt innan något testas.',
+                        'Att projektet saknar tydliga roller.',
+                        'Att man bygger, testar och förbättrar i flera omgångar.',
+                        'Att dokumentationen skrivs först efter lansering.'
+                    ],
+                    answer: 'C',
+                    explanation: 'Iterativ utveckling betyder att lösningen växer fram genom upprepade versioner, tester och förbättringar.'
+                },
+                {
+                    text: 'Vilken roll kontrollerar ofta att systemet fungerar och letar efter fel?',
+                    options: [
+                        'Designer',
+                        'Projektledare',
+                        'Programmerare',
+                        'Testare'
+                    ],
+                    answer: 'D',
+                    explanation: 'Testaren kontrollerar att systemet fungerar och försöker hitta fel innan lösningen används.'
+                },
+                {
+                    text: 'Vad är en MVP i ett agilt projekt?',
+                    options: [
+                        'En minsta fungerande produktversion som kan testas av användare.',
+                        'En fullständig slutversion utan begränsningar.',
+                        'En tidsplan för hela projektet.',
+                        'En lista över alla möjliga framtida funktioner.'
+                    ],
+                    answer: 'A',
+                    explanation: 'En MVP innehåller precis tillräckligt många funktioner för att kunna testas och ge användbar feedback.'
+                }
+            ]
+
+            const quiz = document.createElement('section')
+            quiz.className = 'content-section chapter-quiz'
+            quiz.setAttribute('aria-labelledby', 'chapter-quiz-title')
+            quiz.innerHTML = `
+                <h2 id="chapter-quiz-title">Quiz</h2>
+                <form class="chapter-quiz-form">
+                    ${questions.map((question, questionIndex) => `
+                        <fieldset class="quiz-question">
+                            <legend>${questionIndex + 1}. ${question.text}</legend>
+                            <div class="quiz-options">
+                                ${question.options.map((option, optionIndex) => {
+                                    const letter = String.fromCharCode(65 + optionIndex)
+                                    const inputId = `quiz-q${questionIndex + 1}-${letter}`
+                                    return `
+                                        <label class="quiz-option" for="${inputId}">
+                                            <input type="radio" id="${inputId}" name="quiz-q${questionIndex + 1}" value="${letter}">
+                                            <span class="quiz-option-letter">${letter}</span>
+                                            <span>${option}</span>
+                                        </label>
+                                    `
+                                }).join('')}
+                            </div>
+                            <p class="quiz-feedback" data-feedback-for="quiz-q${questionIndex + 1}"></p>
+                        </fieldset>
+                    `).join('')}
+                    <button type="button" class="quiz-submit">Rätta quizet</button>
+                    <p class="quiz-result" aria-live="polite"></p>
+                </form>
+            `
+
+            const form = quiz.querySelector('.chapter-quiz-form')
+            const result = quiz.querySelector('.quiz-result')
+            const submit = quiz.querySelector('.quiz-submit')
+
+            submit.addEventListener('click', () => {
+                let score = 0
+
+                questions.forEach((question, questionIndex) => {
+                    const name = `quiz-q${questionIndex + 1}`
+                    const selected = form.querySelector(`input[name="${name}"]:checked`)
+                    const feedback = form.querySelector(`[data-feedback-for="${name}"]`)
+                    const options = form.querySelectorAll(`input[name="${name}"]`)
+
+                    options.forEach((option) => {
+                        option.closest('.quiz-option').classList.remove('is-correct', 'is-wrong')
+                    })
+
+                    if (selected && selected.value === question.answer) {
+                        score += 1
+                        selected.closest('.quiz-option').classList.add('is-correct')
+                        feedback.textContent = 'Rätt.'
+                        feedback.className = 'quiz-feedback is-correct'
+                    } else {
+                        const correctInput = form.querySelector(`input[name="${name}"][value="${question.answer}"]`)
+                        correctInput.closest('.quiz-option').classList.add('is-correct')
+                        if (selected) {
+                            selected.closest('.quiz-option').classList.add('is-wrong')
+                            feedback.textContent = `Fel. Rätt svar är ${question.answer}. ${question.explanation}`
+                        } else {
+                            feedback.textContent = `Inget svar valt. Rätt svar är ${question.answer}. ${question.explanation}`
+                        }
+                        feedback.className = 'quiz-feedback is-wrong'
+                    }
+                })
+
+                result.textContent = `Du fick ${score} av ${questions.length} rätt.`
+            })
+
+            targetHeading.insertAdjacentElement('beforebegin', quiz)
+            return true
+        }
+
         const match = window.location.pathname.match(/chapter-(\d+)\.html/)
         if (match) {
             const chapterNumber = parseInt(match[1], 10)
@@ -103,7 +246,9 @@
                     let tries = 0
                     const insertInterval = setInterval(() => {
                         tries += 1
-                        if (insertDevelopmentLinkUnderHeading() || tries > 40) {
+                        const developmentLinkInserted = insertDevelopmentLinkUnderHeading()
+                        const quizInserted = insertChapterQuiz()
+                        if ((developmentLinkInserted && quizInserted) || tries > 40) {
                             clearInterval(insertInterval)
                         }
                     }, 100)
