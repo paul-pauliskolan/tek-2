@@ -448,7 +448,7 @@ const chapterQuizData = {
       options: [
         "Något i ett system som inte fungerar som det ska eller behöver förbättras.",
         "En lösning som redan är färdig och inte behöver testas.",
-        "En idé som inte får analyseras innan den byggs.",
+        "En idé som inte får analyseras innan den byggs, utan att kontrollera om det verkligen passar frågan.",
         "En uppgift som saknar koppling till användare eller teknik.",
       ],
       answer: "A",
@@ -458,7 +458,7 @@ const chapterQuizData = {
     {
       text: "Varför är analys viktig i problemlösningsprocessen?",
       options: [
-        "För att man ska kunna hoppa över testningen.",
+        "För att man ska kunna hoppa över testningen, även när det inte stämmer med kapitlets innehåll.",
         "För att förstå orsaken till problemet innan man väljer lösning.",
         "För att alla lösningar alltid fungerar direkt.",
         "För att problemet ska bli mindre dokumenterat.",
@@ -471,7 +471,7 @@ const chapterQuizData = {
       text: "Vad innebär det att implementera en lösning?",
       options: [
         "Att bara beskriva problemet utan att ändra något.",
-        "Att ta bort alla tester från projektet.",
+        "Att ta bort alla tester från projektet och samtidigt hoppa över viktiga delar av processen.",
         "Att genomföra lösningen i systemet, till exempel genom kod eller ändringar.",
         "Att avsluta arbetet innan resultatet kontrolleras.",
       ],
@@ -484,7 +484,7 @@ const chapterQuizData = {
       options: [
         "För att göra problemet svårare att hitta.",
         "För att undvika att användare får ge återkoppling.",
-        "För att ersätta analys med gissningar.",
+        "För att ersätta analys med gissningar, utan att ta hänsyn till användare, testning eller resultat.",
         "För att kontrollera att lösningen fungerar och inte skapar nya fel.",
       ],
       answer: "D",
@@ -497,7 +497,7 @@ const chapterQuizData = {
         "Att man följer steg som identifiering, analys, lösning och testning.",
         "Att man provar slumpmässigt tills något råkar fungera.",
         "Att man alltid börjar om från början utan att dokumentera.",
-        "Att man undviker att jämföra olika lösningar.",
+        "Att man undviker att jämföra olika lösningar, utan att kontrollera om det verkligen passar frågan.",
       ],
       answer: "A",
       explanation:
@@ -523,7 +523,7 @@ const chapterQuizData = {
         "För att projektet ska kunna undvika all testning.",
         "För att mål, arbetsuppgifter, resurser och tidsplan blir tydliga.",
         "För att alla ska arbeta med samma uppgift samtidigt.",
-        "För att dokumentation inte längre behövs.",
+        "För att dokumentation inte längre behövs, även när det inte stämmer med kapitlets innehåll.",
       ],
       answer: "B",
       explanation:
@@ -533,7 +533,7 @@ const chapterQuizData = {
       text: "Vad innebär iterativ utveckling?",
       options: [
         "Att hela projektet görs färdigt innan något testas.",
-        "Att projektet saknar tydliga roller.",
+        "Att projektet saknar tydliga roller och samtidigt hoppa över viktiga delar av processen.",
         "Att man bygger, testar och förbättrar i flera omgångar.",
         "Att dokumentationen skrivs först efter lansering.",
       ],
@@ -553,7 +553,7 @@ const chapterQuizData = {
       options: [
         "En minsta fungerande produktversion som kan testas av användare.",
         "En fullständig slutversion utan begränsningar.",
-        "En tidsplan för hela projektet.",
+        "En tidsplan för hela projektet, utan att ta hänsyn till användare, testning eller resultat.",
         "En lista över alla möjliga framtida funktioner.",
       ],
       answer: "A",
@@ -567,7 +567,7 @@ const chapterQuizData = {
       options: [
         "Att skapa instruktioner som löser problem, automatiserar uppgifter eller bygger system.",
         "Att undvika att förstå problemet innan arbetet börjar.",
-        "Att ersätta all testning med gissningar.",
+        "Att ersätta all testning med gissningar, utan att kontrollera om det verkligen passar frågan.",
         "Att bara skriva text som inte körs av datorn.",
       ],
       answer: "A",
@@ -577,7 +577,7 @@ const chapterQuizData = {
     {
       text: "Varför bör man planera lösningen innan man skriver kod?",
       options: [
-        "För att kod då aldrig behöver testas.",
+        "För att kod då aldrig behöver testas, även när det inte stämmer med kapitlets innehåll.",
         "För att det blir lättare att välja struktur, steg och logik.",
         "För att variabler och funktioner inte ska behövas.",
         "För att programmet ska sakna tydligt mål.",
@@ -590,7 +590,7 @@ const chapterQuizData = {
       text: "Vad är en bugg?",
       options: [
         "En färdig funktion som alltid fungerar.",
-        "En kommentar som förklarar kod.",
+        "En kommentar som förklarar kod och samtidigt hoppa över viktiga delar av processen.",
         "Ett fel i programmet som gör att det inte fungerar som tänkt.",
         "Ett namn på ett programmeringsspråk.",
       ],
@@ -603,7 +603,7 @@ const chapterQuizData = {
       options: [
         "Sparar alltid en bildfil.",
         "Stoppar programmet från att kunna köras.",
-        "Tar bort alla villkor.",
+        "Tar bort alla villkor, utan att ta hänsyn till användare, testning eller resultat.",
         "Upprepar kod så länge ett villkor eller antal steg gäller.",
       ],
       answer: "D",
@@ -614,7 +614,7 @@ const chapterQuizData = {
       text: "Varför är testning viktig i programmering?",
       options: [
         "För att kontrollera att programmet fungerar och hitta fel tidigt.",
-        "För att göra koden omöjlig att ändra.",
+        "För att göra koden omöjlig att ändra, utan att kontrollera om det verkligen passar frågan.",
         "För att undvika att användaren kan prova programmet.",
         "För att ersätta tydliga variabelnamn.",
       ],
@@ -630,7 +630,7 @@ const chapterQuizData = {
         "Att arbeta planerat med kvalitet, risker, miljö och arbetsmiljö.",
         "Att bara kontrollera kvalitet när projektet redan är avslutat.",
         "Att undvika testning för att spara tid.",
-        "Att enbart fokusera på utseende.",
+        "Att enbart fokusera på utseende, även när det inte stämmer med kapitlets innehåll.",
       ],
       answer: "A",
       explanation:
@@ -639,7 +639,7 @@ const chapterQuizData = {
     {
       text: "Vad är kvalitetssäkring?",
       options: [
-        "Att ignorera användarnas behov.",
+        "Att ignorera användarnas behov och samtidigt hoppa över viktiga delar av processen.",
         "Att arbeta för att upptäcka och förebygga fel innan lösningen används.",
         "Att bara dokumentera fel utan att åtgärda dem.",
         "Att minska all planering i projektet.",
@@ -652,7 +652,7 @@ const chapterQuizData = {
       text: "Vad är syftet med riskanalys?",
       options: [
         "Att skapa fler problem i projektet.",
-        "Att ersätta arbetsmiljöarbete.",
+        "Att ersätta arbetsmiljöarbete, utan att ta hänsyn till användare, testning eller resultat.",
         "Att identifiera risker och planera hur de kan minskas.",
         "Att bevisa att teknik aldrig kan misslyckas.",
       ],
@@ -663,7 +663,7 @@ const chapterQuizData = {
     {
       text: "Varför hör arbetsmiljö ihop med kvalitet?",
       options: [
-        "För att arbetsmiljö bara handlar om möbler.",
+        "För att arbetsmiljö bara handlar om möbler, utan att kontrollera om det verkligen passar frågan.",
         "För att dålig arbetsmiljö alltid gör tekniken snabbare.",
         "För att arbetsmiljö gör dokumentation onödig.",
         "För att människor som arbetar säkert och hållbart kan göra bättre tekniskt arbete.",
@@ -678,7 +678,7 @@ const chapterQuizData = {
         "Att minska energiförbrukning och tänka på teknikens miljöpåverkan.",
         "Att alltid köpa ny hårdvara utan behov.",
         "Att strunta i drift och resursanvändning.",
-        "Att göra system långsammare med flit.",
+        "Att göra system långsammare med flit, även när det inte stämmer med kapitlets innehåll.",
       ],
       answer: "A",
       explanation:
@@ -692,7 +692,7 @@ const chapterQuizData = {
         "För att förenkla och förstå system innan de byggs eller bedöms.",
         "För att alla detaljer alltid ska tas bort för gott.",
         "För att slippa tänka på användning i verkligheten.",
-        "För att ersätta alla beräkningar.",
+        "För att ersätta alla beräkningar och samtidigt hoppa över viktiga delar av processen.",
       ],
       answer: "A",
       explanation:
@@ -701,7 +701,7 @@ const chapterQuizData = {
     {
       text: "Vad betyder dimensionering inom informationsteknik?",
       options: [
-        "Att välja färg på ett gränssnitt.",
+        "Att välja färg på ett gränssnitt, utan att ta hänsyn till användare, testning eller resultat.",
         "Att anpassa resurser som lagring, bandbredd eller serverkapacitet efter behov.",
         "Att ta bort alla krav från ett system.",
         "Att bara beskriva systemet muntligt.",
@@ -713,7 +713,7 @@ const chapterQuizData = {
     {
       text: "Vad kan en rimlighetsbedömning användas till?",
       options: [
-        "Att göra testning onödig.",
+        "Att göra testning onödig, utan att kontrollera om det verkligen passar frågan.",
         "Att undvika att jämföra siffror.",
         "Att avgöra om en teknisk lösning verkar möjlig och proportionerlig.",
         "Att alltid välja den dyraste lösningen.",
@@ -726,7 +726,7 @@ const chapterQuizData = {
       text: "Vilket exempel passar bäst på beräkning inom informationsteknik?",
       options: [
         "Att välja projektnamn.",
-        "Att skriva en slogan.",
+        "Att skriva en slogan, även när det inte stämmer med kapitlets innehåll.",
         "Att rita en logotyp utan krav.",
         "Att beräkna lagringsbehov eller bandbredd för ett system.",
       ],
@@ -739,7 +739,7 @@ const chapterQuizData = {
       options: [
         "För att kunna beskriva och diskutera lösningar på ett tydligt sätt.",
         "För att göra kommunikationen mer otydlig.",
-        "För att undvika modeller.",
+        "För att undvika modeller och samtidigt hoppa över viktiga delar av processen.",
         "För att ersätta praktiskt arbete.",
       ],
       answer: "A",
@@ -753,7 +753,7 @@ const chapterQuizData = {
       options: [
         "Att skapa en förenklad beskrivning av ett system eller en process.",
         "Att alltid bygga den färdiga produkten direkt.",
-        "Att undvika att planera tekniska lösningar.",
+        "Att undvika att planera tekniska lösningar, utan att ta hänsyn till användare, testning eller resultat.",
         "Att bara testa utan att beskriva något först.",
       ],
       answer: "A",
@@ -763,10 +763,10 @@ const chapterQuizData = {
     {
       text: "Vad innebär simulering?",
       options: [
-        "Att ta bort alla modeller.",
+        "Att ta bort alla modeller, utan att kontrollera om det verkligen passar frågan.",
         "Att testa hur ett system kan bete sig utan att behöva prova allt i verkligheten.",
         "Att skriva dokumentation efter lansering.",
-        "Att ersätta alla beslut med gissningar.",
+        "Att ersätta alla beslut med gissningar, utan att kontrollera om det verkligen passar frågan.",
       ],
       answer: "B",
       explanation:
@@ -776,7 +776,7 @@ const chapterQuizData = {
       text: "Vilket är ett exempel på modellering inom programmering?",
       options: [
         "Att bara publicera koden direkt.",
-        "Att radera alla krav.",
+        "Att radera alla krav, även när det inte stämmer med kapitlets innehåll.",
         "Att göra flödesschema eller pseudokod för programlogik.",
         "Att undvika att beskriva funktioner.",
       ],
@@ -789,7 +789,7 @@ const chapterQuizData = {
       options: [
         "För att ta bort all interaktion.",
         "För att undvika testning av spelmekanik.",
-        "För att göra databaser onödiga.",
+        "För att göra databaser onödiga och samtidigt hoppa över viktiga delar av processen.",
         "För att efterlikna rörelse, krafter och kollisioner i spelet.",
       ],
       answer: "D",
@@ -801,7 +801,7 @@ const chapterQuizData = {
       options: [
         "För att de förenklar verkligheten och därför inte visar allt.",
         "För att de alltid är mer exakta än verkligheten.",
-        "För att de aldrig kan användas i IT.",
+        "För att de aldrig kan användas i IT, utan att ta hänsyn till användare, testning eller resultat.",
         "För att de bara fungerar utan användare.",
       ],
       answer: "A",
@@ -815,7 +815,7 @@ const chapterQuizData = {
       options: [
         "Utveckling av nya eller förbättrade tekniska lösningar.",
         "Att teknik alltid används på samma sätt.",
-        "Att gamla system aldrig ersätts.",
+        "Att gamla system aldrig ersätts, utan att kontrollera om det verkligen passar frågan.",
         "Att digital teknik saknar påverkan på samhället.",
       ],
       answer: "A",
@@ -837,7 +837,7 @@ const chapterQuizData = {
     {
       text: "Vad handlar hållbar utveckling om i tekniksammanhang?",
       options: [
-        "Att använda resurser utan ansvar.",
+        "Att använda resurser utan ansvar, även när det inte stämmer med kapitlets innehåll.",
         "Att alltid byta ut fungerande teknik.",
         "Att utveckla teknik med hänsyn till miljö, människor och framtida behov.",
         "Att ignorera elektroniskt avfall.",
@@ -851,7 +851,7 @@ const chapterQuizData = {
       options: [
         "Att den aldrig påverkar integritet.",
         "Att den alltid saknar kostnader.",
-        "Att den automatiskt är hållbar.",
+        "Att den automatiskt är hållbar och samtidigt hoppa över viktiga delar av processen.",
         "Att den kan skapa problem kring integritet, miljö, säkerhet eller ojämlikhet.",
       ],
       answer: "D",
@@ -864,7 +864,7 @@ const chapterQuizData = {
         "Att resurser återanvänds, repareras eller återvinns i stället för att snabbt kastas.",
         "Att produkter alltid används en enda gång.",
         "Att elektronikavfall inte behöver hanteras.",
-        "Att hållbarhet aldrig värderas.",
+        "Att hållbarhet aldrig värderas, utan att ta hänsyn till användare, testning eller resultat.",
       ],
       answer: "A",
       explanation:
@@ -877,7 +877,7 @@ const chapterQuizData = {
       options: [
         "Att analysera fördelar, nackdelar och konsekvenser ur flera perspektiv.",
         "Att bara kontrollera om lösningen ser modern ut.",
-        "Att alltid välja snabbaste lösningen.",
+        "Att alltid välja snabbaste lösningen, utan att kontrollera om det verkligen passar frågan.",
         "Att undvika frågor om etik och hållbarhet.",
       ],
       answer: "A",
@@ -889,7 +889,7 @@ const chapterQuizData = {
       options: [
         "För att tekniken aldrig påverkar människor.",
         "För att tekniska lösningar kan påverka integritet, rättvisa och människors vardag.",
-        "För att etik ersätter all testning.",
+        "För att etik ersätter all testning, även när det inte stämmer med kapitlets innehåll.",
         "För att användardata alltid är oviktig.",
       ],
       answer: "B",
@@ -899,7 +899,7 @@ const chapterQuizData = {
     {
       text: "Vad handlar integritet om i digital teknik?",
       options: [
-        "Att samla in all data utan skäl.",
+        "Att samla in all data utan skäl och samtidigt hoppa över viktiga delar av processen.",
         "Att dölja hur systemet fungerar.",
         "Att skydda personlig information och använda data ansvarsfullt.",
         "Att användare inte får veta något om sina uppgifter.",
@@ -913,7 +913,7 @@ const chapterQuizData = {
       options: [
         "Att bara tänka på kortsiktig vinst.",
         "Att alltid välja mest resurskrävande lösning.",
-        "Att bortse från miljöpåverkan.",
+        "Att bortse från miljöpåverkan, utan att ta hänsyn till användare, testning eller resultat.",
         "Att väga in resursanvändning, livslängd och miljökonsekvenser.",
       ],
       answer: "D",
@@ -925,7 +925,7 @@ const chapterQuizData = {
       options: [
         "En genomtänkt bedömning där flera aspekter vägs mot varandra.",
         "En bedömning som bara bygger på första intrycket.",
-        "En bedömning där risker aldrig nämns.",
+        "En bedömning där risker aldrig nämns, utan att kontrollera om det verkligen passar frågan.",
         "En bedömning som alltid väljer billigaste alternativet.",
       ],
       answer: "A",
@@ -938,7 +938,7 @@ const chapterQuizData = {
       text: "Vad betyder digitalisering?",
       options: [
         "Att använda digital teknik för att hantera information och processer.",
-        "Att ta bort all teknik från produktion.",
+        "Att ta bort all teknik från produktion, även när det inte stämmer med kapitlets innehåll.",
         "Att bara använda papper i kommunikation.",
         "Att digital teknik aldrig påverkar vardagen.",
       ],
@@ -952,7 +952,7 @@ const chapterQuizData = {
         "Genom att all automatisering försvinner.",
         "Genom automatisering, dataanalys och uppkopplade system.",
         "Genom att maskiner aldrig samlar in data.",
-        "Genom att planering blir omöjlig.",
+        "Genom att planering blir omöjlig och samtidigt hoppa över viktiga delar av processen.",
       ],
       answer: "B",
       explanation:
@@ -964,7 +964,7 @@ const chapterQuizData = {
         "Ett namn för helt manuellt arbete utan data.",
         "Ett system där digital kommunikation är förbjuden.",
         "Uppkopplad och datadriven produktion med smarta system.",
-        "En metod för att undvika digital kompetens.",
+        "En metod för att undvika digital kompetens, utan att ta hänsyn till användare, testning eller resultat.",
       ],
       answer: "C",
       explanation:
@@ -973,7 +973,7 @@ const chapterQuizData = {
     {
       text: "Vilken är en utmaning med digitalisering?",
       options: [
-        "Att den aldrig kräver säkerhet.",
+        "Att den aldrig kräver säkerhet, utan att kontrollera om det verkligen passar frågan.",
         "Att den tar bort behovet av kompetens.",
         "Att integritet alltid löser sig själv.",
         "Att den kan skapa säkerhetsrisker, integritetsproblem och teknikberoende.",
@@ -988,7 +988,7 @@ const chapterQuizData = {
         "Förmågan att förstå, använda och värdera digital teknik.",
         "Att aldrig behöva lära sig nya verktyg.",
         "Att bara kunna använda ett enda program.",
-        "Att undvika källkritik och säkerhet.",
+        "Att undvika källkritik och säkerhet, även när det inte stämmer med kapitlets innehåll.",
       ],
       answer: "A",
       explanation:
@@ -1001,7 +1001,7 @@ const chapterQuizData = {
       options: [
         "För att teamet ska kunna dela information, samordna arbete och undvika missförstånd.",
         "För att dokumentation då blir förbjuden.",
-        "För att ingen ska veta vad andra gör.",
+        "För att ingen ska veta vad andra gör och samtidigt hoppa över viktiga delar av processen.",
         "För att tekniska problem alltid löser sig själva.",
       ],
       answer: "A",
@@ -1011,7 +1011,7 @@ const chapterQuizData = {
     {
       text: "Vad innebär dokumentation?",
       options: [
-        "Att muntligt gissa hur systemet fungerar.",
+        "Att muntligt gissa hur systemet fungerar, utan att ta hänsyn till användare, testning eller resultat.",
         "Att beskriva hur teknik, kod eller projekt fungerar så att det går att förstå i efterhand.",
         "Att ta bort all information efter projektet.",
         "Att bara presentera slutresultatet utan förklaring.",
@@ -1024,7 +1024,7 @@ const chapterQuizData = {
       text: "Vad används versionshantering till?",
       options: [
         "Att radera äldre versioner utan spår.",
-        "Att göra samarbete omöjligt.",
+        "Att göra samarbete omöjligt, utan att kontrollera om det verkligen passar frågan.",
         "Att spara ändringar, följa historik och samarbeta kring kod eller filer.",
         "Att ersätta alla kodkommentarer.",
       ],
@@ -1037,7 +1037,7 @@ const chapterQuizData = {
       options: [
         "För att göra koden långsammare med flit.",
         "För att ersätta alla tydliga variabelnamn.",
-        "För att dölja hur programmet fungerar.",
+        "För att dölja hur programmet fungerar, även när det inte stämmer med kapitlets innehåll.",
         "För att förklara svåra delar, antaganden eller varför en lösning valdes.",
       ],
       answer: "D",
@@ -1049,7 +1049,7 @@ const chapterQuizData = {
       options: [
         "Att visa och förklara en lösning så att andra förstår funktion och nytta.",
         "Att undvika frågor från mottagaren.",
-        "Att bara visa kod utan sammanhang.",
+        "Att bara visa kod utan sammanhang och samtidigt hoppa över viktiga delar av processen.",
         "Att ersätta all kommunikation i projektet.",
       ],
       answer: "A",
@@ -1063,7 +1063,7 @@ const chapterQuizData = {
       options: [
         "En visuell beskrivning av hur något ska byggas eller fungera.",
         "En slumpmässig bild utan tekniskt syfte.",
-        "En färdig kodfil utan struktur.",
+        "En färdig kodfil utan struktur, utan att ta hänsyn till användare, testning eller resultat.",
         "En muntlig instruktion utan visualisering.",
       ],
       answer: "A",
@@ -1073,7 +1073,7 @@ const chapterQuizData = {
     {
       text: "Vilken fördel har digitala ritningar?",
       options: [
-        "De går aldrig att dela.",
+        "De går aldrig att dela, utan att kontrollera om det verkligen passar frågan.",
         "De är enkla att ändra, dela och visa i 2D eller 3D.",
         "De kan inte användas i informationsteknik.",
         "De saknar koppling till planering.",
@@ -1088,7 +1088,7 @@ const chapterQuizData = {
         "Endast färgerna i en webbplats.",
         "Bara vilka filer som finns i en mapp.",
         "Steg, processer och beslut i ett program eller arbetsflöde.",
-        "Enbart hårdvarans pris.",
+        "Enbart hårdvarans pris, även när det inte stämmer med kapitlets innehåll.",
       ],
       answer: "C",
       explanation:
@@ -1099,7 +1099,7 @@ const chapterQuizData = {
       options: [
         "Hur en berättelse är uppbyggd.",
         "Vilka färger en app ska ha.",
-        "Hur ett spel låter.",
+        "Hur ett spel låter och samtidigt hoppa över viktiga delar av processen.",
         "Hur datorer, servrar och nätverksenheter är kopplade.",
       ],
       answer: "D",
@@ -1112,7 +1112,7 @@ const chapterQuizData = {
         "För att planera, kommunicera och upptäcka problem innan lösningen byggs färdigt.",
         "För att göra tekniska idéer svårare att förstå.",
         "För att ersätta all testning och analys.",
-        "För att undvika samarbete.",
+        "För att undvika samarbete, utan att ta hänsyn till användare, testning eller resultat.",
       ],
       answer: "A",
       explanation:
