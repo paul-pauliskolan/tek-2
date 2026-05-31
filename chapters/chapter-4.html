@@ -59,6 +59,13 @@
                 if (window.pythonbook && window.pythonbook.getChapter(chapterNumber)) {
                     clearInterval(interval)
                     window.pythonbook.renderChapterPage(chapterNumber)
+                    let tries = 0
+                    const insertInterval = setInterval(() => {
+                        tries += 1
+                        if (window.pythonbook.insertChapterQuiz(chapterNumber) || tries > 40) {
+                            clearInterval(insertInterval)
+                        }
+                    }, 100)
                 }
             }, 100)
         }
