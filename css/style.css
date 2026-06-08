@@ -730,15 +730,14 @@ ol {
 }
 
 .quiz-options {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 0.55rem;
   margin-top: 0.85rem;
 }
 
 .quiz-option {
-  display: grid;
-  grid-template-columns: auto 2rem minmax(0, 1fr);
+  display: flex;
   gap: 0.65rem;
   align-items: start;
   padding: 0.65rem 0.75rem;

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Omgång 4 av övningsquiz till Teknik 2.">
+    <title>Omgång 4 - Teknik 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">⚙️ Teknik 2</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="index.html" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero">
+                <p class="eyebrow">Övningsquiz</p>
+                <h1 id="quiz-page-title">Omgång 4</h1>
+                <p class="subtitle" id="quiz-page-subtitle">10 frågor med fyra svarsalternativ.</p>
+            </header>
+
+            <div id="quiz-mount"></div>
+
+            <div class="chapter-nav">
+                <a href="ovningsquiz-3.html" class="nav-button"><div><div class="nav-label">← Föregående</div><div class="nav-title">Omgång 3</div></div></a>
+                <a href="ovningsquiz-5.html" class="nav-button"><div style="text-align: right;"><div class="nav-label">Nästa →</div><div class="nav-title">Omgång 5</div></div></a>
+            </div>
+        </article>
+
+        <aside class="chapter-aside">
+            <section class="aside-card">
+                <p class="eyebrow">Omgångar</p>
+                <h2>Välj quiz</h2>
+                <nav class="chapter-toc" aria-label="Länkar till quizomgångar">
+                    <ul class="chapter-toc-list">
+                        <li><a class="toc-link" href="ovningsquiz-1.html">Omgång 1</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-2.html">Omgång 2</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-3.html">Omgång 3</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-4.html">Omgång 4</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-5.html">Omgång 5</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-6.html">Omgång 6</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-7.html">Omgång 7</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-8.html">Omgång 8</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-9.html">Omgång 9</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-10.html">Omgång 10</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-11.html">Omgång 11</a></li>
+                        <li><a class="toc-link" href="ovningsquiz-12.html">Omgång 12</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="ovningsfragor.html">Till övningsöversikten</a> | <a href="index.html">Till startsidan</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/ovningsquiz.js"></script>
+    <script>
+        renderQuizPage(3);
+    </script>
+</body>
+
+</html>
