@@ -64,6 +64,11 @@ body.presentation-body {
 .slide-figure { margin: 1.5rem 0 0; }
 .slide-figure img { display: block; max-width: 100%; max-height: 48vh; border: 1px solid var(--slide-border); border-radius: 10px; box-shadow: 0 14px 34px var(--slide-shadow); }
 .slide-figure figcaption { margin-top: .55rem; color: var(--slide-muted); font-size: clamp(.9rem, 1.3vw, 1.15rem); }
+.title-slide-with-image { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, .5fr); gap: clamp(1rem, 3vw, 3rem); align-items: center; }
+.title-slide-with-image > div { min-width: 0; }
+.title-slide-with-image h1 { max-width: 13ch; font-size: clamp(2.2rem, 4.8vw, 4.8rem); overflow-wrap: anywhere; }
+.title-comic { margin: 0; justify-self: center; }
+.title-comic img { width: auto; max-width: 100%; max-height: 62vh; background: #fff; }
 .comparison { width: 100%; margin-top: 2rem; border-collapse: collapse; background: #fff; font-size: clamp(1rem, 1.6vw, 1.45rem); }
 .comparison th, .comparison td { padding: 1rem; border: 1px solid var(--slide-border); text-align: left; vertical-align: top; }
 .comparison th { color: var(--slide-accent); }
@@ -91,6 +96,9 @@ body.presentation-body {
 
 @media (max-width: 760px) {
   .two-column { grid-template-columns: 1fr; }
+  .title-slide-with-image { grid-template-columns: 1fr; }
+  .title-slide-with-image h1 { max-width: 17ch; overflow-wrap: normal; }
+  .title-comic img { max-height: 34vh; }
   .two-column.diagram-emphasis { grid-template-columns: 1fr; }
   .decision-simulator { grid-template-columns: 1fr; }
   .process-grid, .scenario-actions { grid-template-columns: 1fr; }

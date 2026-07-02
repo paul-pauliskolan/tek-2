@@ -14,10 +14,16 @@
       <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
     </header>
     <div class="deck" aria-live="polite">
-      <section class="slide is-active"><div class="slide-content">
-        <p class="slide-kicker">Teknik 1 · Kapitel 1</p>
-        <h1>Teknikutvecklingsprocessen</h1>
-        <p class="fragment">Från ett verkligt behov till en lösning som används och utvecklas vidare.</p>
+      <section class="slide is-active"><div class="slide-content title-slide-with-image">
+        <div>
+          <p class="slide-kicker">Teknik 1 · Kapitel 1</p>
+          <h1>Teknikutvecklingsprocessen</h1>
+          <p class="fragment">Från ett verkligt behov till en lösning som används och utvecklas vidare.</p>
+        </div>
+        <figure class="slide-figure title-comic">
+          <img src="../assets/images/xkcd-1.png" alt="XKCD-serie om svårigheten att bedöma ett teknikprojekts omfattning">
+          <figcaption>Källa: xkcd.com/1425</figcaption>
+        </figure>
       </div></section>
 
       <section class="slide"><div class="slide-content">
@@ -118,7 +124,7 @@
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Interaktiv övning</p><h2>Vilket steg behövs nu?</h2>
         <div class="scenario-tool">
-          <p data-scenario-text>En skolklass vet att viktig information är svår att hitta, men har ännu inte frågat elever och lärare vad de behöver.</p>
+          <p data-scenario-text>En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.</p>
           <div class="scenario-actions">
             <button type="button" data-step="Research och analys">Research och analys</button>
             <button type="button" data-step="Produktion">Produktion</button>
@@ -166,7 +172,7 @@
         <ul><li class="fragment">Teknikutveckling utgår från problem och behov.</li><li class="fragment">Research och flera idéer ger bättre beslut.</li><li class="fragment">Prototyper gör idéer testbara.</li><li class="fragment">Testning och iteration förbättrar lösningen.</li><li class="fragment">Produkter behöver underhåll under hela livscykeln.</li></ul>
       </div></section>
     </div>
-    <footer class="presentation-footer"><span>→ eller mellanslag: framåt · ←: bakåt</span></footer>
+    <footer class="presentation-footer"></footer>
   </main>
   <script src="presentation.js"></script>
   <script>
@@ -184,7 +190,7 @@
     });
 
     const scenarios = [
-      { text: 'En skolklass vet att viktig information är svår att hitta, men har ännu inte frågat elever och lärare vad de behöver.', choices: ['Research och analys', 'Produktion', 'Livscykel'], answer: 'Research och analys' },
+      { text: 'En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.', choices: ['Research och analys', 'Produktion', 'Livscykel'], answer: 'Research och analys' },
       { text: 'En klickbar modell har testats. Flera användare hittar inte menyknappen.', choices: ['Iteration och förbättring', 'Problemidentifiering', 'Produktion'], answer: 'Iteration och förbättring' },
       { text: 'Webbplatsen är publicerad, men ett säkerhetsfel har upptäckts.', choices: ['Livscykel', 'Idégenerering', 'Prototyp'], answer: 'Livscykel' }
     ];
