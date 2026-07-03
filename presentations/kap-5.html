@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interaktiv presentation om programmering för problemlösning i Teknik 1.">
+  <title>Kapitel 5 – Programmering för problemlösning</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Teknik 1 · Kapitel 5</p>
+        <h1>Programmering för problemlösning</h1>
+        <p class="fragment">Från ett tydligt problem till instruktioner som datorn kan utföra.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förklara hur programmering används för problemlösning</li><li class="fragment">beskriva programmeringsprocessens fem steg</li><li class="fragment">förklara variabler, villkor, loopar och funktioner</li><li class="fragment">resonera om testning, automatisering och kodkvalitet</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Startfråga</p><h2>Vad behöver datorn veta?</h2>
+        <p class="fragment">Uppgift: räkna ut medelvärdet av tre tal.</p>
+        <ul><li class="fragment">Vilka tal ska användas?</li><li class="fragment">Vilka beräkningar ska göras?</li><li class="fragment">Vad ska visas för användaren?</li><li class="fragment">Vad händer om inmatningen är fel?</li></ul>
+        <p class="fragment">Programmering kräver att problemet uttrycks exakt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Begrepp</p><h2>Vad är programmering?</h2>
+        <p class="fragment">Att skriva instruktioner som en dator kan följa.</p>
+        <p class="fragment">Instruktionerna skrivs i programmeringsspråk som Python, JavaScript eller C#.</p>
+        <p class="fragment">Datorn följer instruktionerna snabbt och noggrant – även när instruktionerna är fel.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Problemlösningsverktyg</p><h2>Koden är inte målet</h2>
+        <p class="fragment">Programmering kan användas för att:</p>
+        <div class="process-grid"><span class="fragment">Bearbeta data</span><span class="fragment">Automatisera arbete</span><span class="fragment">Styra system</span><span class="fragment">Skapa interaktion</span></div>
+        <p class="fragment"><strong>Målet är en fungerande lösning på ett verkligt problem.</strong></p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Helhetsbild</p><h2>Programmeringsprocessen</h2>
+        <div class="flow"><span class="fragment">Förstå</span><b class="fragment">→</b><span class="fragment">Planera</span><b class="fragment">→</b><span class="fragment">Koda</span><b class="fragment">→</b><span class="fragment">Testa</span><b class="fragment">→</b><span class="fragment">Förbättra</span></div>
+        <p class="fragment">Nya testresultat kan skicka oss tillbaka till ett tidigare steg.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 1</p><h2>Förstå problemet</h2>
+        <ul><li class="fragment">Vad ska programmet göra?</li><li class="fragment">Vilken indata behövs?</li><li class="fragment">Vilken utdata ska skapas?</li><li class="fragment">Hur ska programmet användas?</li><li class="fragment">Vilka fel behöver hanteras?</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Indata · bearbetning · utdata</p><h2>Beskriv lösningens flöde</h2>
+        <div class="flow"><span class="fragment">5, 8, 11</span><b class="fragment">→</b><span class="fragment">Summera och dividera med 3</span><b class="fragment">→</b><span class="fragment">Medelvärde: 8</span></div>
+        <p class="fragment">En tydlig modell gör det lättare att kontrollera om programmet löser rätt problem.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 2</p><h2>Planera lösningen</h2>
+        <ol><li class="fragment">Läs in talen.</li><li class="fragment">Räkna ut summan.</li><li class="fragment">Dela summan med antalet tal.</li><li class="fragment">Visa resultatet.</li></ol>
+        <p class="fragment">Pseudokod och flödesscheman hjälper oss att tänka igenom logiken innan syntaxen tar plats.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Pseudokod</p><h2>Planen utan programspråk</h2>
+        <pre class="code-block fragment"><code>LÄS IN tre tal
+summa = tal 1 + tal 2 + tal 3
+medelvärde = summa / 3
+VISA medelvärde</code></pre>
+        <p class="fragment">Pseudokoden beskriver logiken men behöver inte följa ett programspråks exakta regler.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 3</p><h2>Skriv kod</h2>
+        <pre class="code-block fragment"><code>tal = [5, 8, 11]
+summa = sum(tal)
+medelvarde = summa / len(tal)
+print(medelvarde)</code></pre>
+        <p class="fragment">Resultat: <code>8.0</code></p>
+        <p class="fragment">Koden är en möjlig implementation av planen – inte själva planen.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Fyra byggstenar</p><h2>Så uttrycks lösningen</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Variabel</th><td>Lagrar information.</td><td><code>poang = 10</code></td></tr><tr class="fragment"><th>Villkor</th><td>Väljer mellan alternativ.</td><td><code>if poang &gt; 5</code></td></tr><tr class="fragment"><th>Loop</th><td>Upprepar en instruktion.</td><td><code>for tal in lista</code></td></tr><tr class="fragment"><th>Funktion</th><td>Samlar kod för en uppgift.</td><td><code>berakna_summa()</code></td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Variabler</p><h2>Ge information ett namn</h2>
+        <pre class="code-block fragment"><code>namn = "Mira"
+poang = 120
+aktiv = True</code></pre>
+        <p class="fragment">Variabelnamnet ska hjälpa läsaren att förstå vad värdet betyder.</p>
+        <p class="fragment"><code>x = 120</code> fungerar för datorn, men <code>poang = 120</code> är tydligare för människor.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Villkor</p><h2>Låt programmet välja</h2>
+        <pre class="code-block fragment"><code>if alder &gt;= 18:
+    print("Myndig")
+else:
+    print("Inte myndig")</code></pre>
+        <p class="fragment">Villkoret kontrolleras. Endast den gren som stämmer körs.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Loopar</p><h2>Upprepa utan kopiering</h2>
+        <pre class="code-block fragment"><code>for namn in ["Mira", "Noor", "Sam"]:
+    print(namn)</code></pre>
+        <p class="fragment">Samma instruktion körs en gång för varje namn.</p>
+        <p class="fragment">Loopar är användbara när antalet värden kan förändras.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Funktioner</p><h2>Samla en tydlig uppgift</h2>
+        <pre class="code-block fragment"><code>def medelvarde(tal):
+    return sum(tal) / len(tal)
+
+resultat = medelvarde([5, 8, 11])</code></pre>
+        <p class="fragment">Funktionen kan återanvändas med andra listor och testas separat.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt exempel</p><h2>Beräkna medelvärde</h2>
+        <div class="decision-simulator average-simulator">
+          <div class="decision-controls">
+            <label for="average-input">Tal, separerade med kommatecken</label>
+            <input id="average-input" type="text" value="5, 8, 11" inputmode="decimal">
+            <button type="button" data-calculate-average>Beräkna</button>
+          </div>
+          <div class="decision-output">
+            <strong>Programmets steg</strong>
+            <pre data-average-output aria-live="polite">Tryck på Beräkna.</pre>
+          </div>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 4</p><h2>Testa programmet</h2>
+        <table class="comparison"><thead><tr><th>Testfall</th><th>Vad kontrolleras?</th></tr></thead><tbody><tr class="fragment"><td><code>5, 8, 11</code></td><td>Vanliga giltiga värden</td></tr><tr class="fragment"><td><code>0, 0, 0</code></td><td>Nollvärden</td></tr><tr class="fragment"><td><code>-5, 5</code></td><td>Negativa tal</td></tr><tr class="fragment"><td><code>fem, 8</code></td><td>Felaktig inmatning</td></tr><tr class="fragment"><td>tomt</td><td>Saknad inmatning</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilket test saknas?</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Oväntad inmatning behöver testas så att programmet kan ge ett tydligt felmeddelande i stället för att krascha.">
+          <p>Ett program som räknar med tal har bara testats med 2, 4 och 6.</p>
+          <button type="button" data-choice="a">Samma tal en gång till</button>
+          <button type="button" data-choice="b">En annan skärmfärg</button>
+          <button type="button" data-choice="c">Bokstäver, tom inmatning och negativa tal</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 5</p><h2>Förbättra lösningen</h2>
+        <ul><li class="fragment">rätta buggar och logiska fel</li><li class="fragment">hantera oväntad inmatning</li><li class="fragment">göra koden tydligare</li><li class="fragment">förbättra snabbhet och användbarhet</li></ul>
+        <p class="fragment">Program utvecklas ofta i flera versioner. Versionshantering gör ändringarna möjliga att följa och återställa.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Webbplats</p><h2>JavaScript skapar interaktion</h2>
+        <div class="flow"><span class="fragment">Användaren klickar</span><b class="fragment">→</b><span class="fragment">Händelsen upptäcks</span><b class="fragment">→</b><span class="fragment">Kod körs</span><b class="fragment">→</b><span class="fragment">Sidan uppdateras</span></div>
+        <p class="fragment">Exempel: menyer, formulärkontroll, meddelanden och dynamiskt innehåll.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Unity</p><h2>C# styr spelvärlden</h2>
+        <div class="flow"><span class="fragment">Spelaren trycker</span><b class="fragment">→</b><span class="fragment">Indata läses</span><b class="fragment">→</b><span class="fragment">Rörelse beräknas</span><b class="fragment">→</b><span class="fragment">Karaktären flyttas</span></div>
+        <p class="fragment">Samma princip används för hopp, kollisioner, poäng och interaktion med objekt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Automatisering</p><h2>Låt datorn utföra återkommande arbete</h2>
+        <ul><li class="fragment">sortera stora mängder data</li><li class="fragment">beräkna resultat på samma sätt varje gång</li><li class="fragment">kontrollera formulär</li><li class="fragment">skapa rapporter från data</li></ul>
+        <p class="fragment">Automatisering sparar tid och kan minska mänskliga misstag – om reglerna och programmet är korrekta.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktig begränsning</p><h2>Datorn automatiserar även fel</h2>
+        <p class="fragment">Ett program kan utföra en felaktig regel snabbt, konsekvent och i stor skala.</p>
+        <ul><li class="fragment">Är indata tillförlitlig?</li><li class="fragment">Är reglerna rimliga?</li><li class="fragment">Kan resultatet kontrolleras?</li><li class="fragment">Vem ansvarar när något blir fel?</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Felsökning</p><h2>Vanliga utmaningar</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Syntaxfel</th><td>Språket kan inte tolka koden.</td></tr><tr class="fragment"><th>Exekveringsfel</th><td>Programmet avbryts när ett fel inträffar.</td></tr><tr class="fragment"><th>Logiskt fel</th><td>Programmet körs men ger fel resultat.</td></tr><tr class="fragment"><th>Otydligt problem</th><td>Koden löser fel behov.</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kvalitet</p><h2>Kod läses oftare än den skrivs</h2>
+        <ul><li class="fragment">använd tydliga namn</li><li class="fragment">dela upp koden i begripliga delar</li><li class="fragment">kommentera varför – inte varje självklar rad</li><li class="fragment">undvik onödig upprepning</li><li class="fragment">gör programmet begripligt för användaren</li></ul>
+        <p class="fragment">Ren kod är lättare att testa, ändra och samarbeta kring.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Planera ett automatiserat verktyg</h2>
+        <ol><li class="fragment">Välj en återkommande uppgift.</li><li class="fragment">Beskriv indata, bearbetning och utdata.</li><li class="fragment">Skriv pseudokod.</li><li class="fragment">Identifiera variabler, villkor, loopar och funktioner.</li><li class="fragment">Skapa minst fem testfall.</li><li class="fragment">Beskriv hur felaktig inmatning ska hanteras.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
+        <ol><li class="fragment">Varför bör problemet och lösningen planeras innan koden skrivs?</li><li class="fragment">När behövs ett villkor och när behövs en loop?</li><li class="fragment">Varför måste ett automatiserat system testas med oväntad inmatning?</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Programmering uttrycker en problemlösning som exakta instruktioner.</li><li class="fragment">Förstå och planera innan du kodar.</li><li class="fragment">Variabler, villkor, loopar och funktioner bygger lösningen.</li><li class="fragment">Testa normala, extrema och felaktiga värden.</li><li class="fragment">Bra kod ska vara korrekt, begriplig och möjlig att förbättra.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    document.querySelectorAll('.choice-question').forEach((question) => {
+      question.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-choice]');
+        if (!button) return;
+        const correct = button.dataset.choice === question.dataset.correct;
+        question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        question.querySelector('.choice-feedback').textContent = correct
+          ? question.dataset.correctMessage
+          : 'Inte riktigt. Ett bra test behöver undersöka andra situationer än dem programmet redan klarar.';
+      });
+    });
+
+    document.querySelector('[data-calculate-average]').addEventListener('click', () => {
+      const input = document.querySelector('#average-input').value;
+      const output = document.querySelector('[data-average-output]');
+      const parts = input.split(',').map((part) => part.trim()).filter(Boolean);
+      const numbers = parts.map(Number);
+      if (!parts.length) {
+        output.textContent = 'Fel: skriv minst ett tal.';
+        return;
+      }
+      if (numbers.some((number) => !Number.isFinite(number))) {
+        output.textContent = 'Fel: alla värden måste vara tal.';
+        return;
+      }
+      const sum = numbers.reduce((total, number) => total + number, 0);
+      const average = sum / numbers.length;
+      output.textContent = `Tal: ${numbers.join(', ')}\nSumma: ${sum}\nAntal: ${numbers.length}\nMedelvärde: ${average}`;
+    });
+  </script>
+</body>
+</html>

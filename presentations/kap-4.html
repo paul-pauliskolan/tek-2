@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interaktiv presentation om metodik och arbetsformer i tekniska projekt för Teknik 1.">
+  <title>Kapitel 4 – Metodik och arbetsformer i projekt</title>
+  <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Teknik 1 · Kapitel 4</p>
+        <h1>Metodik och arbetsformer i projekt</h1>
+        <p class="fragment">Hur ett team går från mål till resultat utan att tappa tid, ansvar eller kvalitet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förklara vad som kännetecknar ett projekt</li><li class="fragment">beskriva projektets faser och planering</li><li class="fragment">förklara betydelsen av roller och samarbete</li><li class="fragment">jämföra traditionella, iterativa och agila arbetssätt</li><li class="fragment">använda dokumentation och utvärdering</li></ul>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Startfråga</p><h2>När blir en uppgift ett projekt?</h2>
+        <p class="fragment">”Skapa en webbplats” är ännu bara en uppgift.</p>
+        <p class="fragment">Projektet behöver ett tydligt resultat, en tidsram, planerade arbetsmoment och ansvar.</p>
+        <p class="fragment"><strong>Projektmetodik gör arbetet möjligt att styra och följa upp.</strong></p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Begrepp</p><h2>Vad är ett projekt?</h2>
+        <div class="process-grid"><span class="fragment">Tydligt mål</span><span class="fragment">Tidsplan</span><span class="fragment">Arbetsmoment</span><span class="fragment">Resurser</span><span class="fragment">Slutpunkt</span></div>
+        <p class="fragment">När målet är uppnått eller projektet avbryts avslutas projektet.</p>
+        <p class="fragment">Löpande verksamhet fortsätter däremot utan en bestämd slutpunkt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Helhetsbild</p><h2>Projektets huvudfaser</h2>
+        <div class="flow"><span class="fragment">Planering</span><b class="fragment">→</b><span class="fragment">Design</span><b class="fragment">→</b><span class="fragment">Utveckling</span><b class="fragment">→</b><span class="fragment">Testning</span><b class="fragment">→</b><span class="fragment">Lansering</span></div>
+        <p class="fragment">I praktiken kan teamet behöva gå tillbaka och justera tidigare beslut.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Planering</p><h2>Fyra frågor före start</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Mål</th><td>Vad ska projektet åstadkomma?</td></tr><tr class="fragment"><th>Arbetsuppgifter</th><td>Vilka delar behöver genomföras?</td></tr><tr class="fragment"><th>Tidsplan</th><td>När ska delarna och helheten vara klara?</td></tr><tr class="fragment"><th>Resurser</th><td>Vilken tid, teknik, kompetens och utrustning finns?</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Mål</p><h2>Går målet att följa upp?</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Otydligt</strong></p><p class="fragment">”Gör en bra webbplats.”</p></div><div><p class="fragment"><strong>Tydligare</strong></p><p class="fragment">”Skapa en mobilanpassad webbplats där föreningens medlemmar hittar schema och kontaktuppgifter.”</p></div></div>
+        <p class="fragment">Ett tydligt mål avgränsar både resultatet och arbetet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Nedbrytning</p><h2>Från mål till arbetsuppgifter</h2>
+        <div class="flow"><span class="fragment">Webbplats</span><b class="fragment">→</b><span class="fragment">Innehåll</span><span class="fragment">Design</span><span class="fragment">Kod</span><span class="fragment">Test</span></div>
+        <p class="fragment">Varje del kan brytas ner tills uppgiften är tydlig nog att uppskatta, fördela och genomföra.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Tidsplan</p><h2>Planera beroenden och marginal</h2>
+        <ul><li class="fragment">Vad måste bli klart innan nästa uppgift kan börja?</li><li class="fragment">Vilka uppgifter kan göras parallellt?</li><li class="fragment">Var finns osäkerhet?</li><li class="fragment">Vilken reservtid behövs?</li></ul>
+        <p class="fragment">En plan utan marginal antar att ingenting kommer att gå fel.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Riskanalys</p><h2>Planera även för avvikelser</h2>
+        <table class="comparison"><thead><tr><th>Risk</th><th>Förebyggande åtgärd</th><th>Reservplan</th></tr></thead><tbody><tr class="fragment"><td>Tiden räcker inte</td><td>Prioritera funktioner tidigt</td><td>Leverera kärnfunktionerna först</td></tr><tr class="fragment"><td>Tekniken fungerar inte</td><td>Bygg en tidig prototyp</td><td>Välj en enklare lösning</td></tr></tbody></table>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Roller</p><h2>Tydligt ansvar i teamet</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Projektledare</th><td>Planerar, följer upp och samordnar.</td></tr><tr class="fragment"><th>Programmerare</th><td>Utvecklar kod och funktioner.</td></tr><tr class="fragment"><th>Designer</th><td>Utformar gränssnitt och användarupplevelse.</td></tr><tr class="fragment"><th>Testare</th><td>Kontrollerar kvalitet och hittar fel.</td></tr></tbody></table>
+        <p class="fragment">I små projekt kan samma person ha flera roller.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vem ansvarar för vad?</h2>
+        <div class="choice-question" data-correct="b" data-correct-message="Rätt. Projektledaren följer upp helheten och samordnar arbetet, men teamet delar ansvaret för resultatet.">
+          <p>Två arbetsuppgifter har blivit försenade och påverkar resten av tidsplanen. Vem behöver först skapa en gemensam bild av läget?</p>
+          <button type="button" data-choice="a">Endast testaren</button>
+          <button type="button" data-choice="b">Projektledaren tillsammans med teamet</button>
+          <button type="button" data-choice="c">Ingen – planen ska inte ändras</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Samarbete</p><h2>Delarna påverkar varandra</h2>
+        <ul><li class="fragment">kommunicera förändringar tidigt</li><li class="fragment">gör ansvar och beslut synliga</li><li class="fragment">stäm av beroenden regelbundet</li><li class="fragment">be om hjälp innan problemet blir akut</li></ul>
+        <p class="fragment">Tydliga roller ersätter inte kommunikation.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Arbetsmetoder</p><h2>Planstyrt eller anpassningsbart?</h2>
+        <table class="comparison"><thead><tr><th>Traditionellt</th><th>Agilt</th></tr></thead><tbody><tr><td class="fragment">Mycket planeras i förväg.</td><td class="fragment">Arbetet delas i korta cykler.</td></tr><tr><td class="fragment">Passar när krav är stabila.</td><td class="fragment">Passar när behov kan förändras.</td></tr><tr><td class="fragment">Ändringar kan bli kostsamma sent.</td><td class="fragment">Feedback påverkar nästa cykel.</td></tr></tbody></table>
+        <p class="fragment">Många projekt kombinerar arbetssätten.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Iterativ utveckling</p><h2>Bygg, testa och förbättra</h2>
+        <div class="flow"><span class="fragment">Planera</span><b class="fragment">→</b><span class="fragment">Bygg</span><b class="fragment">→</b><span class="fragment">Testa</span><b class="fragment">→</b><span class="fragment">Lär</span><b class="fragment">↺</b></div>
+        <p class="fragment">Varje varv ska ge en tydligare produkt och bättre kunskap om behovet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">MVP</p><h2>Minsta användbara produkt</h2>
+        <p class="fragment">En MVP innehåller precis tillräckligt för att riktiga användare ska kunna prova lösningen och ge relevant feedback.</p>
+        <div class="two-column"><div><p class="fragment"><strong>Prototyp</strong></p><p class="fragment">Intern och experimentell. Testar en idé.</p></div><div><p class="fragment"><strong>MVP</strong></p><p class="fragment">En verklig, begränsad produktversion för användare.</p></div></div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Progression</p><h2>Från skiss till användning</h2>
+        <div class="flow"><span class="fragment">Enkel skiss</span><b class="fragment">→</b><span class="fragment">Fungerande prototyp</span><b class="fragment">→</b><span class="fragment">MVP</span><b class="fragment">→</b><span class="fragment">Fortsatt produkt</span></div>
+        <p class="fragment">Varje steg testar nya antaganden utan att allt behöver byggas direkt.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kanban</p><h2>Gör arbetet synligt</h2>
+        <div class="kanban-demo" aria-label="Interaktiv Kanban-tavla">
+          <section class="kanban-column" data-kanban-column="todo" data-column-label="Att göra">
+            <h3>Att göra · 2</h3>
+            <button type="button" class="kanban-card"><span>Testa mobilmenyn</span><span class="kanban-meta">Hög prioritet · Sam</span></button>
+            <button type="button" class="kanban-card is-blocked"><span>Optimera bilder</span><span class="kanban-meta">Blockerad: bilder saknas · Kim</span></button>
+          </section>
+          <section class="kanban-column" data-kanban-column="doing" data-column-label="Pågående">
+            <h3>Pågående · 2</h3>
+            <button type="button" class="kanban-card"><span>Bygg navigation</span><span class="kanban-meta">Deadline fredag · Noor</span></button>
+            <button type="button" class="kanban-card"><span>Skriv startsidestext</span><span class="kanban-meta">Normal prioritet · Alex</span></button>
+          </section>
+          <section class="kanban-column" data-kanban-column="done" data-column-label="Klart">
+            <h3>Klart · 1</h3>
+            <button type="button" class="kanban-card"><span>Skapa wireframe</span><span class="kanban-meta">Godkänd torsdag · Noor</span></button>
+          </section>
+        </div>
+        <p class="kanban-hint">Tavlan visar status, ansvar, prioritet och hinder. Klicka på ett kort för att flytta det till nästa steg.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Scrum</p><h2>Korta sprintar med tydliga mål</h2>
+        <ul><li class="fragment">välj vilka uppgifter som ska göras i sprinten</li><li class="fragment">arbeta mot ett gemensamt sprintmål</li><li class="fragment">stäm av hinder regelbundet</li><li class="fragment">visa resultatet och utvärdera arbetssättet</li></ul>
+        <p class="fragment">En sprint är inte bara en kort deadline – den ska ge ett användbart resultat och lärande.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · webbplats</p><h2>Dela upp leveransen</h2>
+        <ol><li class="fragment">Planera målgrupp, innehåll och struktur.</li><li class="fragment">Skapa layout och mobil navigation.</li><li class="fragment">Utveckla HTML, CSS och JavaScript.</li><li class="fragment">Testa funktion, tillgänglighet och responsivitet.</li><li class="fragment">Publicera och följ upp användningen.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · Unity</p><h2>Samordna spelprojektet</h2>
+        <ol><li class="fragment">Definiera spelidé och kärnmekanik.</li><li class="fragment">Fördela grafik, nivådesign, kod och test.</li><li class="fragment">Bygg en spelbar prototyp.</li><li class="fragment">Testa styrning, balans och prestanda.</li><li class="fragment">Prioritera förbättringar inför nästa version.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Dokumentation</p><h2>Projektets gemensamma minne</h2>
+        <ul><li class="fragment">projektplan och tidsplan</li><li class="fragment">design- och systembeskrivningar</li><li class="fragment">beslut och ansvar</li><li class="fragment">kodkommentarer och versionshistorik</li><li class="fragment">testresultat</li></ul>
+        <p class="fragment">Dokumentera vad som behövs för att förstå, följa upp och fortsätta arbetet.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lansering</p><h2>Mer än att trycka publicera</h2>
+        <ul><li class="fragment">är systemet testat i rätt miljö?</li><li class="fragment">räcker server- och databaskapaciteten?</li><li class="fragment">finns övervakning och reservplan?</li><li class="fragment">vet användarna vad som förändras?</li></ul>
+        <p class="fragment">En lyckad lansering behöver både teknisk och organisatorisk planering.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Utvärdering</p><h2>Lär av projektet</h2>
+        <p class="fragment">Efter projektet gör teamet en gemensam utvärdering.</p>
+        <ol><li class="fragment">Vad fungerade bra?</li><li class="fragment">Vad skapade problem?</li><li class="fragment">Vilka antaganden var fel?</li><li class="fragment">Vad ska göras annorlunda nästa gång?</li></ol>
+        <p class="fragment">Syftet är lärande, inte att leta syndabockar.</p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt beslut</p><h2>Projektet ligger efter</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Teamet behöver först skapa en gemensam lägesbild och sedan prioritera om utifrån målet.">
+          <p>Tre dagar återstår. Två viktiga funktioner är klara, men fyra mindre funktioner återstår.</p>
+          <button type="button" data-choice="a">Alla arbetar snabbare utan att prata</button>
+          <button type="button" data-choice="b">Lägg till fler funktioner för säkerhets skull</button>
+          <button type="button" data-choice="c">Stäm av målet, prioritera kärnfunktionerna och uppdatera planen</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Planera ett miniprojekt</h2>
+        <ol><li class="fragment">Formulera ett tydligt och avgränsat mål.</li><li class="fragment">Bryt ner målet i arbetsuppgifter.</li><li class="fragment">Fördela ansvar och identifiera beroenden.</li><li class="fragment">Skapa en enkel Kanban-tavla.</li><li class="fragment">Välj vad som ingår i första prototypen.</li><li class="fragment">Planera test och utvärdering.</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
+        <ol><li class="fragment">Vad skiljer en prototyp från en MVP?</li><li class="fragment">Hur hjälper tydliga roller samarbetet?</li><li class="fragment">Varför behöver en projektgrupp identifiera och prioritera risker redan under planeringen?</li></ol>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Projekt har mål, tidsplan, resurser och slutpunkt.</li><li class="fragment">Bryt ner arbetet och gör ansvar tydligt.</li><li class="fragment">Agilt arbete använder korta cykler och återkoppling.</li><li class="fragment">Dokumentation gör beslut och resultat begripliga.</li><li class="fragment">Utvärdering förvandlar erfarenhet till lärande.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    document.querySelectorAll('.choice-question').forEach((question) => {
+      question.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-choice]');
+        if (!button) return;
+        const correct = button.dataset.choice === question.dataset.correct;
+        question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        question.querySelector('.choice-feedback').textContent = correct
+          ? question.dataset.correctMessage
+          : 'Inte riktigt. Välj alternativet som gör mål, ansvar och nästa beslut tydliga för hela teamet.';
+      });
+    });
+
+    const kanbanColumns = Array.from(document.querySelectorAll('[data-kanban-column]'));
+    const kanbanHint = document.querySelector('.kanban-hint');
+    function updateKanbanCounts() {
+      kanbanColumns.forEach((column) => {
+        const count = column.querySelectorAll('.kanban-card').length;
+        column.querySelector('h3').textContent = `${column.dataset.columnLabel} · ${count}`;
+      });
+    }
+    document.querySelector('.kanban-demo').addEventListener('click', (event) => {
+      const card = event.target.closest('.kanban-card');
+      if (!card) return;
+      if (card.classList.contains('is-blocked')) {
+        kanbanHint.textContent = 'Den här uppgiften är blockerad och kan inte flyttas förrän de saknade bilderna har levererats.';
+        return;
+      }
+      const currentColumn = card.closest('[data-kanban-column]');
+      const currentIndex = kanbanColumns.indexOf(currentColumn);
+      kanbanColumns[(currentIndex + 1) % kanbanColumns.length].appendChild(card);
+      kanbanHint.textContent = 'Uppgiftens status är uppdaterad. Tavlan visar nu det nya arbetsläget för hela teamet.';
+      updateKanbanCounts();
+    });
+  </script>
+</body>
+</html>
