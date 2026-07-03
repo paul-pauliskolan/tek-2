@@ -111,6 +111,23 @@ body.presentation-body {
 .simulation-track { position: relative; height: 12rem; border: 1px solid var(--slide-border); border-radius: 10px; background: linear-gradient(#e9f4ff, #fff 75%); overflow: hidden; }
 .simulation-ground { position: absolute; right: 0; bottom: 0; left: 0; height: 1.2rem; background: #6f8f4f; }
 .simulation-ball { position: absolute; left: 50%; bottom: calc(1.2rem + var(--height-ratio, 1) * 9.5rem); width: 2rem; height: 2rem; border-radius: 50%; background: var(--slide-accent); transform: translateX(-50%); transition: bottom 180ms ease; }
+.flowchart { display: grid; justify-items: center; gap: .4rem; margin-top: 1.2rem; }
+.flow-node { min-width: 13rem; padding: .65rem 1rem; border: 2px solid var(--slide-text); background: #fff; text-align: center; font-size: clamp(.9rem, 1.3vw, 1.15rem); font-weight: 750; transition: background 160ms ease, border-color 160ms ease; }
+.flow-node.terminator { border-radius: 999px; }
+.flow-node.decision { min-width: 10rem; border-color: var(--slide-accent); transform: skew(-12deg); }
+.flow-node.decision > span { display: block; transform: skew(12deg); }
+.flow-node.is-active { border-color: #24733f; background: #eaf7ee; }
+.flow-arrow { color: var(--slide-accent); font-size: 1.35rem; font-weight: 900; line-height: 1; }
+.flow-branches { display: grid; grid-template-columns: repeat(2, minmax(10rem, 1fr)); gap: 2rem; }
+.flow-branch { display: grid; justify-items: center; gap: .35rem; }
+.wireframe { display: grid; grid-template-rows: auto 1fr auto; min-height: 22rem; margin-top: 1.5rem; border: 2px solid var(--slide-text); border-radius: 10px; background: #fff; overflow: hidden; }
+.wireframe-header, .wireframe-footer { padding: .75rem 1rem; background: #eceae3; font-weight: 800; }
+.wireframe-header { display: flex; justify-content: space-between; gap: 1rem; }
+.wireframe-main { display: grid; grid-template-columns: 1.4fr .6fr; gap: 1rem; padding: 1rem; }
+.wireframe-block { display: grid; place-items: center; min-height: 5rem; border: 2px dashed #999; color: var(--slide-muted); font-weight: 700; text-align: center; }
+.network-diagram { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .75rem; margin-top: 2rem; }
+.network-device { padding: .85rem 1rem; border: 2px solid var(--slide-text); border-radius: 10px; background: #fff; font-size: clamp(.9rem, 1.4vw, 1.2rem); font-weight: 800; text-align: center; }
+.network-link { color: var(--slide-accent); font-size: 1.7rem; font-weight: 900; }
 
 @media (max-width: 760px) {
   .two-column { grid-template-columns: 1fr; }
@@ -123,6 +140,7 @@ body.presentation-body {
   .kanban-demo { grid-template-columns: 1fr; }
   .database-schema { grid-template-columns: 1fr; }
   .database-relation { transform: rotate(90deg); }
+  .flow-branches, .wireframe-main { grid-template-columns: 1fr; }
   .presentation-topbar, .presentation-footer { align-items: flex-start; flex-direction: column; }
   .slide { min-height: calc(100vh - 9rem); padding: 1.5rem; }
   .slide p, .slide li { font-size: clamp(1.15rem, 4.3vw, 1.65rem); }
