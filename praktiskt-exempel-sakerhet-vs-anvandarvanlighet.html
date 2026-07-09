@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Praktiskt exempel i Teknik 2 om säkerhet och användarvänlighet i mobilbetalningar.">
+    <title>Säkerhet vs. användarvänlighet - Teknik 2</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">⚙️ Teknik 2</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Öppna kapitelmeny">☰</button>
+    </nav>
+
+    <aside class="side-menu" id="side-menu" aria-label="Kapitelmeny">
+        <a href="index.html" class="menu-close" id="menu-close" aria-label="Stäng kapitelmeny">✕</a>
+        <h2>Kapitel</h2>
+        <nav class="chapter-menu" id="chapters-menu"></nav>
+    </aside>
+
+    <main class="container chapter-shell">
+        <article class="chapter-main">
+            <header class="chapter-hero">
+                <p class="eyebrow">Praktiskt exempel</p>
+                <h1>Säkerhet vs. användarvänlighet</h1>
+                <p class="subtitle">Mobilbetalningar visar varför tekniska system måste balansera snabbhet, bekvämlighet och skydd.</p>
+            </header>
+
+            <section id="chapter-content">
+                <div class="video-card">
+                    <h2>Film: mobilbetalningar och säkerhetsrisker</h2>
+                    <p>Se filmen först och använd sedan texten för att analysera avvägningen mellan säkerhet och användarvänlighet.</p>
+                    <iframe class="video-embed" src="https://www.youtube.com/embed/PPJ6NJkmDAo" title="Säkerhet och mobilbetalningar" allowfullscreen></iframe>
+                </div>
+
+                <h2>Vad handlar exemplet om?</h2>
+                <p>Filmen visar hur ett modernt betalningssystem kan påverkas av svagheter i samspelet mellan telefon, kortnätverk och betalterminal. Poängen är inte att lära ut ett angrepp, utan att visa en viktig princip i Teknik 2: varje teknisk lösning bygger på antaganden, gränser och kompromisser.</p>
+                <p>Mobilbetalningar är populära eftersom de är snabba och enkla. Samma egenskaper gör att säkerheten måste vara mycket genomtänkt. När ett system gör det lättare att betala måste det samtidigt säkerställa att rätt person faktiskt godkänner betalningen.</p>
+
+                <h2>Hur kan ett säkert system ändå få svagheter?</h2>
+                <p>Ett betalningssystem består av flera delar som måste lita på varandra. Telefonen, kortet i plånboken, betalterminalen, banken och kortnätverket skickar information mellan sig. Om någon del tolkar information fel, eller litar för mycket på en annan del, kan det uppstå en svaghet.</p>
+                <p>I exemplet utnyttjas idén att systemet kan behandla vissa snabba betalningar annorlunda än vanliga köp. Funktionen finns för att vardagen ska bli smidig, till exempel i miljöer där många personer snabbt behöver passera en spärr eller terminal. Det är användarvänligt, men det kräver att säkerhetskontrollerna fortfarande håller.</p>
+
+                <h2>Man-in-the-middle på en begriplig nivå</h2>
+                <p>Begreppet man-in-the-middle betyder att någon placerar sig mellan två system som tror att de pratar direkt med varandra. Angriparen kan då läsa eller förändra delar av kommunikationen. I Teknik 2 är det viktiga att förstå principen: säker kommunikation kräver att systemen kan verifiera både avsändare, innehåll och sammanhang.</p>
+                <p>Det här är samma grundproblem som finns i många digitala system. Om ett system inte kan vara säkert på vem det pratar med, eller om informationen har ändrats på vägen, kan fel beslut fattas.</p>
+
+                <h2>Säkerhet och användarvänlighet drar åt olika håll</h2>
+                <p>Hög säkerhet innebär ofta fler kontroller: kod, Face ID, BankID, gränsvärden, varningar eller extra bekräftelser. Hög användarvänlighet innebär ofta färre steg: snabbt, tyst och utan avbrott.</p>
+                <p>Utmaningen är att hitta rätt balans. Om systemet är för krångligt slutar människor använda det eller hittar genvägar. Om systemet är för enkelt kan det bli osäkert. Bra teknikdesign handlar därför om att göra det säkra alternativet så enkelt som möjligt.</p>
+
+                <h2>Koppling till Teknik 2</h2>
+                <p>Exemplet kan kopplas till flera delar av kursen:</p>
+                <ul>
+                    <li><strong>Tekniska system:</strong> betalningen fungerar genom flera samverkande komponenter.</li>
+                    <li><strong>Riskanalys:</strong> varje förenkling behöver bedömas utifrån möjliga konsekvenser.</li>
+                    <li><strong>Användarcentrerad design:</strong> systemet måste vara begripligt och smidigt för användaren.</li>
+                    <li><strong>Etik och ansvar:</strong> utvecklare och företag behöver ta ansvar för hur tekniken kan missbrukas.</li>
+                    <li><strong>Iteration:</strong> när svagheter upptäcks behöver systemet uppdateras och förbättras.</li>
+                </ul>
+
+                <h2>Frågor att diskutera</h2>
+                <ol>
+                    <li>Vilken funktion i exemplet är skapad för att göra systemet mer användarvänligt?</li>
+                    <li>Vilka säkerhetsrisker kan uppstå när betalningar ska gå mycket snabbt?</li>
+                    <li>Varför räcker det inte att bara en del av systemet är säker?</li>
+                    <li>Hur kan man göra ett betalningssystem både säkert och smidigt?</li>
+                    <li>Vilket ansvar har företag när de upptäcker svagheter i tekniska system?</li>
+                </ol>
+            </section>
+
+            <div class="chapter-nav">
+                <a href="praktiskt-exempel-uppfinning-innovation-entreprenorskap.html" class="nav-button"><div><div class="nav-label">← Föregående</div><div class="nav-title">Uppfinning och innovation</div></div></a>
+                <a href="index.html" class="nav-button"><div style="text-align: right;"><div class="nav-label">Tillbaka →</div><div class="nav-title">Startsidan</div></div></a>
+            </div>
+        </article>
+
+        <aside class="chapter-aside">
+            <section class="aside-card">
+                <p class="eyebrow">Exempel</p>
+                <h2>Praktiska exempel</h2>
+                <nav class="chapter-toc" aria-label="Praktiska exempel">
+                    <ul class="chapter-toc-list">
+                        <li><a class="toc-link" href="praktiskt-exempel-uppfinning-innovation-entreprenorskap.html">Uppfinning och innovation</a></li>
+                        <li><a class="toc-link" href="praktiskt-exempel-sakerhet-vs-anvandarvanlighet.html">Säkerhet vs. användarvänlighet</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="site-footer site-footer-wide">
+        <p><a href="index.html">Till startsidan</a></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
