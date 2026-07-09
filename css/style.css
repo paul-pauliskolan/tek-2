@@ -332,6 +332,10 @@ ol {
   gap: 0.65rem;
 }
 
+.chapter-menu + .chapter-menu {
+  margin-top: 0.65rem;
+}
+
 .chapter-link {
   display: flex;
   gap: 0.8rem;
