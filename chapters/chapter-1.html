@@ -246,6 +246,9 @@
                     `).join('')}
                     <button type="button" class="quiz-submit">Rätta quizet</button>
                     <p class="quiz-result" aria-live="polite"></p>
+                    ${window.teknik2QuizStatistics && window.teknik2QuizStatistics.isEnabled
+                        ? '<p class="quiz-statistics-notice">Anonyma svar används för att förbättra quizet.</p>'
+                        : ''}
                 </form>
             `
 
@@ -285,6 +288,25 @@
                 })
 
                 result.textContent = `Du fick ${score} av ${questions.length} rätt.`
+
+                if (!form.dataset.statisticsSent && window.teknik2QuizStatistics) {
+                    window.teknik2QuizStatistics.record({
+                        quizId: 'kapitel-1',
+                        chapter: 'Kapitel 1',
+                        answers: questions.map((question, questionIndex) => {
+                            const name = `quiz-q${questionIndex + 1}`
+                            const selected = form.querySelector(`input[name="${name}"]:checked`)
+                            return {
+                                questionNumber: questionIndex + 1,
+                                questionText: question.text,
+                                selectedAnswer: selected ? selected.value : '',
+                                correctAnswer: question.answer,
+                                isCorrect: Boolean(selected && selected.value === question.answer),
+                            }
+                        }),
+                    })
+                    form.dataset.statisticsSent = 'true'
+                }
             })
 
             targetHeading.insertAdjacentElement('beforebegin', quiz)

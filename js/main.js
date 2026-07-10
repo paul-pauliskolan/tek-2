@@ -2,8 +2,38 @@
 
 const BOOK_TITLE = "Teknik 2 - IN";
 const BOOK_SHORT_TITLE = "Teknik 2";
+// Set this to the deployed Google Apps Script web-app URL to enable anonymous quiz statistics.
+const QUIZ_STATISTICS_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbylqSA4P8tGRWikq_3VU5Ypt4jKsO4poJvJk2f-JzZCvL5vcILHiloNPofGVaaiqDzC/exec";
 
 let chaptersData = [];
+
+function recordQuizStatistics({ quizId, chapter, answers }) {
+  if (!QUIZ_STATISTICS_ENDPOINT || !Array.isArray(answers) || !answers.length) {
+    return;
+  }
+
+  const payload = {
+    quizId,
+    chapter,
+    pagePath: window.location.pathname,
+    answers,
+  };
+
+  fetch(QUIZ_STATISTICS_ENDPOINT, {
+    method: "POST",
+    mode: "no-cors",
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
+    body: JSON.stringify(payload),
+  }).catch(() => {
+    // Quiz correction must still work if statistics cannot be sent.
+  });
+}
+
+window.teknik2QuizStatistics = {
+  isEnabled: Boolean(QUIZ_STATISTICS_ENDPOINT),
+  record: recordQuizStatistics,
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   loadChaptersData();
@@ -444,64 +474,100 @@ function renderChapterPage(chapterNumber) {
 const chapterQuizData = {
   3: [
     {
-      text: "Vad är ett tekniskt problem inom informationsteknik?",
+      text: "En knapp på en webbplats ger ingen reaktion när användaren klickar. Vad bör man göra först?",
       options: [
-        "Något i ett system som inte fungerar som det ska eller behöver förbättras.",
-        "En lösning som redan är färdig och inte behöver testas.",
-        "En idé som inte får analyseras innan den byggs, utan att kontrollera om det verkligen passar frågan.",
-        "En uppgift som saknar koppling till användare eller teknik.",
-      ],
-      answer: "A",
-      explanation:
-        "Ett tekniskt problem handlar om att något inte fungerar, saknas eller behöver förbättras i en teknisk lösning.",
-    },
-    {
-      text: "Varför är analys viktig i problemlösningsprocessen?",
-      options: [
-        "För att man ska kunna hoppa över testningen, även när det inte stämmer med kapitlets innehåll.",
-        "För att förstå orsaken till problemet innan man väljer lösning.",
-        "För att alla lösningar alltid fungerar direkt.",
-        "För att problemet ska bli mindre dokumenterat.",
-      ],
-      answer: "B",
-      explanation:
-        "Analys hjälper dig att förstå varför problemet uppstår, så att lösningen angriper rätt orsak.",
-    },
-    {
-      text: "Vad innebär det att implementera en lösning?",
-      options: [
-        "Att bara beskriva problemet utan att ändra något.",
-        "Att ta bort alla tester från projektet och samtidigt hoppa över viktiga delar av processen.",
-        "Att genomföra lösningen i systemet, till exempel genom kod eller ändringar.",
-        "Att avsluta arbetet innan resultatet kontrolleras.",
+        "Skriva om hela webbplatsen för att vara säker på att felet försvinner.",
+        "Byta design på knappen eftersom alla knappfel beror på utseende.",
+        "Beskriva exakt vad som händer, var felet uppstår och vad som förväntades.",
+        "Publicera sidan igen och vänta på mer återkoppling från användare.",
       ],
       answer: "C",
       explanation:
-        "Implementering betyder att lösningen faktiskt genomförs i praktiken.",
+        "Första steget är att identifiera problemet tydligt innan man börjar ändra lösningen.",
     },
     {
-      text: "Varför behöver resultatet testas efter en ändring?",
+      text: "Vilket alternativ visar bäst skillnaden mellan symptom och orsak?",
       options: [
-        "För att göra problemet svårare att hitta.",
-        "För att undvika att användare får ge återkoppling.",
-        "För att ersätta analys med gissningar, utan att ta hänsyn till användare, testning eller resultat.",
-        "För att kontrollera att lösningen fungerar och inte skapar nya fel.",
-      ],
-      answer: "D",
-      explanation:
-        "Testning visar om problemet verkligen är löst och om ändringen har skapat nya problem.",
-    },
-    {
-      text: "Vad kännetecknar systematiskt problemlösningsarbete?",
-      options: [
-        "Att man följer steg som identifiering, analys, lösning och testning.",
-        "Att man provar slumpmässigt tills något råkar fungera.",
-        "Att man alltid börjar om från början utan att dokumentera.",
-        "Att man undviker att jämföra olika lösningar, utan att kontrollera om det verkligen passar frågan.",
+        "Sidan laddar långsamt; orsaken kan vara för stora bilder.",
+        "Symptomet är lösningen; orsaken är alltid användarens misstag.",
+        "Symptom och orsak betyder samma sak i tekniska system.",
+        "Orsaken är det första man ser; symptomet är ändringen man gör.",
       ],
       answer: "A",
       explanation:
-        "Systematiskt arbete innebär att man följer en tydlig process från problem till testad lösning.",
+        "Symptomet är det synliga problemet. Orsaken är det som ligger bakom och behöver undersökas.",
+    },
+    {
+      text: "Ett formulär misslyckas ibland, men bara med vissa inmatningar. Vad är ett rimligt nästa steg?",
+      options: [
+        "Ta bort formuläret och bygg en annan funktion direkt.",
+        "Testa olika inmatningar och dokumentera när felet uppstår.",
+        "Ändra flera delar samtidigt så att någon ändring troligen hjälper.",
+        "Vänta tills felet uppstår hos fler användare innan det undersöks.",
+      ],
+      answer: "B",
+      explanation:
+        "Systematisk testning gör det lättare att se vilka villkor som utlöser felet.",
+    },
+    {
+      text: "Ett program startar men kraschar när användaren försöker dividera med noll. Vilken feltyp passar bäst?",
+      options: [
+        "Syntaxfel.",
+        "Logiskt fel.",
+        "Designfel.",
+        "Exekveringsfel.",
+      ],
+      answer: "D",
+      explanation:
+        "Ett exekveringsfel uppstår när programmet körs men avbryts när ett problem inträffar.",
+    },
+    {
+      text: "Vad innebär dekomposition vid problemlösning?",
+      options: [
+        "Att dela upp ett större problem i mindre delar.",
+        "Att ta bort detaljer tills ingen lösning går att kontrollera.",
+        "Att välja den första lösningen innan orsaken är känd.",
+        "Att dokumentera slutresultatet men hoppa över analysen.",
+      ],
+      answer: "A",
+      explanation:
+        "Dekomposition gör ett stort problem mer hanterbart genom att dela upp det i mindre delar.",
+    },
+    {
+      text: "När är pseudokod särskilt användbar i problemlösning?",
+      options: [
+        "När man vill undvika att tänka igenom programmets logik.",
+        "När färdig kod redan är testad och lanserad.",
+        "När man vill beskriva lösningens steg före riktig kod.",
+        "När man behöver ersätta alla tester med en textbeskrivning.",
+      ],
+      answer: "C",
+      explanation:
+        "Pseudokod beskriver logiken på ett begripligt sätt innan den skrivs i ett programmeringsspråk.",
+    },
+    {
+      text: "Varför bör man ändra en sak i taget när man felsöker?",
+      options: [
+        "För att lösningen annars alltid blir långsammare.",
+        "För att se vilken ändring som påverkade resultatet.",
+        "För att dokumentation bara behövs när flera ändringar görs.",
+        "För att användaren inte ska märka att systemet testas.",
+      ],
+      answer: "B",
+      explanation:
+        "Om flera saker ändras samtidigt blir det svårt att veta vilken ändring som löste eller skapade problemet.",
+    },
+    {
+      text: "Efter en ändring fungerar den trasiga knappen igen. Vad bör testningen också kontrollera?",
+      options: [
+        "Att knappen har fått en mer avancerad design.",
+        "Att koden innehåller fler rader än tidigare.",
+        "Att samma fel aldrig kan uppstå i något annat system.",
+        "Att närliggande funktioner fortfarande fungerar.",
+      ],
+      answer: "D",
+      explanation:
+        "Testning efter en ändring ska kontrollera både att ursprungsfelet är löst och att inget annat har gått sönder.",
     },
   ],
   4: [
@@ -1174,6 +1240,11 @@ function insertChapterQuiz(chapterNumber) {
             .join("")}
           <button type="button" class="quiz-submit">Rätta quizet</button>
           <p class="quiz-result" aria-live="polite"></p>
+          ${
+            QUIZ_STATISTICS_ENDPOINT
+              ? '<p class="quiz-statistics-notice">Anonyma svar används för att förbättra quizet.</p>'
+              : ""
+          }
       </form>
   `;
 
@@ -1215,6 +1286,25 @@ function insertChapterQuiz(chapterNumber) {
     });
 
     result.textContent = `Du fick ${score} av ${questions.length} rätt.`;
+
+    if (!form.dataset.statisticsSent) {
+      recordQuizStatistics({
+        quizId: `kapitel-${chapterNumber}`,
+        chapter: `Kapitel ${chapterNumber}`,
+        answers: questions.map((question, questionIndex) => {
+          const name = `chapter-${chapterNumber}-quiz-q${questionIndex + 1}`;
+          const selected = form.querySelector(`input[name="${name}"]:checked`);
+          return {
+            questionNumber: questionIndex + 1,
+            questionText: question.text,
+            selectedAnswer: selected ? selected.value : "",
+            correctAnswer: question.answer,
+            isCorrect: Boolean(selected && selected.value === question.answer),
+          };
+        }),
+      });
+      form.dataset.statisticsSent = "true";
+    }
   });
 
   targetHeading.insertAdjacentElement("beforebegin", quiz);

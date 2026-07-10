@@ -265,6 +265,9 @@ function renderQuizPage(groupIndex) {
                 }).join("")}
                 <button type="button" class="quiz-submit">Rätta omgången</button>
                 <p class="quiz-result" aria-live="polite"></p>
+                ${window.teknik2QuizStatistics && window.teknik2QuizStatistics.isEnabled
+                    ? '<p class="quiz-statistics-notice">Anonyma svar används för att förbättra quizet.</p>'
+                    : ''}
             </form>
         </section>
     `;
@@ -313,4 +316,28 @@ function checkQuiz(form) {
     });
 
     result.textContent = `Du fick ${score} av ${group.questions.length} rätt.`;
+
+    if (!form.dataset.statisticsSent && window.teknik2QuizStatistics) {
+        const answers = group.questions.map((question, questionIndex) => {
+            const questionNumber = groupIndex * 10 + questionIndex + 1;
+            const renderedQuestion = getRenderedQuestion(question, questionNumber);
+            const inputName = `${groupId}-q${questionIndex + 1}`;
+            const selected = form.querySelector(`input[name="${inputName}"]:checked`);
+
+            return {
+                questionNumber,
+                questionText: renderedQuestion.text,
+                selectedAnswer: selected ? selected.value : "",
+                correctAnswer: renderedQuestion.answer,
+                isCorrect: Boolean(selected && selected.value === renderedQuestion.answer),
+            };
+        });
+
+        window.teknik2QuizStatistics.record({
+            quizId: groupId,
+            chapter: group.title,
+            answers,
+        });
+        form.dataset.statisticsSent = "true";
+    }
 }
