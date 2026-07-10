@@ -108,58 +108,114 @@
 
             const questions = [
                 {
-                    text: 'Vad kännetecknar ett projekt?',
+                    text: 'En elevgrupp ska utveckla en app för skolans öppet hus. Vad bör de göra först?',
                     options: [
-                        'Ett arbete med tydligt mål, tidsplan och slut.',
-                        'Ett arbete som aldrig avslutas.',
-                        'En samling löpande uppgifter utan gemensamt mål.',
-                        'Ett spontant arbete utan planering.'
+                        'Börja koda startsidan direkt.',
+                        'Formulera vilket problem appen ska lösa och för vem.',
+                        'Bestämma färger och typsnitt.',
+                        'Publicera appen och ändra efteråt.'
+                    ],
+                    answer: 'B',
+                    explanation: 'I början behöver gruppen förstå problemet och målgruppen innan lösningen byggs.'
+                },
+                {
+                    text: 'Varför är research viktig tidigt i teknikutvecklingsprocessen?',
+                    options: [
+                        'För att hitta behov, begränsningar och liknande lösningar.',
+                        'För att kunna hoppa över testning senare.',
+                        'För att bestämma exakt slutprodukt innan användare tillfrågas.',
+                        'För att undvika att ändra idén under arbetet.'
                     ],
                     answer: 'A',
-                    explanation: 'Ett projekt är avgränsat i tid och har ett tydligt mål, en tidsplan och ett slut.'
+                    explanation: 'Research hjälper gruppen förstå behov, alternativ och begränsningar innan en lösning väljs.'
                 },
                 {
-                    text: 'Varför är planering viktig i ett tekniskt projekt?',
+                    text: 'Vilket alternativ beskriver bäst skillnaden mellan en idé och en prototyp?',
                     options: [
-                        'För att projektet ska kunna undvika all testning.',
-                        'För att mål, arbetsuppgifter, resurser och tidsplan blir tydliga.',
-                        'För att alla ska arbeta med samma uppgift samtidigt.',
-                        'För att dokumentation inte längre behövs, utan att kontrollera om det verkligen passar frågan.'],
-                    answer: 'B',
-                    explanation: 'Planering gör arbetet tydligare och minskar risken för stress, missförstånd och förseningar.'
-                },
-                {
-                    text: 'Vad innebär iterativ utveckling?',
-                    options: [
-                        'Att hela projektet görs färdigt innan något testas.',
-                        'Att projektet saknar tydliga roller, även när det inte stämmer med kapitlets innehåll.',
-                        'Att man bygger, testar och förbättrar i flera omgångar.',
-                        'Att dokumentationen skrivs först efter lansering.'
+                        'En prototyp är alltid den slutliga produkten.',
+                        'En idé är färdig att lansera, en prototyp används bara för dokumentation.',
+                        'En idé beskriver en möjlig lösning, en prototyp går att prova eller visa.',
+                        'En idé behöver testas, men en prototyp behöver inte testas.'
                     ],
                     answer: 'C',
-                    explanation: 'Iterativ utveckling betyder att lösningen växer fram genom upprepade versioner, tester och förbättringar.'
+                    explanation: 'En prototyp är en tidig version eller modell som kan användas för att testa idén.'
                 },
                 {
-                    text: 'Vilken roll kontrollerar ofta att systemet fungerar och letar efter fel?',
+                    text: 'En grupp bygger en klickbar skiss av en webbplats för att se om användare hittar rätt information. Vilket steg passar bäst?',
                     options: [
-                        'Designer',
-                        'Projektledare',
-                        'Programmerare',
-                        'Testare'
+                        'Produktion.',
+                        'Prototyp och testning.',
+                        'Avveckling.',
+                        'Upphovsrätt.'
+                    ],
+                    answer: 'B',
+                    explanation: 'En klickbar skiss är en prototyp, och den används här för att testa användarens väg genom webbplatsen.'
+                },
+                {
+                    text: 'Vad betyder iteration i teknikutveckling?',
+                    options: [
+                        'Att man följer planen exakt och aldrig ändrar något.',
+                        'Att man lanserar flera produkter samtidigt.',
+                        'Att man bara arbetar med dokumentation.',
+                        'Att man testar, förbättrar och provar igen.'
                     ],
                     answer: 'D',
-                    explanation: 'Testaren kontrollerar att systemet fungerar och försöker hitta fel innan lösningen används.'
+                    explanation: 'Iteration betyder att lösningen utvecklas i flera varv genom testning och förbättring.'
                 },
                 {
-                    text: 'Vad är en MVP i ett agilt projekt?',
+                    text: 'Efter ett användartest märker gruppen att många inte hittar menyknappen. Vad är ett rimligt nästa steg?',
                     options: [
-                        'En minsta fungerande produktversion som kan testas av användare.',
-                        'En fullständig slutversion utan begränsningar.',
-                        'En tidsplan för hela projektet och samtidigt hoppa över viktiga delar av processen.',
-                        'En lista över alla möjliga framtida funktioner.'
+                        'Ta bort testresultatet eftersom prototypen redan är klar.',
+                        'Lansera direkt eftersom felet bara gäller vissa användare.',
+                        'Ändra designen och testa igen.',
+                        'Börja om med ett helt annat problem utan analys.'
+                    ],
+                    answer: 'C',
+                    explanation: 'Testresultat används för att förbättra lösningen och sedan prova den igen.'
+                },
+                {
+                    text: 'Vilket exempel visar en tydlig problemformulering?',
+                    options: [
+                        'Nya elever hittar inte schema och lokaler under första veckan.',
+                        'Vi ska använda AI.',
+                        'Vi ska göra en snygg app.',
+                        'Vi ska göra något modernt.'
                     ],
                     answer: 'A',
-                    explanation: 'En MVP innehåller precis tillräckligt många funktioner för att kunna testas och ge användbar feedback.'
+                    explanation: 'En tydlig problemformulering beskriver vad som inte fungerar och vem som påverkas.'
+                },
+                {
+                    text: 'Varför behöver man tänka på målgruppen när man utvecklar teknik?',
+                    options: [
+                        'För att målgruppen alltid bestämmer all teknik själva.',
+                        'För att lösningen ska passa dem som faktiskt ska använda den.',
+                        'För att tekniken annars inte behöver testas.',
+                        'För att alla användare har exakt samma behov.'
+                    ],
+                    answer: 'B',
+                    explanation: 'Tekniken behöver utformas efter användarnas behov, förutsättningar och sammanhang.'
+                },
+                {
+                    text: 'Vad menas med livscykelperspektiv för en digital produkt?',
+                    options: [
+                        'Att produkten behöver underhållas, uppdateras och ibland avvecklas.',
+                        'Att arbetet är slut så fort produkten publiceras.',
+                        'Att bara prototypen räknas som teknisk lösning.',
+                        'Att testning bara görs innan problemet är formulerat.'
+                    ],
+                    answer: 'A',
+                    explanation: 'En digital produkt behöver ofta hanteras även efter lansering, till exempel med uppdateringar och underhåll.'
+                },
+                {
+                    text: 'När behöver upphovsrätt särskilt beaktas i ett digitalt projekt?',
+                    options: [
+                        'När man testar om en knapp fungerar.',
+                        'När man väljer vilka användare som ska intervjuas.',
+                        'När man skriver om sin egen problemformulering.',
+                        'När man använder bilder, text, musik eller annat material som andra har skapat.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Upphovsrätt gäller material som andra har skapat, till exempel bilder, text, musik och film.'
                 }
             ]
 

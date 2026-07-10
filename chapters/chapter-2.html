@@ -67,57 +67,92 @@
 
             const questions = [
                 {
-                    text: 'Vad handlar entreprenörskap om inom teknik?',
+                    text: 'Ett team har byggt en tekniskt avancerad app, men ingen elevgrupp verkar behöva den. Vilken slutsats passar bäst?',
                     options: [
-                        'Att se möjligheter, utveckla idéer och skapa lösningar som kan användas i verkligheten.',
-                        'Att bara skriva kod utan att undersöka användarnas behov.',
-                        'Att undvika risker genom att aldrig testa nya idéer, utan att kontrollera om det verkligen passar frågan.',
-                        'Att endast kopiera tekniska lösningar som redan finns.'
+                        'Appen är automatiskt en innovation eftersom den är tekniskt avancerad.',
+                        'Teamet bör lägga all tid på marknadsföring innan de undersöker behovet.',
+                        'Entreprenörskap handlar också om att förstå användare, behov och värde.',
+                        'Om tekniken fungerar behövs ingen målgrupp.'
                     ],
-                    answer: 'A',
-                    explanation: 'Entreprenörskap handlar om att upptäcka möjligheter och utveckla idéer till lösningar som skapar värde i verkligheten.'
+                    answer: 'C',
+                    explanation: 'En teknisk lösning behöver skapa verkligt värde för en målgrupp, inte bara fungera tekniskt.'
                 },
                 {
-                    text: 'Vad är skillnaden mellan en uppfinning och en innovation?',
+                    text: 'Vilket alternativ beskriver bäst skillnaden mellan en uppfinning och en innovation?',
                     options: [
-                        'En uppfinning måste alltid vara digital, men en innovation måste vara fysisk.',
-                        'En uppfinning är en ny idé, medan en innovation är en idé som används och skapar värde.',
+                        'En uppfinning är en ny idé eller teknik, medan en innovation används och skapar värde.',
                         'En uppfinning är alltid lönsam, medan en innovation bara är en prototyp.',
-                        'Det finns ingen skillnad mellan begreppen, även när det inte stämmer med kapitlets innehåll.'],
-                    answer: 'B',
+                        'En uppfinning måste vara fysisk, medan en innovation alltid är digital.',
+                        'Det finns ingen viktig skillnad mellan begreppen.'
+                    ],
+                    answer: 'A',
                     explanation: 'En uppfinning kan vara en ny idé eller teknik, men en innovation används i praktiken och skapar nytta.'
                 },
                 {
-                    text: 'Varför behöver en entreprenör förstå marknad och användare?',
+                    text: 'En grupp beskriver sin målgrupp som "alla som använder internet". Vad är det största problemet?',
                     options: [
-                        'För att kunna hoppa över testning och lansering.',
-                        'För att tekniska lösningar alltid säljer sig själva.',
-                        'För att veta vilka behov som finns och om lösningen skapar värde för någon.',
-                        'För att undvika att behöva anpassa produkten och samtidigt hoppa över viktiga delar av processen.'],
+                        'Målgruppen blir för smal för att kunna testas.',
+                        'Målgruppen blir för bred för att ge tydliga beslut om behov och funktioner.',
+                        'Målgruppen gör att lösningen inte får innehålla teknik.',
+                        'Målgruppen visar att finansiering inte behövs.'
+                    ],
+                    answer: 'B',
+                    explanation: 'En för bred målgrupp gör det svårt att veta vilka behov lösningen ska prioritera.'
+                },
+                {
+                    text: 'Vilket alternativ är ett tydligt värdeerbjudande?',
+                    options: [
+                        'Vi ska bygga en modern app med många funktioner.',
+                        'Vi ska använda den senaste tekniken.',
+                        'För små föreningar som har svårt att hålla information aktuell erbjuder vi en lättskött webbplats.',
+                        'Vår lösning ska bli bättre än alla andra.'
+                    ],
                     answer: 'C',
-                    explanation: 'En teknisk idé lyckas lättare om den bygger på verkliga behov och passar de användare eller kunder den är tänkt för.'
+                    explanation: 'Ett värdeerbjudande kopplar målgrupp, behov, lösning och nytta.'
+                },
+                {
+                    text: 'En digital tjänst ska hantera elevers namn och resultat. Vilket villkor behöver gruppen särskilt tänka på?',
+                    options: [
+                        'Att material som bilder och texter får användas med rätt licens.',
+                        'Att serverkapaciteten räcker om många använder tjänsten samtidigt.',
+                        'Att tjänsten har en tydlig målgrupp och ett begripligt värde.',
+                        'Att personuppgifter hanteras lagligt, säkert och med tydlig information.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Namn och resultat är personuppgifter. Därför behöver gruppen ta hänsyn till GDPR och användarnas förtroende.'
                 },
                 {
                     text: 'Vad kan finansiering användas till i ett teknikprojekt?',
                     options: [
-                        'Att ersätta kreativitet helt, utan att ta hänsyn till användare, testning eller resultat.',
-                        'Att göra juridiska krav oviktiga.',
-                        'Att garantera att projektet lyckas utan risk.',
-                        'Att betala för till exempel utveckling, verktyg, marknadsföring eller drift.'
+                        'Att köpa sig fri från risker när tekniken är svår att utveckla.',
+                        'Att täcka kostnader för utveckling, verktyg, drift eller lansering.',
+                        'Att slippa undersöka om målgruppen faktiskt behöver lösningen.',
+                        'Att göra lagar, licenser och säkerhetskrav mindre viktiga.'
                     ],
-                    answer: 'D',
-                    explanation: 'Finansiering kan behövas för resurser som tid, teknik, verktyg, drift och marknadsföring, men den tar inte bort alla risker.'
+                    answer: 'B',
+                    explanation: 'Finansiering kan ge resurser, men den tar inte bort behovet av testning, analys och bra beslut.'
                 },
                 {
-                    text: 'Varför är risk och osäkerhet viktiga att tänka på?',
+                    text: 'Varför är risk och osäkerhet viktiga att tänka på i entreprenörskap?',
                     options: [
-                        'För att nya idéer kan misslyckas tekniskt, ekonomiskt eller för att användare inte behöver lösningen.',
-                        'För att risk alltid betyder att idén ska stoppas direkt.',
-                        'För att risk bara finns i stora företag, och att små projekt därför aldrig behöver testas eller analyseras i förväg.',
-                        'För att osäkerhet visar att planering är onödigt.'
+                        'För att risk visar att projektet bör pausas tills all osäkerhet är borta.',
+                        'För att risk främst handlar om att välja rätt namn och grafisk profil.',
+                        'För att osäkerhet försvinner när den tekniska prototypen fungerar.',
+                        'För att idén kan falla på teknik, ekonomi, behov eller konkurrens.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Tidiga tester och analys minskar risken att lägga mycket tid på en lösning som inte håller.'
+                },
+                {
+                    text: 'Ett team testar en enkel prototyp och upptäcker att användarna tolkar funktionen fel. Vad visar det bäst?',
+                    options: [
+                        'Att resultatet bör analyseras inför nästa version.',
+                        'Att prototypen bör ersättas direkt utan mer undersökning.',
+                        'Att användare helst ska vänta tills produkten är färdig.',
+                        'Att idén inte längre kan bli en innovation efter testet.'
                     ],
                     answer: 'A',
-                    explanation: 'Entreprenörskap innebär osäkerhet. Därför behöver man testa, analysera och förbättra idéer innan man satsar för mycket.'
+                    explanation: 'Erfarenhet blir lärande först när teamet analyserar resultatet och ändrar sitt nästa beslut.'
                 }
             ]
 
