@@ -1,6 +1,34 @@
 const SPREADSHEET_ID = "1OuYzQOEpXEr0KM5yfCpsqTmHm5o9bNuKG4SCobOssj4";
 const SHEET_NAME = "Svar";
 
+function onOpen() {
+  SpreadsheetApp.getUi()
+    .createMenu("Quizstatistik")
+    .addItem("Tom insamlade svar", "clearQuizStatistics")
+    .addToUi();
+}
+
+function clearQuizStatistics() {
+  const ui = SpreadsheetApp.getUi();
+  const confirmation = ui.alert(
+    "Tom insamlade svar?",
+    "Alla insamlade quizsvar tas bort. Flikarna med analyser behalls.",
+    ui.ButtonSet.YES_NO,
+  );
+
+  if (confirmation !== ui.Button.YES) {
+    return;
+  }
+
+  const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
+  const lastRow = sheet.getLastRow();
+  if (lastRow > 1) {
+    sheet.getRange(2, 1, lastRow - 1, 9).clearContent();
+  }
+
+  ui.alert("Quizstatistiken ar tomd och redo for en ny omgang.");
+}
+
 function doGet() {
   return ContentService.createTextOutput("Quizstatistik ar aktiv.");
 }

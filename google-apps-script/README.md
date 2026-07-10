@@ -8,3 +8,5 @@
 6. Klistra in adressen i `QUIZ_STATISTICS_ENDPOINT` i `js/main.js` och publicera kurswebben.
 
 Varje elevs forsta rattning pa en sida skickar ett anonymt svar per fraga. Inga namn, e-postadresser eller IP-adresser samlas in.
+
+Nar du har sparat den senaste versionen av skriptet och oppnar kalkylarket igen visas menyn **Quizstatistik**. Valj **Tom insamlade svar** for att starta en ny insamlingsomgang. Rubriker och analysflikar behalls.
