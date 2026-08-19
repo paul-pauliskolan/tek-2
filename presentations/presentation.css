@@ -133,6 +133,14 @@ body.presentation-body {
 .wireframe-header { display: flex; justify-content: space-between; gap: 1rem; }
 .wireframe-main { display: grid; grid-template-columns: 1.4fr .6fr; gap: 1rem; padding: 1rem; }
 .wireframe-block { display: grid; place-items: center; min-height: 5rem; border: 2px dashed #999; color: var(--slide-muted); font-weight: 700; text-align: center; }
+.wireframe-examples { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(.8rem, 2vw, 1.5rem); margin-top: 1.5rem; }
+.wireframe-examples figure { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--slide-border); border-radius: 10px; background: #fff; box-shadow: 0 14px 34px var(--slide-shadow); }
+.wireframe-examples img { display: block; width: 100%; height: clamp(10rem, 25vh, 16rem); object-fit: cover; }
+.wireframe-examples figcaption { display: grid; gap: .15rem; padding: .75rem .9rem; }
+.wireframe-examples figcaption strong { color: var(--slide-accent); font-size: clamp(1rem, 1.45vw, 1.3rem); }
+.wireframe-examples figcaption span { color: var(--slide-muted); font-size: clamp(.85rem, 1.15vw, 1.05rem); }
+.prototype-slide .wireframe-examples img { height: clamp(8rem, 19vh, 12rem); }
+.prototype-slide .comparison { margin-top: 1rem; }
 .network-diagram { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: .75rem; margin-top: 2rem; }
 .network-device { padding: .85rem 1rem; border: 2px solid var(--slide-text); border-radius: 10px; background: #fff; font-size: clamp(.9rem, 1.4vw, 1.2rem); font-weight: 800; text-align: center; }
 .network-link { color: var(--slide-accent); font-size: 1.7rem; font-weight: 900; }
@@ -149,6 +157,8 @@ body.presentation-body {
   .database-schema { grid-template-columns: 1fr; }
   .database-relation { transform: rotate(90deg); }
   .flow-branches, .wireframe-main { grid-template-columns: 1fr; }
+  .wireframe-examples { grid-template-columns: 1fr; }
+  .wireframe-examples img { height: min(26vh, 13rem); }
   .presentation-topbar, .presentation-footer { align-items: flex-start; flex-direction: column; }
   .slide { min-height: calc(100vh - 9rem); padding: 1.5rem; }
   .slide p, .slide li { font-size: clamp(1.15rem, 4.3vw, 1.65rem); }
