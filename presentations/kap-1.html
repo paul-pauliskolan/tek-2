@@ -17,7 +17,7 @@
       <section class="slide is-active"><div class="slide-content title-slide-with-image">
         <div>
           <p class="slide-kicker">Teknik 1 · Kapitel 1</p>
-          <h1>Teknikutvecklingsprocessen</h1>
+          <h1>Teknik&shy;utvecklings&shy;processen</h1>
           <a class="fragment merlin-callout" href="https://merlin.allaboutbirds.org/download/" target="_blank" rel="noopener noreferrer">
             <strong>I dag finns appar som klarar uppgiften.</strong>
             <span>Merlin Bird ID identifierar fåglar med både bilder och fågelsång.</span>
@@ -137,8 +137,8 @@
         <div class="scenario-tool">
           <p data-scenario-text>En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.</p>
           <div class="scenario-actions">
-            <button type="button" data-step="Research och analys">Research och analys</button>
             <button type="button" data-step="Produktion">Produktion</button>
+            <button type="button" data-step="Research och analys">Research och analys</button>
             <button type="button" data-step="Livscykel">Livscykel</button>
           </div>
           <p class="scenario-feedback" aria-live="polite"></p>
@@ -161,21 +161,31 @@
         <table class="comparison"><thead><tr><th>Brustet steg</th><th>Möjlig följd</th></tr></thead><tbody><tr class="fragment"><td>Problem och research</td><td>Produkten löser inget viktigt behov.</td></tr><tr class="fragment"><td>Testning</td><td>Buggar och prestandaproblem når användarna.</td></tr><tr class="fragment"><td>Iteration</td><td>Kända brister blir kvar vid lansering.</td></tr><tr class="fragment"><td>Livscykel</td><td>Underhåll blir dyrt och osäkert.</td></tr></tbody></table>
       </div></section>
 
+      <section class="slide failure-examples-slide"><div class="slide-content">
+        <p class="slide-kicker">När processen brister</p><h2>Exempel på misslyckade teknikprojekt</h2>
+        <p class="slide-intro">Tre verkliga exempel där brister i teknikutvecklingsprocessen bidrog till problem.</p>
+        <table class="comparison compact-table failure-examples"><thead><tr><th>Projekt</th><th>Kort beskrivning</th><th>Vad gick fel?</th><th>Steg som brast</th></tr></thead><tbody>
+          <tr class="fragment"><th>Google Glass</th><td>Smarta glasögon som skulle visa information direkt för användaren.</td><td>Dyr, socialt obekväm och med oklar praktisk nytta.</td><td>Problemidentifiering och research kring användarbehov och integritet.</td></tr>
+          <tr class="fragment"><th>Healthcare.gov</th><td>Offentlig webbplats för att jämföra och teckna sjukförsäkring.</td><td>Krascher, långsam prestanda och svåra inloggningsproblem vid lanseringen.</td><td>Konstruktion och design, testning samt iteration före produktion.</td></tr>
+          <tr class="fragment"><th>Cyberpunk 2077</th><td>Ett efterlängtat spel med en stor öppen värld.</td><td>Många buggar och tydliga prestandaproblem, särskilt på äldre konsoler.</td><td>Testning, iteration och livscykelplanering kopplad till teknisk skuld.</td></tr>
+        </tbody></table>
+      </div></section>
+
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Diskussion</p><h2>Är processen alltid likadan?</h2>
         <p class="fragment">Nej. Stegens omfattning beror på projektets risk, storlek och mål.</p>
-        <p class="fragment">Men frågorna bakom stegen behövs även i små projekt.</p>
+        <p class="fragment">Men frågorna bakom stegen behövs ofta även i små projekt.</p>
         <p class="fragment">Det viktiga är att kunna motivera vad ni gör, i vilken ordning och varför.</p>
       </div></section>
 
       <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Arbetsuppgift</p><h2>Planera en digital lösning</h2>
-        <ol><li class="fragment">Välj ett problem i skolan eller vardagen.</li><li class="fragment">Beskriv användaren och behovet.</li><li class="fragment">Gör research och ta fram tre idéer.</li><li class="fragment">Välj en idé och skissa en prototyp.</li><li class="fragment">Planera ett test: vem, vad och hur?</li><li class="fragment">Beskriv hur resultatet ska förbättra lösningen.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Exit ticket</p><h2>Tre saker innan du går</h2>
-        <ol><li class="fragment">Vilket steg är viktigast att göra tidigt – och varför?</li><li class="fragment">Vad är skillnaden mellan en idé och en prototyp?</li><li class="fragment">Ge ett exempel på iteration i ett projekt.</li></ol>
+        <p class="answer-warning fragment"><strong>Varning: facit visas direkt efter varje fråga.</strong></p>
+        <ol class="exit-questions">
+          <li class="fragment">Vilket steg är viktigast att göra tidigt – och varför?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> Problemidentifiering och research, eftersom projektet annars riskerar att lösa fel problem.</span></li>
+          <li class="fragment">Vad är skillnaden mellan en idé och en prototyp?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> En idé är ett förslag; en prototyp är en testbar version av förslaget.</span></li>
+          <li class="fragment">Ge ett exempel på iteration i ett projekt.<span class="exit-answer fragment"><strong>Exempel på svar:</strong> Testa en meny, förbättra den efter återkoppling och testa igen.</span></li>
+        </ol>
       </div></section>
 
       <section class="slide"><div class="slide-content">
@@ -201,8 +211,8 @@
     });
 
     const scenarios = [
-      { text: 'En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.', choices: ['Research och analys', 'Produktion', 'Livscykel'], answer: 'Research och analys' },
-      { text: 'En klickbar modell har testats. Flera användare hittar inte menyknappen.', choices: ['Iteration och förbättring', 'Problemidentifiering', 'Produktion'], answer: 'Iteration och förbättring' },
+      { text: 'En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.', choices: ['Produktion', 'Research och analys', 'Livscykel'], answer: 'Research och analys' },
+      { text: 'En klickbar modell har testats. Flera användare hittar inte menyknappen.', choices: ['Problemidentifiering', 'Produktion', 'Iteration och förbättring'], answer: 'Iteration och förbättring' },
       { text: 'Webbplatsen är publicerad, men ett säkerhetsfel har upptäckts.', choices: ['Livscykel', 'Idégenerering', 'Prototyp'], answer: 'Livscykel' }
     ];
     const tool = document.querySelector('.scenario-tool');
@@ -212,6 +222,10 @@
       tool.querySelector('[data-scenario-text]').textContent = scenario.text;
       tool.querySelector('.scenario-actions').innerHTML = scenario.choices.map((choice) => `<button type="button" data-step="${choice}">${choice}</button>`).join('');
       tool.querySelector('.scenario-feedback').textContent = '';
+      const nextButton = tool.querySelector('.next-scenario');
+      const isLastScenario = scenarioIndex === scenarios.length - 1;
+      nextButton.disabled = isLastScenario;
+      nextButton.textContent = isLastScenario ? 'Övningen är klar' : 'Nästa situation';
     }
     tool.addEventListener('click', (event) => {
       const step = event.target.closest('[data-step]');
@@ -220,10 +234,13 @@
         tool.querySelector('.scenario-feedback').textContent = correct ? 'Rätt – det steget ger projektet den information som behövs nu.' : `Nästa lämpliga steg är: ${scenarios[scenarioIndex].answer}.`;
       }
       if (event.target.closest('.next-scenario')) {
-        scenarioIndex = (scenarioIndex + 1) % scenarios.length;
-        renderScenario();
+        if (scenarioIndex < scenarios.length - 1) {
+          scenarioIndex += 1;
+          renderScenario();
+        }
       }
     });
+    renderScenario();
   </script>
 </body>
 </html>
