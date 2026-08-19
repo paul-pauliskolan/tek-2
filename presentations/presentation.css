@@ -64,11 +64,19 @@ body.presentation-body {
 .slide-figure { margin: 1.5rem 0 0; }
 .slide-figure img { display: block; max-width: 100%; max-height: 48vh; border: 1px solid var(--slide-border); border-radius: 10px; box-shadow: 0 14px 34px var(--slide-shadow); }
 .slide-figure figcaption { margin-top: .55rem; color: var(--slide-muted); font-size: clamp(.9rem, 1.3vw, 1.15rem); }
-.title-slide-with-image { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(180px, .5fr); gap: clamp(1rem, 3vw, 3rem); align-items: center; }
+.title-slide-with-image { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr); gap: clamp(1rem, 3vw, 3rem); align-items: center; }
 .title-slide-with-image > div { min-width: 0; }
 .title-slide-with-image h1 { max-width: 13ch; font-size: clamp(2.2rem, 4.8vw, 4.8rem); overflow-wrap: anywhere; }
 .title-comic { margin: 0; justify-self: center; }
-.title-comic img { width: auto; max-width: 100%; max-height: 62vh; background: #fff; }
+.title-comic img { width: auto; max-width: 100%; max-height: 68vh; background: #fff; }
+.title-comic .xkcd-caption { max-width: 34rem; font-size: clamp(1rem, 1.35vw, 1.25rem); line-height: 1.4; }
+.xkcd-caption q { display: block; }
+.xkcd-caption span { display: block; margin-top: .45rem; font-size: .9em; font-style: italic; }
+.merlin-callout { display: block; width: fit-content; max-width: 32rem; margin-top: 1.6rem; padding-left: 1rem; border-left: 5px solid var(--slide-accent); color: var(--slide-text); text-decoration: none; }
+.merlin-callout strong, .merlin-callout span { display: block; }
+.merlin-callout strong { color: var(--slide-accent); font-size: clamp(1.2rem, 1.75vw, 1.6rem); }
+.merlin-callout span { margin-top: .25rem; font-size: clamp(1.05rem, 1.45vw, 1.35rem); line-height: 1.35; }
+.merlin-callout:hover strong { text-decoration: underline; }
 .comparison { width: 100%; margin-top: 2rem; border-collapse: collapse; background: #fff; font-size: clamp(1rem, 1.6vw, 1.45rem); }
 .comparison th, .comparison td { padding: 1rem; border: 1px solid var(--slide-border); text-align: left; vertical-align: top; }
 .comparison th { color: var(--slide-accent); }
@@ -133,7 +141,7 @@ body.presentation-body {
   .two-column { grid-template-columns: 1fr; }
   .title-slide-with-image { grid-template-columns: 1fr; }
   .title-slide-with-image h1 { max-width: 17ch; overflow-wrap: normal; }
-  .title-comic img { max-height: 34vh; }
+  .title-comic img { max-height: 42vh; }
   .two-column.diagram-emphasis { grid-template-columns: 1fr; }
   .decision-simulator { grid-template-columns: 1fr; }
   .process-grid, .scenario-actions { grid-template-columns: 1fr; }
