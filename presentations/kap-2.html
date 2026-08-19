@@ -34,15 +34,20 @@
 
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Centralt begrepp</p><h2>Vad är entreprenörskap?</h2>
-        <p class="fragment">Att se möjligheter, utveckla idéer och skapa lösningar som används i verkligheten.</p>
+        <p class="fragment">Att se möjligheter, ta initiativ, utveckla idéer och skapa lösningar som används i verkligheten.</p>
         <ul><li class="fragment">kan leda till ett företag</li><li class="fragment">kan förbättra en befintlig verksamhet</li><li class="fragment">kan skapa en produkt eller tjänst</li></ul>
         <p class="fragment">Företagande är alltså en möjlig del – inte hela definitionen.</p>
+        <p class="fragment"><strong>Man kan inte lära sig bara entreprenörskap.</strong> Det kräver stora kunskaper inom flera områden, till exempel teknik, användarbehov, ekonomi, kommunikation och lagar.</p>
       </div></section>
 
       <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Kunskap och erfarenhet</p><h2>Teori räcker inte ensam</h2>
-        <ul><li class="fragment">Det kräver breda kunskaper om exempelvis teknik, användare, ekonomi, kommunikation och lagar.</li><li class="fragment">Ingen kan allt själv – samarbete och förmågan att söka ny kunskap är centrala.</li><li class="fragment">Omdöme utvecklas genom verkliga beslut, försök, återkoppling och erfarenhet.</li><li class="fragment">Misstag behöver undersökas och användas för att förbättra nästa försök.</li></ul>
-        <p class="fragment"><strong>Kunskap ger grunden – praktiskt arbete utvecklar förmågan.</strong></p>
+        <ul><li class="fragment">Breda kunskaper behövs: teknik, användare, ekonomi, kommunikation och lagar.</li><li class="fragment">Ingen kan allt – samarbete och förmågan att söka ny kunskap är centrala.</li><li class="fragment">Omdöme utvecklas genom beslut, försök, återkoppling och erfarenhet.</li></ul>
+        <div class="bias-box">
+          <p class="fragment"><strong>Bias</strong> är omedvetna tankemönster som påverkar hur vi tolkar information och fattar beslut.</p>
+          <ul><li class="fragment"><strong>Bekräftelsebias:</strong> vi lyssnar mest på positiv respons och bortser från kritik.</li><li class="fragment"><strong>Utgå från sig själv:</strong> vi antar att användarna tänker och agerar som vi.</li><li class="fragment"><strong>Sunk cost:</strong> vi fortsätter med en dålig idé eftersom mycket tid eller pengar redan har lagts på den.</li></ul>
+        </div>
+        <p class="fragment"><strong>Resultatet kan bli en produkt som löser fel problem eller är svår att använda.</strong></p>
       </div></section>
 
       <section class="slide"><div class="slide-content">
@@ -59,17 +64,24 @@
       </div></section>
 
       <section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Affärsmodellsinnovation</p><h2>När sättet att skapa värde är nytt</h2>
+        <p class="fragment">En affärsmodell beskriver hur en verksamhet skapar värde för användaren och får resurser eller intäkter för att fortsätta.</p>
+        <p class="fragment">Innovationen kan ligga i <strong>hur</strong> en befintlig produkt erbjuds, används, distribueras eller finansieras.</p>
+        <table class="comparison compact-table"><thead><tr><th>Nytt sätt</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><td>Abonnemang</td><td>Spotify ger tillgång till musik mot en återkommande avgift.</td></tr><tr class="fragment"><td>Freemium</td><td>En grundtjänst är gratis, medan extra funktioner kostar.</td></tr><tr class="fragment"><td>Tillgång i stället för ägande</td><td>Användaren hyr eller delar exempelvis en bil eller ett verktyg.</td></tr></tbody></table>
+        <p class="fragment"><strong>Produkten behöver alltså inte vara ny – sättet att skapa och leverera värde kan vara innovationen.</strong></p>
+      </div></section>
+
+      <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Jämförelse</p><h2>Uppfinning eller innovation?</h2>
         <table class="comparison"><thead><tr><th>Uppfinning</th><th>Innovation</th></tr></thead><tbody><tr><td class="fragment">En ny idé eller teknik</td><td class="fragment">En idé som används och skapar värde</td></tr><tr><td class="fragment">Exempel: den första experimentella pekskärmen</td><td class="fragment">Exempel: smarttelefoner som gjorde pekskärmen användbar för många</td></tr><tr><td class="fragment">Exempel: en ny spelmekanik i en prototyp</td><td class="fragment">Exempel: ett publicerat spel där mekaniken skapar en uppskattad spelupplevelse</td></tr></tbody></table>
       </div></section>
 
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kontrollfråga</p><h2>Vilket är en innovation?</h2>
-        <div class="choice-question" data-correct="c">
-          <button type="button" data-choice="a">En ny spelmekanik beskriven i ett dokument</button>
-          <button type="button" data-choice="b">En fungerande prototyp som bara utvecklaren har provat</button>
-          <button type="button" data-choice="c">En förbättrad digital tjänst som används och sparar tid åt kunder</button>
-          <p class="choice-feedback" aria-live="polite"></p>
+      <section class="slide quiz-slide"><div class="slide-content">
+        <p class="slide-kicker">Kunskapskontroll · <span data-quiz-progress>1/4</span></p><h2 data-quiz-question>Vilket är en innovation?</h2>
+        <div class="knowledge-quiz">
+          <div class="quiz-actions"></div>
+          <p class="quiz-feedback" aria-live="polite"></p>
+          <button type="button" class="next-quiz-question" disabled>Nästa fråga</button>
         </div>
       </div></section>
 
@@ -184,6 +196,49 @@
           : 'Inte riktigt. Sök efter alternativet som visar verklig användning eller tidig behovstestning.';
       });
     });
+
+    const quizQuestions = [
+      { question: 'Vilket är en innovation?', choices: ['En ny spelmekanik beskriven i ett dokument', 'En prototyp som bara utvecklaren har provat', 'En förbättrad digital tjänst som används och sparar tid'], answer: 2, explanation: 'En innovation används i praktiken och skapar värde.' },
+      { question: 'Varför kan man inte lära sig bara entreprenörskap?', choices: ['Det handlar bara om att starta företag', 'Det kräver kunskaper inom flera områden och praktisk erfarenhet', 'Det bygger främst på medfödd kreativitet'], answer: 1, explanation: 'Entreprenörskap kombinerar bland annat teknik, användarbehov, ekonomi, kommunikation och lagar.' },
+      { question: 'Vilket är ett exempel på bekräftelsebias?', choices: ['Teamet lyssnar på beröm men bortser från återkommande kritik', 'Teamet intervjuar användare med olika erfarenheter', 'Teamet ändrar prototypen efter ett test'], answer: 0, explanation: 'Bekräftelsebias gör att vi söker stöd för vår idé och lättare avfärdar information som talar emot den.' },
+      { question: 'Hur kan en affärsmodell vara en innovation?', choices: ['Genom att ge produkten ett nytt namn', 'Genom att använda dyrare teknik', 'Genom ett nytt sätt att erbjuda, distribuera eller finansiera värde'], answer: 2, explanation: 'Innovationen kan ligga i hur värdet skapas och levereras, även när själva produkten redan finns.' }
+    ];
+    const knowledgeQuiz = document.querySelector('.knowledge-quiz');
+    let quizIndex = 0;
+    function renderQuizQuestion() {
+      const item = quizQuestions[quizIndex];
+      document.querySelector('[data-quiz-progress]').textContent = `${quizIndex + 1}/${quizQuestions.length}`;
+      document.querySelector('[data-quiz-question]').textContent = item.question;
+      knowledgeQuiz.querySelector('.quiz-actions').innerHTML = item.choices.map((choice, index) => `<button type="button" data-quiz-choice="${index}">${choice}</button>`).join('');
+      knowledgeQuiz.querySelector('.quiz-feedback').textContent = '';
+      const nextButton = knowledgeQuiz.querySelector('.next-quiz-question');
+      nextButton.disabled = true;
+      nextButton.textContent = quizIndex === quizQuestions.length - 1 ? 'Avsluta quizet' : 'Nästa fråga';
+    }
+    knowledgeQuiz.addEventListener('click', (event) => {
+      const choice = event.target.closest('[data-quiz-choice]');
+      if (choice) {
+        const item = quizQuestions[quizIndex];
+        const correct = Number(choice.dataset.quizChoice) === item.answer;
+        knowledgeQuiz.querySelectorAll('[data-quiz-choice]').forEach((button) => {
+          button.classList.remove('is-correct', 'is-wrong');
+          button.disabled = true;
+        });
+        choice.classList.add(correct ? 'is-correct' : 'is-wrong');
+        knowledgeQuiz.querySelector('.quiz-feedback').textContent = `${correct ? 'Rätt.' : 'Inte riktigt.'} ${item.explanation}`;
+        knowledgeQuiz.querySelector('.next-quiz-question').disabled = false;
+      }
+      if (event.target.closest('.next-quiz-question')) {
+        if (quizIndex < quizQuestions.length - 1) {
+          quizIndex += 1;
+          renderQuizQuestion();
+        } else {
+          knowledgeQuiz.querySelector('.next-quiz-question').disabled = true;
+          knowledgeQuiz.querySelector('.next-quiz-question').textContent = 'Quizet är klart';
+        }
+      }
+    });
+    renderQuizQuestion();
   </script>
 </body>
 </html>
