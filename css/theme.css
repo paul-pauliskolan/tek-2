@@ -1,0 +1,44 @@
+.theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid var(--border-color, var(--slide-border, #64748b));
+  border-radius: 999px;
+  background: var(--control-background, var(--slide-panel, #ffffff));
+  color: var(--text-primary, var(--slide-text, #111827));
+  font: inherit;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-small, none);
+}
+
+.theme-toggle:hover {
+  background: var(--hover-background, var(--slide-code-bg, #e5e7eb));
+  border-color: var(--accent-color, var(--slide-accent, #2457a6));
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--focus-ring, #2563eb);
+  outline-offset: 3px;
+}
+
+body > .theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+}
+
+/* Fristående diagram behåller sina datakodade färger; endast sidytan följer temat. */
+:root[data-theme="dark"] body:not(.presentation-body) > .container {
+  border-color: var(--border-color, #45505e);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+}
+
+@media (max-width: 720px) {
+  .navbar .theme-toggle { order: 2; }
+}
