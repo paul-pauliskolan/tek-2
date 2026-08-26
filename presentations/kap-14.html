@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interaktiv presentation om modeller, dimensionering och rimlighetsbedömning i Teknik 1.">
+  <title>Kapitel 14 – Dimensionering, beräkningar och rimlighetsbedömning</title>
+  <script src="../js/theme.js"></script>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Teknik 1 · Kapitel 14</p>
+        <h1>Dimensionering, beräkningar och rimlighetsbedömning</h1>
+        <p class="fragment">Att planera tekniska system med begrepp, teorier, modeller och beräkningar.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Dimensionering</p><h2>Anpassa kapaciteten till behovet</h2>
+        <ul><li class="fragment">antal samtidiga användare</li><li class="fragment">lagringsbehov</li><li class="fragment">nätverkskapacitet</li><li class="fragment">processor och arbetsminne</li><li class="fragment">förväntad tillväxt och reservkapacitet</li></ul>
+        <p class="fragment">Överdimensionering kostar resurser. Underdimensionering ger dålig funktion.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Antaganden</p><h2>Beräkningen är bara så bra som underlaget</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Besökare per dag</th><td>Hur många använder tjänsten?</td></tr><tr class="fragment"><th>Samtidighet</th><td>Hur många använder den samtidigt?</td></tr><tr class="fragment"><th>Data per besök</th><td>Hur mycket skickas till varje användare?</td></tr><tr class="fragment"><th>Topplast</th><td>När är belastningen som störst?</td></tr><tr class="fragment"><th>Tillväxt</th><td>Hur förändras behovet över tid?</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Beräkning</p><h2>Datamängd vid samtidig användning</h2>
+        <pre class="code-block fragment"><code>total datamängd = antal användare × data per användare</code></pre>
+        <p class="fragment">500 användare × 4 MB = 2 000 MB ≈ 2 GB</p>
+        <p class="fragment">Beräkningen beskriver datamängden, men inte ensam hur snabbt den måste överföras.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv dimensionering</p><h2>Beräkna trafikbehovet</h2>
+        <div class="decision-simulator capacity-simulator">
+          <div class="decision-controls">
+            <label for="capacity-users">Samtidiga användare</label>
+            <input id="capacity-users" type="number" min="1" value="500">
+            <label for="capacity-data">Data per användare (MB)</label>
+            <input id="capacity-data" type="number" min="0.1" step="0.1" value="4">
+            <label for="capacity-time">Överföringstid (sekunder)</label>
+            <input id="capacity-time" type="number" min="1" value="10">
+            <button type="button" data-calculate-capacity>Beräkna</button>
+          </div>
+          <div class="decision-output"><strong>Resultat</strong><pre data-capacity-output aria-live="polite">Ändra värden och beräkna.</pre></div>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Enheter</p><h2>Byte och bit är inte samma sak</h2>
+        <p class="fragment">Filstorlek anges ofta i MB eller GB.</p>
+        <p class="fragment">Nätverkshastighet anges ofta i Mbit/s eller Gbit/s.</p>
+        <pre class="code-block fragment"><code>1 byte = 8 bitar
+100 MB = 800 Mbit</code></pre>
+        <p class="fragment">Fel enhet kan göra beräkningen åtta gånger fel.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lagringskapacitet</p><h2>Räkna på tillväxt över tid</h2>
+        <p class="fragment">2 000 användare laddar upp 5 MB per vecka.</p>
+        <pre class="code-block fragment"><code>2 000 × 5 MB = 10 000 MB ≈ 10 GB per vecka
+10 GB × 52 ≈ 520 GB per år</code></pre>
+        <p class="fragment">Sedan behövs marginal för säkerhetskopior, metadata och tillväxt.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Serverbelastning</p><h2>Genomsnitt döljer toppar</h2>
+        <p class="fragment">1 000 besök jämnt fördelade över ett dygn kan verka enkelt.</p>
+        <p class="fragment">Om 600 besök sker under samma tio minuter blir kravet helt annorlunda.</p>
+        <p class="fragment"><strong>Dimensionera efter relevanta toppar – inte bara dygnsmedel.</strong></p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · Unity</p><h2>Dimensionera för spelarens dator</h2>
+        <ul><li class="fragment">grafikens detaljnivå och upplösning</li><li class="fragment">processorbelastning</li><li class="fragment">arbetsminne och grafikminne</li><li class="fragment">antal objekt och fysikberäkningar</li></ul>
+        <p class="fragment">Ett spel som bara fungerar på utvecklarens dator är inte färdigbedömt.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Rimlighetsbedömning</p><h2>Ställ frågor till resultatet</h2>
+        <ul><li class="fragment">Är storleksordningen rimlig?</li><li class="fragment">Är enheterna korrekta?</li><li class="fragment">Vilka antaganden styr resultatet?</li><li class="fragment">Har något viktigt utelämnats?</li><li class="fragment">Stämmer resultatet med mätningar eller liknande system?</li></ul>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Snabb kontroll</p><h2>Överslagsräkning hittar stora fel</h2>
+        <p class="fragment">Exakt beräkning: 487 användare × 3,8 MB = 1 850,6 MB.</p>
+        <p class="fragment">Överslag: 500 × 4 MB = 2 000 MB.</p>
+        <p class="fragment">Resultaten ligger nära varandra. Storleksordningen verkar rimlig.</p>
+        <p class="fragment">Om den exakta beräkningen i stället gav 20 MB skulle något sannolikt vara fel.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt beslut</p><h2>Är påståendet rimligt?</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Påståendet saknar mätbara antaganden om användning, kapacitet och topplast och kan därför inte godtas ännu.">
+          <p>”Den billigaste servern klarar säkert hundratusen samtidiga användare.”</p>
+          <button type="button" data-choice="a">Ja, alla servrar fungerar ungefär likadant</button>
+          <button type="button" data-choice="b">Ja, eftersom servern är ny</button>
+          <button type="button" data-choice="c">Det går inte att bedöma utan krav, data och belastningstest</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Modell + beräkning + test</p><h2>Tre underlag för beslut</h2>
+        <div class="flow"><span class="fragment">Modell beskriver systemet</span><b class="fragment">+</b><span class="fragment">Beräkning uppskattar behovet</span><b class="fragment">+</b><span class="fragment">Test mäter verkligt beteende</span></div>
+        <p class="fragment">Ingen del räcker alltid ensam. Tillsammans ger de ett starkare beslutsunderlag.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Dimensionera en digital tjänst</h2>
+        <ol><li class="fragment">Beskriv systemet med en enkel modell.</li><li class="fragment">Formulera antaganden om användning.</li><li class="fragment">Beräkna trafik eller lagringsbehov.</li><li class="fragment">Lägg till rimlig reservkapacitet.</li><li class="fragment">Gör en överslagskontroll.</li><li class="fragment">Beskriv vilket test som kan bekräfta beräkningen.</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
+        <ol><li class="fragment">Vad skiljer en teori från en modell?</li><li class="fragment">Varför måste topplast ingå i dimensioneringen?</li><li class="fragment">Hur kan en överslagsräkning avslöja ett orimligt resultat?</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Begrepp gör tekniska resonemang precisa.</li><li class="fragment">Teorier förklarar och modeller förenklar.</li><li class="fragment">Dimensionering anpassar kapacitet till verkliga behov.</li><li class="fragment">Beräkningar kräver tydliga antaganden och korrekta enheter.</li><li class="fragment">Rimlighet kontrolleras med överslag, jämförelser och tester.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    document.querySelectorAll('.choice-question').forEach((question) => {
+      question.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-choice]');
+        if (!button) return;
+        const correct = button.dataset.choice === question.dataset.correct;
+        question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        question.querySelector('.choice-feedback').textContent = correct
+          ? question.dataset.correctMessage
+          : 'Inte riktigt. Välj det alternativ som bygger på rätt modell eller på mätbara tekniska underlag.';
+      });
+    });
+
+    document.querySelector('[data-calculate-capacity]').addEventListener('click', () => {
+      const users = Number(document.querySelector('#capacity-users').value);
+      const dataPerUser = Number(document.querySelector('#capacity-data').value);
+      const seconds = Number(document.querySelector('#capacity-time').value);
+      const output = document.querySelector('[data-capacity-output]');
+      if (![users, dataPerUser, seconds].every((value) => Number.isFinite(value) && value > 0)) {
+        output.textContent = 'Fel: alla värden måste vara större än noll.';
+        return;
+      }
+      const totalMB = users * dataPerUser;
+      const requiredMbit = totalMB * 8 / seconds;
+      output.textContent = `Total data: ${totalMB.toLocaleString('sv-SE')} MB\nÖverföringstid: ${seconds} s\nMinsta teoretiska bandbredd: ${requiredMbit.toLocaleString('sv-SE')} Mbit/s\n\nI praktiken behövs marginal för protokoll, variation och topplast.`;
+    });
+  </script>
+</body>
+</html>

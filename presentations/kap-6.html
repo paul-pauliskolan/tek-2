@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interaktiv presentation om kvalitet, risk, miljö och arbetsmiljö i Teknik 1.">
-  <title>Kapitel 6 – Kvalitet, risk, miljö och arbetsmiljö</title>
+  <meta name="description" content="Interaktiv presentation om problemlösning inom informationsteknik för Teknik 1.">
+  <title>Kapitel 6 – Lösningar, implementering och systematisk testning</title>
   <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="presentation.css">
@@ -18,185 +18,76 @@
     <div class="deck" aria-live="polite">
       <section class="slide is-active"><div class="slide-content">
         <p class="slide-kicker">Teknik 1 · Kapitel 6</p>
-        <h1>Kvalitet, risk, miljö och arbetsmiljö</h1>
-        <p class="fragment">Ett tekniskt system ska fungera – men också vara säkert, hållbart och rimligt att arbeta med.</p>
+        <h1>Lösningar, implementering och systematisk testning</h1>
+        <p class="fragment">Från ett synligt symptom till en testad teknisk lösning.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">förklara systematiskt kvalitetsarbete</li><li class="fragment">beskriva flera former av kvalitetssäkring och testning</li><li class="fragment">identifiera, bedöma och hantera risker</li><li class="fragment">resonera om miljöpåverkan och arbetsmiljö</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 3</p><h2>Föreslå flera lösningar</h2>
+        <ul><li class="fragment">ändra kod eller inställningar</li><li class="fragment">förbättra design och användarflöde</li><li class="fragment">optimera filer eller resurser</li><li class="fragment">jämför tid, effekt och risk</li></ul>
+        <p class="fragment">Den första idén är inte automatiskt den bästa lösningen.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Startfråga</p><h2>När har ett system hög kvalitet?</h2>
-        <p class="fragment">När det går att starta?</p>
-        <p class="fragment">När alla funktioner finns?</p>
-        <p class="fragment">När utvecklaren är nöjd?</p>
-        <p class="fragment"><strong>Kvalitet måste bedömas mot krav, användning, risker och konsekvenser.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Konsekvenser</p><h2>Kan lösningen skapa nya problem?</h2>
+        <p class="fragment">En ändring kan lösa ett fel men samtidigt påverka:</p>
+        <div class="process-grid"><span class="fragment">Säkerhet</span><span class="fragment">Prestanda</span><span class="fragment">Stabilitet</span><span class="fragment">Användbarhet</span><span class="fragment">Underhåll</span></div>
+        <p class="fragment">Välj den lösning som fungerar bäst för systemet som helhet.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Begrepp</p><h2>Vad menas med kvalitet?</h2>
-        <div class="process-grid"><span class="fragment">Funktion</span><span class="fragment">Stabilitet</span><span class="fragment">Säkerhet</span><span class="fragment">Användbarhet</span><span class="fragment">Prestanda</span><span class="fragment">Underhållbarhet</span></div>
-        <p class="fragment">Kvalitet betyder inte bara att systemet fungerar, utan hur väl det uppfyller sitt syfte över tid.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 4</p><h2>Implementera kontrollerat</h2>
+        <ul><li class="fragment">gör en tydlig förändring i taget</li><li class="fragment">dokumentera vad som ändras</li><li class="fragment">behåll möjligheten att återställa</li><li class="fragment">testa den minsta relevanta delen först</li></ul>
+        <p class="fragment">Om allt ändras samtidigt blir det svårt att veta vad som hjälpte.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Systematiskt arbete</p><h2>Kvalitet byggs under hela projektet</h2>
-        <div class="flow"><span class="fragment">Planera</span><b class="fragment">→</b><span class="fragment">Genomföra</span><b class="fragment">→</b><span class="fragment">Kontrollera</span><b class="fragment">→</b><span class="fragment">Förbättra</span><b class="fragment">↺</b></div>
-        <p class="fragment">Kvalitetsarbete är en återkommande process, inte en slutkontroll.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 5</p><h2>Testa resultatet</h2>
+        <ol><li class="fragment">Är det ursprungliga problemet borta?</li><li class="fragment">Fungerar lösningen flera gånger?</li><li class="fragment">Fungerar den även med annan indata?</li><li class="fragment">Har något annat slutat fungera?</li></ol>
+        <p class="fragment">”Det fungerade en gång” är inte ett tillräckligt test.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Planera kvalitet</p><h2>Bestäm vad ”bra” betyder</h2>
-        <ul><li class="fragment">Vilka krav ska lösningen uppfylla?</li><li class="fragment">Hur ska kraven kontrolleras?</li><li class="fragment">Vem ansvarar för kontrollerna?</li><li class="fragment">När ska testerna genomföras?</li><li class="fragment">Vad räknas som godkänt?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Varför tidigt?</p><h2>Fel blir dyrare senare</h2>
-        <div class="flow"><span class="fragment">Krav</span><b class="fragment">→</b><span class="fragment">Design</span><b class="fragment">→</b><span class="fragment">Kod</span><b class="fragment">→</b><span class="fragment">Lansering</span></div>
-        <p class="fragment">Ett felaktigt krav kan påverka design, kod, test och användare.</p>
-        <p class="fragment">Tidiga kontroller minskar mängden arbete som måste göras om.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Teknisk skuld</p><h2>En genväg kan skapa framtida kostnad</h2>
-        <p class="fragment">Teknisk skuld uppstår när en snabb lösning gör framtida underhåll och utveckling svårare.</p>
-        <table class="comparison"><thead><tr><th>Nu</th><th>Senare</th></tr></thead><tbody><tr class="fragment"><td>Test hoppas över</td><td>Fler fel når användaren</td></tr><tr class="fragment"><td>Otydlig kod accepteras</td><td>Ändringar tar längre tid</td></tr><tr class="fragment"><td>Säkerhetsuppdatering skjuts upp</td><td>Risken för intrång ökar</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kvalitetssäkring</p><h2>Flera perspektiv behövs</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Kodgranskning</th><td>Hittar fel, risker och otydlig kod.</td></tr><tr class="fragment"><th>Funktionstest</th><td>Kontrollerar att en funktion gör rätt.</td></tr><tr class="fragment"><th>Användartest</th><td>Visar om människor förstår och kan använda lösningen.</td></tr><tr class="fragment"><th>Uppföljning</th><td>Kontrollerar kvalitet efter lansering.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Testtyper</p><h2>Olika frågor kräver olika test</h2>
-        <table class="comparison"><thead><tr><th>Test</th><th>Fråga</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><th>Funktion</th><td>Gör systemet rätt sak?</td><td>Kan formuläret skickas?</td></tr><tr class="fragment"><th>Användare</th><td>Förstår användaren?</td><td>Hittar eleven rätt meny?</td></tr><tr class="fragment"><th>Prestanda</th><td>Fungerar det under belastning?</td><td>Klarar sidan 1 000 besökare?</td></tr><tr class="fragment"><th>Säkerhet</th><td>Kan systemet missbrukas?</td><td>Skyddas användardata?</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kontrollfråga</p><h2>Vilket test behövs?</h2>
-        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Ett prestandatest visar hur systemet reagerar när många användare ansluter samtidigt.">
-          <p>En bokningstjänst fungerar för fem testare. Teamet behöver veta om den klarar tusen samtidiga användare.</p>
-          <button type="button" data-choice="a">Användartest</button>
-          <button type="button" data-choice="b">Kodgranskning av färgnamn</button>
-          <button type="button" data-choice="c">Prestandatest under belastning</button>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv felsökning</p><h2>Vad är bästa nästa steg?</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Först behöver felet reproduceras med kontrollerade testfall så att villkoren blir tydliga.">
+          <p>Ett formulär misslyckas ibland när det skickas, men teamet vet inte vilken inmatning som utlöser felet.</p>
+          <button type="button" data-choice="a">Skriv om hela formuläret</button>
+          <button type="button" data-choice="b">Byt färg på skicka-knappen</button>
+          <button type="button" data-choice="c">Testa systematiskt med olika inmatningar och dokumentera resultatet</button>
           <p class="choice-feedback" aria-live="polite"></p>
         </div>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Riskanalys</p><h2>Tänk förebyggande</h2>
-        <ol><li class="fragment">Identifiera vad som kan hända.</li><li class="fragment">Bedöm sannolikheten.</li><li class="fragment">Bedöm konsekvensen.</li><li class="fragment">Prioritera riskerna.</li><li class="fragment">Planera åtgärder och ansvar.</li></ol>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · webbplats</p><h2>Knappen gör ingenting</h2>
+        <ol><li class="fragment"><strong>Identifiera:</strong> klick ger ingen reaktion.</li><li class="fragment"><strong>Analysera:</strong> JavaScript-funktionen körs inte.</li><li class="fragment"><strong>Föreslå:</strong> kontrollera kopplingen mellan knapp och funktion.</li><li class="fragment"><strong>Implementera:</strong> korrigera kopplingen.</li><li class="fragment"><strong>Testa:</strong> prova flera klick och olika enheter.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Riskvärde</p><h2>Sannolikhet × konsekvens</h2>
-        <div class="two-column"><div><p class="fragment"><strong>Sannolikhet</strong></p><p class="fragment">Hur troligt är det att händelsen inträffar?</p></div><div><p class="fragment"><strong>Konsekvens</strong></p><p class="fragment">Hur allvarligt blir resultatet om den inträffar?</p></div></div>
-        <p class="fragment">En sällsynt händelse kan fortfarande prioriteras högt om konsekvensen är mycket allvarlig.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · Unity</p><h2>Karaktären faller genom marken</h2>
+        <ol><li class="fragment"><strong>Symptom:</strong> karaktären passerar markytan.</li><li class="fragment"><strong>Analys:</strong> kontrollera collider och fysikinställningar.</li><li class="fragment"><strong>Orsak:</strong> collider saknas eller är fel inställd.</li><li class="fragment"><strong>Lösning:</strong> korrigera komponenten.</li><li class="fragment"><strong>Test:</strong> prova flera platser och rörelser.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktiv riskmatris</p><h2>Bedöm en risk</h2>
-        <div class="decision-simulator risk-simulator">
-          <div class="decision-controls">
-            <label for="risk-probability">Sannolikhet</label>
-            <select id="risk-probability"><option value="1">1 · Låg</option><option value="2">2 · Medel</option><option value="3">3 · Hög</option></select>
-            <label for="risk-consequence">Konsekvens</label>
-            <select id="risk-consequence"><option value="1">1 · Låg</option><option value="2">2 · Medel</option><option value="3">3 · Hög</option></select>
-            <button type="button" data-calculate-risk>Beräkna riskvärde</button>
-          </div>
-          <div class="decision-output"><strong>Bedömning</strong><pre data-risk-output aria-live="polite">Välj värden och beräkna.</pre></div>
-        </div>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Optimering</p><h2>När inget är trasigt – men för långsamt</h2>
+        <p class="fragment">Optimering förbättrar exempelvis snabbhet, stabilitet eller resursanvändning.</p>
+        <ul><li class="fragment">minska bildstorlekar</li><li class="fragment">förenkla onödigt arbete i koden</li><li class="fragment">anpassa serverkapacitet till belastningen</li></ul>
+        <p class="fragment">Mät före och efter ändringen. Annars vet du inte om den hjälpte.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Vanliga IT-risker</p><h2>Vad kan hota systemet?</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Dataförlust</th><td>Filer försvinner eller blir oanvändbara.</td></tr><tr class="fragment"><th>Säkerhetsintrång</th><td>Obehöriga får åtkomst.</td></tr><tr class="fragment"><th>Driftstopp</th><td>Systemet blir otillgängligt.</td></tr><tr class="fragment"><th>Programfel</th><td>Felaktig kod ger fel resultat.</td></tr><tr class="fragment"><th>Överbelastning</th><td>Kapaciteten räcker inte.</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Gummiankemetoden</p><h2>Förklara problemet högt</h2>
+        <ol><li class="fragment">Beskriv vad systemet ska göra.</li><li class="fragment">Förklara vad varje steg faktiskt gör.</li><li class="fragment">Säg vilka antaganden du gör.</li><li class="fragment">Notera var förklaringen inte längre håller.</li></ol>
+        <p class="fragment">Du kan förklara för en person – eller ett föremål. Poängen är att formulera tanken tydligt.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Riskhantering</p><h2>Fyra sätt att hantera risk</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Undvik</th><td>Ta bort aktiviteten som skapar risken.</td></tr><tr class="fragment"><th>Minska</th><td>Sänk sannolikhet eller konsekvens.</td></tr><tr class="fragment"><th>Överför</th><td>Fördela ansvaret, exempelvis genom avtal.</td></tr><tr class="fragment"><th>Acceptera</th><td>Bevaka en låg risk och ha en reservplan.</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Problemlösning och lärande</p><h2>Fel kan ge kunskap</h2>
+        <p class="fragment">När du undersöker varför något inte fungerar lär du dig hur systemet är uppbyggt.</p>
+        <div class="flow"><span class="fragment">Fel</span><b class="fragment">→</b><span class="fragment">Undersökning</span><b class="fragment">→</b><span class="fragment">Förståelse</span><b class="fragment">→</b><span class="fragment">Bättre lösning</span></div>
+        <p class="fragment">Slumpmässiga ändringar ger däremot svag kunskap om vad som faktiskt hände.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Förebyggande åtgärder</p><h2>Gör systemet motståndskraftigt</h2>
-        <ul><li class="fragment">säkerhetskopior och återställningstest</li><li class="fragment">begränsad åtkomst och stark autentisering</li><li class="fragment">automatiska och manuella tester</li><li class="fragment">övervakning och larm</li><li class="fragment">reservplan vid driftstopp</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Felsök systematiskt</h2>
+        <ol><li class="fragment">Välj ett konkret fel i ett program, en webbplats eller ett spel.</li><li class="fragment">Beskriv förväntat och faktiskt resultat.</li><li class="fragment">Reproducera felet och dokumentera stegen.</li><li class="fragment">Formulera två möjliga orsaker.</li><li class="fragment">Ändra en sak och testa igen.</li><li class="fragment">Redovisa vad testet visade.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Miljösäkring</p><h2>Digital teknik har fysisk påverkan</h2>
-        <ul><li class="fragment">servrar och nätverk använder energi</li><li class="fragment">elektronik kräver material och tillverkning</li><li class="fragment">utrustning behöver transporteras och återvinnas</li><li class="fragment">ineffektiv kod kan använda onödiga resurser</li></ul>
-        <p class="fragment">”Digitalt” betyder inte automatiskt resurssnålt.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Minska miljöpåverkan</p><h2>Se till hela livscykeln</h2>
-        <div class="flow"><span class="fragment">Material</span><b class="fragment">→</b><span class="fragment">Tillverkning</span><b class="fragment">→</b><span class="fragment">Drift</span><b class="fragment">→</b><span class="fragment">Underhåll</span><b class="fragment">→</b><span class="fragment">Återbruk</span></div>
-        <ul><li class="fragment">förläng utrustningens livslängd</li><li class="fragment">effektivisera kod och serveranvändning</li><li class="fragment">välj rätt kapacitet för behovet</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">AI och energi</p><h2>Möjlighet med resurskostnad</h2>
-        <p class="fragment">AI-tjänster använder kraftfulla servrar för både träning och användning.</p>
-        <p class="fragment">Miljöpåverkan beror bland annat på modellens storlek, antalet beräkningar och hur elen produceras.</p>
-        <p class="fragment">Rätt fråga är därför inte bara ”kan vi använda AI?” utan också ”när ger användningen tillräcklig nytta?”.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Arbetsmiljö</p><h2>Människan är en del av systemet</h2>
-        <div class="process-grid"><span class="fragment">Ergonomi</span><span class="fragment">Arbetsbelastning</span><span class="fragment">Belysning</span><span class="fragment">Pauser</span><span class="fragment">Tydligt ansvar</span><span class="fragment">Psykologisk trygghet</span></div>
-        <p class="fragment">Dålig arbetsmiljö påverkar både hälsa, beslut och teknisk kvalitet.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Ergonomi</p><h2>Anpassa arbetet till kroppen</h2>
-        <ul><li class="fragment">variera arbetsställning</li><li class="fragment">placera skärm och tangentbord rimligt</li><li class="fragment">undvik långvarigt statiskt arbete</li><li class="fragment">ta regelbundna pauser</li><li class="fragment">anpassa ljus och ljudmiljö</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Organisatorisk arbetsmiljö</p><h2>Orimlig planering skapar risk</h2>
-        <p class="fragment">Orealistiska deadlines kan leda till stress, fler misstag och genvägar i kvalitetssäkringen.</p>
-        <ul><li class="fragment">prioritera arbetsuppgifter</li><li class="fragment">gör belastning och hinder synliga</li><li class="fragment">fördela ansvar tydligt</li><li class="fragment">skapa utrymme att rapportera problem</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Exempel · webbplats</p><h2>Fyra perspektiv samtidigt</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Kvalitet</th><td>Sidan fungerar i olika webbläsare.</td></tr><tr class="fragment"><th>Risk</th><td>Användardata skyddas och säkerhetskopieras.</td></tr><tr class="fragment"><th>Miljö</th><td>Bilder, kod och serverresurser effektiviseras.</td></tr><tr class="fragment"><th>Arbetsmiljö</th><td>Arbetet har rimlig belastning och tydligt ansvar.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktivt beslut</p><h2>Vad prioriteras först?</h2>
-        <div class="choice-question" data-correct="b" data-correct-message="Rätt. Risken med hög konsekvens för användarnas data behöver hanteras före mindre visuella brister.">
-          <p>En webbplats har ett mindre färgfel. Samtidigt saknas fungerande säkerhetskopiering av användardata.</p>
-          <button type="button" data-choice="a">Rätta färgen först eftersom felet syns</button>
-          <button type="button" data-choice="b">Säkra och testa säkerhetskopieringen först</button>
-          <button type="button" data-choice="c">Vänta tills något går fel</button>
-          <p class="choice-feedback" aria-live="polite"></p>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Praktisk övning</p><h2>Gör en kvalitetsplan</h2>
-        <ol><li class="fragment">Välj en teknisk lösning.</li><li class="fragment">Formulera fyra mätbara kvalitetskrav.</li><li class="fragment">Välj test för varje krav.</li><li class="fragment">Identifiera tre risker och bedöm dem.</li><li class="fragment">Föreslå en miljöåtgärd.</li><li class="fragment">Föreslå en arbetsmiljöåtgärd.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Diskussion</p><h2>Kvalitet innebär avvägningar</h2>
-        <ul><li class="fragment">Kan högre miljökrav driva fram bättre teknik?</li><li class="fragment">När är en teknisk risk acceptabel?</li><li class="fragment">Vem ansvarar för problem efter lansering?</li><li class="fragment">Hur påverkar tidspress kvalitet och arbetsmiljö?</li></ul>
-        <p class="fragment">Professionellt kvalitetsarbete gör avvägningarna synliga och motiverade.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
-        <ol><li class="fragment">Varför ska kvalitet planeras före testningen?</li><li class="fragment">Hur skiljer sig sannolikhet från konsekvens?</li><li class="fragment">Hur kan arbetsmiljö påverka systemets tekniska kvalitet?</li></ol>
+        <ol><li class="fragment">Vad skiljer ett symptom från en orsak?</li><li class="fragment">Varför ska man ändra en sak i taget?</li><li class="fragment">Hur kontrollerar du att lösningen inte skapade ett nytt fel?</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment">Kvalitet planeras, kontrolleras och förbättras kontinuerligt.</li><li class="fragment">Olika kvalitetsfrågor kräver olika tester.</li><li class="fragment">Risk bedöms genom sannolikhet och konsekvens.</li><li class="fragment">Digital teknik har fysisk miljöpåverkan.</li><li class="fragment">God arbetsmiljö är en förutsättning för hållbar kvalitet.</li></ul>
+        <ul><li class="fragment">Beskriv problemet tydligt innan du försöker lösa det.</li><li class="fragment">Skilj symptom från bakomliggande orsak.</li><li class="fragment">Reproducera, analysera och jämför möjliga lösningar.</li><li class="fragment">Implementera en kontrollerad förändring i taget.</li><li class="fragment">Testa både lösningen och resten av systemet.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>
@@ -212,16 +103,8 @@
         button.classList.add(correct ? 'is-correct' : 'is-wrong');
         question.querySelector('.choice-feedback').textContent = correct
           ? question.dataset.correctMessage
-          : 'Inte riktigt. Utgå från vilket alternativ som bäst minskar den viktigaste risken eller besvarar testfrågan.';
+          : 'Inte riktigt. Utgå från observationer och välj steget som ger säkrast information om orsaken.';
       });
-    });
-
-    document.querySelector('[data-calculate-risk]').addEventListener('click', () => {
-      const probability = Number(document.querySelector('#risk-probability').value);
-      const consequence = Number(document.querySelector('#risk-consequence').value);
-      const value = probability * consequence;
-      const level = value <= 2 ? 'Låg' : value <= 4 ? 'Medel' : 'Hög';
-      document.querySelector('[data-risk-output]').textContent = `Sannolikhet: ${probability}\nKonsekvens: ${consequence}\nRiskvärde: ${value}\nPrioritet: ${level}`;
     });
   </script>
 </body>

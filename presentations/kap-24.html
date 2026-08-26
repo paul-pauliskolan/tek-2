@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interaktiv presentation om kommunikation, dokumentation och presentation inom informationsteknik i Teknik 1.">
+  <title>Kapitel 24 – Versionshantering och presentation av tekniska lösningar</title>
+  <script src="../js/theme.js"></script>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Teknik 1 · Kapitel 24</p>
+        <h1>Versionshantering och presentation av tekniska lösningar</h1>
+        <p class="fragment">Tekniska lösningar behöver kunna förstås, användas och utvecklas av andra.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Versionshantering</p><h2>Spara förändringar med sammanhang</h2>
+        <div class="flow"><span class="fragment">Version 1</span><b class="fragment">→</b><span class="fragment">Ändring + beskrivning</span><b class="fragment">→</b><span class="fragment">Version 2</span><b class="fragment">→</b><span class="fragment">Fortsatt arbete</span></div>
+        <ul><li class="fragment">jämför versioner</li><li class="fragment">se vem som ändrade vad</li><li class="fragment">återställ ett tidigare läge</li><li class="fragment">arbeta parallellt i grenar</li></ul>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Git och GitHub</p><h2>Verktyg och samarbetsplattform</h2>
+        <table class="comparison"><thead><tr><th>Git</th><th>GitHub</th></tr></thead><tbody><tr><td class="fragment">Versionshanteringssystem</td><td class="fragment">Webbaserad tjänst för Git-repositorier</td></tr><tr><td class="fragment">Kan användas lokalt</td><td class="fragment">Lagrar och delar projekt online</td></tr><tr><td class="fragment">Commit, branch och merge</td><td class="fragment">Pull requests, granskning och ärenden</td></tr></tbody></table>
+        <p class="fragment">GitHub använder Git, men Git är inte samma sak som GitHub.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">En bra commit</p><h2>En begriplig förändring</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Otydligt</strong></p><pre class="code-block compact-code fragment"><code>fix</code></pre></div><div><p class="fragment"><strong>Tydligt</strong></p><pre class="code-block compact-code fragment"><code>Rätta validering av tom e-postadress</code></pre></div></div>
+        <p class="fragment">En commit bör vara avgränsad och beskriva vad förändringen åstadkommer.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Presentation</p><h2>Välj budskap före detaljer</h2>
+        <ol><li class="fragment">Vad ska mottagaren förstå?</li><li class="fragment">Vad behöver mottagaren besluta eller göra?</li><li class="fragment">Vilka bevis och exempel behövs?</li><li class="fragment">Vilka tekniska detaljer kan vänta?</li></ol>
+        <p class="fragment">En presentation är ett urval – inte all dokumentation uppläst.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Visuell kommunikation</p><h2>Visa relationen som ska förstås</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Flödesschema</th><td>Ordning och beslut</td></tr><tr class="fragment"><th>Systemdiagram</th><td>Komponenter och kopplingar</td></tr><tr class="fragment"><th>Skärmbild</th><td>Gränssnitt och visuellt resultat</td></tr><tr class="fragment"><th>Diagram</th><td>Mängder, förändring och jämförelse</td></tr><tr class="fragment"><th>Demonstration</th><td>Faktiskt beteende i användning</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Förklara ett system</p><h2>Från helhet till detalj</h2>
+        <div class="flow"><span class="fragment">Problem och användare</span><b class="fragment">→</b><span class="fragment">Lösningens helhet</span><b class="fragment">→</b><span class="fragment">Viktiga delar</span><b class="fragment">→</b><span class="fragment">Resultat och begränsningar</span></div>
+        <p class="fragment">Mottagaren behöver en karta innan de tekniska detaljerna blir begripliga.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Elevator pitch</p><h2>Förklara nyttan på en minut</h2>
+        <div class="prompt-card fragment"><p><strong>För</strong> [målgrupp] som har [problem] erbjuder vår lösning [funktion]. Den skapar [nytta], till skillnad från [alternativ].</p></div>
+        <p class="fragment">Fokusera på problem, mottagare och värde – inte en lista över all teknik.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv pitchbyggare</p><h2>Formulera kärnan</h2>
+        <div class="decision-simulator pitch-builder">
+          <div class="decision-controls">
+            <label for="pitch-audience">Målgrupp</label><input id="pitch-audience" type="text" value="små idrottsföreningar">
+            <label for="pitch-problem">Problem</label><input id="pitch-problem" type="text" value="svårt att hålla medlemmar informerade">
+            <label for="pitch-solution">Lösning</label><input id="pitch-solution" type="text" value="en lättskött webbplats med schema och nyheter">
+            <label for="pitch-value">Nytta</label><input id="pitch-value" type="text" value="mindre administration och aktuell information">
+            <button type="button" data-build-pitch>Skapa pitch</button>
+          </div>
+          <div class="decision-output"><strong>Pitch</strong><pre data-pitch-output aria-live="polite">Fyll i fälten och skapa en pitch.</pre></div>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Webbplatsprojekt</p><h2>Tre spår genom hela projektet</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Kommunikation</th><td>Diskutera krav, design, status och problem.</td></tr><tr class="fragment"><th>Dokumentation</th><td>Beskriv struktur, dataflöden, kod och tester.</td></tr><tr class="fragment"><th>Presentation</th><td>Demonstrera webbplatsen och förklara nyttan.</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Unity-projekt</p><h2>Förklara både regler och upplevelse</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Kommunikation</th><td>Samordna spelmekanik, nivåer, grafik och kod.</td></tr><tr class="fragment"><th>Dokumentation</th><td>Beskriv system, skript, tillgångar och testresultat.</td></tr><tr class="fragment"><th>Presentation</th><td>Visa spelet och demonstrera centrala funktioner.</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Loggbok</p><h2>Dokumentera arbetets utveckling</h2>
+        <ul><li class="fragment">vad gjorde jag?</li><li class="fragment">varför valde jag denna lösning?</li><li class="fragment">vilka problem uppstod?</li><li class="fragment">hur testades och förbättrades resultatet?</li><li class="fragment">vad är nästa steg?</li></ul>
+        <p class="fragment">En bra loggbok beskriver beslut och lärande, inte bara en lista över aktiviteter.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt beslut</p><h2>Vilken dokumentation behövs?</h2>
+        <div class="choice-question" data-correct="b" data-correct-message="Rätt. En systembeskrivning med dataflöde, autentisering och ansvar hjälper nästa utvecklare förstå och ändra integrationen säkert.">
+          <p>En ny utvecklare ska underhålla en koppling mellan en webbplats och ett betalningssystem.</p>
+          <button type="button" data-choice="a">Endast en reklambild av webbplatsen</button>
+          <button type="button" data-choice="b">Systembeskrivning, dataflöde, gränssnitt och säkerhetskrav</button>
+          <button type="button" data-choice="c">En lista över teamets favoritverktyg</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Dokumentera och presentera en lösning</h2>
+        <ol><li class="fragment">Välj en teknisk lösning och två mottagare.</li><li class="fragment">Skapa en enkel systembeskrivning.</li><li class="fragment">Skriv en kort användarguide.</li><li class="fragment">Förbättra namn och kommentarer i ett kodexempel.</li><li class="fragment">Skapa en tydlig visuell modell.</li><li class="fragment">Presentera lösningen på en minut.</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
+        <ol><li class="fragment">Hur skiljer sig dokumentation från presentation?</li><li class="fragment">När hjälper en kodkommentar – och när behövs tydligare kod?</li><li class="fragment">Vad skiljer Git från GitHub?</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Kommunikation skapar gemensam förståelse och samordning.</li><li class="fragment">Dokumentation bevarar kunskap om system och beslut.</li><li class="fragment">Tydlig kod och relevanta kommentarer kompletterar varandra.</li><li class="fragment">Git hanterar versioner; GitHub stödjer lagring och samarbete.</li><li class="fragment">En presentation anpassar budskap och detaljer till mottagaren.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    document.querySelectorAll('.choice-question').forEach((question) => {
+      question.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-choice]');
+        if (!button) return;
+        const correct = button.dataset.choice === question.dataset.correct;
+        question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        question.querySelector('.choice-feedback').textContent = correct
+          ? question.dataset.correctMessage
+          : 'Inte riktigt. Välj alternativet som gör den viktiga tekniska kunskapen tydlig och användbar för mottagaren.';
+      });
+    });
+
+    document.querySelector('[data-build-pitch]').addEventListener('click', () => {
+      const fields = ['pitch-audience', 'pitch-problem', 'pitch-solution', 'pitch-value'];
+      const values = fields.map((id) => document.querySelector(`#${id}`).value.trim());
+      const output = document.querySelector('[data-pitch-output]');
+      if (values.some((value) => !value)) {
+        output.textContent = 'Fel: fyll i alla fyra fälten.';
+        return;
+      }
+      const [audience, problem, solution, value] = values;
+      output.textContent = `För ${audience} som har ${problem} erbjuder vi ${solution}. Det ger ${value}.`;
+    });
+  </script>
+</body>
+</html>

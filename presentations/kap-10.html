@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interaktiv presentation om värdering av tekniska lösningar, etik och hållbarhet i Teknik 1.">
-  <title>Kapitel 10 – Värdering, etik och hållbarhet</title>
+  <meta name="description" content="Interaktiv presentation om programmering för problemlösning i Teknik 1.">
+  <title>Kapitel 10 – Programförbättring, automatisering och kvalitet</title>
   <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="presentation.css">
@@ -18,194 +18,54 @@
     <div class="deck" aria-live="polite">
       <section class="slide is-active"><div class="slide-content">
         <p class="slide-kicker">Teknik 1 · Kapitel 10</p>
-        <h1>Värdering, etik och hållbarhet</h1>
-        <p class="fragment">Att jämföra tekniska lösningar och motivera vilket alternativ som är rimligast.</p>
+        <h1>Programförbättring, automatisering och kvalitet</h1>
+        <p class="fragment">Från ett tydligt problem till instruktioner som datorn kan utföra.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">värdera tekniska lösningar ur flera perspektiv</li><li class="fragment">resonera om etiska frågor och integritet</li><li class="fragment">bedöma säkerhet och hållbar utveckling</li><li class="fragment">jämföra alternativ och motivera en rimlig bedömning</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 5</p><h2>Förbättra lösningen</h2>
+        <ul><li class="fragment">rätta buggar och logiska fel</li><li class="fragment">hantera oväntad inmatning</li><li class="fragment">göra koden tydligare</li><li class="fragment">förbättra snabbhet och användbarhet</li></ul>
+        <p class="fragment">Program utvecklas ofta i flera versioner. Versionshantering gör ändringarna möjliga att följa och återställa.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Startfråga</p><h2>Vilken lösning är bäst?</h2>
-        <p class="fragment">Den snabbaste?</p>
-        <p class="fragment">Den billigaste?</p>
-        <p class="fragment">Den säkraste?</p>
-        <p class="fragment">Den med minst miljöpåverkan?</p>
-        <p class="fragment"><strong>”Bäst” beror på vilka krav, människor och konsekvenser som räknas.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Webbplats</p><h2>JavaScript skapar interaktion</h2>
+        <div class="flow"><span class="fragment">Användaren klickar</span><b class="fragment">→</b><span class="fragment">Händelsen upptäcks</span><b class="fragment">→</b><span class="fragment">Kod körs</span><b class="fragment">→</b><span class="fragment">Sidan uppdateras</span></div>
+        <p class="fragment">Exempel: menyer, formulärkontroll, meddelanden och dynamiskt innehåll.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Begrepp</p><h2>Vad innebär värdering?</h2>
-        <ol><li class="fragment">Beskriv alternativen.</li><li class="fragment">Välj relevanta kriterier.</li><li class="fragment">Samla underlag.</li><li class="fragment">Jämför fördelar och nackdelar.</li><li class="fragment">Bedöm konsekvenser.</li><li class="fragment">Motivera slutsatsen.</li></ol>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Unity</p><h2>C# styr spelvärlden</h2>
+        <div class="flow"><span class="fragment">Spelaren trycker</span><b class="fragment">→</b><span class="fragment">Indata läses</span><b class="fragment">→</b><span class="fragment">Rörelse beräknas</span><b class="fragment">→</b><span class="fragment">Karaktären flyttas</span></div>
+        <p class="fragment">Samma princip används för hopp, kollisioner, poäng och interaktion med objekt.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Varför värdera?</p><h2>Fungerande betyder inte automatiskt bra</h2>
-        <p class="fragment">En app kan fungera men samla in onödigt mycket data.</p>
-        <p class="fragment">En server kan vara snabb men använda orimligt mycket energi.</p>
-        <p class="fragment">En billig produkt kan vara svår att reparera och snabbt bli avfall.</p>
-        <p class="fragment">Värdering gör dolda kostnader och konsekvenser synliga.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Automatisering</p><h2>Låt datorn utföra återkommande arbete</h2>
+        <ul><li class="fragment">sortera stora mängder data</li><li class="fragment">beräkna resultat på samma sätt varje gång</li><li class="fragment">kontrollera formulär</li><li class="fragment">skapa rapporter från data</li></ul>
+        <p class="fragment">Automatisering sparar tid och kan minska mänskliga misstag – om reglerna och programmet är korrekta.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kriterier</p><h2>Flera aspekter samtidigt</h2>
-        <div class="process-grid"><span class="fragment">Funktion</span><span class="fragment">Effektivitet</span><span class="fragment">Säkerhet</span><span class="fragment">Kostnad</span><span class="fragment">Etik</span><span class="fragment">Miljöpåverkan</span><span class="fragment">Tillgänglighet</span><span class="fragment">Långsiktighet</span></div>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Viktig begränsning</p><h2>Datorn automatiserar även fel</h2>
+        <p class="fragment">Ett program kan utföra en felaktig regel snabbt, konsekvent och i stor skala.</p>
+        <ul><li class="fragment">Är indata tillförlitlig?</li><li class="fragment">Är reglerna rimliga?</li><li class="fragment">Kan resultatet kontrolleras?</li><li class="fragment">Vem ansvarar när något blir fel?</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Krav före poäng</p><h2>Vissa kriterier är absoluta</h2>
-        <p class="fragment">En lösning som bryter mot lag eller utsätter människor för allvarlig risk kan inte ”vinna” genom höga poäng på andra områden.</p>
-        <div class="two-column"><div><p class="fragment"><strong>Minimikrav</strong></p><p class="fragment">Måste vara uppfyllda.</p></div><div><p class="fragment"><strong>Jämförelsekriterier</strong></p><p class="fragment">Hjälper oss välja mellan godkända alternativ.</p></div></div>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Felsökning</p><h2>Vanliga utmaningar</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Syntaxfel</th><td>Språket kan inte tolka koden.</td></tr><tr class="fragment"><th>Exekveringsfel</th><td>Programmet avbryts när ett fel inträffar.</td></tr><tr class="fragment"><th>Logiskt fel</th><td>Programmet körs men ger fel resultat.</td></tr><tr class="fragment"><th>Otydligt problem</th><td>Koden löser fel behov.</td></tr></tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Funktion</p><h2>Löser tekniken rätt problem?</h2>
-        <ul><li class="fragment">ger systemet korrekt resultat?</li><li class="fragment">fungerar det stabilt?</li><li class="fragment">klarar det relevanta användningsfall?</li><li class="fragment">kan användaren slutföra sin uppgift?</li></ul>
-        <p class="fragment">Snygg design kan inte kompensera för felaktig funktion.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kvalitet</p><h2>Kod läses oftare än den skrivs</h2>
+        <ul><li class="fragment">använd tydliga namn</li><li class="fragment">dela upp koden i begripliga delar</li><li class="fragment">kommentera varför – inte varje självklar rad</li><li class="fragment">undvik onödig upprepning</li><li class="fragment">gör programmet begripligt för användaren</li></ul>
+        <p class="fragment">Ren kod är lättare att testa, ändra och samarbeta kring.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Effektivitet</p><h2>Vilka resurser krävs?</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Tid</th><td>Hur snabbt utförs uppgiften?</td></tr><tr class="fragment"><th>Beräkning</th><td>Hur mycket processor och minne används?</td></tr><tr class="fragment"><th>Energi</th><td>Hur mycket el krävs?</td></tr><tr class="fragment"><th>Mänskligt arbete</th><td>Hur mycket utbildning och handpåläggning behövs?</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Planera ett automatiserat verktyg</h2>
+        <ol><li class="fragment">Välj en återkommande uppgift.</li><li class="fragment">Beskriv indata, bearbetning och utdata.</li><li class="fragment">Skriv pseudokod.</li><li class="fragment">Identifiera variabler, villkor, loopar och funktioner.</li><li class="fragment">Skapa minst fem testfall.</li><li class="fragment">Beskriv hur felaktig inmatning ska hanteras.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Säkerhet</p><h2>Skydda system, data och människor</h2>
-        <ul><li class="fragment">förhindra obehörig åtkomst</li><li class="fragment">minska risken för dataförlust</li><li class="fragment">hantera driftstopp och fel</li><li class="fragment">begränsa konsekvenser när något går fel</li><li class="fragment">testa återställning och reservplaner</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Etik</p><h2>Vad bör tekniken göra?</h2>
-        <p class="fragment">Etik handlar inte bara om vad som är tekniskt möjligt eller lagligt.</p>
-        <ul><li class="fragment">respekterar lösningen människors självbestämmande?</li><li class="fragment">fördelas nytta och risk rättvist?</li><li class="fragment">kan tekniken missbrukas?</li><li class="fragment">är beslut möjliga att förstå och ifrågasätta?</li><li class="fragment">vem ansvarar för konsekvenserna?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Etik och lag</p><h2>Lagligt är en miniminivå</h2>
-        <table class="comparison"><thead><tr><th>Lag</th><th>Etik</th></tr></thead><tbody><tr><td class="fragment">Vad är tillåtet eller förbjudet?</td><td class="fragment">Vad är rimligt, rättvist och försvarbart?</td></tr><tr><td class="fragment">Kan vara tydligt reglerat.</td><td class="fragment">Kräver ofta avvägning och argument.</td></tr><tr><td class="fragment">Förändras genom formella beslut.</td><td class="fragment">Kan uppstå innan lagstiftningen hunnit med.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Integritet</p><h2>Tre frågor om data</h2>
-        <ol><li class="fragment"><strong>Vilken</strong> information samlas in?</li><li class="fragment"><strong>Varför</strong> behövs den?</li><li class="fragment"><strong>Vem</strong> får använda den?</li></ol>
-        <p class="fragment">Lägg också till: hur länge sparas den, hur skyddas den och kan användaren säga nej?</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Dataminimering</p><h2>Samla inte in ”för säkerhets skull”</h2>
-        <p class="fragment">En väderapp behöver kanske plats för att visa lokalt väder.</p>
-        <p class="fragment">Den behöver normalt inte kontaktlista, mikrofon och ständig bakgrundsposition.</p>
-        <p class="fragment"><strong>Mindre insamlad data minskar både integritetsrisk och konsekvensen av ett intrång.</strong></p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Dark patterns</p><h2>När designen arbetar mot användaren</h2>
-        <div class="two-column"><div><p class="fragment"><strong>Acceptera allt</strong></p><p class="fragment">Stor, färgstark och enkel knapp.</p></div><div><p class="fragment"><strong>Neka spårning</strong></p><p class="fragment">Dold bakom flera länkar och otydliga ord.</p></div></div>
-        <p class="fragment">Gränssnittet kan fungera tekniskt men ändå begränsa ett informerat och frivilligt val.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kontrollfråga</p><h2>Vilken design är etiskt starkast?</h2>
-        <div class="choice-question" data-correct="b" data-correct-message="Rätt. Likvärdiga och tydliga val stärker användarens självbestämmande och gör samtycket mer meningsfullt.">
-          <p>En tjänst frågar om användaren vill dela data för riktad reklam.</p>
-          <button type="button" data-choice="a">Stor ”Acceptera”-knapp och ett dolt nej</button>
-          <button type="button" data-choice="b">Tydliga och likvärdiga val för ja, nej och inställningar</button>
-          <button type="button" data-choice="c">Samla in data innan frågan visas</button>
-          <p class="choice-feedback" aria-live="polite"></p>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">AI och rättvisa</p><h2>Automatiserade beslut måste granskas</h2>
-        <ul><li class="fragment">är träningsdatan representativ?</li><li class="fragment">missgynnas vissa grupper?</li><li class="fragment">kan beslutet förklaras?</li><li class="fragment">kan en människa överklaga eller korrigera?</li><li class="fragment">vem ansvarar när resultatet blir fel?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Hållbar utveckling</p><h2>Värdera hela livscykeln</h2>
-        <div class="flow"><span class="fragment">Material</span><b class="fragment">→</b><span class="fragment">Tillverkning</span><b class="fragment">→</b><span class="fragment">Transport</span><b class="fragment">→</b><span class="fragment">Användning</span><b class="fragment">→</b><span class="fragment">Återbruk eller avfall</span></div>
-        <p class="fragment">En energieffektiv produkt kan fortfarande ha stor påverkan genom material, tillverkning eller kort livslängd.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Hållbarhetsfrågor</p><h2>Vad behöver undersökas?</h2>
-        <ul><li class="fragment">hur mycket energi och material krävs?</li><li class="fragment">hur länge kan lösningen användas?</li><li class="fragment">går den att reparera och uppdatera?</li><li class="fragment">vilka arbetsvillkor finns i leverantörskedjan?</li><li class="fragment">vad händer när produkten tas ur bruk?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Avvägning</p><h2>Ingen lösning är perfekt</h2>
-        <p class="fragment">Högre säkerhet kan öka kostnad och komplexitet.</p>
-        <p class="fragment">Längre livslängd kan kräva dyrare material.</p>
-        <p class="fragment">Snabb utveckling kan skapa teknisk skuld och avfall.</p>
-        <p class="fragment"><strong>En avvägning ska vara synlig, motiverad och möjlig att ompröva.</strong></p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Värderingsmatris</p><h2>Gör jämförelsen tydlig</h2>
-        <table class="comparison"><thead><tr><th>Kriterium</th><th>Lösning A</th><th>Lösning B</th></tr></thead><tbody><tr class="fragment"><th>Funktion</th><td>5</td><td>4</td></tr><tr class="fragment"><th>Säkerhet</th><td>2</td><td>5</td></tr><tr class="fragment"><th>Kostnad</th><td>5</td><td>3</td></tr><tr class="fragment"><th>Hållbarhet</th><td>2</td><td>4</td></tr></tbody></table>
-        <p class="fragment">Poäng visar jämförelsen – men kriteriernas vikt och underlaget måste också motiveras.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktiv värdering</p><h2>Jämför två lösningar</h2>
-        <div class="decision-simulator evaluation-simulator">
-          <div class="decision-controls">
-            <label for="eval-function">Vikt: funktion (1–5)</label><input id="eval-function" type="number" min="1" max="5" value="3">
-            <label for="eval-security">Vikt: säkerhet (1–5)</label><input id="eval-security" type="number" min="1" max="5" value="5">
-            <label for="eval-sustainability">Vikt: hållbarhet (1–5)</label><input id="eval-sustainability" type="number" min="1" max="5" value="4">
-            <button type="button" data-calculate-evaluation>Beräkna viktad poäng</button>
-          </div>
-          <div class="decision-output"><strong>Resultat</strong><pre data-evaluation-output aria-live="polite">Ändra kriteriernas vikt och beräkna.</pre></div>
-        </div>
-        <p class="kanban-hint">A: funktion 5, säkerhet 2, hållbarhet 2. B: funktion 4, säkerhet 5, hållbarhet 4.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Matrisens begränsning</p><h2>Siffror ersätter inte omdöme</h2>
-        <ul><li class="fragment">vem satte poängen?</li><li class="fragment">vilket underlag användes?</li><li class="fragment">varför har kriterierna just dessa vikter?</li><li class="fragment">saknas berörda grupper eller konsekvenser?</li><li class="fragment">finns minimikrav som inte får kompenseras?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Rimlig bedömning</p><h2>Motivera – inte bara tyck</h2>
-        <ol><li class="fragment">Beskriv problemet och berörda grupper.</li><li class="fragment">Redovisa kriterier och minimikrav.</li><li class="fragment">Använd relevanta mätningar och källor.</li><li class="fragment">Beskriv osäkerheter och avvägningar.</li><li class="fragment">Förklara varför alternativet väljs.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Värdering under projektet</p><h2>Fråga före, under och efter</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Före</th><td>Vilket problem, vilka krav och vilka risker?</td></tr><tr class="fragment"><th>Under</th><td>Visar tester och återkoppling att lösningen är rimlig?</td></tr><tr class="fragment"><th>Efter</th><td>Vilka faktiska konsekvenser och förbättringsbehov syns?</td></tr></tbody></table>
-        <p class="fragment">Värdering är ett styrverktyg, inte bara en avslutande rapport.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Samhällspåverkan</p><h2>Se bortom den direkta användaren</h2>
-        <ul><li class="fragment">vilka yrken och arbetsuppgifter förändras?</li><li class="fragment">vem får tillgång och vem riskerar att utestängas?</li><li class="fragment">hur förändras makt över data och beslut?</li><li class="fragment">vilka beroenden byggs in i samhället?</li><li class="fragment">vem bär kostnaden när systemet misslyckas?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktivt beslut</p><h2>Vilket alternativ är rimligast?</h2>
-        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Ett pilotförsök ger underlag om funktion, integritet och konsekvenser innan systemet införs i stor skala.">
-          <p>En skola överväger ett AI-system som analyserar elevers aktivitet och föreslår stödinsatser. Systemets träffsäkerhet och dataskydd är ännu osäkra.</p>
-          <button type="button" data-choice="a">Inför systemet för alla direkt</button>
-          <button type="button" data-choice="b">Avvisa all framtida användning utan undersökning</button>
-          <button type="button" data-choice="c">Genomför en begränsad, frivillig och utvärderad pilot med tydligt dataskydd</button>
-          <p class="choice-feedback" aria-live="polite"></p>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Praktisk övning</p><h2>Värdera två tekniska lösningar</h2>
-        <ol><li class="fragment">Formulera problemet och två alternativ.</li><li class="fragment">Välj minst fem relevanta kriterier.</li><li class="fragment">Bestäm eventuella minimikrav.</li><li class="fragment">Samla underlag och jämför alternativen.</li><li class="fragment">Beskriv etiska och långsiktiga konsekvenser.</li><li class="fragment">Motivera vilket alternativ som är rimligast.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
-        <ol><li class="fragment">Varför räcker det inte att en teknisk lösning fungerar?</li><li class="fragment">Vad skiljer ett minimikrav från ett jämförelsekriterium?</li><li class="fragment">Hur kan en värderingsmatris både hjälpa och vilseleda?</li></ol>
+        <ol><li class="fragment">Varför bör problemet och lösningen planeras innan koden skrivs?</li><li class="fragment">När behövs ett villkor och när behövs en loop?</li><li class="fragment">Varför måste ett automatiserat system testas med oväntad inmatning?</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment">Värdera teknik utifrån flera relevanta kriterier.</li><li class="fragment">Lag, etik och användarens självbestämmande är inte samma sak.</li><li class="fragment">Integritet stärks genom tydliga val och dataminimering.</li><li class="fragment">Hållbarhet kräver ett livscykelperspektiv.</li><li class="fragment">En rimlig bedömning redovisar underlag, avvägningar och osäkerhet.</li></ul>
+        <ul><li class="fragment">Programmering uttrycker en problemlösning som exakta instruktioner.</li><li class="fragment">Förstå och planera innan du kodar.</li><li class="fragment">Variabler, villkor, loopar och funktioner bygger lösningen.</li><li class="fragment">Testa normala, extrema och felaktiga värden.</li><li class="fragment">Bra kod ska vara korrekt, begriplig och möjlig att förbättra.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>
@@ -221,27 +81,26 @@
         button.classList.add(correct ? 'is-correct' : 'is-wrong');
         question.querySelector('.choice-feedback').textContent = correct
           ? question.dataset.correctMessage
-          : 'Inte riktigt. Välj alternativet som respekterar människor och bygger beslutet på relevant underlag.';
+          : 'Inte riktigt. Ett bra test behöver undersöka andra situationer än dem programmet redan klarar.';
       });
     });
 
-    document.querySelector('[data-calculate-evaluation]').addEventListener('click', () => {
-      const weights = [
-        Number(document.querySelector('#eval-function').value),
-        Number(document.querySelector('#eval-security').value),
-        Number(document.querySelector('#eval-sustainability').value)
-      ];
-      const output = document.querySelector('[data-evaluation-output]');
-      if (!weights.every((value) => Number.isInteger(value) && value >= 1 && value <= 5)) {
-        output.textContent = 'Fel: alla vikter måste vara heltal mellan 1 och 5.';
+    document.querySelector('[data-calculate-average]').addEventListener('click', () => {
+      const input = document.querySelector('#average-input').value;
+      const output = document.querySelector('[data-average-output]');
+      const parts = input.split(',').map((part) => part.trim()).filter(Boolean);
+      const numbers = parts.map(Number);
+      if (!parts.length) {
+        output.textContent = 'Fel: skriv minst ett tal.';
         return;
       }
-      const solutionA = [5, 2, 2];
-      const solutionB = [4, 5, 4];
-      const scoreA = weights.reduce((total, weight, index) => total + weight * solutionA[index], 0);
-      const scoreB = weights.reduce((total, weight, index) => total + weight * solutionB[index], 0);
-      const result = scoreA === scoreB ? 'Alternativen får samma poäng.' : scoreA > scoreB ? 'Lösning A får högst poäng.' : 'Lösning B får högst poäng.';
-      output.textContent = `Viktad poäng A: ${scoreA}\nViktad poäng B: ${scoreB}\n${result}\n\nKontrollera även minimikrav och underlag innan beslut.`;
+      if (numbers.some((number) => !Number.isFinite(number))) {
+        output.textContent = 'Fel: alla värden måste vara tal.';
+        return;
+      }
+      const sum = numbers.reduce((total, number) => total + number, 0);
+      const average = sum / numbers.length;
+      output.textContent = `Tal: ${numbers.join(', ')}\nSumma: ${sum}\nAntal: ${numbers.length}\nMedelvärde: ${average}`;
     });
   </script>
 </body>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interaktiv presentation om modellering och simulering i Teknik 1.">
+  <title>Kapitel 15 – Modellering och simulering i digitala system</title>
+  <script src="../js/theme.js"></script>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Teknik 1 · Kapitel 15</p>
+        <h1>Modellering och simulering</h1>
+        <p class="fragment">Beskriv systemet, prova dess beteende och lär innan den verkliga lösningen byggs.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
+        <ul><li class="fragment">förklara modellering och simulering</li><li class="fragment">ge exempel på modeller inom informationsteknik</li><li class="fragment">beskriva hur simulering används för att testa scenarier</li><li class="fragment">resonera om modellers möjligheter och begränsningar</li></ul>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Startfråga</p><h2>Varför inte bygga direkt?</h2>
+        <p class="fragment">Den färdiga lösningen kan vara dyr eller farlig att ändra.</p>
+        <p class="fragment">Alla antaganden är ännu inte testade.</p>
+        <p class="fragment">Teamet behöver kunna diskutera lösningen innan detaljerna finns.</p>
+        <p class="fragment"><strong>En modell gör idén synlig. En simulering gör beteendet möjligt att prova.</strong></p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Modellering</p><h2>Förenkla med ett syfte</h2>
+        <p class="fragment">Modellering innebär att skapa en förenklad representation av ett system.</p>
+        <ul><li class="fragment">välj vad modellen ska hjälpa oss förstå</li><li class="fragment">ta med relevanta delar och relationer</li><li class="fragment">utelämna detaljer som inte behövs för syftet</li></ul>
+        <p class="fragment">En modell är användbar när förenklingen hjälper oss fatta bättre beslut.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel på modeller</p><h2>Olika frågor kräver olika bilder</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Systemdiagram</th><td>Hur hänger komponenterna ihop?</td></tr><tr class="fragment"><th>Databasschema</th><td>Hur organiseras och kopplas data?</td></tr><tr class="fragment"><th>Nätverksdiagram</th><td>Hur kommunicerar enheterna?</td></tr><tr class="fragment"><th>Flödesschema</th><td>I vilken ordning sker steg och beslut?</td></tr><tr class="fragment"><th>Wireframe</th><td>Hur organiseras gränssnittet?</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Systemdiagram</p><h2>Visa komponenter och dataflöde</h2>
+        <div class="flow"><span class="fragment">Användare</span><b class="fragment">→</b><span class="fragment">Webbgränssnitt</span><b class="fragment">→</b><span class="fragment">Server</span><b class="fragment">⇄</b><span class="fragment">Databas</span></div>
+        <p class="fragment">Modellen visar strukturen men inte all kod, hårdvara eller nätverkstrafik.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Databasschema</p><h2>Visa data och relationer</h2>
+        <div class="database-schema">
+          <section class="database-table fragment"><h3>Användare</h3><ul><li><strong>PK</strong> användare_id</li><li>namn</li><li>e_post</li></ul></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Programmodell</p><h2>Flödesschema och pseudokod</h2>
+        <div class="two-column"><div><p class="fragment"><strong>Flödesschema</strong></p><p class="fragment">Visar steg, riktning och beslut visuellt.</p></div><div><p class="fragment"><strong>Pseudokod</strong></p><p class="fragment">Beskriver logiken med strukturerad text.</p></div></div>
+        <pre class="code-block compact-code fragment"><code>LÄS in ålder
+OM ålder är minst 18
+    VISA "Myndig"
+ANNARS
+    VISA "Inte myndig"</code></pre>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Simulering</p><h2>Kör modellen genom ett scenario</h2>
+        <p class="fragment">Simulering innebär att använda en modell för att undersöka hur ett system beter sig.</p>
+        <div class="flow"><span class="fragment">Modell</span><b class="fragment">+</b><span class="fragment">Indata och antaganden</span><b class="fragment">→</b><span class="fragment">Beräknat beteende</span><b class="fragment">→</b><span class="fragment">Analys</span></div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Varför simulera?</p><h2>Testa innan verkligheten</h2>
+        <ul><li class="fragment">prova farliga eller ovanliga scenarier säkert</li><li class="fragment">upptäcka problem tidigt</li><li class="fragment">jämföra flera lösningar</li><li class="fragment">minska kostnader för fysiska prototyper</li><li class="fragment">förutse kapacitet och beteende</li></ul>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Modell eller simulering?</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Wireframen är modellen och när en testperson klickar genom den simuleras användarens väg genom webbplatsen.">
+          <p>En klickbar wireframe används för att testa om användare hittar från startsidan till bokningen.</p>
+          <button type="button" data-choice="a">Endast en modell</button>
+          <button type="button" data-choice="b">Endast en simulering</button>
+          <button type="button" data-choice="c">En modell som används i en simulering</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Webbplats</p><h2>Simulera användarupplevelsen</h2>
+        <ol><li class="fragment">Skapa wireframes över viktiga sidor.</li><li class="fragment">Koppla dem till en klickbar prototyp.</li><li class="fragment">Ge användaren en konkret uppgift.</li><li class="fragment">Observera vägval och problem.</li><li class="fragment">Förbättra modellen och testa igen.</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Webbprestanda</p><h2>Simulera olika förutsättningar</h2>
+        <ul><li class="fragment">långsam mobil uppkoppling</li><li class="fragment">svagare telefon eller dator</li><li class="fragment">många samtidiga användare</li><li class="fragment">stora bilder och filer</li></ul>
+        <p class="fragment">Verktyg som Lighthouse kan simulera vissa miljöer, men resultatet behöver jämföras med verklig användning.</p>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    document.querySelectorAll('.choice-question').forEach((question) => {
+      question.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-choice]');
+        if (!button) return;
+        const correct = button.dataset.choice === question.dataset.correct;
+        question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        question.querySelector('.choice-feedback').textContent = correct
+          ? question.dataset.correctMessage
+          : 'Inte riktigt. Fundera på skillnaden mellan att beskriva systemet och att prova dess beteende.';
+      });
+    });
+
+    let gravityTime = 0;
+    let gravityStartHeight = 20;
+    function renderGravity() {
+      const gravity = Number(document.querySelector('#gravity-value').value);
+      const height = Math.max(0, gravityStartHeight - 0.5 * gravity * gravityTime * gravityTime);
+      const ratio = gravityStartHeight > 0 ? height / gravityStartHeight : 0;
+      document.querySelector('[data-simulation-ball]').style.setProperty('--height-ratio', ratio);
+      document.querySelector('[data-gravity-output]').textContent = `Tid: ${gravityTime.toFixed(1)} s\nHöjd: ${height.toFixed(2)} m\n${height === 0 ? 'Objektet har nått marken.' : 'Objektet faller.'}`;
+    }
+    document.querySelector('[data-gravity-start]').addEventListener('click', () => {
+      const height = Number(document.querySelector('#gravity-height').value);
+      const gravity = Number(document.querySelector('#gravity-value').value);
+      if (!(height > 0) || !(gravity > 0)) {
+        document.querySelector('[data-gravity-output]').textContent = 'Fel: höjd och gravitation måste vara större än noll.';
+        return;
+      }
+      gravityStartHeight = height;
+      gravityTime = 0;
+      renderGravity();
+    });
+    document.querySelector('[data-gravity-step]').addEventListener('click', () => {
+      gravityTime += 0.5;
+      renderGravity();
+    });
+  </script>
+</body>
+</html>

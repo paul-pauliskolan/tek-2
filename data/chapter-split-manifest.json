@@ -1,0 +1,236 @@
+[
+  {
+    "sourceChapter": 1,
+    "sourceTitle": "Tillämpning av teknikutvecklingsprocessen inom informationsteknik",
+    "splitBefore": "6. Testning",
+    "newChapters": [
+      1,
+      2
+    ],
+    "newTitles": [
+      "Teknikutveckling från problem till prototyp",
+      "Testning, iteration och tekniska lösningars livscykel"
+    ],
+    "wordCounts": [
+      1004,
+      962
+    ],
+    "presentationSplitMarker": "Steg 6"
+  },
+  {
+    "sourceChapter": 2,
+    "sourceTitle": "Entreprenörskap och entreprenörskapets villkor i en innovativ och kreativ teknikutvecklingsprocess",
+    "splitBefore": "Villkor för entreprenörskap",
+    "newChapters": [
+      3,
+      4
+    ],
+    "newTitles": [
+      "Entreprenörskap, uppfinningar och innovation",
+      "Entreprenörskapets villkor och möjligheter"
+    ],
+    "wordCounts": [
+      927,
+      1081
+    ],
+    "presentationSplitMarker": "Villkor"
+  },
+  {
+    "sourceChapter": 3,
+    "sourceTitle": "Problemlösning och praktisk tillämpning inom informationsteknik",
+    "splitBefore": "3. Föreslå lösningar",
+    "newChapters": [
+      5,
+      6
+    ],
+    "newTitles": [
+      "Tekniska problem och orsaksanalys",
+      "Lösningar, implementering och systematisk testning"
+    ],
+    "wordCounts": [
+      750,
+      1013
+    ],
+    "presentationSplitMarker": "Steg 3"
+  },
+  {
+    "sourceChapter": 4,
+    "sourceTitle": "Metodik och arbetsformer i projekt",
+    "splitBefore": "Arbetsmetoder i projekt",
+    "newChapters": [
+      7,
+      8
+    ],
+    "newTitles": [
+      "Projektplanering, roller och samarbete",
+      "Arbetsmetoder och agila projekt"
+    ],
+    "wordCounts": [
+      756,
+      864
+    ],
+    "presentationSplitMarker": "Arbetsmetoder"
+  },
+  {
+    "sourceChapter": 5,
+    "sourceTitle": "Tillämpning av programmering för problemlösning",
+    "splitBefore": "5. Förbättring",
+    "newChapters": [
+      9,
+      10
+    ],
+    "newTitles": [
+      "Programmeringsprocessen från problem till test",
+      "Programförbättring, automatisering och kvalitet"
+    ],
+    "wordCounts": [
+      662,
+      805
+    ],
+    "presentationSplitMarker": "Steg 5"
+  },
+  {
+    "sourceChapter": 6,
+    "sourceTitle": "Systematiskt kvalitetsarbete, kvalitetssäkring, miljösäkring, riskanalys och arbetsmiljö",
+    "splitBefore": "Hur kan risker minskas?",
+    "newChapters": [
+      11,
+      12
+    ],
+    "newTitles": [
+      "Kvalitetssäkring och riskanalys",
+      "Riskhantering, miljösäkring och arbetsmiljö"
+    ],
+    "wordCounts": [
+      621,
+      739
+    ],
+    "presentationSplitMarker": "Riskhantering"
+  },
+  {
+    "sourceChapter": 7,
+    "sourceTitle": "Tillämpning av begrepp, teorier och modeller för att konstruera, dimensionera, beräkna och bedöma rimligheten i tekniska lösningar",
+    "splitBefore": "Dimensionering",
+    "newChapters": [
+      13,
+      14
+    ],
+    "newTitles": [
+      "Begrepp, teorier, modeller och systemkonstruktion",
+      "Dimensionering, beräkningar och rimlighetsbedömning"
+    ],
+    "wordCounts": [
+      622,
+      731
+    ],
+    "presentationSplitMarker": "Dimensionering"
+  },
+  {
+    "sourceChapter": 8,
+    "sourceTitle": "Modellering och simulering inom något teknikområde med hjälp av relevanta metoder",
+    "splitBefore": "Exempel: modellering och simulering i spelutveckling",
+    "newChapters": [
+      15,
+      16
+    ],
+    "newTitles": [
+      "Modellering och simulering i digitala system",
+      "Simulering i spel och andra teknikområden"
+    ],
+    "wordCounts": [
+      628,
+      801
+    ],
+    "presentationSplitMarker": "Spelutveckling"
+  },
+  {
+    "sourceChapter": 9,
+    "sourceTitle": "Tekniska framsteg, framtidens teknik och hållbar utveckling",
+    "splitBefore": "Nya affärsmodeller",
+    "newChapters": [
+      17,
+      18
+    ],
+    "newTitles": [
+      "Tekniska framsteg, framtidsteknik och hållbarhet",
+      "Affärsmodeller, samhällspåverkan och tekniskt ansvar"
+    ],
+    "wordCounts": [
+      609,
+      605
+    ],
+    "presentationSplitMarker": "Nya affärsmodeller"
+  },
+  {
+    "sourceChapter": 10,
+    "sourceTitle": "Värdering av tekniska lösningar utifrån olika aspekter, däribland etik och hållbar utveckling",
+    "splitBefore": "Teknik och hållbar utveckling",
+    "newChapters": [
+      19,
+      20
+    ],
+    "newTitles": [
+      "Funktion, säkerhet, etik och integritet",
+      "Hållbar värdering av tekniska lösningar"
+    ],
+    "wordCounts": [
+      733,
+      679
+    ],
+    "presentationSplitMarker": "Hållbar utveckling"
+  },
+  {
+    "sourceChapter": 11,
+    "sourceTitle": "Digitaliseringens betydelse för produktion, kommunikation och människans livsmiljö",
+    "splitBefore": "Smarta system",
+    "newChapters": [
+      21,
+      22
+    ],
+    "newTitles": [
+      "Digitalisering i produktion, kommunikation och vardag",
+      "Smarta system, digital kompetens och livsmiljö"
+    ],
+    "wordCounts": [
+      628,
+      701
+    ],
+    "presentationSplitMarker": "Smarta system"
+  },
+  {
+    "sourceChapter": 12,
+    "sourceTitle": "Kommunikation, dokumentation och presentation inom informationsteknik",
+    "splitBefore": "Versionshantering",
+    "newChapters": [
+      23,
+      24
+    ],
+    "newTitles": [
+      "Kommunikation och dokumentation i teknikprojekt",
+      "Versionshantering och presentation av tekniska lösningar"
+    ],
+    "wordCounts": [
+      614,
+      793
+    ],
+    "presentationSplitMarker": "Versionshantering"
+  },
+  {
+    "sourceChapter": 13,
+    "sourceTitle": "Tolkning och framställning av digitala ritningar och modeller",
+    "splitBefore": "2D- och 3D-modeller",
+    "newChapters": [
+      25,
+      26
+    ],
+    "newTitles": [
+      "Tekniska ritningar och modeller för digitala system",
+      "2D- och 3D-modeller: tolkning och framställning"
+    ],
+    "wordCounts": [
+      528,
+      602
+    ],
+    "presentationSplitMarker": "2D-modeller"
+  }
+]

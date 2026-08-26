@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interaktiv presentation om tekniska framsteg, framtidsteknik och hållbar utveckling i Teknik 1.">
-  <title>Kapitel 9 – Tekniska framsteg och hållbar utveckling</title>
+  <meta name="description" content="Interaktiv presentation om programmering för problemlösning i Teknik 1.">
+  <title>Kapitel 9 – Programmeringsprocessen från problem till test</title>
   <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="presentation.css">
@@ -18,184 +18,129 @@
     <div class="deck" aria-live="polite">
       <section class="slide is-active"><div class="slide-content">
         <p class="slide-kicker">Teknik 1 · Kapitel 9</p>
-        <h1>Tekniska framsteg och hållbar utveckling</h1>
-        <p class="fragment">Ny teknik skapar möjligheter, konsekvenser och ansvar.</p>
+        <h1>Programmering för problemlösning</h1>
+        <p class="fragment">Från ett tydligt problem till instruktioner som datorn kan utföra.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">förklara hur teknik utvecklas över tid</li><li class="fragment">beskriva hur ny teknik påverkar samhället</li><li class="fragment">koppla teknikutveckling till hållbarhet</li><li class="fragment">granska cirkulär ekonomi och nya affärsmodeller kritiskt</li><li class="fragment">resonera om möjligheter, risker och ansvar</li></ul>
+        <ul><li class="fragment">förklara hur programmering används för problemlösning</li><li class="fragment">beskriva programmeringsprocessens fem steg</li><li class="fragment">förklara variabler, villkor, loopar och funktioner</li><li class="fragment">resonera om testning, automatisering och kodkvalitet</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Startfråga</p><h2>Är nyare alltid bättre?</h2>
-        <p class="fragment">Ny teknik kan vara snabbare och enklare att använda.</p>
-        <p class="fragment">Den kan samtidigt kräva mer energi, samla mer data eller skapa mer avfall.</p>
-        <p class="fragment"><strong>Ett tekniskt framsteg måste bedömas utifrån vad som förbättras, för vem och till vilket pris.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Startfråga</p><h2>Vad behöver datorn veta?</h2>
+        <p class="fragment">Uppgift: räkna ut medelvärdet av tre tal.</p>
+        <ul><li class="fragment">Vilka tal ska användas?</li><li class="fragment">Vilka beräkningar ska göras?</li><li class="fragment">Vad ska visas för användaren?</li><li class="fragment">Vad händer om inmatningen är fel?</li></ul>
+        <p class="fragment">Programmering kräver att problemet uttrycks exakt.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Begrepp</p><h2>Vad är ett tekniskt framsteg?</h2>
-        <ul><li class="fragment">en ny uppfinning utvecklas</li><li class="fragment">en befintlig lösning förbättras</li><li class="fragment">ett system blir effektivare</li><li class="fragment">tekniken blir billigare eller mer tillgänglig</li><li class="fragment">användningen skapar ett nytt värde</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Begrepp</p><h2>Vad är programmering?</h2>
+        <p class="fragment">Att skriva instruktioner som en dator kan följa.</p>
+        <p class="fragment">Instruktionerna skrivs i programmeringsspråk som Python, JavaScript eller C#.</p>
+        <p class="fragment">Datorn följer instruktionerna snabbt och noggrant – även när instruktionerna är fel.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Utvecklingskedja</p><h2>Ny teknik bygger på äldre teknik</h2>
-        <div class="flow"><span class="fragment">Telefon</span><b class="fragment">+</b><span class="fragment">Dator</span><b class="fragment">+</b><span class="fragment">Internet</span><b class="fragment">+</b><span class="fragment">Pekskärm</span><b class="fragment">→</b><span class="fragment">Smarttelefon</span></div>
-        <p class="fragment">Teknikutveckling börjar sällan från noll. Kunskap, komponenter och infrastrukturer kombineras och förbättras.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Problemlösningsverktyg</p><h2>Koden är inte målet</h2>
+        <p class="fragment">Programmering kan användas för att:</p>
+        <div class="process-grid"><span class="fragment">Bearbeta data</span><span class="fragment">Automatisera arbete</span><span class="fragment">Styra system</span><span class="fragment">Skapa interaktion</span></div>
+        <p class="fragment"><strong>Målet är en fungerande lösning på ett verkligt problem.</strong></p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Drivkrafter</p><h2>Varför utvecklas teknik?</h2>
-        <div class="process-grid"><span class="fragment">Forskning</span><span class="fragment">Innovation</span><span class="fragment">Konkurrens</span><span class="fragment">Samhällsbehov</span><span class="fragment">Miljökrav</span><span class="fragment">Ekonomiska möjligheter</span></div>
-        <p class="fragment">Flera drivkrafter verkar ofta samtidigt och kan dra utvecklingen åt olika håll.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Helhetsbild</p><h2>Programmeringsprocessen</h2>
+        <div class="flow"><span class="fragment">Förstå</span><b class="fragment">→</b><span class="fragment">Planera</span><b class="fragment">→</b><span class="fragment">Koda</span><b class="fragment">→</b><span class="fragment">Testa</span><b class="fragment">→</b><span class="fragment">Förbättra</span></div>
+        <p class="fragment">Nya testresultat kan skicka oss tillbaka till ett tidigare steg.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Informationsteknik</p><h2>Fyra utvecklingslinjer</h2>
-        <div class="flow"><span class="fragment">Datorer</span><b class="fragment">→</b><span class="fragment">Internet</span><b class="fragment">→</b><span class="fragment">Mobil teknik</span><b class="fragment">→</b><span class="fragment">Molntjänster</span></div>
-        <p class="fragment">Utvecklingen har förändrat kommunikation, informationssökning, underhållning, utbildning och arbete.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 1</p><h2>Förstå problemet</h2>
+        <ul><li class="fragment">Vad ska programmet göra?</li><li class="fragment">Vilken indata behövs?</li><li class="fragment">Vilken utdata ska skapas?</li><li class="fragment">Hur ska programmet användas?</li><li class="fragment">Vilka fel behöver hanteras?</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Framtidsteknik</p><h2>Områden under snabb utveckling</h2>
-        <div class="process-grid"><span class="fragment">Artificiell intelligens</span><span class="fragment">Virtuell verklighet</span><span class="fragment">Självkörande fordon</span><span class="fragment">Robotik</span><span class="fragment">Kvantdatorer</span></div>
-        <p class="fragment">”Framtidsteknik” betyder inte att tekniken saknas i dag – utan att utveckling och användning fortfarande förändras snabbt.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Indata · bearbetning · utdata</p><h2>Beskriv lösningens flöde</h2>
+        <div class="flow"><span class="fragment">5, 8, 11</span><b class="fragment">→</b><span class="fragment">Summera och dividera med 3</span><b class="fragment">→</b><span class="fragment">Medelvärde: 8</span></div>
+        <p class="fragment">En tydlig modell gör det lättare att kontrollera om programmet löser rätt problem.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Artificiell intelligens</p><h2>Automatisera och analysera</h2>
-        <ul><li class="fragment">analysera stora datamängder</li><li class="fragment">klassificera och förutsäga</li><li class="fragment">skapa text, bild eller ljud</li><li class="fragment">styra eller stödja beslut</li></ul>
-        <p class="fragment">Resultatet påverkas av träningsdata, modellens begränsningar och hur människor använder systemet.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 2</p><h2>Planera lösningen</h2>
+        <ol><li class="fragment">Läs in talen.</li><li class="fragment">Räkna ut summan.</li><li class="fragment">Dela summan med antalet tal.</li><li class="fragment">Visa resultatet.</li></ol>
+        <p class="fragment">Pseudokod och flödesscheman hjälper oss att tänka igenom logiken innan syntaxen tar plats.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Virtuell verklighet</p><h2>Skapa upplevelser och träning</h2>
-        <ul><li class="fragment">spel och underhållning</li><li class="fragment">utbildning och praktisk träning</li><li class="fragment">simulering av riskfyllda miljöer</li><li class="fragment">visualisering av produkter och byggnader</li></ul>
-        <p class="fragment">Nyttan behöver vägas mot kostnad, tillgänglighet, prestanda och användarens välbefinnande.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Pseudokod</p><h2>Planen utan programspråk</h2>
+        <pre class="code-block fragment"><code>LÄS IN tre tal
+summa = tal 1 + tal 2 + tal 3
+medelvärde = summa / 3
+VISA medelvärde</code></pre>
+        <p class="fragment">Pseudokoden beskriver logiken men behöver inte följa ett programspråks exakta regler.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Självkörande system</p><h2>Sensorer, programvara och beslut</h2>
-        <div class="flow"><span class="fragment">Sensorer</span><b class="fragment">→</b><span class="fragment">Tolkning</span><b class="fragment">→</b><span class="fragment">Beslut</span><b class="fragment">→</b><span class="fragment">Styrning</span><b class="fragment">→</b><span class="fragment">Ny mätning</span></div>
-        <p class="fragment">Svåra frågor uppstår när miljön är oväntad eller när ansvaret mellan människa och system är oklart.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 3</p><h2>Skriv kod</h2>
+        <pre class="code-block fragment"><code>tal = [5, 8, 11]
+summa = sum(tal)
+medelvarde = summa / len(tal)
+print(medelvarde)</code></pre>
+        <p class="fragment">Resultat: <code>8.0</code></p>
+        <p class="fragment">Koden är en möjlig implementation av planen – inte själva planen.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Robotik</p><h2>Från industri till service</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Industri</th><td>Montering, svetsning och kvalitetskontroll</td></tr><tr class="fragment"><th>Logistik</th><td>Transport och sortering av varor</td></tr><tr class="fragment"><th>Vård</th><td>Stöd, rehabilitering och vissa operationer</td></tr><tr class="fragment"><th>Service</th><td>Rengöring, leveranser och information</td></tr></tbody></table>
-        <p class="fragment">Robotens nytta beror på uppgift, miljö, säkerhet och samspelet med människor.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Fyra byggstenar</p><h2>Så uttrycks lösningen</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Variabel</th><td>Lagrar information.</td><td><code>poang = 10</code></td></tr><tr class="fragment"><th>Villkor</th><td>Väljer mellan alternativ.</td><td><code>if poang &gt; 5</code></td></tr><tr class="fragment"><th>Loop</th><td>Upprepar en instruktion.</td><td><code>for tal in lista</code></td></tr><tr class="fragment"><th>Funktion</th><td>Samlar kod för en uppgift.</td><td><code>berakna_summa()</code></td></tr></tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kvantdatorer</p><h2>En annan typ av beräkning</h2>
-        <p class="fragment">Kvantdatorer kan på sikt bli användbara för vissa särskilda problem, inte för all vanlig databehandling.</p>
-        <ul><li class="fragment">simulering av molekyler och material</li><li class="fragment">vissa optimeringsproblem</li><li class="fragment">framtida påverkan på kryptering</li></ul>
-        <p class="fragment">Teknikens möjligheter, kostnader och praktiska begränsningar utvecklas fortfarande.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Variabler</p><h2>Ge information ett namn</h2>
+        <pre class="code-block fragment"><code>namn = "Anna"
+poang = 120
+aktiv = True</code></pre>
+        <p class="fragment">Variabelnamnet ska hjälpa läsaren att förstå vad värdet betyder.</p>
+        <p class="fragment"><code>x = 120</code> fungerar för datorn, men <code>poang = 120</code> är tydligare för människor.</p>
       </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Villkor</p><h2>Låt programmet välja</h2>
+        <pre class="code-block fragment"><code>if alder &gt;= 18:
+    print("Myndig")
+else:
+    print("Inte myndig")</code></pre>
+        <p class="fragment">Villkoret kontrolleras. Endast den gren som stämmer körs.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Loopar</p><h2>Upprepa utan kopiering</h2>
+        <pre class="code-block fragment"><code>for namn in ["Anna", "Erik", "Lisa"]:
+    print(namn)</code></pre>
+        <p class="fragment">Samma instruktion körs en gång för varje namn.</p>
+        <p class="fragment">Loopar är användbara när antalet värden kan förändras.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Funktioner</p><h2>Samla en tydlig uppgift</h2>
+        <pre class="code-block fragment"><code>def medelvarde(tal):
+    return sum(tal) / len(tal)
 
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kontrollfråga</p><h2>Tekniskt framsteg eller bara ny produkt?</h2>
-        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Påståendet behöver stöd i mätbara förbättringar och en analys av konsekvenserna.">
-          <p>Ett företag kallar sin nya telefon ”hållbar” eftersom den är årets modell.</p>
-          <button type="button" data-choice="a">Det är automatiskt sant eftersom modellen är ny</button>
-          <button type="button" data-choice="b">Det är sant om reklamen använder gröna färger</button>
-          <button type="button" data-choice="c">Det måste granskas genom livslängd, reparerbarhet, material och energianvändning</button>
-          <p class="choice-feedback" aria-live="polite"></p>
+resultat = medelvarde([5, 8, 11])</code></pre>
+        <p class="fragment">Funktionen kan återanvändas med andra listor och testas separat.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt exempel</p><h2>Beräkna medelvärde</h2>
+        <div class="decision-simulator average-simulator">
+          <div class="decision-controls">
+            <label for="average-input">Tal, separerade med kommatecken</label>
+            <input id="average-input" type="text" value="5, 8, 11" inputmode="decimal">
+            <button type="button" data-calculate-average>Beräkna</button>
+          </div>
+          <div class="decision-output">
+            <strong>Programmets steg</strong>
+            <pre data-average-output aria-live="polite">Tryck på Beräkna.</pre>
+          </div>
         </div>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Hållbar utveckling</p><h2>Flera perspektiv samtidigt</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Ekologiskt</th><td>Energi, material, utsläpp och avfall</td></tr><tr class="fragment"><th>Socialt</th><td>Hälsa, rättvisa, tillgång och arbetsvillkor</td></tr><tr class="fragment"><th>Ekonomiskt</th><td>Kostnader, långsiktighet och resursanvändning</td></tr></tbody></table>
-        <p class="fragment">En lösning kan vara stark i ett perspektiv och svag i ett annat.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 4</p><h2>Testa programmet</h2>
+        <table class="comparison"><thead><tr><th>Testfall</th><th>Vad kontrolleras?</th></tr></thead><tbody><tr class="fragment"><td><code>5, 8, 11</code></td><td>Vanliga giltiga värden</td></tr><tr class="fragment"><td><code>0, 0, 0</code></td><td>Nollvärden</td></tr><tr class="fragment"><td><code>-5, 5</code></td><td>Negativa tal</td></tr><tr class="fragment"><td><code>fem, 8</code></td><td>Felaktig inmatning</td></tr><tr class="fragment"><td>tomt</td><td>Saknad inmatning</td></tr></tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Teknik som stöd</p><h2>Hur kan teknik bidra?</h2>
-        <ul><li class="fragment">effektivare energianvändning</li><li class="fragment">mindre materialspill</li><li class="fragment">smartare transporter</li><li class="fragment">övervakning och styrning av system</li><li class="fragment">bättre beslutsunderlag från data</li></ul>
-        <p class="fragment">Effektivisering ger inte automatiskt lägre total påverkan om användningen samtidigt ökar kraftigt.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Livscykelperspektiv</p><h2>Bedöm mer än användningen</h2>
-        <div class="flow"><span class="fragment">Råvaror</span><b class="fragment">→</b><span class="fragment">Tillverkning</span><b class="fragment">→</b><span class="fragment">Transport</span><b class="fragment">→</b><span class="fragment">Användning</span><b class="fragment">→</b><span class="fragment">Återbruk eller avfall</span></div>
-        <p class="fragment">Miljöpåverkan kan vara stor före produkten ens börjar användas.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Cirkulär ekonomi</p><h2>Behåll värdet längre</h2>
-        <div class="flow"><span class="fragment">Utforma</span><b class="fragment">→</b><span class="fragment">Använd</span><b class="fragment">→</b><span class="fragment">Underhåll</span><b class="fragment">→</b><span class="fragment">Återanvänd</span><b class="fragment">→</b><span class="fragment">Återvinn</span></div>
-        <p class="fragment">Målet är att produkter, komponenter och material ska cirkulera i stället för att snabbt bli avfall.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kritisk granskning</p><h2>Cirkulärt är inte problemfritt</h2>
-        <ul><li class="fragment">återvinning kan kräva mycket energi</li><li class="fragment">material kan förlora kvalitet</li><li class="fragment">produkter kan vara svåra att reparera</li><li class="fragment">insamling och transport påverkar miljön</li><li class="fragment">grön marknadsföring kan sakna verklig effekt</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Reboundeffekt</p><h2>Effektivare kan leda till mer användning</h2>
-        <p class="fragment">När en teknisk tjänst blir billigare eller effektivare kan människor använda den mer.</p>
-        <div class="flow"><span class="fragment">Lägre resursåtgång per användning</span><b class="fragment">→</b><span class="fragment">Fler användningar</span><b class="fragment">→</b><span class="fragment">Total påverkan kan öka</span></div>
-        <p class="fragment">Därför behöver både effektivitet och total användning mätas.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Nya affärsmodeller</p><h2>Från produkt till löpande tjänst</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Prenumeration</th><td>Återkommande betalning för åtkomst.</td></tr><tr class="fragment"><th>Streaming</th><td>Innehåll levereras via internet vid användning.</td></tr><tr class="fragment"><th>Plattform</th><td>Kopplar samman olika användargrupper.</td></tr><tr class="fragment"><th>Molntjänst</th><td>Lagring eller funktion tillhandahålls via servrar.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Affärsmodellens konsekvenser</p><h2>Vem får värde – och vem tar kostnaden?</h2>
-        <ul><li class="fragment">Vad betalar användaren med: pengar, data eller uppmärksamhet?</li><li class="fragment">Kan tjänsten användas utan ständig uppkoppling?</li><li class="fragment">Vem kontrollerar innehåll och data?</li><li class="fragment">Vad händer om tjänsten stängs?</li><li class="fragment">Skapar modellen beroende eller inlåsning?</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Samhällspåverkan</p><h2>Teknik förändrar mer än verktyg</h2>
-        <div class="process-grid"><span class="fragment">Arbete</span><span class="fragment">Kommunikation</span><span class="fragment">Utbildning</span><span class="fragment">Ekonomi</span><span class="fragment">Makt</span><span class="fragment">Vardagsvanor</span></div>
-        <p class="fragment">När tekniken förändrar vad som är möjligt förändras också roller, förväntningar och kunskapskrav.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Utmaningar</p><h2>Nya möjligheter skapar nya risker</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Energi</th><td>Datacenter, nätverk och utrustning behöver el.</td></tr><tr class="fragment"><th>E-avfall</th><td>Snabba byten skapar stora materialflöden.</td></tr><tr class="fragment"><th>Säkerhet</th><td>Fler uppkopplade system ger fler angreppsytor.</td></tr><tr class="fragment"><th>Integritet</th><td>Data kan användas för analys, styrning och övervakning.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Konsekvensanalys</p><h2>Granska tekniken från flera håll</h2>
-        <ol><li class="fragment">Vilket problem löser tekniken?</li><li class="fragment">Vem får nytta av den?</li><li class="fragment">Vem påverkas negativt?</li><li class="fragment">Vilka resurser krävs under livscykeln?</li><li class="fragment">Vilka risker och beroenden uppstår?</li><li class="fragment">Finns bättre alternativ?</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktivt beslut</p><h2>Vilken analys är starkast?</h2>
-        <div class="choice-question" data-correct="b" data-correct-message="Rätt. Ett trovärdigt beslut behöver jämföra nytta, total resursanvändning, livslängd och konsekvenser för berörda grupper.">
-          <p>En kommun överväger att byta alla fungerande skärmar mot nya, mer energieffektiva modeller.</p>
-          <button type="button" data-choice="a">Byt direkt eftersom nya produkter alltid är hållbarare</button>
-          <button type="button" data-choice="b">Jämför energibesparing med tillverkning, transport, livslängd och hantering av de gamla skärmarna</button>
-          <button type="button" data-choice="c">Behåll alltid gammal teknik oavsett funktion</button>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kontrollfråga</p><h2>Vilket test saknas?</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Oväntad inmatning behöver testas så att programmet kan ge ett tydligt felmeddelande i stället för att krascha.">
+          <p>Ett program som räknar med tal har bara testats med 2, 4 och 6.</p>
+          <button type="button" data-choice="a">Samma tal en gång till</button>
+          <button type="button" data-choice="b">En annan skärmfärg</button>
+          <button type="button" data-choice="c">Bokstäver, tom inmatning och negativa tal</button>
           <p class="choice-feedback" aria-live="polite"></p>
         </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Skola och arbetsliv</p><h2>Framtidskompetens är mer än verktyg</h2>
-        <ul><li class="fragment">förstå grundprinciper</li><li class="fragment">lära nytt när verktyg förändras</li><li class="fragment">granska information och resultat kritiskt</li><li class="fragment">bedöma risk, etik och hållbarhet</li><li class="fragment">samarbeta mellan olika kunskapsområden</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Praktisk övning</p><h2>Analysera en framtidsteknik</h2>
-        <ol><li class="fragment">Beskriv tekniken och problemet den ska lösa.</li><li class="fragment">Identifiera tekniker den bygger vidare på.</li><li class="fragment">Beskriv två möjliga nyttor.</li><li class="fragment">Beskriv två risker eller negativa konsekvenser.</li><li class="fragment">Gör en enkel livscykelanalys.</li><li class="fragment">Föreslå ett villkor för ansvarsfull användning.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
-        <ol><li class="fragment">Varför är ny teknik sällan helt fristående från äldre teknik?</li><li class="fragment">Varför kan effektivare teknik ändå öka den totala miljöpåverkan?</li><li class="fragment">Vilka perspektiv behövs för att bedöma om ett tekniskt framsteg är hållbart?</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment">Tekniska framsteg bygger ofta vidare på befintlig teknik.</li><li class="fragment">Ny teknik förändrar både möjligheter och samhällsstrukturer.</li><li class="fragment">Hållbarhet kräver ekologiska, sociala och ekonomiska perspektiv.</li><li class="fragment">Cirkulära lösningar behöver också granskas kritiskt.</li><li class="fragment">Teknisk utveckling innebär ansvar för långsiktiga konsekvenser.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>
@@ -211,8 +156,26 @@
         button.classList.add(correct ? 'is-correct' : 'is-wrong');
         question.querySelector('.choice-feedback').textContent = correct
           ? question.dataset.correctMessage
-          : 'Inte riktigt. Välj analysen som granskar hela livscykeln, flera berörda grupper och både nytta och risk.';
+          : 'Inte riktigt. Ett bra test behöver undersöka andra situationer än dem programmet redan klarar.';
       });
+    });
+
+    document.querySelector('[data-calculate-average]').addEventListener('click', () => {
+      const input = document.querySelector('#average-input').value;
+      const output = document.querySelector('[data-average-output]');
+      const parts = input.split(',').map((part) => part.trim()).filter(Boolean);
+      const numbers = parts.map(Number);
+      if (!parts.length) {
+        output.textContent = 'Fel: skriv minst ett tal.';
+        return;
+      }
+      if (numbers.some((number) => !Number.isFinite(number))) {
+        output.textContent = 'Fel: alla värden måste vara tal.';
+        return;
+      }
+      const sum = numbers.reduce((total, number) => total + number, 0);
+      const average = sum / numbers.length;
+      output.textContent = `Tal: ${numbers.join(', ')}\nSumma: ${sum}\nAntal: ${numbers.length}\nMedelvärde: ${average}`;
     });
   </script>
 </body>

@@ -419,6 +419,17 @@ function renderChapterPage(chapterNumber) {
   const content = document.querySelector("#chapter-content");
   if (content) {
     content.innerHTML = chapter.contentHtml || "";
+    if (chapterNumber === 1) {
+      const processHeading = Array.from(content.querySelectorAll("h2")).find((heading) =>
+        heading.textContent.trim().toLowerCase().includes("teknikkutvecklingsprocessens steg"),
+      );
+      if (processHeading) {
+        processHeading.insertAdjacentHTML(
+          "afterend",
+          '<div class="development-link-under-steps"><p><a href="chapter-1-development.html" target="_blank" rel="noopener noreferrer">Öppna teknikutvecklingsprocessens steg (ny flik)</a></p><img src="../assets/images/teknikutveckling.png" alt="Flödesschema för teknikutvecklingsprocessen" loading="lazy" style="display:block;max-width:100%;height:auto;margin-top:12px"></div>',
+        );
+      }
+    }
   }
 
   renderChapterToc();
@@ -472,6 +483,209 @@ function renderChapterPage(chapterNumber) {
 }
 
 const chapterQuizData = {
+// Migrated quizzes from original chapters 1 and 2
+  1: [
+                {
+                    text: 'En elevgrupp ska utveckla en app för skolans öppet hus. Vad bör de göra först?',
+                    options: [
+                        'Börja koda startsidan direkt.',
+                        'Formulera vilket problem appen ska lösa och för vem.',
+                        'Bestämma färger och typsnitt.',
+                        'Publicera appen och ändra efteråt.'
+                    ],
+                    answer: 'B',
+                    explanation: 'I början behöver gruppen förstå problemet och målgruppen innan lösningen byggs.'
+                },
+                {
+                    text: 'Varför är research viktig tidigt i teknikutvecklingsprocessen?',
+                    options: [
+                        'För att hitta behov, begränsningar och liknande lösningar.',
+                        'För att kunna hoppa över testning senare.',
+                        'För att bestämma exakt slutprodukt innan användare tillfrågas.',
+                        'För att undvika att ändra idén under arbetet.'
+                    ],
+                    answer: 'A',
+                    explanation: 'Research hjälper gruppen förstå behov, alternativ och begränsningar innan en lösning väljs.'
+                },
+                {
+                    text: 'Vilket alternativ beskriver bäst skillnaden mellan en idé och en prototyp?',
+                    options: [
+                        'En prototyp är alltid den slutliga produkten.',
+                        'En idé är färdig att lansera, en prototyp används bara för dokumentation.',
+                        'En idé beskriver en möjlig lösning, en prototyp går att prova eller visa.',
+                        'En idé behöver testas, men en prototyp behöver inte testas.'
+                    ],
+                    answer: 'C',
+                    explanation: 'En prototyp är en tidig version eller modell som kan användas för att testa idén.'
+                },
+                {
+                    text: 'En grupp bygger en klickbar skiss av en webbplats för att se om användare hittar rätt information. Vilket steg passar bäst?',
+                    options: [
+                        'Produktion.',
+                        'Prototyp och testning.',
+                        'Avveckling.',
+                        'Upphovsrätt.'
+                    ],
+                    answer: 'B',
+                    explanation: 'En klickbar skiss är en prototyp, och den används här för att testa användarens väg genom webbplatsen.'
+                },
+                {
+                    text: 'Vad betyder iteration i teknikutveckling?',
+                    options: [
+                        'Att man följer planen exakt och aldrig ändrar något.',
+                        'Att man lanserar flera produkter samtidigt.',
+                        'Att man bara arbetar med dokumentation.',
+                        'Att man testar, förbättrar och provar igen.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Iteration betyder att lösningen utvecklas i flera varv genom testning och förbättring.'
+                },
+                {
+                    text: 'Efter ett användartest märker gruppen att många inte hittar menyknappen. Vad är ett rimligt nästa steg?',
+                    options: [
+                        'Ta bort testresultatet eftersom prototypen redan är klar.',
+                        'Lansera direkt eftersom felet bara gäller vissa användare.',
+                        'Ändra designen och testa igen.',
+                        'Börja om med ett helt annat problem utan analys.'
+                    ],
+                    answer: 'C',
+                    explanation: 'Testresultat används för att förbättra lösningen och sedan prova den igen.'
+                },
+                {
+                    text: 'Vilket exempel visar en tydlig problemformulering?',
+                    options: [
+                        'Nya elever hittar inte schema och lokaler under första veckan.',
+                        'Vi ska använda AI.',
+                        'Vi ska göra en snygg app.',
+                        'Vi ska göra något modernt.'
+                    ],
+                    answer: 'A',
+                    explanation: 'En tydlig problemformulering beskriver vad som inte fungerar och vem som påverkas.'
+                },
+                {
+                    text: 'Varför behöver man tänka på målgruppen när man utvecklar teknik?',
+                    options: [
+                        'För att målgruppen alltid bestämmer all teknik själva.',
+                        'För att lösningen ska passa dem som faktiskt ska använda den.',
+                        'För att tekniken annars inte behöver testas.',
+                        'För att alla användare har exakt samma behov.'
+                    ],
+                    answer: 'B',
+                    explanation: 'Tekniken behöver utformas efter användarnas behov, förutsättningar och sammanhang.'
+                },
+                {
+                    text: 'Vad menas med livscykelperspektiv för en digital produkt?',
+                    options: [
+                        'Att produkten behöver underhållas, uppdateras och ibland avvecklas.',
+                        'Att arbetet är slut så fort produkten publiceras.',
+                        'Att bara prototypen räknas som teknisk lösning.',
+                        'Att testning bara görs innan problemet är formulerat.'
+                    ],
+                    answer: 'A',
+                    explanation: 'En digital produkt behöver ofta hanteras även efter lansering, till exempel med uppdateringar och underhåll.'
+                },
+                {
+                    text: 'När behöver upphovsrätt särskilt beaktas i ett digitalt projekt?',
+                    options: [
+                        'När man testar om en knapp fungerar.',
+                        'När man väljer vilka användare som ska intervjuas.',
+                        'När man skriver om sin egen problemformulering.',
+                        'När man använder bilder, text, musik eller annat material som andra har skapat.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Upphovsrätt gäller material som andra har skapat, till exempel bilder, text, musik och film.'
+                }
+            ],
+  2: [
+                {
+                    text: 'Ett team har byggt en tekniskt avancerad app, men ingen elevgrupp verkar behöva den. Vilken slutsats passar bäst?',
+                    options: [
+                        'Appen är automatiskt en innovation eftersom den är tekniskt avancerad.',
+                        'Teamet bör lägga all tid på marknadsföring innan de undersöker behovet.',
+                        'Entreprenörskap handlar också om att förstå användare, behov och värde.',
+                        'Om tekniken fungerar behövs ingen målgrupp.'
+                    ],
+                    answer: 'C',
+                    explanation: 'En teknisk lösning behöver skapa verkligt värde för en målgrupp, inte bara fungera tekniskt.'
+                },
+                {
+                    text: 'Vilket alternativ beskriver bäst skillnaden mellan en uppfinning och en innovation?',
+                    options: [
+                        'En uppfinning är en ny idé eller teknik, medan en innovation används och skapar värde.',
+                        'En uppfinning är alltid lönsam, medan en innovation bara är en prototyp.',
+                        'En uppfinning måste vara fysisk, medan en innovation alltid är digital.',
+                        'Det finns ingen viktig skillnad mellan begreppen.'
+                    ],
+                    answer: 'A',
+                    explanation: 'En uppfinning kan vara en ny idé eller teknik, men en innovation används i praktiken och skapar nytta.'
+                },
+                {
+                    text: 'En grupp beskriver sin målgrupp som "alla som använder internet". Vad är det största problemet?',
+                    options: [
+                        'Målgruppen blir för smal för att kunna testas.',
+                        'Målgruppen blir för bred för att ge tydliga beslut om behov och funktioner.',
+                        'Målgruppen gör att lösningen inte får innehålla teknik.',
+                        'Målgruppen visar att finansiering inte behövs.'
+                    ],
+                    answer: 'B',
+                    explanation: 'En för bred målgrupp gör det svårt att veta vilka behov lösningen ska prioritera.'
+                },
+                {
+                    text: 'Vilket alternativ är ett tydligt värdeerbjudande?',
+                    options: [
+                        'Vi ska bygga en modern app med många funktioner.',
+                        'Vi ska använda den senaste tekniken.',
+                        'För små föreningar som har svårt att hålla information aktuell erbjuder vi en lättskött webbplats.',
+                        'Vår lösning ska bli bättre än alla andra.'
+                    ],
+                    answer: 'C',
+                    explanation: 'Ett värdeerbjudande kopplar målgrupp, behov, lösning och nytta.'
+                },
+                {
+                    text: 'En digital tjänst ska hantera elevers namn och resultat. Vilket villkor behöver gruppen särskilt tänka på?',
+                    options: [
+                        'Att material som bilder och texter får användas med rätt licens.',
+                        'Att serverkapaciteten räcker om många använder tjänsten samtidigt.',
+                        'Att tjänsten har en tydlig målgrupp och ett begripligt värde.',
+                        'Att personuppgifter hanteras lagligt, säkert och med tydlig information.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Namn och resultat är personuppgifter. Därför behöver gruppen ta hänsyn till GDPR och användarnas förtroende.'
+                },
+                {
+                    text: 'Vad kan finansiering användas till i ett teknikprojekt?',
+                    options: [
+                        'Att köpa sig fri från risker när tekniken är svår att utveckla.',
+                        'Att täcka kostnader för utveckling, verktyg, drift eller lansering.',
+                        'Att slippa undersöka om målgruppen faktiskt behöver lösningen.',
+                        'Att göra lagar, licenser och säkerhetskrav mindre viktiga.'
+                    ],
+                    answer: 'B',
+                    explanation: 'Finansiering kan ge resurser, men den tar inte bort behovet av testning, analys och bra beslut.'
+                },
+                {
+                    text: 'Varför är risk och osäkerhet viktiga att tänka på i entreprenörskap?',
+                    options: [
+                        'För att risk visar att projektet bör pausas tills all osäkerhet är borta.',
+                        'För att risk främst handlar om att välja rätt namn och grafisk profil.',
+                        'För att osäkerhet försvinner när den tekniska prototypen fungerar.',
+                        'För att idén kan falla på teknik, ekonomi, behov eller konkurrens.'
+                    ],
+                    answer: 'D',
+                    explanation: 'Tidiga tester och analys minskar risken att lägga mycket tid på en lösning som inte håller.'
+                },
+                {
+                    text: 'Ett team testar en enkel prototyp och upptäcker att användarna tolkar funktionen fel. Vad visar det bäst?',
+                    options: [
+                        'Att resultatet bör analyseras inför nästa version.',
+                        'Att prototypen bör ersättas direkt utan mer undersökning.',
+                        'Att användare helst ska vänta tills produkten är färdig.',
+                        'Att idén inte längre kan bli en innovation efter testet.'
+                    ],
+                    answer: 'A',
+                    explanation: 'Erfarenhet blir lärande först när teamet analyserar resultatet och ändrar sitt nästa beslut.'
+                }
+            ],
   3: [
     {
       text: "En knapp på en webbplats ger ingen reaktion när användaren klickar. Vad bör man göra först?",
@@ -1299,7 +1513,28 @@ Object.assign(chapterQuizData, {
 });
 
 function insertChapterQuiz(chapterNumber) {
-  const questions = chapterQuizData[chapterNumber];
+  const sourceChapter = Math.ceil(chapterNumber / 2);
+  const sourceQuestions = chapterQuizData[sourceChapter];
+  const chapterQuizAllocation = {
+    1: [[0, 1, 2, 3, 6, 7, 9], [4, 5, 8]],
+    2: [[0, 1, 2, 3, 7], [4, 5, 6]],
+    3: [[0, 1, 3, 4, 5], [2, 6, 7]],
+    4: [[0, 1, 3, 5], [2, 4, 6, 7]],
+    5: [[0, 2, 4, 5, 7], [1, 3, 6]],
+    6: [[0, 2, 5, 7], [1, 3, 4, 6]],
+    7: [[2, 5, 7], [0, 1, 3, 4, 6]],
+    8: [[0, 1, 2, 5], [3, 4, 6, 7]],
+    9: [[0, 1, 2, 3], [4, 5, 6, 7]],
+    10: [[0, 1, 2, 4, 5], [3, 6, 7]],
+    11: [[0, 1, 6, 7], [2, 3, 4, 5]],
+    12: [[0, 2, 4, 5], [1, 3, 6, 7]],
+    13: [[0, 1, 2, 3, 6, 7], [4, 5]],
+  };
+  const partIndex = chapterNumber % 2 === 1 ? 0 : 1;
+  const allocatedIndexes = chapterQuizAllocation[sourceChapter]?.[partIndex];
+  const questions = sourceQuestions && allocatedIndexes
+    ? allocatedIndexes.map((index) => sourceQuestions[index])
+    : null;
   if (!questions) return true;
 
   const content = document.getElementById("chapter-content");
@@ -1316,7 +1551,8 @@ function insertChapterQuiz(chapterNumber) {
     );
   });
 
-  if (!targetHeading) return false;
+  const insertionTarget = targetHeading || document.getElementById("chapter-summary");
+  if (!insertionTarget) return false;
 
   const quiz = document.createElement("section");
   quiz.className = "content-section chapter-quiz";
@@ -1418,7 +1654,7 @@ function insertChapterQuiz(chapterNumber) {
     }
   });
 
-  targetHeading.insertAdjacentElement("beforebegin", quiz);
+  insertionTarget.insertAdjacentElement("beforebegin", quiz);
   return true;
 }
 

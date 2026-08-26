@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interaktiv presentation om modellering och simulering i Teknik 1.">
-  <title>Kapitel 8 – Modellering och simulering</title>
+  <meta name="description" content="Interaktiv presentation om metodik och arbetsformer i tekniska projekt för Teknik 1.">
+  <title>Kapitel 8 – Arbetsmetoder och agila projekt</title>
   <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="presentation.css">
@@ -18,194 +18,87 @@
     <div class="deck" aria-live="polite">
       <section class="slide is-active"><div class="slide-content">
         <p class="slide-kicker">Teknik 1 · Kapitel 8</p>
-        <h1>Modellering och simulering</h1>
-        <p class="fragment">Beskriv systemet, prova dess beteende och lär innan den verkliga lösningen byggs.</p>
+        <h1>Arbetsmetoder och agila projekt</h1>
+        <p class="fragment">Hur ett team går från mål till resultat utan att tappa tid, ansvar eller kvalitet.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">förklara modellering och simulering</li><li class="fragment">ge exempel på modeller inom informationsteknik</li><li class="fragment">beskriva hur simulering används för att testa scenarier</li><li class="fragment">resonera om modellers möjligheter och begränsningar</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Arbetsmetoder</p><h2>Planstyrt eller anpassningsbart?</h2>
+        <table class="comparison"><thead><tr><th>Traditionellt</th><th>Agilt</th></tr></thead><tbody><tr><td class="fragment">Mycket planeras i förväg.</td><td class="fragment">Arbetet delas i korta cykler.</td></tr><tr><td class="fragment">Passar när krav är stabila.</td><td class="fragment">Passar när behov kan förändras.</td></tr><tr><td class="fragment">Ändringar kan bli kostsamma sent.</td><td class="fragment">Feedback påverkar nästa cykel.</td></tr></tbody></table>
+        <p class="fragment">Många projekt kombinerar arbetssätten.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Startfråga</p><h2>Varför inte bygga direkt?</h2>
-        <p class="fragment">Den färdiga lösningen kan vara dyr eller farlig att ändra.</p>
-        <p class="fragment">Alla antaganden är ännu inte testade.</p>
-        <p class="fragment">Teamet behöver kunna diskutera lösningen innan detaljerna finns.</p>
-        <p class="fragment"><strong>En modell gör idén synlig. En simulering gör beteendet möjligt att prova.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Iterativ utveckling</p><h2>Bygg, testa och förbättra</h2>
+        <div class="flow"><span class="fragment">Planera</span><b class="fragment">→</b><span class="fragment">Bygg</span><b class="fragment">→</b><span class="fragment">Testa</span><b class="fragment">→</b><span class="fragment">Lär</span><b class="fragment">↺</b></div>
+        <p class="fragment">Varje varv ska ge en tydligare produkt och bättre kunskap om behovet.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Modellering</p><h2>Förenkla med ett syfte</h2>
-        <p class="fragment">Modellering innebär att skapa en förenklad representation av ett system.</p>
-        <ul><li class="fragment">välj vad modellen ska hjälpa oss förstå</li><li class="fragment">ta med relevanta delar och relationer</li><li class="fragment">utelämna detaljer som inte behövs för syftet</li></ul>
-        <p class="fragment">En modell är användbar när förenklingen hjälper oss fatta bättre beslut.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">MVP</p><h2>Minsta användbara produkt</h2>
+        <p class="fragment">En MVP innehåller precis tillräckligt för att riktiga användare ska kunna prova lösningen och ge relevant feedback.</p>
+        <div class="two-column"><div><p class="fragment"><strong>Prototyp</strong></p><p class="fragment">Intern och experimentell. Testar en idé.</p></div><div><p class="fragment"><strong>MVP</strong></p><p class="fragment">En verklig, begränsad produktversion för användare.</p></div></div>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Exempel på modeller</p><h2>Olika frågor kräver olika bilder</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Systemdiagram</th><td>Hur hänger komponenterna ihop?</td></tr><tr class="fragment"><th>Databasschema</th><td>Hur organiseras och kopplas data?</td></tr><tr class="fragment"><th>Nätverksdiagram</th><td>Hur kommunicerar enheterna?</td></tr><tr class="fragment"><th>Flödesschema</th><td>I vilken ordning sker steg och beslut?</td></tr><tr class="fragment"><th>Wireframe</th><td>Hur organiseras gränssnittet?</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Progression</p><h2>Från skiss till användning</h2>
+        <div class="flow"><span class="fragment">Enkel skiss</span><b class="fragment">→</b><span class="fragment">Fungerande prototyp</span><b class="fragment">→</b><span class="fragment">MVP</span><b class="fragment">→</b><span class="fragment">Fortsatt produkt</span></div>
+        <p class="fragment">Varje steg testar nya antaganden utan att allt behöver byggas direkt.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Systemdiagram</p><h2>Visa komponenter och dataflöde</h2>
-        <div class="flow"><span class="fragment">Användare</span><b class="fragment">→</b><span class="fragment">Webbgränssnitt</span><b class="fragment">→</b><span class="fragment">Server</span><b class="fragment">⇄</b><span class="fragment">Databas</span></div>
-        <p class="fragment">Modellen visar strukturen men inte all kod, hårdvara eller nätverkstrafik.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Kanban</p><h2>Gör arbetet synligt</h2>
+        <div class="kanban-demo" aria-label="Interaktiv Kanban-tavla">
+          <section class="kanban-column" data-kanban-column="todo" data-column-label="Att göra">
+            <h3>Att göra · 2</h3>
+            <button type="button" class="kanban-card"><span>Testa mobilmenyn</span><span class="kanban-meta">Hög prioritet · Anna</span></button>
+            <button type="button" class="kanban-card is-blocked"><span>Optimera bilder</span><span class="kanban-meta">Blockerad: bilder saknas · Erik</span></button>
+          </section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Scrum</p><h2>Korta sprintar med tydliga mål</h2>
+        <ul><li class="fragment">välj vilka uppgifter som ska göras i sprinten</li><li class="fragment">arbeta mot ett gemensamt sprintmål</li><li class="fragment">stäm av hinder regelbundet</li><li class="fragment">visa resultatet och utvärdera arbetssättet</li></ul>
+        <p class="fragment">En sprint är inte bara en kort deadline – den ska ge ett användbart resultat och lärande.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Databasschema</p><h2>Visa data och relationer</h2>
-        <div class="database-schema">
-          <section class="database-table fragment"><h3>Användare</h3><ul><li><strong>PK</strong> användare_id</li><li>namn</li><li>e_post</li></ul></section>
-          <span class="database-relation fragment">1 → flera</span>
-          <section class="database-table fragment"><h3>Bokning</h3><ul><li><strong>PK</strong> bokning_id</li><li><strong>FK</strong> användare_id</li><li><strong>FK</strong> aktivitet_id</li></ul></section>
-          <span class="database-relation fragment">flera ← 1</span>
-          <section class="database-table fragment"><h3>Aktivitet</h3><ul><li><strong>PK</strong> aktivitet_id</li><li>namn</li><li>tid</li></ul></section>
-        </div>
-        <p class="fragment">Schemat planerar hur informationen ska lagras innan databasen byggs.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · webbplats</p><h2>Dela upp leveransen</h2>
+        <ol><li class="fragment">Planera målgrupp, innehåll och struktur.</li><li class="fragment">Skapa layout och mobil navigation.</li><li class="fragment">Utveckla HTML, CSS och JavaScript.</li><li class="fragment">Testa funktion, tillgänglighet och responsivitet.</li><li class="fragment">Publicera och följ upp användningen.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Programmodell</p><h2>Flödesschema och pseudokod</h2>
-        <div class="two-column"><div><p class="fragment"><strong>Flödesschema</strong></p><p class="fragment">Visar steg, riktning och beslut visuellt.</p></div><div><p class="fragment"><strong>Pseudokod</strong></p><p class="fragment">Beskriver logiken med strukturerad text.</p></div></div>
-        <pre class="code-block compact-code fragment"><code>LÄS in ålder
-OM ålder är minst 18
-    VISA "Myndig"
-ANNARS
-    VISA "Inte myndig"</code></pre>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · Unity</p><h2>Samordna spelprojektet</h2>
+        <ol><li class="fragment">Definiera spelidé och kärnmekanik.</li><li class="fragment">Fördela grafik, nivådesign, kod och test.</li><li class="fragment">Bygg en spelbar prototyp.</li><li class="fragment">Testa styrning, balans och prestanda.</li><li class="fragment">Prioritera förbättringar inför nästa version.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Simulering</p><h2>Kör modellen genom ett scenario</h2>
-        <p class="fragment">Simulering innebär att använda en modell för att undersöka hur ett system beter sig.</p>
-        <div class="flow"><span class="fragment">Modell</span><b class="fragment">+</b><span class="fragment">Indata och antaganden</span><b class="fragment">→</b><span class="fragment">Beräknat beteende</span><b class="fragment">→</b><span class="fragment">Analys</span></div>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Dokumentation</p><h2>Projektets gemensamma minne</h2>
+        <ul><li class="fragment">projektplan och tidsplan</li><li class="fragment">design- och systembeskrivningar</li><li class="fragment">beslut och ansvar</li><li class="fragment">kodkommentarer och versionshistorik</li><li class="fragment">testresultat</li></ul>
+        <p class="fragment">Dokumentera vad som behövs för att förstå, följa upp och fortsätta arbetet.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Varför simulera?</p><h2>Testa innan verkligheten</h2>
-        <ul><li class="fragment">prova farliga eller ovanliga scenarier säkert</li><li class="fragment">upptäcka problem tidigt</li><li class="fragment">jämföra flera lösningar</li><li class="fragment">minska kostnader för fysiska prototyper</li><li class="fragment">förutse kapacitet och beteende</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Lansering</p><h2>Mer än att trycka publicera</h2>
+        <ul><li class="fragment">är systemet testat i rätt miljö?</li><li class="fragment">räcker server- och databaskapaciteten?</li><li class="fragment">finns övervakning och reservplan?</li><li class="fragment">vet användarna vad som förändras?</li></ul>
+        <p class="fragment">En lyckad lansering behöver både teknisk och organisatorisk planering.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kontrollfråga</p><h2>Modell eller simulering?</h2>
-        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Wireframen är modellen och när en testperson klickar genom den simuleras användarens väg genom webbplatsen.">
-          <p>En klickbar wireframe används för att testa om användare hittar från startsidan till bokningen.</p>
-          <button type="button" data-choice="a">Endast en modell</button>
-          <button type="button" data-choice="b">Endast en simulering</button>
-          <button type="button" data-choice="c">En modell som används i en simulering</button>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Utvärdering</p><h2>Lär av projektet</h2>
+        <p class="fragment">Efter projektet gör teamet en gemensam utvärdering.</p>
+        <ol><li class="fragment">Vad fungerade bra?</li><li class="fragment">Vad skapade problem?</li><li class="fragment">Vilka antaganden var fel?</li><li class="fragment">Vad ska göras annorlunda nästa gång?</li></ol>
+        <p class="fragment">Syftet är lärande, inte att leta syndabockar.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt beslut</p><h2>Projektet ligger efter</h2>
+        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Teamet behöver först skapa en gemensam lägesbild och sedan prioritera om utifrån målet.">
+          <p>Tre dagar återstår. Två viktiga funktioner är klara, men fyra mindre funktioner återstår.</p>
+          <button type="button" data-choice="a">Alla arbetar snabbare utan att prata</button>
+          <button type="button" data-choice="b">Lägg till fler funktioner för säkerhets skull</button>
+          <button type="button" data-choice="c">Stäm av målet, prioritera kärnfunktionerna och uppdatera planen</button>
           <p class="choice-feedback" aria-live="polite"></p>
         </div>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Webbplats</p><h2>Simulera användarupplevelsen</h2>
-        <ol><li class="fragment">Skapa wireframes över viktiga sidor.</li><li class="fragment">Koppla dem till en klickbar prototyp.</li><li class="fragment">Ge användaren en konkret uppgift.</li><li class="fragment">Observera vägval och problem.</li><li class="fragment">Förbättra modellen och testa igen.</li></ol>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Planera ett miniprojekt</h2>
+        <ol><li class="fragment">Formulera ett tydligt och avgränsat mål.</li><li class="fragment">Bryt ner målet i arbetsuppgifter.</li><li class="fragment">Fördela ansvar och identifiera beroenden.</li><li class="fragment">Skapa en enkel Kanban-tavla.</li><li class="fragment">Välj vad som ingår i första prototypen.</li><li class="fragment">Planera test och utvärdering.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Webbprestanda</p><h2>Simulera olika förutsättningar</h2>
-        <ul><li class="fragment">långsam mobil uppkoppling</li><li class="fragment">svagare telefon eller dator</li><li class="fragment">många samtidiga användare</li><li class="fragment">stora bilder och filer</li></ul>
-        <p class="fragment">Verktyg som Lighthouse kan simulera vissa miljöer, men resultatet behöver jämföras med verklig användning.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Spelutveckling</p><h2>Modellera världen och reglerna</h2>
-        <ul><li class="fragment">nivåskisser och spelvärldens struktur</li><li class="fragment">regler för poäng, skada och rörelse</li><li class="fragment">karaktärers tillstånd och beteenden</li><li class="fragment">objekt, relationer och händelser</li></ul>
-        <p class="fragment">Spelmodellen beskriver vilka regler simuleringen ska följa.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Fysiksimulering</p><h2>Beräkna rörelse och kollisioner</h2>
-        <div class="process-grid"><span class="fragment">Gravitation</span><span class="fragment">Hastighet</span><span class="fragment">Kraft</span><span class="fragment">Friktion</span><span class="fragment">Kollision</span><span class="fragment">Tid</span></div>
-        <p class="fragment">Spelmotorn uppdaterar modellens värden många gånger per sekund för att skapa rörelse.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktiv fysiksimulering</p><h2>Ett fallande objekt</h2>
-        <div class="decision-simulator gravity-simulator">
-          <div class="decision-controls">
-            <label for="gravity-height">Starthöjd (meter)</label><input id="gravity-height" type="number" min="1" value="20">
-            <label for="gravity-value">Gravitation (m/s²)</label><input id="gravity-value" type="number" min="0.1" step="0.1" value="9.82">
-            <button type="button" data-gravity-start>Starta om</button>
-            <button type="button" data-gravity-step>Stega 0,5 sekunder</button>
-          </div>
-          <div class="decision-output">
-            <div class="simulation-track"><span class="simulation-ball" data-simulation-ball></span><span class="simulation-ground"></span></div>
-            <pre data-gravity-output aria-live="polite">Tid: 0 s\nHöjd: 20 m</pre>
-          </div>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Modellens antaganden</p><h2>Vad saknas i fallsimuleringen?</h2>
-        <ul><li class="fragment">luftmotstånd</li><li class="fragment">vind</li><li class="fragment">objektets form och rotation</li><li class="fragment">variation i gravitation</li><li class="fragment">markens material</li></ul>
-        <p class="fragment">Den enkla modellen kan ändå vara användbar om syftet bara är att undersöka idealiserat fritt fall.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">2D och 3D</p><h2>Fler dimensioner kräver mer</h2>
-        <table class="comparison"><thead><tr><th>2D</th><th>3D</th></tr></thead><tbody><tr><td class="fragment">Rörelse på två axlar</td><td class="fragment">Rörelse och djup på tre axlar</td></tr><tr><td class="fragment">Enklare geometri och kollision</td><td class="fragment">Mer komplex geometri, kamera och kollision</td></tr><tr><td class="fragment">Ofta lägre resurskrav</td><td class="fragment">Ljus, skuggor och perspektiv ökar kraven</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">AI i spel</p><h2>Simulera NPC:ers beteende</h2>
-        <div class="flow"><span class="fragment">Observera världen</span><b class="fragment">→</b><span class="fragment">Välj tillstånd</span><b class="fragment">→</b><span class="fragment">Välj handling</span><b class="fragment">→</b><span class="fragment">Uppdatera</span></div>
-        <p class="fragment">Exempel: patrullera, upptäcka spelaren, jaga, söka och återgå.</p>
-        <p class="fragment">Beteendet är en modell – inte mänsklig förståelse.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Andra teknikområden</p><h2>Simulering där verkliga test är svåra</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Flyg</th><td>Träna piloter och prova nödsituationer.</td></tr><tr class="fragment"><th>Trafik</th><td>Testa flöden, signaler och vägar.</td></tr><tr class="fragment"><th>Klimat</th><td>Undersöka möjliga framtida scenarier.</td></tr><tr class="fragment"><th>Ekonomi</th><td>Analysera effekter av antaganden och beslut.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Digital tvilling</p><h2>En modell kopplad till verkliga data</h2>
-        <div class="flow"><span class="fragment">Fysiskt system</span><b class="fragment">→ sensordata →</b><span class="fragment">Digital modell</span><b class="fragment">→ simulering →</b><span class="fragment">Beslut</span></div>
-        <p class="fragment">Digitala tvillingar kan användas för underhåll, belastningstest och planering av förändringar.</p>
-        <p class="fragment">Modellen behöver uppdateras när det verkliga systemet förändras.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Begränsningar</p><h2>Modellen är inte verkligheten</h2>
-        <ul><li class="fragment">viktiga detaljer kan saknas</li><li class="fragment">antaganden kan vara fel</li><li class="fragment">indata kan vara ofullständig eller vinklad</li><li class="fragment">reglerna kan förenkla för mycket</li><li class="fragment">resultatet kan tolkas fel</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Garbage in, garbage out</p><h2>Avancerad modell + dålig data = dåligt resultat</h2>
-        <div class="flow"><span class="fragment">Felaktig indata</span><b class="fragment">→</b><span class="fragment">Beräkning</span><b class="fragment">→</b><span class="fragment">Övertygande men fel resultat</span></div>
-        <p class="fragment">Granska därför datakälla, antaganden, regler och osäkerhet innan resultatet används.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Validering</p><h2>Stämmer modellen tillräckligt väl?</h2>
-        <ol><li class="fragment">Jämför med kända verkliga resultat.</li><li class="fragment">Testa extrema och oväntade värden.</li><li class="fragment">Variera ett antagande i taget.</li><li class="fragment">Låt andra granska modellen.</li><li class="fragment">Dokumentera osäkerhet och begränsningar.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktivt beslut</p><h2>Kan resultatet användas?</h2>
-        <div class="choice-question" data-correct="b" data-correct-message="Rätt. En simulering behöver valideras mot relevanta verkliga data innan resultatet används som beslutsunderlag.">
-          <p>En trafikmodell förutser kortare köer, men har aldrig jämförts med verkliga trafikmätningar.</p>
-          <button type="button" data-choice="a">Ja, modellen är digital och därför korrekt</button>
-          <button type="button" data-choice="b">Inte ännu – jämför först modellen med verkliga observationer</button>
-          <button type="button" data-choice="c">Ja, om diagrammet ser professionellt ut</button>
-          <p class="choice-feedback" aria-live="polite"></p>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Praktisk övning</p><h2>Modellera och simulera</h2>
-        <ol><li class="fragment">Välj ett tekniskt system och formulera en fråga.</li><li class="fragment">Bestäm vilka delar modellen behöver visa.</li><li class="fragment">Dokumentera antaganden och indata.</li><li class="fragment">Skapa modellen.</li><li class="fragment">Prova minst tre scenarier.</li><li class="fragment">Bedöm resultat och begränsningar.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
-        <ol><li class="fragment">Vad skiljer en modell från en simulering?</li><li class="fragment">Varför kan två modeller av samma system se olika ut?</li><li class="fragment">Hur kan du kontrollera att en simulering är användbar?</li></ol>
+        <ol><li class="fragment">Vad skiljer en prototyp från en MVP?</li><li class="fragment">Hur hjälper tydliga roller samarbetet?</li><li class="fragment">Varför behöver en projektgrupp identifiera och prioritera risker redan under planeringen?</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment">Modellering förenklar ett system för ett bestämt syfte.</li><li class="fragment">Simulering testar modellens beteende i olika scenarier.</li><li class="fragment">Modeller kan minska kostnad och risk men visar inte hela verkligheten.</li><li class="fragment">Resultat beror på indata, regler och antaganden.</li><li class="fragment">Validera modellen innan viktiga beslut fattas.</li></ul>
+        <ul><li class="fragment">Projekt har mål, tidsplan, resurser och slutpunkt.</li><li class="fragment">Bryt ner arbetet och gör ansvar tydligt.</li><li class="fragment">Agilt arbete använder korta cykler och återkoppling.</li><li class="fragment">Dokumentation gör beslut och resultat begripliga.</li><li class="fragment">Utvärdering förvandlar erfarenhet till lärande.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>
@@ -221,33 +114,30 @@ ANNARS
         button.classList.add(correct ? 'is-correct' : 'is-wrong');
         question.querySelector('.choice-feedback').textContent = correct
           ? question.dataset.correctMessage
-          : 'Inte riktigt. Fundera på skillnaden mellan att beskriva systemet och att prova dess beteende.';
+          : 'Inte riktigt. Välj alternativet som gör mål, ansvar och nästa beslut tydliga för hela teamet.';
       });
     });
 
-    let gravityTime = 0;
-    let gravityStartHeight = 20;
-    function renderGravity() {
-      const gravity = Number(document.querySelector('#gravity-value').value);
-      const height = Math.max(0, gravityStartHeight - 0.5 * gravity * gravityTime * gravityTime);
-      const ratio = gravityStartHeight > 0 ? height / gravityStartHeight : 0;
-      document.querySelector('[data-simulation-ball]').style.setProperty('--height-ratio', ratio);
-      document.querySelector('[data-gravity-output]').textContent = `Tid: ${gravityTime.toFixed(1)} s\nHöjd: ${height.toFixed(2)} m\n${height === 0 ? 'Objektet har nått marken.' : 'Objektet faller.'}`;
+    const kanbanColumns = Array.from(document.querySelectorAll('[data-kanban-column]'));
+    const kanbanHint = document.querySelector('.kanban-hint');
+    function updateKanbanCounts() {
+      kanbanColumns.forEach((column) => {
+        const count = column.querySelectorAll('.kanban-card').length;
+        column.querySelector('h3').textContent = `${column.dataset.columnLabel} · ${count}`;
+      });
     }
-    document.querySelector('[data-gravity-start]').addEventListener('click', () => {
-      const height = Number(document.querySelector('#gravity-height').value);
-      const gravity = Number(document.querySelector('#gravity-value').value);
-      if (!(height > 0) || !(gravity > 0)) {
-        document.querySelector('[data-gravity-output]').textContent = 'Fel: höjd och gravitation måste vara större än noll.';
+    document.querySelector('.kanban-demo').addEventListener('click', (event) => {
+      const card = event.target.closest('.kanban-card');
+      if (!card) return;
+      if (card.classList.contains('is-blocked')) {
+        kanbanHint.textContent = 'Den här uppgiften är blockerad och kan inte flyttas förrän de saknade bilderna har levererats.';
         return;
       }
-      gravityStartHeight = height;
-      gravityTime = 0;
-      renderGravity();
-    });
-    document.querySelector('[data-gravity-step]').addEventListener('click', () => {
-      gravityTime += 0.5;
-      renderGravity();
+      const currentColumn = card.closest('[data-kanban-column]');
+      const currentIndex = kanbanColumns.indexOf(currentColumn);
+      kanbanColumns[(currentIndex + 1) % kanbanColumns.length].appendChild(card);
+      kanbanHint.textContent = 'Uppgiftens status är uppdaterad. Tavlan visar nu det nya arbetsläget för hela teamet.';
+      updateKanbanCounts();
     });
   </script>
 </body>

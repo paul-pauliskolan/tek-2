@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interaktiv presentation om kommunikation, dokumentation och presentation inom informationsteknik i Teknik 1.">
-  <title>Kapitel 12 – Kommunikation, dokumentation och presentation</title>
+  <meta name="description" content="Interaktiv presentation om kvalitet, risk, miljö och arbetsmiljö i Teknik 1.">
+  <title>Kapitel 12 – Riskhantering, miljösäkring och arbetsmiljö</title>
   <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="presentation.css">
@@ -18,193 +18,77 @@
     <div class="deck" aria-live="polite">
       <section class="slide is-active"><div class="slide-content">
         <p class="slide-kicker">Teknik 1 · Kapitel 12</p>
-        <h1>Kommunikation, dokumentation och presentation</h1>
-        <p class="fragment">Tekniska lösningar behöver kunna förstås, användas och utvecklas av andra.</p>
+        <h1>Riskhantering, miljösäkring och arbetsmiljö</h1>
+        <p class="fragment">Ett tekniskt system ska fungera – men också vara säkert, hållbart och rimligt att arbeta med.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">förklara varför kommunikation behövs i tekniska projekt</li><li class="fragment">välja relevant dokumentation för olika syften</li><li class="fragment">använda kodkommentarer och versionshantering klokt</li><li class="fragment">presentera en teknisk lösning tydligt för en mottagare</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Riskhantering</p><h2>Fyra sätt att hantera risk</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Undvik</th><td>Ta bort aktiviteten som skapar risken.</td></tr><tr class="fragment"><th>Minska</th><td>Sänk sannolikhet eller konsekvens.</td></tr><tr class="fragment"><th>Överför</th><td>Fördela ansvaret, exempelvis genom avtal.</td></tr><tr class="fragment"><th>Acceptera</th><td>Bevaka en låg risk och ha en reservplan.</td></tr></tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Startfråga</p><h2>Om bara du förstår lösningen</h2>
-        <p class="fragment">Kan någon annan använda den?</p>
-        <p class="fragment">Kan teamet felsöka den?</p>
-        <p class="fragment">Kan projektet fortsätta när du är borta?</p>
-        <p class="fragment"><strong>Begriplighet är en del av teknikens kvalitet.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Förebyggande åtgärder</p><h2>Gör systemet motståndskraftigt</h2>
+        <ul><li class="fragment">säkerhetskopior och återställningstest</li><li class="fragment">begränsad åtkomst och stark autentisering</li><li class="fragment">automatiska och manuella tester</li><li class="fragment">övervakning och larm</li><li class="fragment">reservplan vid driftstopp</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Tre uppgifter</p><h2>Liknande – men inte samma</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Kommunikation</th><td>Dela information och samordna arbete.</td></tr><tr class="fragment"><th>Dokumentation</th><td>Bevara kunskap om system och beslut.</td></tr><tr class="fragment"><th>Presentation</th><td>Förklara en utvald helhet för en mottagare.</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Miljösäkring</p><h2>Digital teknik har fysisk påverkan</h2>
+        <ul><li class="fragment">servrar och nätverk använder energi</li><li class="fragment">elektronik kräver material och tillverkning</li><li class="fragment">utrustning behöver transporteras och återvinnas</li><li class="fragment">ineffektiv kod kan använda onödiga resurser</li></ul>
+        <p class="fragment">”Digitalt” betyder inte automatiskt resurssnålt.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kommunikation</p><h2>Skapa en gemensam bild</h2>
-        <ul><li class="fragment">vad är målet?</li><li class="fragment">vad har beslutats?</li><li class="fragment">vem ansvarar för vad?</li><li class="fragment">vilka hinder finns?</li><li class="fragment">vad behöver hända härnäst?</li></ul>
-        <p class="fragment">Bra kommunikation minskar antaganden och gör avvikelser synliga tidigt.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Minska miljöpåverkan</p><h2>Se till hela livscykeln</h2>
+        <div class="flow"><span class="fragment">Material</span><b class="fragment">→</b><span class="fragment">Tillverkning</span><b class="fragment">→</b><span class="fragment">Drift</span><b class="fragment">→</b><span class="fragment">Underhåll</span><b class="fragment">→</b><span class="fragment">Återbruk</span></div>
+        <ul><li class="fragment">förläng utrustningens livslängd</li><li class="fragment">effektivisera kod och serveranvändning</li><li class="fragment">välj rätt kapacitet för behovet</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kommunikationskanaler</p><h2>Välj kanal efter uppgift</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Möte</th><td>Diskussion, beslut och komplexa frågor</td></tr><tr class="fragment"><th>Chatt</th><td>Snabba frågor och kort samordning</td></tr><tr class="fragment"><th>Dokument</th><td>Beständig och strukturerad information</td></tr><tr class="fragment"><th>Projektverktyg</th><td>Uppgifter, ansvar, status och deadlines</td></tr><tr class="fragment"><th>Kodkommentar</th><td>Förklaring nära den tekniska detaljen</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">AI och energi</p><h2>Möjlighet med resurskostnad</h2>
+        <p class="fragment">AI-tjänster använder kraftfulla servrar för både träning och användning.</p>
+        <p class="fragment">Miljöpåverkan beror bland annat på modellens storlek, antalet beräkningar och hur elen produceras.</p>
+        <p class="fragment">Rätt fråga är därför inte bara ”kan vi använda AI?” utan också ”när ger användningen tillräcklig nytta?”.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Digitala verktyg</p><h2>Verktyget löser inte samarbetet</h2>
-        <div class="process-grid"><span class="fragment">Trello</span><span class="fragment">Jira</span><span class="fragment">Slack</span><span class="fragment">Discord</span><span class="fragment">Delade dokument</span><span class="fragment">GitHub</span></div>
-        <p class="fragment">Teamet behöver fortfarande regler för var beslut, uppgifter och dokument ska finnas.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Arbetsmiljö</p><h2>Människan är en del av systemet</h2>
+        <div class="process-grid"><span class="fragment">Ergonomi</span><span class="fragment">Arbetsbelastning</span><span class="fragment">Belysning</span><span class="fragment">Pauser</span><span class="fragment">Tydligt ansvar</span><span class="fragment">Psykologisk trygghet</span></div>
+        <p class="fragment">Dålig arbetsmiljö påverkar både hälsa, beslut och teknisk kvalitet.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Mottagare</p><h2>Samma teknik – olika förklaring</h2>
-        <table class="comparison"><thead><tr><th>Mottagare</th><th>Behöver främst förstå</th></tr></thead><tbody><tr class="fragment"><th>Användare</th><td>Hur lösningen används säkert och effektivt</td></tr><tr class="fragment"><th>Utvecklare</th><td>Struktur, dataflöden, gränssnitt och beslut</td></tr><tr class="fragment"><th>Beställare</th><td>Nytta, kostnad, risk och resultat</td></tr><tr class="fragment"><th>Testare</th><td>Krav, testmiljö och förväntat beteende</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Ergonomi</p><h2>Anpassa arbetet till kroppen</h2>
+        <ul><li class="fragment">variera arbetsställning</li><li class="fragment">placera skärm och tangentbord rimligt</li><li class="fragment">undvik långvarigt statiskt arbete</li><li class="fragment">ta regelbundna pauser</li><li class="fragment">anpassa ljus och ljudmiljö</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Dokumentation</p><h2>Projektets gemensamma minne</h2>
-        <p class="fragment">Dokumentation beskriver hur systemet fungerar, varför beslut togs och hur arbetet genomfördes.</p>
-        <ul><li class="fragment">gör kunskap sökbar</li><li class="fragment">stödjer underhåll och felsökning</li><li class="fragment">hjälper nya personer in i projektet</li><li class="fragment">gör beslut möjliga att följa upp</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Organisatorisk arbetsmiljö</p><h2>Orimlig planering skapar risk</h2>
+        <p class="fragment">Orealistiska deadlines kan leda till stress, fler misstag och genvägar i kvalitetssäkringen.</p>
+        <ul><li class="fragment">prioritera arbetsuppgifter</li><li class="fragment">gör belastning och hinder synliga</li><li class="fragment">fördela ansvar tydligt</li><li class="fragment">skapa utrymme att rapportera problem</li></ul>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Dokumenttyper</p><h2>Dokumentera rätt sak</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Projektplan</th><td>Mål, tid, resurser och ansvar</td></tr><tr class="fragment"><th>Systembeskrivning</th><td>Komponenter, relationer och dataflöden</td></tr><tr class="fragment"><th>Teknisk rapport</th><td>Metod, resultat, problem och slutsatser</td></tr><tr class="fragment"><th>Testprotokoll</th><td>Testfall, förväntat resultat och utfall</td></tr><tr class="fragment"><th>Användarguide</th><td>Hur lösningen används</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · webbplats</p><h2>Fyra perspektiv samtidigt</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Kvalitet</th><td>Sidan fungerar i olika webbläsare.</td></tr><tr class="fragment"><th>Risk</th><td>Användardata skyddas och säkerhetskopieras.</td></tr><tr class="fragment"><th>Miljö</th><td>Bilder, kod och serverresurser effektiviseras.</td></tr><tr class="fragment"><th>Arbetsmiljö</th><td>Arbetet har rimlig belastning och tydligt ansvar.</td></tr></tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Bra dokumentation</p><h2>Tillräcklig och aktuell</h2>
-        <ul><li class="fragment">har ett tydligt syfte och en mottagare</li><li class="fragment">finns där teamet förväntar sig</li><li class="fragment">använder gemensamma begrepp</li><li class="fragment">uppdateras när systemet förändras</li><li class="fragment">är tillräckligt detaljerad utan att duplicera allt</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Dokumentationsskuld</p><h2>Fel information kan vara värre än ingen</h2>
-        <p class="fragment">Om dokumentationen inte uppdateras kan teamet fatta beslut utifrån ett system som inte längre finns.</p>
-        <div class="flow"><span class="fragment">System ändras</span><b class="fragment">→</b><span class="fragment">Dokumentet lämnas</span><b class="fragment">→</b><span class="fragment">Fel antaganden</span><b class="fragment">→</b><span class="fragment">Nya problem</span></div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kodkommentarer</p><h2>Förklara det koden inte säger</h2>
-        <pre class="code-block compact-code fragment"><code># Fel: beskriver bara raden
-antal = antal + 1  # Öka antal med ett
-
-# Bättre: förklarar orsaken
-antal = antal + 1  # Första posten har index 0</code></pre>
-        <p class="fragment">Kommentera främst varför en oväntad lösning eller ett antagande behövs.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Självdokumenterande kod</p><h2>Tydliga namn minskar behovet av kommentarer</h2>
-        <div class="two-column"><div><pre class="code-block compact-code fragment"><code>x = s / n</code></pre><p class="fragment">Kort men otydligt.</p></div><div><pre class="code-block compact-code fragment"><code>medelvarde = summa / antal</code></pre><p class="fragment">Namn visar avsikten.</p></div></div>
-        <p class="fragment">Kommentarer ska komplettera tydlig kod – inte försöka rädda otydlig kod.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kontrollfråga</p><h2>Vilken kommentar hjälper mest?</h2>
-        <div class="choice-question" data-correct="c" data-correct-message="Rätt. Kommentaren förklarar ett viktigt skäl som inte är uppenbart bara genom att läsa koden.">
-          <button type="button" data-choice="a"><code>poang += 1  # Lägg till ett</code></button>
-          <button type="button" data-choice="b"><code>namn = namn.strip()  # Anropa strip</code></button>
-          <button type="button" data-choice="c"><code>max_forsok = 3  # Begränsar automatiska inloggningsförsök mot attacker</code></button>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt beslut</p><h2>Vad prioriteras först?</h2>
+        <div class="choice-question" data-correct="b" data-correct-message="Rätt. Risken med hög konsekvens för användarnas data behöver hanteras före mindre visuella brister.">
+          <p>En webbplats har ett mindre färgfel. Samtidigt saknas fungerande säkerhetskopiering av användardata.</p>
+          <button type="button" data-choice="a">Rätta färgen först eftersom felet syns</button>
+          <button type="button" data-choice="b">Säkra och testa säkerhetskopieringen först</button>
+          <button type="button" data-choice="c">Vänta tills något går fel</button>
           <p class="choice-feedback" aria-live="polite"></p>
         </div>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Versionshantering</p><h2>Spara förändringar med sammanhang</h2>
-        <div class="flow"><span class="fragment">Version 1</span><b class="fragment">→</b><span class="fragment">Ändring + beskrivning</span><b class="fragment">→</b><span class="fragment">Version 2</span><b class="fragment">→</b><span class="fragment">Fortsatt arbete</span></div>
-        <ul><li class="fragment">jämför versioner</li><li class="fragment">se vem som ändrade vad</li><li class="fragment">återställ ett tidigare läge</li><li class="fragment">arbeta parallellt i grenar</li></ul>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Gör en kvalitetsplan</h2>
+        <ol><li class="fragment">Välj en teknisk lösning.</li><li class="fragment">Formulera fyra mätbara kvalitetskrav.</li><li class="fragment">Välj test för varje krav.</li><li class="fragment">Identifiera tre risker och bedöm dem.</li><li class="fragment">Föreslå en miljöåtgärd.</li><li class="fragment">Föreslå en arbetsmiljöåtgärd.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Git och GitHub</p><h2>Verktyg och samarbetsplattform</h2>
-        <table class="comparison"><thead><tr><th>Git</th><th>GitHub</th></tr></thead><tbody><tr><td class="fragment">Versionshanteringssystem</td><td class="fragment">Webbaserad tjänst för Git-repositorier</td></tr><tr><td class="fragment">Kan användas lokalt</td><td class="fragment">Lagrar och delar projekt online</td></tr><tr><td class="fragment">Commit, branch och merge</td><td class="fragment">Pull requests, granskning och ärenden</td></tr></tbody></table>
-        <p class="fragment">GitHub använder Git, men Git är inte samma sak som GitHub.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Diskussion</p><h2>Kvalitet innebär avvägningar</h2>
+        <ul><li class="fragment">Kan högre miljökrav driva fram bättre teknik?</li><li class="fragment">När är en teknisk risk acceptabel?</li><li class="fragment">Vem ansvarar för problem efter lansering?</li><li class="fragment">Hur påverkar tidspress kvalitet och arbetsmiljö?</li></ul>
+        <p class="fragment">Professionellt kvalitetsarbete gör avvägningarna synliga och motiverade.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">En bra commit</p><h2>En begriplig förändring</h2>
-        <div class="two-column"><div><p class="fragment"><strong>Otydligt</strong></p><pre class="code-block compact-code fragment"><code>fix</code></pre></div><div><p class="fragment"><strong>Tydligt</strong></p><pre class="code-block compact-code fragment"><code>Rätta validering av tom e-postadress</code></pre></div></div>
-        <p class="fragment">En commit bör vara avgränsad och beskriva vad förändringen åstadkommer.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Presentation</p><h2>Välj budskap före detaljer</h2>
-        <ol><li class="fragment">Vad ska mottagaren förstå?</li><li class="fragment">Vad behöver mottagaren besluta eller göra?</li><li class="fragment">Vilka bevis och exempel behövs?</li><li class="fragment">Vilka tekniska detaljer kan vänta?</li></ol>
-        <p class="fragment">En presentation är ett urval – inte all dokumentation uppläst.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Visuell kommunikation</p><h2>Visa relationen som ska förstås</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Flödesschema</th><td>Ordning och beslut</td></tr><tr class="fragment"><th>Systemdiagram</th><td>Komponenter och kopplingar</td></tr><tr class="fragment"><th>Skärmbild</th><td>Gränssnitt och visuellt resultat</td></tr><tr class="fragment"><th>Diagram</th><td>Mängder, förändring och jämförelse</td></tr><tr class="fragment"><th>Demonstration</th><td>Faktiskt beteende i användning</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Förklara ett system</p><h2>Från helhet till detalj</h2>
-        <div class="flow"><span class="fragment">Problem och användare</span><b class="fragment">→</b><span class="fragment">Lösningens helhet</span><b class="fragment">→</b><span class="fragment">Viktiga delar</span><b class="fragment">→</b><span class="fragment">Resultat och begränsningar</span></div>
-        <p class="fragment">Mottagaren behöver en karta innan de tekniska detaljerna blir begripliga.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Elevator pitch</p><h2>Förklara nyttan på en minut</h2>
-        <div class="prompt-card fragment"><p><strong>För</strong> [målgrupp] som har [problem] erbjuder vår lösning [funktion]. Den skapar [nytta], till skillnad från [alternativ].</p></div>
-        <p class="fragment">Fokusera på problem, mottagare och värde – inte en lista över all teknik.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktiv pitchbyggare</p><h2>Formulera kärnan</h2>
-        <div class="decision-simulator pitch-builder">
-          <div class="decision-controls">
-            <label for="pitch-audience">Målgrupp</label><input id="pitch-audience" type="text" value="små idrottsföreningar">
-            <label for="pitch-problem">Problem</label><input id="pitch-problem" type="text" value="svårt att hålla medlemmar informerade">
-            <label for="pitch-solution">Lösning</label><input id="pitch-solution" type="text" value="en lättskött webbplats med schema och nyheter">
-            <label for="pitch-value">Nytta</label><input id="pitch-value" type="text" value="mindre administration och aktuell information">
-            <button type="button" data-build-pitch>Skapa pitch</button>
-          </div>
-          <div class="decision-output"><strong>Pitch</strong><pre data-pitch-output aria-live="polite">Fyll i fälten och skapa en pitch.</pre></div>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Webbplatsprojekt</p><h2>Tre spår genom hela projektet</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Kommunikation</th><td>Diskutera krav, design, status och problem.</td></tr><tr class="fragment"><th>Dokumentation</th><td>Beskriv struktur, dataflöden, kod och tester.</td></tr><tr class="fragment"><th>Presentation</th><td>Demonstrera webbplatsen och förklara nyttan.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Unity-projekt</p><h2>Förklara både regler och upplevelse</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Kommunikation</th><td>Samordna spelmekanik, nivåer, grafik och kod.</td></tr><tr class="fragment"><th>Dokumentation</th><td>Beskriv system, skript, tillgångar och testresultat.</td></tr><tr class="fragment"><th>Presentation</th><td>Visa spelet och demonstrera centrala funktioner.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Loggbok</p><h2>Dokumentera arbetets utveckling</h2>
-        <ul><li class="fragment">vad gjorde jag?</li><li class="fragment">varför valde jag denna lösning?</li><li class="fragment">vilka problem uppstod?</li><li class="fragment">hur testades och förbättrades resultatet?</li><li class="fragment">vad är nästa steg?</li></ul>
-        <p class="fragment">En bra loggbok beskriver beslut och lärande, inte bara en lista över aktiviteter.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktivt beslut</p><h2>Vilken dokumentation behövs?</h2>
-        <div class="choice-question" data-correct="b" data-correct-message="Rätt. En systembeskrivning med dataflöde, autentisering och ansvar hjälper nästa utvecklare förstå och ändra integrationen säkert.">
-          <p>En ny utvecklare ska underhålla en koppling mellan en webbplats och ett betalningssystem.</p>
-          <button type="button" data-choice="a">Endast en reklambild av webbplatsen</button>
-          <button type="button" data-choice="b">Systembeskrivning, dataflöde, gränssnitt och säkerhetskrav</button>
-          <button type="button" data-choice="c">En lista över teamets favoritverktyg</button>
-          <p class="choice-feedback" aria-live="polite"></p>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Praktisk övning</p><h2>Dokumentera och presentera en lösning</h2>
-        <ol><li class="fragment">Välj en teknisk lösning och två mottagare.</li><li class="fragment">Skapa en enkel systembeskrivning.</li><li class="fragment">Skriv en kort användarguide.</li><li class="fragment">Förbättra namn och kommentarer i ett kodexempel.</li><li class="fragment">Skapa en tydlig visuell modell.</li><li class="fragment">Presentera lösningen på en minut.</li></ol>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
-        <ol><li class="fragment">Hur skiljer sig dokumentation från presentation?</li><li class="fragment">När hjälper en kodkommentar – och när behövs tydligare kod?</li><li class="fragment">Vad skiljer Git från GitHub?</li></ol>
+        <ol><li class="fragment">Varför ska kvalitet planeras före testningen?</li><li class="fragment">Hur skiljer sig sannolikhet från konsekvens?</li><li class="fragment">Hur kan arbetsmiljö påverka systemets tekniska kvalitet?</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment">Kommunikation skapar gemensam förståelse och samordning.</li><li class="fragment">Dokumentation bevarar kunskap om system och beslut.</li><li class="fragment">Tydlig kod och relevanta kommentarer kompletterar varandra.</li><li class="fragment">Git hanterar versioner; GitHub stödjer lagring och samarbete.</li><li class="fragment">En presentation anpassar budskap och detaljer till mottagaren.</li></ul>
+        <ul><li class="fragment">Kvalitet planeras, kontrolleras och förbättras kontinuerligt.</li><li class="fragment">Olika kvalitetsfrågor kräver olika tester.</li><li class="fragment">Risk bedöms genom sannolikhet och konsekvens.</li><li class="fragment">Digital teknik har fysisk miljöpåverkan.</li><li class="fragment">God arbetsmiljö är en förutsättning för hållbar kvalitet.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>
@@ -220,20 +104,16 @@ antal = antal + 1  # Första posten har index 0</code></pre>
         button.classList.add(correct ? 'is-correct' : 'is-wrong');
         question.querySelector('.choice-feedback').textContent = correct
           ? question.dataset.correctMessage
-          : 'Inte riktigt. Välj alternativet som gör den viktiga tekniska kunskapen tydlig och användbar för mottagaren.';
+          : 'Inte riktigt. Utgå från vilket alternativ som bäst minskar den viktigaste risken eller besvarar testfrågan.';
       });
     });
 
-    document.querySelector('[data-build-pitch]').addEventListener('click', () => {
-      const fields = ['pitch-audience', 'pitch-problem', 'pitch-solution', 'pitch-value'];
-      const values = fields.map((id) => document.querySelector(`#${id}`).value.trim());
-      const output = document.querySelector('[data-pitch-output]');
-      if (values.some((value) => !value)) {
-        output.textContent = 'Fel: fyll i alla fyra fälten.';
-        return;
-      }
-      const [audience, problem, solution, value] = values;
-      output.textContent = `För ${audience} som har ${problem} erbjuder vi ${solution}. Det ger ${value}.`;
+    document.querySelector('[data-calculate-risk]').addEventListener('click', () => {
+      const probability = Number(document.querySelector('#risk-probability').value);
+      const consequence = Number(document.querySelector('#risk-consequence').value);
+      const value = probability * consequence;
+      const level = value <= 2 ? 'Låg' : value <= 4 ? 'Medel' : 'Hög';
+      document.querySelector('[data-risk-output]').textContent = `Sannolikhet: ${probability}\nKonsekvens: ${consequence}\nRiskvärde: ${value}\nPrioritet: ${level}`;
     });
   </script>
 </body>

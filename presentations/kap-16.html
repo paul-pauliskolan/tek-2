@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interaktiv presentation om modellering och simulering i Teknik 1.">
+  <title>Kapitel 16 – Simulering i spel och andra teknikområden</title>
+  <script src="../js/theme.js"></script>
+    <link rel="stylesheet" href="../css/theme.css">
+    <link rel="stylesheet" href="presentation.css">
+</head>
+<body class="presentation-body">
+  <main class="presentation-shell">
+    <header class="presentation-topbar">
+      <a href="index.html">Presentationer</a>
+      <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
+    </header>
+    <div class="deck" aria-live="polite">
+      <section class="slide is-active"><div class="slide-content">
+        <p class="slide-kicker">Teknik 1 · Kapitel 16</p>
+        <h1>Simulering i spel och andra teknikområden</h1>
+        <p class="fragment">Beskriv systemet, prova dess beteende och lär innan den verkliga lösningen byggs.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Spelutveckling</p><h2>Modellera världen och reglerna</h2>
+        <ul><li class="fragment">nivåskisser och spelvärldens struktur</li><li class="fragment">regler för poäng, skada och rörelse</li><li class="fragment">karaktärers tillstånd och beteenden</li><li class="fragment">objekt, relationer och händelser</li></ul>
+        <p class="fragment">Spelmodellen beskriver vilka regler simuleringen ska följa.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Fysiksimulering</p><h2>Beräkna rörelse och kollisioner</h2>
+        <div class="process-grid"><span class="fragment">Gravitation</span><span class="fragment">Hastighet</span><span class="fragment">Kraft</span><span class="fragment">Friktion</span><span class="fragment">Kollision</span><span class="fragment">Tid</span></div>
+        <p class="fragment">Spelmotorn uppdaterar modellens värden många gånger per sekund för att skapa rörelse.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv fysiksimulering</p><h2>Ett fallande objekt</h2>
+        <div class="decision-simulator gravity-simulator">
+          <div class="decision-controls">
+            <label for="gravity-height">Starthöjd (meter)</label><input id="gravity-height" type="number" min="1" value="20">
+            <label for="gravity-value">Gravitation (m/s²)</label><input id="gravity-value" type="number" min="0.1" step="0.1" value="9.82">
+            <button type="button" data-gravity-start>Starta om</button>
+            <button type="button" data-gravity-step>Stega 0,5 sekunder</button>
+          </div>
+          <div class="decision-output">
+            <div class="simulation-track"><span class="simulation-ball" data-simulation-ball></span><span class="simulation-ground"></span></div>
+            <pre data-gravity-output aria-live="polite">Tid: 0 s\nHöjd: 20 m</pre>
+          </div>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Modellens antaganden</p><h2>Vad saknas i fallsimuleringen?</h2>
+        <ul><li class="fragment">luftmotstånd</li><li class="fragment">vind</li><li class="fragment">objektets form och rotation</li><li class="fragment">variation i gravitation</li><li class="fragment">markens material</li></ul>
+        <p class="fragment">Den enkla modellen kan ändå vara användbar om syftet bara är att undersöka idealiserat fritt fall.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">2D och 3D</p><h2>Fler dimensioner kräver mer</h2>
+        <table class="comparison"><thead><tr><th>2D</th><th>3D</th></tr></thead><tbody><tr><td class="fragment">Rörelse på två axlar</td><td class="fragment">Rörelse och djup på tre axlar</td></tr><tr><td class="fragment">Enklare geometri och kollision</td><td class="fragment">Mer komplex geometri, kamera och kollision</td></tr><tr><td class="fragment">Ofta lägre resurskrav</td><td class="fragment">Ljus, skuggor och perspektiv ökar kraven</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">AI i spel</p><h2>Simulera NPC:ers beteende</h2>
+        <div class="flow"><span class="fragment">Observera världen</span><b class="fragment">→</b><span class="fragment">Välj tillstånd</span><b class="fragment">→</b><span class="fragment">Välj handling</span><b class="fragment">→</b><span class="fragment">Uppdatera</span></div>
+        <p class="fragment">Exempel: patrullera, upptäcka spelaren, jaga, söka och återgå.</p>
+        <p class="fragment">Beteendet är en modell – inte mänsklig förståelse.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Andra teknikområden</p><h2>Simulering där verkliga test är svåra</h2>
+        <table class="comparison"><tbody><tr class="fragment"><th>Flyg</th><td>Träna piloter och prova nödsituationer.</td></tr><tr class="fragment"><th>Trafik</th><td>Testa flöden, signaler och vägar.</td></tr><tr class="fragment"><th>Klimat</th><td>Undersöka möjliga framtida scenarier.</td></tr><tr class="fragment"><th>Ekonomi</th><td>Analysera effekter av antaganden och beslut.</td></tr></tbody></table>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Digital tvilling</p><h2>En modell kopplad till verkliga data</h2>
+        <div class="flow"><span class="fragment">Fysiskt system</span><b class="fragment">→ sensordata →</b><span class="fragment">Digital modell</span><b class="fragment">→ simulering →</b><span class="fragment">Beslut</span></div>
+        <p class="fragment">Digitala tvillingar kan användas för underhåll, belastningstest och planering av förändringar.</p>
+        <p class="fragment">Modellen behöver uppdateras när det verkliga systemet förändras.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Begränsningar</p><h2>Modellen är inte verkligheten</h2>
+        <ul><li class="fragment">viktiga detaljer kan saknas</li><li class="fragment">antaganden kan vara fel</li><li class="fragment">indata kan vara ofullständig eller vinklad</li><li class="fragment">reglerna kan förenkla för mycket</li><li class="fragment">resultatet kan tolkas fel</li></ul>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Garbage in, garbage out</p><h2>Avancerad modell + dålig data = dåligt resultat</h2>
+        <div class="flow"><span class="fragment">Felaktig indata</span><b class="fragment">→</b><span class="fragment">Beräkning</span><b class="fragment">→</b><span class="fragment">Övertygande men fel resultat</span></div>
+        <p class="fragment">Granska därför datakälla, antaganden, regler och osäkerhet innan resultatet används.</p>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Validering</p><h2>Stämmer modellen tillräckligt väl?</h2>
+        <ol><li class="fragment">Jämför med kända verkliga resultat.</li><li class="fragment">Testa extrema och oväntade värden.</li><li class="fragment">Variera ett antagande i taget.</li><li class="fragment">Låt andra granska modellen.</li><li class="fragment">Dokumentera osäkerhet och begränsningar.</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktivt beslut</p><h2>Kan resultatet användas?</h2>
+        <div class="choice-question" data-correct="b" data-correct-message="Rätt. En simulering behöver valideras mot relevanta verkliga data innan resultatet används som beslutsunderlag.">
+          <p>En trafikmodell förutser kortare köer, men har aldrig jämförts med verkliga trafikmätningar.</p>
+          <button type="button" data-choice="a">Ja, modellen är digital och därför korrekt</button>
+          <button type="button" data-choice="b">Inte ännu – jämför först modellen med verkliga observationer</button>
+          <button type="button" data-choice="c">Ja, om diagrammet ser professionellt ut</button>
+          <p class="choice-feedback" aria-live="polite"></p>
+        </div>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Praktisk övning</p><h2>Modellera och simulera</h2>
+        <ol><li class="fragment">Välj ett tekniskt system och formulera en fråga.</li><li class="fragment">Bestäm vilka delar modellen behöver visa.</li><li class="fragment">Dokumentera antaganden och indata.</li><li class="fragment">Skapa modellen.</li><li class="fragment">Prova minst tre scenarier.</li><li class="fragment">Bedöm resultat och begränsningar.</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
+        <ol><li class="fragment">Vad skiljer en modell från en simulering?</li><li class="fragment">Varför kan två modeller av samma system se olika ut?</li><li class="fragment">Hur kan du kontrollera att en simulering är användbar?</li></ol>
+      </div></section>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
+        <ul><li class="fragment">Modellering förenklar ett system för ett bestämt syfte.</li><li class="fragment">Simulering testar modellens beteende i olika scenarier.</li><li class="fragment">Modeller kan minska kostnad och risk men visar inte hela verkligheten.</li><li class="fragment">Resultat beror på indata, regler och antaganden.</li><li class="fragment">Validera modellen innan viktiga beslut fattas.</li></ul>
+      </div></section>
+    </div>
+    <footer class="presentation-footer"></footer>
+  </main>
+  <script src="presentation.js"></script>
+  <script>
+    document.querySelectorAll('.choice-question').forEach((question) => {
+      question.addEventListener('click', (event) => {
+        const button = event.target.closest('[data-choice]');
+        if (!button) return;
+        const correct = button.dataset.choice === question.dataset.correct;
+        question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
+        button.classList.add(correct ? 'is-correct' : 'is-wrong');
+        question.querySelector('.choice-feedback').textContent = correct
+          ? question.dataset.correctMessage
+          : 'Inte riktigt. Fundera på skillnaden mellan att beskriva systemet och att prova dess beteende.';
+      });
+    });
+
+    let gravityTime = 0;
+    let gravityStartHeight = 20;
+    function renderGravity() {
+      const gravity = Number(document.querySelector('#gravity-value').value);
+      const height = Math.max(0, gravityStartHeight - 0.5 * gravity * gravityTime * gravityTime);
+      const ratio = gravityStartHeight > 0 ? height / gravityStartHeight : 0;
+      document.querySelector('[data-simulation-ball]').style.setProperty('--height-ratio', ratio);
+      document.querySelector('[data-gravity-output]').textContent = `Tid: ${gravityTime.toFixed(1)} s\nHöjd: ${height.toFixed(2)} m\n${height === 0 ? 'Objektet har nått marken.' : 'Objektet faller.'}`;
+    }
+    document.querySelector('[data-gravity-start]').addEventListener('click', () => {
+      const height = Number(document.querySelector('#gravity-height').value);
+      const gravity = Number(document.querySelector('#gravity-value').value);
+      if (!(height > 0) || !(gravity > 0)) {
+        document.querySelector('[data-gravity-output]').textContent = 'Fel: höjd och gravitation måste vara större än noll.';
+        return;
+      }
+      gravityStartHeight = height;
+      gravityTime = 0;
+      renderGravity();
+    });
+    document.querySelector('[data-gravity-step]').addEventListener('click', () => {
+      gravityTime += 0.5;
+      renderGravity();
+    });
+  </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Interaktiv presentation om entreprenörskap och innovation för Teknik 1.">
-  <title>Kapitel 2 – Entreprenörskap och innovation</title>
+  <meta name="description" content="Interaktiv presentation om teknikutvecklingsprocessen för Teknik 1.">
+  <title>Kapitel 2 – Testning, iteration och tekniska lösningars livscykel</title>
   <script src="../js/theme.js"></script>
     <link rel="stylesheet" href="../css/theme.css">
     <link rel="stylesheet" href="presentation.css">
@@ -16,175 +16,96 @@
       <span class="slide-counter">Bild <span data-current-slide>1</span>/<span data-total-slides>1</span></span>
     </header>
     <div class="deck" aria-live="polite">
-      <section class="slide is-active"><div class="slide-content">
-        <p class="slide-kicker">Teknik 1 · Kapitel 2</p>
-        <h1>Entreprenörskap och innovation</h1>
-        <p class="fragment">Hur en teknisk idé kan skapa verkligt värde för andra.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Lektionsmål</p><h2>Efter kapitlet ska du kunna...</h2>
-        <ul><li class="fragment">förklara vad entreprenörskap innebär</li><li class="fragment">skilja mellan uppfinning och innovation</li><li class="fragment">koppla en teknisk idé till användare, behov och värde</li><li class="fragment">resonera om villkor, finansiering och risk</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Startfråga</p><h2>Räcker en bra idé?</h2>
-        <p class="fragment">En idé kan vara tekniskt imponerande...</p>
-        <p class="fragment">...men om ingen behöver, förstår eller kan använda den skapar den inget värde.</p>
-        <p class="fragment"><strong>Entreprenörskap förbinder idén med verkligheten.</strong></p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Centralt begrepp</p><h2>Vad är entreprenörskap?</h2>
-        <p class="fragment">Att se möjligheter, ta initiativ, utveckla idéer och skapa lösningar som används i verkligheten.</p>
-        <ul><li class="fragment">kan leda till ett företag</li><li class="fragment">kan förbättra en befintlig verksamhet</li><li class="fragment">kan skapa en produkt eller tjänst</li></ul>
-        <p class="fragment">Företagande är alltså en möjlig del – inte hela definitionen.</p>
-        <p class="fragment"><strong>Man kan inte lära sig bara entreprenörskap.</strong> Det kräver stora kunskaper inom flera områden, till exempel teknik, användarbehov, ekonomi, kommunikation och lagar.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kunskap och erfarenhet</p><h2>Teori räcker inte ensam</h2>
-        <ul><li class="fragment">Breda kunskaper behövs: teknik, användare, ekonomi, kommunikation och lagar.</li><li class="fragment">Ingen kan allt – samarbete och förmågan att söka ny kunskap är centrala.</li><li class="fragment">Omdöme utvecklas genom beslut, försök, återkoppling och erfarenhet.</li></ul>
-        <div class="bias-box">
-          <p class="fragment"><strong>Bias</strong> är omedvetna tankemönster som påverkar hur vi tolkar information och fattar beslut.</p>
-          <ul><li class="fragment"><strong>Bekräftelsebias:</strong> vi lyssnar mest på positiv respons och bortser från kritik.</li><li class="fragment"><strong>Utgå från sig själv:</strong> vi antar att användarna tänker och agerar som vi.</li><li class="fragment"><strong>Sunk cost:</strong> vi fortsätter med en dålig idé eftersom mycket tid eller pengar redan har lagts på den.</li></ul>
+      <section class="slide is-active"><div class="slide-content title-slide-with-image">
+        <div>
+          <p class="slide-kicker">Teknik 1 · Kapitel 2</p>
+          <h1>Testning, iteration och tekniska lösningars livscykel</h1>
+          <a class="fragment merlin-callout" href="https://merlin.allaboutbirds.org/download/" target="_blank" rel="noopener noreferrer">
+            <strong>I dag finns appar som klarar uppgiften.</strong>
+            <span>Merlin Bird ID identifierar fåglar med både bilder och fågelsång.</span>
+          </a>
         </div>
-        <p class="fragment"><strong>Resultatet kan bli en produkt som löser fel problem eller är svår att använda.</strong></p>
+        <figure class="slide-figure title-comic">
+          <img src="../assets/images/xkcd-1.png" alt="XKCD-serie om svårigheten att bedöma ett teknikprojekts omfattning">
+          <figcaption class="xkcd-caption">
+            <q>In the 60s, Marvin Minsky assigned a couple of undergrads to spend the summer programming a computer to use a camera to identify objects in a scene. He figured they'd have the problem solved by the end of the summer. Half a century later, we're still working on it.</q>
+            <span>— Alt text from xkcd #1425, “Tasks”, September 24, 2014</span>
+          </figcaption>
+        </figure>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Teknik + entreprenörskap</p><h2>Från funktion till värde</h2>
-        <div class="flow"><span class="fragment">Behov</span><b class="fragment">→</b><span class="fragment">Teknisk idé</span><b class="fragment">→</b><span class="fragment">Testbar lösning</span><b class="fragment">→</b><span class="fragment">Värde för användaren</span></div>
-        <p class="fragment">Tekniken svarar på <em>hur</em>. Entreprenörskapet frågar också <em>för vem</em> och <em>varför</em>.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 6</p><h2>Testa lösningen</h2>
+        <ul><li class="fragment">Fungerar funktionerna?</li><li class="fragment">Förstår användaren vad den ska göra?</li><li class="fragment">Fungerar lösningen på rätt enheter?</li><li class="fragment">Är prestanda och stabilitet tillräckliga?</li></ul>
+        <p class="fragment">Ett test behöver ett tydligt mål och observerbara resultat.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Innovation</p><h2>Ny eller förbättrad – och använd</h2>
-        <p class="fragment">En innovation är en ny eller förbättrad lösning som används i praktiken.</p>
-        <p class="fragment">Det kan vara en produkt, tjänst, teknisk lösning eller affärsmodell.</p>
-        <p class="fragment"><strong>En idé på papper är ännu inte en innovation.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 7</p><h2>Iteration: förbättra och testa igen</h2>
+        <div class="flow"><span class="fragment">Bygg</span><b class="fragment">→</b><span class="fragment">Testa</span><b class="fragment">→</b><span class="fragment">Analysera</span><b class="fragment">→</b><span class="fragment">Förbättra</span><b class="fragment">↺</b></div>
+        <p class="fragment">Iteration betyder att lösningen utvecklas i flera omgångar.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Affärsmodellsinnovation</p><h2>När sättet att skapa värde är nytt</h2>
-        <p class="fragment">En affärsmodell beskriver hur en verksamhet skapar värde för användaren och får resurser eller intäkter för att fortsätta.</p>
-        <p class="fragment">Innovationen kan ligga i <strong>hur</strong> en befintlig produkt erbjuds, används, distribueras eller finansieras.</p>
-        <table class="comparison compact-table"><thead><tr><th>Nytt sätt</th><th>Exempel</th></tr></thead><tbody><tr class="fragment"><td>Abonnemang</td><td>Spotify ger tillgång till musik mot en återkommande avgift.</td></tr><tr class="fragment"><td>Freemium</td><td>En grundtjänst är gratis, medan extra funktioner kostar.</td></tr><tr class="fragment"><td>Tillgång i stället för ägande</td><td>Användaren hyr eller delar exempelvis en bil eller ett verktyg.</td></tr></tbody></table>
-        <p class="fragment"><strong>Produkten behöver alltså inte vara ny – sättet att skapa och leverera värde kan vara innovationen.</strong></p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 8</p><h2>Produktion och lansering</h2>
+        <p class="fragment">När lösningen fungerar tillräckligt bra görs den tillgänglig för användare.</p>
+        <ul><li class="fragment">webbplatsen publiceras</li><li class="fragment">appen distribueras</li><li class="fragment">spelet släpps på en plattform</li></ul>
+        <p class="fragment">Lansering är en milstolpe – inte slutet på arbetet.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Jämförelse</p><h2>Uppfinning eller innovation?</h2>
-        <table class="comparison"><thead><tr><th>Uppfinning</th><th>Innovation</th></tr></thead><tbody><tr><td class="fragment">En ny idé eller teknik</td><td class="fragment">En idé som används och skapar värde</td></tr><tr><td class="fragment">Exempel: den första experimentella pekskärmen</td><td class="fragment">Exempel: smarttelefoner som gjorde pekskärmen användbar för många</td></tr><tr><td class="fragment">Exempel: en ny spelmekanik i en prototyp</td><td class="fragment">Exempel: ett publicerat spel där mekaniken skapar en uppskattad spelupplevelse</td></tr></tbody></table>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Steg 9</p><h2>Lösningens livscykel</h2>
+        <ul><li class="fragment">underhåll och säkerhetsuppdateringar</li><li class="fragment">nya funktioner och förbättringar</li><li class="fragment">buggrättningar</li><li class="fragment">ersättning eller avveckling</li></ul>
+        <p class="fragment"><strong>Teknisk skuld:</strong> genvägar tidigt kan göra framtida ändringar dyrare.</p>
       </div></section>
-
-      <section class="slide quiz-slide"><div class="slide-content">
-        <p class="slide-kicker">Kunskapskontroll · <span data-quiz-progress>1/4</span></p><h2 data-quiz-question>Vilket är en innovation?</h2>
-        <div class="knowledge-quiz">
-          <div class="quiz-actions"></div>
-          <p class="quiz-feedback" aria-live="polite"></p>
-          <button type="button" class="next-quiz-question" disabled>Nästa fråga</button>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Interaktiv övning</p><h2>Vilket steg behövs nu?</h2>
+        <div class="scenario-tool">
+          <p data-scenario-text>En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.</p>
+          <div class="scenario-actions">
+            <button type="button" data-step="Produktion">Produktion</button>
+            <button type="button" data-step="Research och analys">Research och analys</button>
+            <button type="button" data-step="Livscykel">Livscykel</button>
+          </div>
+          <p class="scenario-feedback" aria-live="polite"></p>
+          <button type="button" class="next-scenario">Nästa situation</button>
         </div>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Användaren</p><h2>Tre frågor före utveckling</h2>
-        <ol><li class="fragment"><strong>Vem</strong> har problemet?</li><li class="fragment"><strong>Vilket</strong> problem ska lösas?</li><li class="fragment"><strong>Varför</strong> ska användaren välja denna lösning?</li></ol>
-        <p class="fragment">En målgrupp som ”alla” är för bred för att ge tydliga beslut.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · webbplats</p><h2>Processen i ett projekt</h2>
+        <ol><li class="fragment">Behov: skolinformation är svår att hitta.</li><li class="fragment">Research: intervjua elever och lärare.</li><li class="fragment">Design: planera sidor och navigation.</li><li class="fragment">Prototyp: bygg en första version.</li><li class="fragment">Testa på mobil och förbättra.</li><li class="fragment">Publicera och håll innehållet aktuellt.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Värdeerbjudande</p><h2>Vad får användaren?</h2>
-        <p class="fragment">Ett värdeerbjudande beskriver kort vilket problem lösningen löser och vilken nytta den ger.</p>
-        <div class="prompt-card fragment"><p><strong>För</strong> [målgrupp] som behöver [behov] erbjuder vi [lösning], vilket ger [nytta].</p></div>
-        <p class="fragment">Exempel: För små föreningar som har svårt att hålla information aktuell erbjuder vi en lättskött webbplats.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exempel · spel</p><h2>Samma process, annan produkt</h2>
+        <ol><li class="fragment">Mål: skapa en tydlig spelupplevelse.</li><li class="fragment">Research: studera liknande spel.</li><li class="fragment">Design: planera mekanik, regler och nivåer.</li><li class="fragment">Prototyp: bygg en enkel spelbar version.</li><li class="fragment">Testa styrning, balans och prestanda.</li><li class="fragment">Släpp, rätta buggar och skapa uppdateringar.</li></ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Villkor</p><h2>Vad påverkar om idén lyckas?</h2>
-        <div class="process-grid"><span class="fragment">Ekonomi</span><span class="fragment">Konkurrens</span><span class="fragment">Lagar</span><span class="fragment">Teknik</span><span class="fragment">Marknad</span><span class="fragment">Tid</span></div>
-        <p class="fragment">En bra idé måste fungera inom flera begränsningar samtidigt.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">När processen brister</p><h2>Fel blir dyrare sent</h2>
+        <table class="comparison"><thead><tr><th>Brustet steg</th><th>Möjlig följd</th></tr></thead><tbody><tr class="fragment"><td>Problem och research</td><td>Produkten löser inget viktigt behov.</td></tr><tr class="fragment"><td>Testning</td><td>Buggar och prestandaproblem når användarna.</td></tr><tr class="fragment"><td>Iteration</td><td>Kända brister blir kvar vid lansering.</td></tr><tr class="fragment"><td>Livscykel</td><td>Underhåll blir dyrt och osäkert.</td></tr></tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Tekniskt villkor</p><h2>Klarar lösningen att växa?</h2>
-        <p class="fragment"><strong>Skalbarhet</strong> handlar om att en lösning kan hantera fler användare eller mer data utan att sluta fungera.</p>
-        <div class="flow"><span class="fragment">100 användare</span><b class="fragment">→</b><span class="fragment">10 000</span><b class="fragment">→</b><span class="fragment">1 000 000</span></div>
-        <p class="fragment">Tillväxt kan kräva annan serverkapacitet, datalagring och support.</p>
+<section class="slide failure-examples-slide"><div class="slide-content">
+        <p class="slide-kicker">När processen brister</p><h2>Exempel på misslyckade teknikprojekt</h2>
+        <p class="slide-intro">Tre verkliga exempel där brister i teknikutvecklingsprocessen bidrog till problem.</p>
+        <table class="comparison compact-table failure-examples"><thead><tr><th>Projekt</th><th>Kort beskrivning</th><th>Vad gick fel?</th><th>Steg som brast</th></tr></thead><tbody>
+          <tr class="fragment"><th>Google Glass</th><td>Smarta glasögon som skulle visa information direkt för användaren.</td><td>Dyr, socialt obekväm och med oklar praktisk nytta.</td><td>Problemidentifiering och research kring användarbehov och integritet.</td></tr>
+          <tr class="fragment"><th>Healthcare.gov</th><td>Offentlig webbplats för att jämföra och teckna sjukförsäkring.</td><td>Krascher, långsam prestanda och svåra inloggningsproblem vid lanseringen.</td><td>Konstruktion och design, testning samt iteration före produktion.</td></tr>
+          <tr class="fragment"><th>Cyberpunk 2077</th><td>Ett efterlängtat spel med en stor öppen värld.</td><td>Många buggar och tydliga prestandaproblem, särskilt på äldre konsoler.</td><td>Testning, iteration och livscykelplanering kopplad till teknisk skuld.</td></tr>
+        </tbody></table>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Lagar och förtroende</p><h2>GDPR och upphovsrätt</h2>
-        <div class="two-column"><div><p class="fragment"><strong>GDPR</strong></p><p class="fragment">Personuppgifter ska samlas in och hanteras säkert, lagligt och öppet.</p></div><div><p class="fragment"><strong>Upphovsrätt</strong></p><p class="fragment">Bilder, musik, text och kod kräver rätt tillstånd eller licens.</p></div></div>
-        <p class="fragment">Att följa regler tar resurser men kan samtidigt bygga användarnas förtroende.</p>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Diskussion</p><h2>Är processen alltid likadan?</h2>
+        <p class="fragment">Nej. Stegens omfattning beror på projektets risk, storlek och mål.</p>
+        <p class="fragment">Men frågorna bakom stegen behövs ofta även i små projekt.</p>
+        <p class="fragment">Det viktiga är att kunna motivera vad ni gör, i vilken ordning och varför.</p>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Finansiering</p><h2>Idéer behöver resurser</h2>
-        <p class="fragment">Utveckling kräver tid, kompetens, utrustning, programvara och ibland marknadsföring.</p>
-        <ul><li class="fragment">egna pengar</li><li class="fragment">investerare eller företag</li><li class="fragment">bidrag</li><li class="fragment">crowdfunding</li></ul>
-        <p class="fragment">Finansiering förändrar inte behovet av att testa om idén håller.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Risk och osäkerhet</p><h2>Vad kan gå fel?</h2>
-        <ul><li class="fragment">tekniken fungerar inte som tänkt</li><li class="fragment">för få användare behöver lösningen</li><li class="fragment">utvecklingen blir dyrare än planerat</li><li class="fragment">en konkurrent erbjuder större värde</li></ul>
-        <p class="fragment">Risk försvinner inte – men tidiga tester kan minska den.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Erfarenhetslärande</p><h2>Ett misstag är inte automatiskt ett lärande</h2>
-        <div class="flow"><span class="fragment">Försök</span><b class="fragment">→</b><span class="fragment">Resultat</span><b class="fragment">→</b><span class="fragment">Analys</span><b class="fragment">→</b><span class="fragment">Nytt försök</span></div>
-        <p class="fragment">Erfarenhet byggs när man undersöker varför något gick fel och ändrar sitt nästa beslut.</p>
-        <p class="fragment">Att upprepa samma misstag utan analys ger däremot inget bättre resultat.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Interaktivt beslut</p><h2>Vad bör teamet göra först?</h2>
-        <div class="choice-question" data-correct="b">
-          <p>Ett team vill bygga en app som hjälper gymnasieelever att planera skolarbetet. De vet ännu inte hur elever planerar idag.</p>
-          <button type="button" data-choice="a">Bygga alla funktioner direkt</button>
-          <button type="button" data-choice="b">Intervjua elever och testa en enkel prototyp</button>
-          <button type="button" data-choice="c">Köpa annonser innan appen finns</button>
-          <p class="choice-feedback" aria-live="polite"></p>
-        </div>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Kreativitet</p><h2>Mer än en genialisk idé</h2>
-        <ul><li class="fragment">kombinera befintliga lösningar på nya sätt</li><li class="fragment">ta fram många alternativ</li><li class="fragment">bygga prototyper och experimentera</li><li class="fragment">samarbeta med personer som ser olika saker</li></ul>
-        <p class="fragment">Kreativitet blir användbar när idéerna prövas mot behov och begränsningar.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Exempel</p><h2>Webbplatser för små föreningar</h2>
-        <table class="comparison"><tbody><tr class="fragment"><th>Behov</th><td>Aktuell information är svår att publicera.</td></tr><tr class="fragment"><th>Målgrupp</th><td>Små föreningar utan egen webbyrå.</td></tr><tr class="fragment"><th>Lösning</th><td>En tydlig och lättskött webbplats.</td></tr><tr class="fragment"><th>Teknik</th><td>HTML, CSS och JavaScript.</td></tr><tr class="fragment"><th>Affär</th><td>Betalt för utveckling, support och uppdateringar.</td></tr></tbody></table>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Pitch</p><h2>Förklara idén på en minut</h2>
-        <ol><li class="fragment">Vilket problem löser ni?</li><li class="fragment">Vem har problemet?</li><li class="fragment">Hur fungerar lösningen?</li><li class="fragment">Vilket värde skapar den?</li><li class="fragment">Varför är den bättre än alternativen?</li></ol>
-        <p class="fragment">En pitch ska göra idén begriplig – inte beskriva varje teknisk detalj.</p>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Exit ticket</p><h2>Tre frågor</h2>
+<section class="slide"><div class="slide-content">
+        <p class="slide-kicker">Exit ticket</p><h2>Tre saker innan du går</h2>
         <p class="answer-warning fragment"><strong>Varning: facit visas direkt efter varje fråga.</strong></p>
         <ol class="exit-questions">
-          <li class="fragment">Vad skiljer en uppfinning från en innovation?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> En uppfinning är en ny idé eller teknik. En innovation används i praktiken och skapar värde.</span></li>
-          <li class="fragment">Vilket värde skapar din idé för användaren?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> Idén ska lösa ett tydligt problem och exempelvis spara tid, minska kostnader eller göra något enklare.</span></li>
-          <li class="fragment">Vilken risk bör testas först?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> Den mest avgörande osäkerheten, ofta om målgruppen verkligen har problemet och vill använda lösningen.</span></li>
+          <li class="fragment">Vilket steg är viktigast att göra tidigt – och varför?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> Problemidentifiering och research, eftersom projektet annars riskerar att lösa fel problem.</span></li>
+          <li class="fragment">Vad är skillnaden mellan en idé och en prototyp?<span class="exit-answer fragment"><strong>Exempel på svar:</strong> En idé är ett förslag; en prototyp är en testbar version av förslaget.</span></li>
+          <li class="fragment">Ge ett exempel på iteration i ett projekt.<span class="exit-answer fragment"><strong>Exempel på svar:</strong> Testa en meny, förbättra den efter återkoppling och testa igen.</span></li>
         </ol>
       </div></section>
-
-      <section class="slide"><div class="slide-content">
+<section class="slide"><div class="slide-content">
         <p class="slide-kicker">Sammanfattning</p><h2>Kom ihåg</h2>
-        <ul><li class="fragment">Entreprenörskap omsätter möjligheter och idéer i verkligt värde.</li><li class="fragment">Innovation är en lösning som används i praktiken.</li><li class="fragment">Användare, behov och värde måste vara tydliga.</li><li class="fragment">Ekonomi, teknik, lagar, marknad och tid påverkar idén.</li><li class="fragment">Prototyper och tidiga tester minskar risk.</li></ul>
-      </div></section>
-
-      <section class="slide"><div class="slide-content">
-        <p class="slide-kicker">Arbetsuppgift</p><h2>Utveckla en teknisk idé</h2>
-        <ol><li class="fragment">Välj ett verkligt problem och en tydlig målgrupp.</li><li class="fragment">Skriv ett värdeerbjudande.</li><li class="fragment">Beskriv lösningens viktigaste funktion.</li><li class="fragment">Identifiera två villkor och två risker.</li><li class="fragment">Planera hur idén kan testas billigt.</li><li class="fragment">Förbered en pitch på högst en minut.</li></ol>
+        <ul><li class="fragment">Teknikutveckling utgår från problem och behov.</li><li class="fragment">Research och flera idéer ger bättre beslut.</li><li class="fragment">Prototyper gör idéer testbara.</li><li class="fragment">Testning och iteration förbättrar lösningen.</li><li class="fragment">Produkter behöver underhåll under hela livscykeln.</li></ul>
       </div></section>
     </div>
     <footer class="presentation-footer"></footer>
@@ -199,53 +120,42 @@
         question.querySelectorAll('[data-choice]').forEach((item) => item.classList.remove('is-correct', 'is-wrong'));
         button.classList.add(correct ? 'is-correct' : 'is-wrong');
         question.querySelector('.choice-feedback').textContent = correct
-          ? 'Rätt. Lösningen kopplas till verklig användning eller testas mot ett verkligt behov.'
-          : 'Inte riktigt. Sök efter alternativet som visar verklig användning eller tidig behovstestning.';
+          ? 'Rätt. Prototypen gör det möjligt att testa tidigt och ändra billigt.'
+          : 'Inte riktigt. Prototypen används för att prova idén och hitta problem tidigt.';
       });
     });
 
-    const quizQuestions = [
-      { question: 'Vilket är en innovation?', choices: ['En ny spelmekanik beskriven i ett dokument', 'En prototyp som bara utvecklaren har provat', 'En förbättrad digital tjänst som används och sparar tid'], answer: 2, explanation: 'En innovation används i praktiken och skapar värde.' },
-      { question: 'Varför kan man inte lära sig bara entreprenörskap?', choices: ['Det handlar bara om att starta företag', 'Det kräver kunskaper inom flera områden och praktisk erfarenhet', 'Det bygger främst på medfödd kreativitet'], answer: 1, explanation: 'Entreprenörskap kombinerar bland annat teknik, användarbehov, ekonomi, kommunikation och lagar.' },
-      { question: 'Vilket är ett exempel på bekräftelsebias?', choices: ['Teamet lyssnar på beröm men bortser från återkommande kritik', 'Teamet intervjuar användare med olika erfarenheter', 'Teamet ändrar prototypen efter ett test'], answer: 0, explanation: 'Bekräftelsebias gör att vi söker stöd för vår idé och lättare avfärdar information som talar emot den.' },
-      { question: 'Hur kan en affärsmodell vara en innovation?', choices: ['Genom att ge produkten ett nytt namn', 'Genom att använda dyrare teknik', 'Genom ett nytt sätt att erbjuda, distribuera eller finansiera värde'], answer: 2, explanation: 'Innovationen kan ligga i hur värdet skapas och levereras, även när själva produkten redan finns.' }
+    const scenarios = [
+      { text: 'En idrottsförening vill ersätta sin gamla webbplats. Innan arbetet börjar behöver projektgruppen ta reda på vilken information och vilka funktioner medlemmarna faktiskt behöver.', choices: ['Produktion', 'Research och analys', 'Livscykel'], answer: 'Research och analys' },
+      { text: 'En klickbar modell har testats. Flera användare hittar inte menyknappen.', choices: ['Problemidentifiering', 'Produktion', 'Iteration och förbättring'], answer: 'Iteration och förbättring' },
+      { text: 'Webbplatsen är publicerad, men ett säkerhetsfel har upptäckts.', choices: ['Livscykel', 'Idégenerering', 'Prototyp'], answer: 'Livscykel' }
     ];
-    const knowledgeQuiz = document.querySelector('.knowledge-quiz');
-    let quizIndex = 0;
-    function renderQuizQuestion() {
-      const item = quizQuestions[quizIndex];
-      document.querySelector('[data-quiz-progress]').textContent = `${quizIndex + 1}/${quizQuestions.length}`;
-      document.querySelector('[data-quiz-question]').textContent = item.question;
-      knowledgeQuiz.querySelector('.quiz-actions').innerHTML = item.choices.map((choice, index) => `<button type="button" data-quiz-choice="${index}">${choice}</button>`).join('');
-      knowledgeQuiz.querySelector('.quiz-feedback').textContent = '';
-      const nextButton = knowledgeQuiz.querySelector('.next-quiz-question');
-      nextButton.disabled = true;
-      nextButton.textContent = quizIndex === quizQuestions.length - 1 ? 'Avsluta quizet' : 'Nästa fråga';
+    const tool = document.querySelector('.scenario-tool');
+    let scenarioIndex = 0;
+    function renderScenario() {
+      const scenario = scenarios[scenarioIndex];
+      tool.querySelector('[data-scenario-text]').textContent = scenario.text;
+      tool.querySelector('.scenario-actions').innerHTML = scenario.choices.map((choice) => `<button type="button" data-step="${choice}">${choice}</button>`).join('');
+      tool.querySelector('.scenario-feedback').textContent = '';
+      const nextButton = tool.querySelector('.next-scenario');
+      const isLastScenario = scenarioIndex === scenarios.length - 1;
+      nextButton.disabled = isLastScenario;
+      nextButton.textContent = isLastScenario ? 'Övningen är klar' : 'Nästa situation';
     }
-    knowledgeQuiz.addEventListener('click', (event) => {
-      const choice = event.target.closest('[data-quiz-choice]');
-      if (choice) {
-        const item = quizQuestions[quizIndex];
-        const correct = Number(choice.dataset.quizChoice) === item.answer;
-        knowledgeQuiz.querySelectorAll('[data-quiz-choice]').forEach((button) => {
-          button.classList.remove('is-correct', 'is-wrong');
-          button.disabled = true;
-        });
-        choice.classList.add(correct ? 'is-correct' : 'is-wrong');
-        knowledgeQuiz.querySelector('.quiz-feedback').textContent = `${correct ? 'Rätt.' : 'Inte riktigt.'} ${item.explanation}`;
-        knowledgeQuiz.querySelector('.next-quiz-question').disabled = false;
+    tool.addEventListener('click', (event) => {
+      const step = event.target.closest('[data-step]');
+      if (step) {
+        const correct = step.dataset.step === scenarios[scenarioIndex].answer;
+        tool.querySelector('.scenario-feedback').textContent = correct ? 'Rätt – det steget ger projektet den information som behövs nu.' : `Nästa lämpliga steg är: ${scenarios[scenarioIndex].answer}.`;
       }
-      if (event.target.closest('.next-quiz-question')) {
-        if (quizIndex < quizQuestions.length - 1) {
-          quizIndex += 1;
-          renderQuizQuestion();
-        } else {
-          knowledgeQuiz.querySelector('.next-quiz-question').disabled = true;
-          knowledgeQuiz.querySelector('.next-quiz-question').textContent = 'Quizet är klart';
+      if (event.target.closest('.next-scenario')) {
+        if (scenarioIndex < scenarios.length - 1) {
+          scenarioIndex += 1;
+          renderScenario();
         }
       }
     });
-    renderQuizQuestion();
+    renderScenario();
   </script>
 </body>
 </html>
