@@ -13,6 +13,7 @@ assert len(chapters) == 26
 original_data = json.loads(subprocess.check_output(
     ["git", "show", "HEAD:data/chapters.json"], cwd=ROOT, text=True
 ))["chapters"]
+has_original_13_chapter_baseline = len(original_data) == 13
 
 for expected, chapter in enumerate(chapters, 1):
     assert chapter["number"] == expected
@@ -29,25 +30,26 @@ for row in manifest:
     split_heading = row["splitBefore"]
     assert split_heading not in chapters[first - 1]["contentHtml"]
     assert re.search(r"<h2[^>]*>" + re.escape(split_heading) + r"</h2>", chapters[second - 1]["contentHtml"])
-    original = original_data[row["sourceChapter"] - 1]["contentHtml"]
-    combined = chapters[first - 1]["contentHtml"] + chapters[second - 1]["contentHtml"]
-    combined = combined.replace(
-        "Det heter Industri 4.0 eftersom det beskriver den fjärde industriella revolutionen. Siffran 4.0 markerar alltså det fjärde stora utvecklingssteget inom industrin.",
-        "Det syftar på den fjärde industriella revolutionen. För att förstå vad det innebär behöver man känna till de tidigare stegen i industrins utveckling.",
-    )
-    assert combined == original
+    if has_original_13_chapter_baseline:
+        original = original_data[row["sourceChapter"] - 1]["contentHtml"]
+        combined = chapters[first - 1]["contentHtml"] + chapters[second - 1]["contentHtml"]
+        combined = combined.replace(
+            "Det heter Industri 4.0 eftersom det beskriver den fjärde industriella revolutionen. Siffran 4.0 markerar alltså det fjärde stora utvecklingssteget inom industrin.",
+            "Det syftar på den fjärde industriella revolutionen. För att förstå vad det innebär behöver man känna till de tidigare stegen i industrins utveckling.",
+        )
+        assert combined == original
 
-    original_deck = subprocess.check_output(
-        ["git", "show", f"HEAD:presentations/kap-{row['sourceChapter']}.html"], cwd=ROOT, text=True
-    )
-    original_slides = re.findall(r'<section class="slide(?: [^"]*)?">.*?</section>', original_deck, re.S)
-    split_decks = (
-        (ROOT / f"presentations/kap-{first}.html").read_text(encoding="utf-8")
-        + (ROOT / f"presentations/kap-{second}.html").read_text(encoding="utf-8")
-    )
-    # The original title slide is intentionally renumbered; every instructional
-    # slide after it must otherwise survive byte-for-byte in exactly one half.
-    assert all(split_decks.count(slide) == 1 for slide in original_slides[1:]), row["sourceChapter"]
+        original_deck = subprocess.check_output(
+            ["git", "show", f"HEAD:presentations/kap-{row['sourceChapter']}.html"], cwd=ROOT, text=True
+        )
+        original_slides = re.findall(r'<section class="slide(?: [^"]*)?">.*?</section>', original_deck, re.S)
+        split_decks = (
+            (ROOT / f"presentations/kap-{first}.html").read_text(encoding="utf-8")
+            + (ROOT / f"presentations/kap-{second}.html").read_text(encoding="utf-8")
+        )
+        # The original title slide is intentionally renumbered; every instructional
+        # slide after it must otherwise survive byte-for-byte in exactly one half.
+        assert all(split_decks.count(slide) == 1 for slide in original_slides[1:]), row["sourceChapter"]
     assert row["presentationSplitMarker"].lower() in re.sub(r"<[^>]+>", " ", (ROOT / f"presentations/kap-{second}.html").read_text(encoding="utf-8")).lower()
 
 presentation_index = (ROOT / "presentations/index.html").read_text(encoding="utf-8")

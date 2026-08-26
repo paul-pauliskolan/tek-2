@@ -236,6 +236,14 @@ def apply_content_refinements() -> None:
         path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def normalize_presentation_branding() -> None:
+    for path in (ROOT / "presentations").glob("*.html"):
+        text = path.read_text(encoding="utf-8")
+        updated = text.replace("Teknik 1", "Teknik 2")
+        if updated != text:
+            path.write_text(updated, encoding="utf-8")
+
+
 if __name__ == "__main__":
     split_chapters()
     split_presentations()
@@ -243,3 +251,4 @@ if __name__ == "__main__":
     create_chapter_pages()
     update_indexes()
     apply_content_refinements()
+    normalize_presentation_branding()
