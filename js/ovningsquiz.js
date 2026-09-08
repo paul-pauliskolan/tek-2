@@ -193,6 +193,19 @@ const quizGroups = [
             }
 ];
 
+// Två utvalda frågor från varje kapitelquiz, med separat statistik-ID.
+quizGroups.push({
+    id: "samling-kapitel-1-6",
+    startNumber: 1,
+    title: "Samlingsquiz: kapitel 1–6",
+    area: "Två frågor från varje kapitel 1–6",
+    questions: [[1, [0, 2]], [2, [1, 3]], [3, [1, 2]], [4, [1, 4]], [5, [1, 3]], [6, [2, 4]]]
+        .flatMap(([chapter, indices]) => indices.map((index) => {
+            const question = chapterQuizData[chapter][index];
+            return [`Kapitel ${chapter}: ${question.text}`, question.options, question.answer, question.explanation];
+        }))
+});
+
 function optionLetter(index) {
     return String.fromCharCode(65 + index);
 }
@@ -221,8 +234,8 @@ function renderQuizPage(groupIndex) {
         return;
     }
 
-    const groupId = `omgang-${groupIndex + 1}`;
-    const startNumber = groupIndex * 10 + 1;
+    const groupId = group.id || `omgang-${groupIndex + 1}`;
+    const startNumber = group.startNumber || groupIndex * 10 + 1;
 
     document.title = `${group.title} - Teknik 2`;
 
@@ -230,7 +243,7 @@ function renderQuizPage(groupIndex) {
     if (title) title.textContent = group.title;
 
     const subtitle = document.getElementById("quiz-page-subtitle");
-    if (subtitle) subtitle.textContent = `${group.area}. 10 frågor med fyra svarsalternativ.`;
+    if (subtitle) subtitle.textContent = `${group.area}. ${group.questions.length} frågor med fyra svarsalternativ.`;
 
     quizMount.innerHTML = `
         <section class="content-section chapter-quiz" id="${groupId}">
@@ -280,12 +293,12 @@ function renderQuizPage(groupIndex) {
 function checkQuiz(form) {
     const groupIndex = Number(form.dataset.quizIndex);
     const group = quizGroups[groupIndex];
-    const groupId = `omgang-${groupIndex + 1}`;
+    const groupId = group.id || `omgang-${groupIndex + 1}`;
     const result = form.querySelector(".quiz-result");
     let score = 0;
 
     group.questions.forEach((question, questionIndex) => {
-        const questionNumber = groupIndex * 10 + questionIndex + 1;
+        const questionNumber = (group.startNumber || groupIndex * 10 + 1) + questionIndex;
         const renderedQuestion = getRenderedQuestion(question, questionNumber);
         const inputName = `${groupId}-q${questionIndex + 1}`;
         const selected = form.querySelector(`input[name="${inputName}"]:checked`);
@@ -307,9 +320,9 @@ function checkQuiz(form) {
 
             if (selected) {
                 selected.closest(".quiz-option").classList.add("is-wrong");
-                feedback.textContent = `Fel. Rätt svar är ${renderedQuestion.answer}.`;
+                feedback.textContent = `Fel. Rätt svar är ${renderedQuestion.answer}. ${question[3] || ""}`.trim();
             } else {
-                feedback.textContent = `Inget svar valt. Rätt svar är ${renderedQuestion.answer}.`;
+                feedback.textContent = `Inget svar valt. Rätt svar är ${renderedQuestion.answer}. ${question[3] || ""}`.trim();
             }
             feedback.className = "quiz-feedback is-wrong";
         }
@@ -319,7 +332,7 @@ function checkQuiz(form) {
 
     if (!form.dataset.statisticsSent && window.teknik2QuizStatistics) {
         const answers = group.questions.map((question, questionIndex) => {
-            const questionNumber = groupIndex * 10 + questionIndex + 1;
+            const questionNumber = (group.startNumber || groupIndex * 10 + 1) + questionIndex;
             const renderedQuestion = getRenderedQuestion(question, questionNumber);
             const inputName = `${groupId}-q${questionIndex + 1}`;
             const selected = form.querySelector(`input[name="${inputName}"]:checked`);
