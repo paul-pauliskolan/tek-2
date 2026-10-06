@@ -30,6 +30,7 @@ const questionBank = [
   [6,"Lösningar, implementering och systematisk testning","Vad är systemoptimering?","Att förbättra hur ett system använder resurser eller fungerar, exempelvis snabbhet, stabilitet eller laddningstid."],
   [6,"Lösningar, implementering och systematisk testning","Hur fungerar gummiankemetoden?","Du förklarar kod och problem högt steg för steg; då blir logiska luckor och felaktiga antaganden ofta synliga."]
 ];
+questionBank.push(...window.extraQuestions);
 (function () {
   "use strict";
   const questions = questionBank.map(q => q.slice());
