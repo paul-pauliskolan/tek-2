@@ -1512,29 +1512,193 @@ Object.assign(chapterQuizData, {
   ],
 });
 
+// Each chapter has its own questions. Keeping the banks separate prevents a
+// question from the other half of a former chapter pair appearing in the quiz.
+const chapterSpecificQuizData = {
+  1: [
+    quizQuestion("Ett team vill utveckla en app men har ännu inte undersökt användarnas situation. Vilket steg bör komma först?", ["Bygga en fullständig version", "Identifiera problemet och vilka som berörs", "Välja färger och typsnitt", "Planera lanseringen"], "B", "Teknikutveckling börjar med ett tydligt problem och en förståelse för användarnas behov."),
+    quizQuestion("Vilket underlag är mest användbart under research och analys?", ["Antaganden från utvecklarna", "En lista över möjliga produktnamn", "Data om behov, befintliga lösningar och begränsningar", "En färdig reklamkampanj"], "C", "Research ska ge belägg för behov, begränsningar och vad befintliga lösningar redan gör."),
+    quizQuestion("Varför skapar man flera idéer innan man väljer lösning?", ["För att kunna jämföra olika sätt att möta behovet", "För att slippa formulera krav", "För att varje idé måste byggas", "För att testning då blir onödig"], "A", "Idégenerering öppnar för jämförelse innan teamet låser sig vid en lösning."),
+    quizQuestion("Vad beskriver konstruktion och design i teknikutvecklingsprocessen?", ["Att enbart namnge produkten", "Att sälja lösningen till användare", "Att avsluta projektet efter research", "Att planera hur lösningen ska se ut och fungera"], "D", "I konstruktion och design konkretiseras lösningens struktur, funktion och utformning."),
+    quizQuestion("Ett team gör en klickbar modell av en webbplats för att pröva navigeringen. Vad har de skapat?", ["En marknadsanalys", "En prototyp", "En färdig produkt", "En livscykelanalys"], "B", "En prototyp är en tidig version som gör det möjligt att undersöka en idé före full utveckling."),
+    quizQuestion("Vilket beslut visar bäst att en prototyp används på rätt sätt?", ["Den används för att samla återkoppling före fortsatt utveckling", "Den publiceras utan test eftersom den ser färdig ut", "Den ersätter analysen av användarnas behov", "Den innehåller alla framtida funktioner"], "A", "Prototypens värde ligger i att tidigt pröva antaganden och få återkoppling."),
+    quizQuestion("Varför utvecklas tekniska lösningar?", ["För att varje ny lösning måste använda nyast möjliga teknik", "För att tekniska problem saknar tidigare lösningar", "För att möta behov eller lösa problem på ett bättre sätt", "För att design alltid är viktigare än funktion"], "C", "Teknikutveckling drivs av problem, behov och möjligheter att förbättra befintliga lösningar."),
+  ],
+  2: [
+    quizQuestion("Användartestet visar att många missar köpknappen. Vad är nästa rimliga steg?", ["Justera utformningen och testa den igen", "Behålla utformningen eftersom prototypen är byggd", "Starta produktion utan fler mätningar", "Ta bort testresultatet ur dokumentationen"], "A", "Iteration innebär att använda testresultat för att förbättra och sedan pröva lösningen på nytt."),
+    quizQuestion("När går en teknisk lösning från prototyp till produktion?", ["När den första idén har formulerats", "När all vidare förbättring har blivit omöjlig", "När den har prövats tillräckligt för att framställas eller lanseras", "När research ersätts av marknadsföring"], "C", "Produktion följer efter att lösningen har testats och bedömts redo för användning."),
+    quizQuestion("Vad omfattar en digital produkts livscykel efter lanseringen?", ["Bara den första försäljningen", "Användning, underhåll, uppdatering och till slut avveckling", "Endast utvecklarnas slutpresentation", "Enbart tillverkningen av hårdvara"], "B", "Livscykeln fortsätter under användning och omfattar underhåll, förändringar och avveckling."),
+  ],
+  3: [
+    quizQuestion("Vilket exempel visar bäst entreprenörskap inom teknik?", ["Att utveckla och pröva en digital tjänst som löser ett identifierat behov", "Att kopiera en tjänst utan att undersöka användarna", "Att samla idéer utan att välja eller testa någon", "Att endast studera hur en befintlig produkt fungerar"], "A", "Entreprenörskap innebär att omsätta idéer i handling och skapa värde för andra."),
+    quizQuestion("Vad skiljer en innovation från en uppfinning?", ["En innovation måste vara en fysisk produkt", "En uppfinning måste alltid bli lönsam", "En innovation skapar användning eller värde av en ny eller förbättrad idé", "En uppfinning får inte bygga på tidigare teknik"], "C", "Innovation handlar om att en idé eller uppfinning kommer till användning och skapar värde."),
+    quizQuestion("Ett nytt sensorsystem fungerar tekniskt men ingen vill använda det. Vad saknas främst för att det ska bli en innovation?", ["Ett mer avancerat programmeringsspråk", "Att lösningen möter ett verkligt behov och tas i bruk", "Fler tekniska komponenter", "Ett patent i ett annat land"], "B", "Teknisk nyhet räcker inte; innovation kräver relevant användning eller nytta."),
+    quizQuestion("Varför behöver en entreprenör undersöka marknaden och användarna?", ["För att undvika all konkurrens", "För att kunna garantera vinst", "För att slippa ändra den första idén", "För att bedöma behov, målgrupp och möjliga alternativ"], "D", "Marknads- och användarkunskap visar om idén löser ett viktigt problem och för vem."),
+    quizQuestion("Vilket arbetssätt stödjer lärande i entreprenörskap?", ["Dölja misslyckade försök", "Investera allt innan idén prövas", "Testa antaganden i liten skala och använda resultaten", "Vänta tills alla risker har försvunnit"], "C", "Små tester gör att entreprenören kan lära av misstag utan att ta onödigt stor risk."),
+  ],
+  4: [
+    quizQuestion("Ett företag ska lagra kunduppgifter i en app. Vilket villkor måste vägas in utöver teknik och finansiering?", ["Dataskydd och andra relevanta regler", "Antalet färger i logotypen", "Vilket kontor konkurrenten använder", "Hur många idéer teamet först skrev ned"], "A", "Digitalt entreprenörskap måste följa lagar och regler, bland annat för personuppgifter."),
+    quizQuestion("Varför gör en entreprenör en enkel budget före utvecklingen?", ["För att eliminera alla osäkerheter", "För att uppskatta resursbehov och om finansieringen räcker", "För att ersätta testning med ekonomiska mål", "För att bestämma produktens tekniska arkitektur"], "B", "En budget kopplar planerade aktiviteter och resurser till tillgänglig finansiering."),
+    quizQuestion("Vad bör en kort pitch tydligast förmedla?", ["Alla tekniska detaljer i lösningen", "Hela företagets framtida organisation", "Problemet, lösningen, målgruppen och värdet", "En fullständig lista över möjliga risker"], "C", "En pitch ska snabbt göra affärsidéns problem, lösning, målgrupp och nytta begripliga."),
+  ],
+  5: [
+    quizQuestion("En webbplats laddar långsamt. Vilken formulering är bäst som första problembeskrivning?", ["Webbplatsen är dålig", "Tekniken fungerar aldrig", "Startsidan tar åtta sekunder att ladda på mobilnät", "Servern måste bytas"], "C", "En mätbar problembeskrivning skiljer observationen från en ännu obevisad orsak eller lösning."),
+    quizQuestion("Varför ska man skilja symtom från grundorsak?", ["För att samma symtom kan bero på olika bakomliggande fel", "För att grundorsaker alltid syns direkt", "För att testning bara kan mäta symtom", "För att den första förklaringen oftast är korrekt"], "A", "Orsaksanalys behövs eftersom ett synligt problem kan ha flera möjliga orsaker."),
+    quizQuestion("Ett spel kraschar bara när en viss bana öppnas. Vilken undersökning ger bäst nästa ledtråd?", ["Byta spelikon", "Testa samma händelse och granska felmeddelanden och loggar", "Skriva om hela spelet", "Fråga om spelaren gillar grafiken"], "B", "Ett reproducerbart test och loggar hjälper till att avgränsa orsaken."),
+    quizQuestion("Vad är syftet med att avgränsa ett tekniskt problem?", ["Att göra lösningen mer avancerad", "Att undvika att samla fakta", "Att slå fast orsaken före undersökning", "Att göra problemet hanterbart och möjligt att undersöka"], "D", "En tydlig avgränsning anger vad som påverkas, när felet uppstår och vad som ska analyseras."),
+    quizQuestion("Vilken metod ger starkast stöd för att en misstänkt orsak verkligen orsakar felet?", ["Teamet röstar om den", "Orsaken låter tekniskt avancerad", "Man ändrar en relevant faktor och ser om felet påverkas", "Samma antagande skrivs i flera dokument"], "C", "Ett kontrollerat test av en faktor ger bättre belägg än antaganden eller omröstning."),
+  ],
+  6: [
+    quizQuestion("Tre möjliga lösningar finns till ett nätverksfel. Hur bör teamet välja vilken som provas först?", ["Välja den dyraste", "Jämföra hur väl de angriper orsaken samt kostnad och risk", "Implementera alla samtidigt", "Välja den som kräver mest kod"], "B", "Lösningsförslag behöver värderas mot grundorsak, effekt, resurser och risker."),
+    quizQuestion("Vad innebär implementering i problemlösningsprocessen?", ["Att införa den valda lösningen på ett kontrollerat sätt", "Att formulera problemet för första gången", "Att ersätta testplanen med en presentation", "Att lista möjliga orsaker utan åtgärd"], "A", "Vid implementering genomförs den valda åtgärden så att effekten kan prövas."),
+    quizQuestion("Hur visar ett test bäst att en genomförd lösning fungerar?", ["Utvecklaren tycker att resultatet ser bättre ut", "Lösningen innehåller fler funktioner än tidigare", "Testet jämför utfallet med tydliga krav och det ursprungliga felet", "Koden har blivit längre"], "C", "Systematisk testning kontrollerar mot förväntade resultat och det problem som skulle lösas."),
+  ],
+  7: [
+    quizQuestion("Vilken kombination hör hemma i en användbar projektplan?", ["Mål, uppgifter, tidplan och resurser", "Logotyp, reklam, pris och slogan", "Kod, server, lösenord och färgtema", "Problem, patent, vinst och lanseringsfest"], "A", "Projektplanen behöver visa vad som ska nås, vilket arbete som krävs, när och med vilka resurser."),
+    quizQuestion("Vad kännetecknar ett bra projektmål?", ["Det kan tolkas helt olika av alla", "Det beskriver enbart vilka verktyg som ska användas", "Det är tydligt nog att följas upp mot ett resultat", "Det ändras varje gång en uppgift blir svår"], "C", "Ett mål behöver vara begripligt och möjligt att följa upp."),
+    quizQuestion("Två gruppmedlemmar tror att den andra ansvarar för testningen. Vad saknas i planeringen?", ["Fler idéer till funktioner", "En tydlig ansvarsfördelning", "En längre projekttitel", "En ny målgrupp"], "B", "Tydliga roller och ansvar minskar risken att viktiga uppgifter faller mellan stolarna."),
+    quizQuestion("Varför behöver ett projektteam samarbeta även när rollerna är tydliga?", ["För att alla ska utföra samma uppgift", "För att tidplanen annars saknar datum", "För att projektledaren ska kunna arbeta ensam", "För att delarnas beroenden och information måste samordnas"], "D", "Roller delar ansvar, men resultatet kräver att arbetet och informationen hänger ihop."),
+  ],
+  8: [
+    quizQuestion("När passar ett agilt arbetssätt särskilt bra?", ["När krav kan utvecklas genom återkoppling under arbetet", "När ingen får ändra den första planen", "När resultatet inte behöver testas", "När alla funktioner måste byggas samtidigt"], "A", "Agila metoder stödjer stegvis utveckling och anpassning efter ny kunskap."),
+    quizQuestion("Vad innebär iterativ utveckling?", ["Att projektet saknar mål", "Att samma plan presenteras flera gånger", "Att lösningen byggs, prövas och förbättras i återkommande cykler", "Att dokumentationen skrivs före varje krav"], "C", "En iteration ger ett resultat som utvärderas och förbättras i nästa cykel."),
+    quizQuestion("Ett team arbetar i korta perioder och väljer de viktigaste uppgifterna först. Vilken fördel söker de?", ["Att slippa samarbeta med beställaren", "Att tidigt leverera värde och kunna ändra prioritering", "Att göra testning till ett separat slutsteg", "Att undvika dokumentation av beslut"], "B", "Korta arbetscykler gör prioritering och återkoppling möjlig under projektet."),
+    quizQuestion("Vilken dokumentation är rimlig i ett agilt projekt?", ["Ingen dokumentation eftersom planen kan ändras", "Endast slutrapporten", "Alla diskussioner ordagrant", "Tillräcklig dokumentation för beslut, ansvar och fortsatt arbete"], "D", "Agilt arbete minskar onödig dokumentation men kräver fortfarande spårbara beslut och tydligt ansvar."),
+  ],
+  9: [
+    quizQuestion("Innan kod skrivs för en biljettkalkylator, vad behöver programmeraren först klargöra?", ["Vilka indata, regler och resultat problemet kräver", "Vilket tema kodeditorn ska ha", "Hur många kodrader lösningen bör innehålla", "Vilken dator användaren äger"], "A", "Programmering börjar med att förstå problemet och precisera indata, bearbetning och utdata."),
+    quizQuestion("Vilket planeringsunderlag beskriver en lösning steg för steg utan krav på programspråkets syntax?", ["En variabellista", "En felrapport", "Pseudokod", "En versionshistorik"], "C", "Pseudokod gör algoritmens logik tydlig innan den översätts till kod."),
+    quizQuestion("När är ett villkor lämpligare än en loop?", ["När samma steg ska upprepas många gånger", "När programmet ska välja väg utifrån om ett krav är uppfyllt", "När data ska lagras i en variabel", "När kod ska samlas i en funktion"], "B", "Villkor styr vilket kodblock som körs beroende på ett sant eller falskt uttryck."),
+    quizQuestion("Varför delas kod ofta upp i funktioner?", ["För att varje värde ska bli globalt", "För att villkor inte ska behövas", "För att programmet alltid ska köras snabbare", "För att avgränsa ansvar och kunna återanvända logik"], "D", "Funktioner ger tydligare ansvar och gör kod lättare att testa och återanvända."),
+    quizQuestion("Vilket testfall är viktigast utöver normala värden för ett program som godtar åldrar 0–120?", ["Ett nytt variabelnamn", "En annan bakgrundsfärg", "Värden vid och strax utanför gränserna", "Samma giltiga ålder flera gånger"], "C", "Gränsvärdestestning kan avslöja fel i villkor för minsta och största tillåtna värde."),
+  ],
+  10: [
+    quizQuestion("Ett fungerande program innehåller samma beräkning på fyra ställen. Vilken förbättring ökar underhållbarheten?", ["Samla beräkningen i en återanvändbar funktion", "Lägga till fler kopior för säkerhets skull", "Byta namn på programmet", "Ta bort testerna av beräkningen"], "A", "Gemensam logik i en funktion minskar duplicering och risken för olika beteenden."),
+    quizQuestion("Vilken uppgift lämpar sig bäst för automatisering?", ["Ett unikt etiskt ställningstagande", "En återkommande regelstyrd sammanställning av data", "Ett samtal där människors behov ska tolkas", "Valet av projektets övergripande värderingar"], "B", "Återkommande uppgifter med tydliga regler kan ofta automatiseras tillförlitligt."),
+    quizQuestion("Hur bidrar programmering till kvalitet efter att ett program redan fungerar?", ["Genom att testresultat ersätts av utvecklarens bedömning", "Genom att fler funktioner alltid läggs till", "Genom refaktorering, tester och hantering av fel och specialfall", "Genom att dokumentation tas bort"], "C", "Kvalitet förbättras när kod görs tydligare och beteendet verifieras systematiskt."),
+  ],
+  11: [
+    quizQuestion("Vad gör kvalitetsarbete systematiskt?", ["Det genomförs bara när en kund klagar", "Krav, tester, resultat och åtgärder följs upp återkommande", "Varje utvecklare väljer egna kvalitetskrav", "En slutkontroll ersätter allt tidigare arbete"], "B", "Systematiskt kvalitetsarbete är planerat, dokumenterat och återkommande."),
+    quizQuestion("Vilket test undersöker om många samtidiga användare gör tjänsten långsam?", ["Användartest", "Säkerhetstest", "Prestandatest", "Kodgranskning"], "C", "Prestandatest mäter bland annat svarstid och kapacitet under belastning."),
+    quizQuestion("Vad tillför ett användartest som ett funktionstest inte säkert visar?", ["Om målgruppen förstår och kan använda lösningen", "Om varje funktion returnerar ett tekniskt korrekt värde", "Om källkoden följer en bestämd syntax", "Om servern klarar maximal belastning"], "A", "Användartest granskar användbarhet, medan funktionstest främst granskar förväntat beteende."),
+    quizQuestion("Hur prioriteras en risk normalt i en riskanalys?", ["Efter hur lätt den är att beskriva", "Efter vem som upptäckte den", "Efter ordningen i risklistan", "Efter sannolikhet och konsekvens"], "D", "Kombinationen av sannolikhet och konsekvens visar vilka risker som bör hanteras först."),
+  ],
+  12: [
+    quizQuestion("En risk kan inte tas bort helt. Vad bör projektet göra?", ["Dölja den i rapporten", "Planera förebyggande åtgärder och beredskap om den inträffar", "Vänta tills projektet är avslutat", "Räkna den som löst"], "B", "Riskhantering minskar sannolikhet eller konsekvens och förbereder en reservåtgärd."),
+    quizQuestion("Vilket val är ett exempel på miljösäkring av en digital tjänst?", ["Dimensionera drift efter faktisk belastning och följa energianvändningen", "Lagra alla data för säkerhets skull", "Byta fungerande utrustning varje år", "Köra servrar med maximal kapacitet hela tiden"], "A", "Miljösäkring omfattar att mäta och minska onödig energi- och resursanvändning."),
+    quizQuestion("Varför behöver AI-tjänsters energiförbrukning ingå i en miljöbedömning?", ["AI använder aldrig fysisk infrastruktur", "Elförbrukning påverkar bara inköpspriset", "Träning och drift kan kräva betydande beräkningsresurser", "Energianvändning kan bara mätas för privata datorer"], "C", "AI körs på fysisk datorkapacitet vars drift och kylning använder energi."),
+    quizQuestion("Vilken åtgärd förbättrar arbetsmiljön vid långvarigt skärmarbete?", ["Färre pauser för att behålla fokus", "Samma arbetsställning hela dagen", "Högsta möjliga ljusstyrka", "Varierad arbetsställning, pauser och anpassad belysning"], "D", "Ergonomi och återhämtning minskar belastning och besvär vid skärmarbete."),
+  ],
+  13: [
+    quizQuestion("En webbtjänst svarar långsamt. Hur hjälper en systemmodell analysen?", ["Den visar samband mellan exempelvis klient, server och databas", "Den garanterar att felet finns i nätverket", "Den ersätter mätning av svarstider", "Den visar alla detaljer i systemet samtidigt"], "A", "En modell förenklar systemet så att delar och samband kan analyseras."),
+    quizQuestion("Vad innebär det att konstruera ett digitalt system?", ["Att enbart programmera första funktionen", "Att planera struktur, delar, data och hur de samverkar", "Att välja den dyraste hårdvaran", "Att dokumentera systemet efter avveckling"], "B", "Konstruktion omfattar genomtänkta val om struktur och samverkan före och under byggandet."),
+    quizQuestion("Vilket påstående använder begreppet bandbredd korrekt?", ["Bandbredd anger hur länge data lagras", "Bandbredd beskriver antalet tabeller i databasen", "Bandbredd är mängden data som kan överföras per tidsenhet", "Bandbredd visar hur många algoritmsteg ett program har"], "C", "Bandbredd beskriver överföringskapacitet under en viss tid."),
+  ],
+  14: [
+    quizQuestion("Vad innebär dimensionering av en webbserver?", ["Att välja sidans grafiska mått", "Att anpassa kapaciteten till väntad belastning och krav", "Att rita servern i skala", "Att bestämma antalet menyer"], "B", "Dimensionering avgör vilka resurser som krävs för att uppfylla belastnings- och prestandakrav."),
+    quizQuestion("En tjänst skickar 5 MB per användare till 200 användare. Vilken total datamängd behöver överföras?", ["25 MB", "205 MB", "1 000 MB", "10 000 MB"], "C", "5 MB multiplicerat med 200 användare är 1 000 MB."),
+    quizQuestion("En beräkning ger att 10 000 videor ryms på 50 MB. Vad bör göras först?", ["Kontrollera enheter, antaganden och storleksordning", "Acceptera resultatet eftersom en formel användes", "Öka antalet videor i beräkningen", "Byta serverleverantör"], "A", "Rimlighetsbedömning upptäcker orimliga resultat genom kontroll av enheter och storleksordning."),
+    quizQuestion("Varför används modeller vid dimensionering?", ["För att verkliga krav då kan utelämnas", "För att all osäkerhet försvinner", "För att beräkningar inte längre behövs", "För att förenkla samband mellan belastning, resurser och prestanda"], "D", "En modell gör centrala samband möjliga att beräkna och jämföra."),
+    quizQuestion("En webbplats klarar 100 samtidiga användare men kravet är 500. Vilken slutsats är rimlig?", ["Kravet kan ignoreras eftersom webbplatsen fungerar", "Kapaciteten behöver höjas eller lösningen optimeras och testas igen", "Testet visar att fem servrar alltid krävs", "Antalet användare påverkar inte dimensioneringen"], "B", "Mätningen visar ett gap mot kravet, men den exakta åtgärden behöver prövas och verifieras."),
+  ],
+  15: [
+    quizQuestion("Vilken modell visar bäst hur en användare, server och databas samverkar?", ["Ett systemdiagram", "En färgpalett", "En tidrapport", "En affärsbudget"], "A", "Ett systemdiagram visar delar i ett system och kopplingarna mellan dem."),
+    quizQuestion("Vad skiljer simulering från en statisk modell?", ["Simulering saknar antaganden", "Simulering prövar modellens beteende i scenarier", "Simulering visar alltid verkligheten exakt", "Simulering används först när systemet är färdigt"], "B", "I en simulering används modellen för att undersöka hur systemet beter sig under valda villkor."),
+    quizQuestion("Vad visar ett databasschema?", ["Hur användaren navigerar mellan webbsidor", "Hur nätverkskablar är dragna", "Hur data organiseras i tabeller och relationer", "Hur ett programs färger ska användas"], "C", "Databasschemat modellerar datastruktur och samband."),
+    quizQuestion("Hur kan en klickbar webbprototyp fungera som simulering?", ["Den beräknar serverns elkostnad", "Den lagrar verkliga kunduppgifter", "Den ersätter all senare testning", "Den låter användare pröva ett planerat navigeringsflöde"], "D", "En klickbar prototyp simulerar användningen innan den fullständiga webbplatsen byggs."),
+  ],
+  16: [
+    quizQuestion("Vilken del av ett spel lämpar sig för fysiksimulering?", ["Projektets budget", "Gravitation, rörelse och kollisioner", "Spelstudions organisationsschema", "Filernas versionsnamn"], "B", "Fysiksimulering beräknar hur objekt rör sig och påverkar varandra."),
+    quizQuestion("Varför kräver en 3D-simulering ofta mer beräkningskraft än en 2D-simulering?", ["Den måste hantera djup, perspektiv, ljus och fler beräkningar", "Den använder alltid fler nätverkskablar", "Den saknar förenklade modeller", "Den kan inte optimeras"], "A", "3D tillför dimensioner och visuella beräkningar som ofta ökar resursbehovet."),
+    quizQuestion("Hur kan en digital tvilling användas för en fabrik?", ["Som en statisk reklambild", "Som ersättning för alla verkliga sensorer", "Som digital modell för att simulera belastning, underhåll och fel", "Som arkiv för gamla ritningar utan aktuella data"], "C", "En digital tvilling representerar ett verkligt system och kan användas för analys och simulering."),
+    quizQuestion("En avancerad simulering ger missvisande resultat eftersom indata är fel. Vilken princip illustreras?", ["Iteration", "Dimensionering", "Versionshantering", "Garbage in, garbage out"], "D", "En simulering blir inte mer tillförlitlig än sina indata och antaganden."),
+  ],
+  17: [
+    quizQuestion("Vad räknas som ett tekniskt framsteg?", ["En ny eller förbättrad lösning som ökar möjligheten att möta ett behov", "Varje produkt som får ett nytt namn", "En idé som inte har prövats", "Teknik som bara är dyrare än föregångaren"], "A", "Ett tekniskt framsteg innebär en meningsfull ny eller förbättrad teknisk möjlighet."),
+    quizQuestion("Vilken möjlig användning hör till artificiell intelligens enligt kapitlets framtidsteknik?", ["Att ta bort behovet av data", "Att analysera mönster och stödja automatiserade beslut", "Att garantera att alla beslut är rättvisa", "Att lagra energi utan förluster"], "B", "AI kan hitta mönster och ge beslutsstöd, men resultat behöver fortfarande granskas."),
+    quizQuestion("Hur kan informationsteknik bidra till hållbar utveckling?", ["Genom att alltid ersätta fungerande utrustning", "Genom att öka mängden engångselektronik", "Genom smartare styrning som minskar onödig energi- och resursanvändning", "Genom att göra miljödata hemlig"], "C", "Digital styrning och analys kan effektivisera användningen av energi och andra resurser."),
+    quizQuestion("Vilket val följer principen om cirkulär ekonomi?", ["Produkten limmas ihop så att den inte kan repareras", "Fungerande delar kasseras vid varje uppgradering", "Programstöd avslutas tidigt för att öka nyköp", "Produkten utformas för reparation, återanvändning och återvinning"], "D", "Cirkulär ekonomi håller produkter och material i användning så länge som möjligt."),
+  ],
+  18: [
+    quizQuestion("Vilket exempel är en digital abonnemangsmodell?", ["Användaren betalar återkommande för tillgång till en nätbaserad tjänst", "Kunden köper en fysisk produkt en gång utan tjänst", "Företaget delar bara ut tryckta manualer", "Utvecklaren sparar programmet lokalt för eget bruk"], "A", "En abonnemangsmodell ger löpande tillgång mot återkommande betalning."),
+    quizQuestion("Vilken förändring visar teknikens påverkan på arbetslivet?", ["Alla yrken får exakt samma arbetsuppgifter", "Automatisering förändrar uppgifter och behovet av kompetens", "Digitalisering tar bort behovet av lärande", "Teknik påverkar bara fritiden"], "B", "Ny teknik kan ersätta vissa moment, skapa andra och förändra kompetenskraven."),
+    quizQuestion("Vilken kombination beskriver två utmaningar med ny digital teknik?", ["Lägre datamängd och färre tjänster", "Fler manuella rutiner och mindre kommunikation", "Energianvändning och elektroniskt avfall", "Mindre behov av säkerhet och integritet"], "C", "Digital teknik använder fysisk infrastruktur och utrustning som påverkar energi och avfall."),
+    quizQuestion("Vad innebär tekniskt ansvar när en ny tjänst utvecklas?", ["Att enbart följa vad konkurrenterna gör", "Att lansera först och bedöma följder senare", "Att maximera användning oavsett konsekvenser", "Att väga nytta mot säkerhet, integritet, miljö och samhällseffekter"], "D", "Ansvar kräver att både möjligheter och negativa konsekvenser bedöms."),
+  ],
+  19: [
+    quizQuestion("Två appar löser samma uppgift. Vilket underlag ger bäst jämförelse av funktionen?", ["Mätningar mot samma användarbehov och krav", "Antalet färger i gränssnittet", "Vilken app som lanserades senast", "Hur många tekniska ord reklamen använder"], "A", "En rättvis funktionsjämförelse använder gemensamma, relevanta krav."),
+    quizQuestion("En app begär åtkomst till kontakter trots att funktionen inte behöver dem. Vilken fråga är mest relevant?", ["Om ikonen kan byta färg", "Om datainsamlingen är nödvändig och tydligt förklarad", "Om appen startar snabbt", "Om företaget har fler appar"], "B", "Integritet kräver att insamling har ett relevant syfte och att användaren informeras."),
+    quizQuestion("Vilket scenario är främst en säkerhetsfråga?", ["En knapp har otydlig text", "En tjänst använder mycket energi", "Obehöriga kan läsa användarnas kontouppgifter", "En prenumeration är dyrare än väntat"], "C", "Obehörig åtkomst hotar informationens konfidentialitet och användarnas säkerhet."),
+    quizQuestion("Ett automatiserat beslut missgynnar systematiskt en grupp. Vilket perspektiv måste granskas?", ["Enbart svarstiden", "Enbart lagringskostnaden", "Enbart antalet funktioner", "Etik, rättvisa och vilka data eller regler som orsakar utfallet"], "D", "Teknikvärdering behöver granska om systemets data och regler skapar orättvisa konsekvenser."),
+    quizQuestion("Vilket exempel är ett dark pattern?", ["En tydlig knapp för att avböja spårning", "En neutral jämförelse av abonnemang", "En design som gör uppsägning avsiktligt svår att hitta", "En varning före permanent radering"], "C", "Dark patterns styr användaren genom vilseledande eller manipulerande design."),
+  ],
+  20: [
+    quizQuestion("En billig skrivare kräver dyra patroner och byts ofta ut. Vad bör en hållbar värdering omfatta?", ["Bara inköpspriset", "Livslängd, drift, material, reparerbarhet och avfall", "Bara utskriftshastigheten", "Endast tillverkarens reklam"], "B", "Hållbar värdering ser till konsekvenser under lösningens hela användning och livscykel."),
+    quizQuestion("Hur gör man en rimlig bedömning när en teknik ger både nytta och miljöpåverkan?", ["Väger belagd nytta och påverkan mot alternativ och möjliga åtgärder", "Räknar all ny teknik som hållbar", "Ignorerar nyttan så snart en nackdel finns", "Väljer automatiskt det billigaste alternativet"], "A", "En rimlig bedömning är en transparent avvägning mellan flera relevanta konsekvenser."),
+    quizQuestion("Vilket arbetssätt visar kritiskt tänkande om en leverantörs miljöpåstående?", ["Godta påståendet eftersom det står på förpackningen", "Jämföra logotypen med konkurrenternas", "Söka mätbara belägg, avgränsningar och oberoende underlag", "Bedöma enbart produktens färg"], "C", "Kritisk värdering prövar vilka belägg och avgränsningar som ligger bakom ett påstående."),
+  ],
+  21: [
+    quizQuestion("Vad innebär digitalisering mer än att göra ett dokument till en digital fil?", ["Att arbetssätt och processer kan förändras med digital teknik", "Att all information automatiskt blir offentlig", "Att manuellt arbete alltid försvinner", "Att internet inte längre behövs"], "A", "Digitalisering kan omforma hur information hanteras och hur verksamheter arbetar."),
+    quizQuestion("En fabrik låter sensorer justera produktionen efter aktuell data. Vad är detta exempel på?", ["Analog arkivering", "Industri 4.0 med uppkopplad och datadriven produktion", "Manuell kvalitetskontroll utan data", "Digital kommunikation mellan privatpersoner"], "B", "Industri 4.0 kopplar samman sensorer, data, automation och produktionssystem."),
+    quizQuestion("Hur har digitalisering förändrat samarbete på olika platser?", ["Dokument kan bara läsas av en person", "Möten kräver alltid samma rum", "Delade dokument, chatt och video möjliggör arbete på distans", "Information måste skrivas ut före delning"], "C", "Digitala kommunikationsverktyg gör synkront och asynkront distansarbete möjligt."),
+    quizQuestion("Vilket vardagsexempel visar en digitaliserad process?", ["En papperskalender utan kopplingar", "En mekanisk dörrnyckel", "En bok som bara finns i tryck", "En banktjänst där betalning och kvitto hanteras digitalt"], "D", "Hela arbetsflödet för betalning och återkoppling hanteras med digital teknik."),
+  ],
+  22: [
+    quizQuestion("Vad gör ett system 'smart' i kapitlets mening?", ["Det har en blank yta", "Det använder data för att reagera, anpassa eller styra", "Det saknar sensorer och regler", "Det fungerar bara utan nätverk"], "B", "Smarta system samlar eller använder data för att anpassa sitt beteende."),
+    quizQuestion("Vilken åtgärd minskar en integritetsrisk i ett smart hem?", ["Samla in all möjlig data", "Ge alla enheter samma lösenord", "Begränsa data och åtkomst till det som behövs", "Publicera sensordata öppet"], "C", "Dataminimering och åtkomstkontroll minskar exponeringen av personliga uppgifter."),
+    quizQuestion("Vad innebär den digitala klyftan?", ["Skillnader i tillgång, kunskap och möjlighet att använda digital teknik", "Skillnaden mellan två versioner av samma app", "Avståndet mellan en server och en klient", "Att alla använder olika lösenord"], "A", "Den digitala klyftan handlar om ojämlika förutsättningar att delta i ett digitaliserat samhälle."),
+    quizQuestion("Vilket beteende visar digital kompetens?", ["Dela information utan att kontrollera källan", "Acceptera alla behörigheter automatiskt", "Använda samma lösenord överallt", "Använda verktyg och samtidigt granska källor, säkerhet och dataanvändning"], "D", "Digital kompetens omfattar både praktisk användning och kritisk, säker värdering."),
+  ],
+  23: [
+    quizQuestion("Ett projektteam tolkar ett krav på två olika sätt. Vilken åtgärd hjälper mest?", ["Dokumentera en gemensam tolkning och bekräfta den med berörda", "Låta båda bygga var sin fullständig lösning", "Vänta med frågan till slutredovisningen", "Ta bort kravet ur planen"], "A", "Gemensam, verifierad dokumentation minskar missförstånd och omarbete."),
+    quizQuestion("Vilken dokumentation hjälper bäst en ny utvecklare att förstå ett systems uppbyggnad?", ["En lista över mötestider", "En systembeskrivning med delar, dataflöden och viktiga beslut", "En bild på projektgruppen", "Enbart produktens slogan"], "B", "Systembeskrivningen förklarar struktur, samband och varför centrala val gjordes."),
+    quizQuestion("När är en kodkommentar mest värdefull?", ["När den upprepar exakt vad en tydlig kodrad gör", "När den ersätter begripliga namn", "När den förklarar ett viktigt skäl eller antagande som koden inte visar", "När den innehåller kod som inte längre används"], "C", "Bra kommentarer förklarar varför något görs eller vilka ovanliga villkor som gäller."),
+    quizQuestion("Hur bör teknisk kommunikation anpassas till mottagaren?", ["Alla ska få samma detaljnivå och fackord", "Tekniska begrepp ska alltid undvikas", "Endast projektledaren behöver förstå budskapet", "Innehåll, begrepp och detaljnivå väljs efter mottagarens behov"], "D", "Kommunikation blir tydlig när den utgår från mottagarens syfte och förkunskaper."),
+  ],
+  24: [
+    quizQuestion("Vad är huvudsyftet med versionshantering?", ["Att följa, jämföra och återställa ändringar i projektfiler", "Att automatiskt rätta alla programfel", "Att ersätta säkerhetskopiering i alla situationer", "Att hindra flera personer från att samarbeta"], "A", "Versionshantering ger en spårbar historik och stöd för samarbete och återställning."),
+    quizQuestion("Två utvecklare ändrar samma kodrad på olika sätt. Vad behöver de hantera?", ["Ett prestandatest", "En versionskonflikt som måste jämföras och lösas", "En ny databasrelation", "Ett användartest"], "B", "När parallella ändringar kolliderar behöver teamet avgöra hur de ska sammanfogas."),
+    quizQuestion("Vilket presentationsstöd passar bäst för att visa hur systemdelar utbyter data?", ["En lång lista med filnamn", "Enbart en skärmbild av startsidan", "Ett diagram med komponenter, kopplingar och dataflöden", "En tabell över arbetade timmar"], "C", "Ett relevant diagram synliggör systemets struktur och informationsflöde."),
+    quizQuestion("Vad bör en elevator pitch om en teknisk lösning främst innehålla?", ["Alla versionsnummer", "Fullständig källkod", "Varje problem som uppstod i projektet", "Problemet, lösningen och värdet för målgruppen"], "D", "En elevator pitch sammanfattar snabbt varför lösningen behövs och vilket värde den skapar."),
+  ],
+  25: [
+    quizQuestion("Vad är huvudsyftet med en teknisk ritning?", ["Att underhålla användarkonton", "Att beskriva en lösnings struktur eller utformning så den kan förstås och byggas", "Att mäta projektets ekonomi", "Att ersätta alla skriftliga krav"], "B", "Tekniska ritningar kommunicerar hur något är uppbyggt eller ska framställas."),
+    quizQuestion("Vilken modell ska användas för att visa routrar, servrar och deras anslutningar?", ["Ett nätverksdiagram", "Ett flödesschema", "En wireframe", "Ett databasschema"], "A", "Nätverksdiagram visar enheter och kommunikationsvägar i ett nätverk."),
+    quizQuestion("Vad visar ett flödesschema främst?", ["Tabeller och främmande nycklar", "Fysiska mått på en produkt", "Steg, ordning och beslut i en process", "Servernas geografiska placering"], "C", "Flödesschemat modellerar ett arbets- eller programflöde med steg och vägval."),
+    quizQuestion("En utvecklare vill planera tabeller, nycklar och relationer. Vilken modell behövs?", ["En CAD-ritning", "Ett nätverksdiagram", "En processbudget", "En databasmodell"], "D", "En databasmodell beskriver hur information struktureras och kopplas samman."),
+    quizQuestion("Varför är digitala ritningar praktiska i ett projektteam?", ["De kan uppdateras, delas och visas i olika vyer", "De behöver aldrig versionshanteras", "De är alltid korrekta utan granskning", "De kan bara användas för fysiska produkter"], "A", "Digitala modeller är lätta att revidera och kommunicera under utvecklingen."),
+    quizQuestion("Vad behöver man först identifiera när man tolkar en okänd systemmodell?", ["Vilket program modellen skapades i", "Vilka symboler, delar och relationer modellen visar", "Hur många färger modellen använder", "Vem som senast öppnade filen"], "B", "Tolkning börjar med modellens notation, beståndsdelar och samband."),
+  ],
+  26: [
+    quizQuestion("Vilket påstående jämför 2D- och 3D-modeller korrekt?", ["2D visar två dimensioner, medan 3D även representerar djup", "2D kan bara användas på papper", "3D saknar skala och perspektiv", "2D är alltid mer detaljerat än 3D"], "A", "Skillnaden är att en 3D-modell även representerar djup, vilket möjliggör rumslig tolkning."),
+    quizQuestion("Vilket arbetssätt är lämpligt när en egen digital modell ska framställas?", ["Lägga in alla möjliga detaljer innan syftet bestäms", "Välja modelltyp efter vad som ska kommuniceras och använda konsekventa symboler", "Undvika att kontrollera modellen mot verkliga krav", "Byta notation mellan modellens olika delar"], "B", "En användbar modell utgår från syftet och använder en tydlig, konsekvent notation."),
+  ],
+};
+
+function prepareChapterQuizQuestions(chapterNumber) {
+  return chapterSpecificQuizData[chapterNumber]?.map((question, questionIndex) => {
+    const correctOption = question.options[question.answer.charCodeAt(0) - 65];
+    const options = [...question.options];
+    let seed = `${chapterNumber}:${questionIndex}:${question.text}`
+      .split("")
+      .reduce((value, character) => (value * 31 + character.charCodeAt(0)) >>> 0, 2166136261);
+
+    for (let index = options.length - 1; index > 0; index -= 1) {
+      seed = (seed * 1664525 + 1013904223) >>> 0;
+      const swapIndex = seed % (index + 1);
+      [options[index], options[swapIndex]] = [options[swapIndex], options[index]];
+    }
+
+    return {
+      ...question,
+      options,
+      answer: String.fromCharCode(65 + options.indexOf(correctOption)),
+    };
+  });
+}
+
 function insertChapterQuiz(chapterNumber) {
-  const sourceChapter = Math.ceil(chapterNumber / 2);
-  const sourceQuestions = chapterQuizData[sourceChapter];
-  const chapterQuizAllocation = {
-    1: [[0, 1, 2, 3, 6, 7, 9], [4, 5, 8]],
-    2: [[0, 1, 2, 3, 7], [4, 5, 6]],
-    3: [[0, 1, 3, 4, 5], [2, 6, 7]],
-    4: [[0, 1, 3, 5], [2, 4, 6, 7]],
-    5: [[0, 2, 4, 5, 7], [1, 3, 6]],
-    6: [[0, 2, 5, 7], [1, 3, 4, 6]],
-    7: [[2, 5, 7], [0, 1, 3, 4, 6]],
-    8: [[0, 1, 2, 5], [3, 4, 6, 7]],
-    9: [[0, 1, 2, 3], [4, 5, 6, 7]],
-    10: [[0, 1, 2, 4, 5], [3, 6, 7]],
-    11: [[0, 1, 6, 7], [2, 3, 4, 5]],
-    12: [[0, 2, 4, 5], [1, 3, 6, 7]],
-    13: [[0, 1, 2, 3, 6, 7], [4, 5]],
-  };
-  const partIndex = chapterNumber % 2 === 1 ? 0 : 1;
-  const allocatedIndexes = chapterQuizAllocation[sourceChapter]?.[partIndex];
-  const questions = sourceQuestions && allocatedIndexes
-    ? allocatedIndexes.map((index) => sourceQuestions[index])
-    : null;
+  const questions = prepareChapterQuizQuestions(chapterNumber);
   if (!questions) return true;
 
   const content = document.getElementById("chapter-content");
@@ -1615,7 +1779,7 @@ function insertChapterQuiz(chapterNumber) {
       if (selected && selected.value === question.answer) {
         score += 1;
         selected.closest(".quiz-option").classList.add("is-correct");
-        feedback.textContent = "Rätt.";
+        feedback.textContent = `Rätt. ${question.explanation}`;
         feedback.className = "quiz-feedback is-correct";
       } else {
         const correctInput = form.querySelector(
