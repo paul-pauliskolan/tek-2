@@ -39,3 +39,12 @@ Kör det automatiska testet med Node och paketet `linkedom` tillgängligt (vid b
 ```sh
 node scripts/test-tek2-kapitel-1-16.cjs
 ```
+
+## Publicerad webbsida
+
+- Publicerad via commit `ed5a26b` på `master` i kursens befintliga GitHub Pages-projekt.
+- Publika HTML-filen och bedömningsguidens MD-fil hämtades och jämfördes byte för byte med källfilerna.
+- Ett komplett prov med alla rätt genomfördes på den publika HTTPS-adressen: 20/20 och 100 %.
+- Kopieringsknappen på den publika sidan visade bekräftelsen ”Sammanfattningen har kopierats.”
+- Även den publika inlämningens faktiska rad A2:D2 verifierades: `TEK2-PUBLIK-R4N8-20261110`, 20 rätt, fördjupningsråd. Serverkörningen var långsam men raden sparades. Endast denna testrad togs därefter bort; slutlig avläsning visade enbart rubrikerna.
+- Inga provlänkar har lagts till i kursnavigationen och inga gamla provfiler har ändrats.
