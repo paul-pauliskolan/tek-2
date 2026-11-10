@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Olistat testprov för kapitel 1–16 i Teknik 2.">
+  <title>Testprov kapitel 1–16 – Teknik 2</title>
+  <script src="js/theme.js"></script>
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .test-page { max-width: 850px; }
+    .test-card { background: var(--surface); border: 1px solid var(--border); border-radius: 1rem; box-shadow: var(--shadow); padding: clamp(1.2rem, 4vw, 2.2rem); }
+    .test-card + .test-card { margin-top: 1rem; }
+    .test-meta { color: var(--text-muted); }
+    .name-field { display: grid; gap: .45rem; max-width: 28rem; margin: 1.25rem 0; font-family: "Trebuchet MS", "Segoe UI", sans-serif; font-weight: 700; }
+    input[type="text"] { width: 100%; padding: .8rem; border: 1px solid var(--border); border-radius: .55rem; background: var(--field-background); color: var(--field-text); font: inherit; }
+    .primary-button, .secondary-button { border: 1px solid var(--accent); border-radius: .6rem; padding: .75rem 1rem; font: 700 1rem/1.2 "Trebuchet MS", "Segoe UI", sans-serif; cursor: pointer; }
+    .primary-button { background: var(--accent); color: var(--accent-contrast); }
+    .secondary-button { background: var(--surface); color: var(--text); }
+    button:focus-visible, input:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+    .progress-track { height: .65rem; overflow: hidden; border-radius: 999px; background: var(--border); margin: .55rem 0 1.5rem; }
+    .progress-bar { height: 100%; background: var(--accent); transition: width .2s ease; }
+    .options { border: 0; padding: 0; margin: 1.25rem 0; }
+    .options legend { font: 700 1.25rem/1.35 "Trebuchet MS", "Segoe UI", sans-serif; margin-bottom: 1rem; }
+    .option { display: flex; gap: .75rem; align-items: flex-start; padding: .8rem; margin: .55rem 0; border: 1px solid var(--border); border-radius: .65rem; cursor: pointer; }
+    .option:hover { background: var(--hover-background); }
+    .option input { margin-top: .35rem; flex: 0 0 auto; }
+    .test-actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem; }
+    .error-message { color: var(--error-text); background: var(--error-background); padding: .75rem; border-radius: .5rem; margin-top: 1rem; }
+    .result-summary { font-size: 1.15rem; }
+    .wrong-item { border-left: .3rem solid var(--accent); padding: .2rem 0 .2rem 1rem; margin: 1.4rem 0; }
+    pre { white-space: pre-wrap; overflow-wrap: anywhere; background: var(--hover-background); padding: 1rem; border-radius: .5rem; }
+    .wrong-item h3 { margin-bottom: .65rem; }
+    .result-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.5rem; }
+    [hidden] { display: none !important; }
+    @media (max-width: 560px) { .test-actions button, .result-actions button { width: 100%; } }
+  </style>
+</head>
+<body>
+  <main class="container test-page">
+    <section id="start-view" class="test-card" aria-labelledby="page-title">
+      <p class="eyebrow">Olistat testprov · Teknik 2</p>
+      <h1 id="page-title">Kapitel 1–16</h1>
+      <p class="test-meta">20 frågor. Frågorna och svarsalternativen får en ny ordning vid varje start. Exakt ett svar är rätt på varje fråga.</p>
+      <p>Provet ger återkoppling för repetition. Resultatet är ett ögonblicksmått och innebär inte automatisk betygssättning.</p>
+      <p>Olistat betyder att provet inte finns i kursmenyn. Det är inte lösenordsskyddat. Endast förnamn, antal rätt och repetitionsråd skickas till lärarens resultatflik.</p>
+      <form id="start-form">
+        <label class="name-field" for="student-name">Förnamn
+          <input id="student-name" name="studentName" type="text" maxlength="50" autocomplete="given-name" required>
+        </label>
+        <button class="primary-button" type="submit">Starta provet</button>
+        <p id="start-error" class="error-message" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section id="quiz-view" class="test-card" aria-live="polite" hidden>
+      <p id="progress-text" class="test-meta"></p>
+      <div class="progress-track" aria-hidden="true"><div id="progress-bar" class="progress-bar"></div></div>
+      <form id="question-form">
+        <fieldset class="options">
+          <legend id="question-text" tabindex="-1"></legend>
+          <pre id="question-material" hidden></pre>
+          <div id="options-list"></div>
+        </fieldset>
+        <div class="test-actions">
+          <button id="previous-button" class="secondary-button" type="button">Föregående</button>
+          <button id="next-button" class="primary-button" type="submit">Nästa fråga</button>
+        </div>
+        <p id="question-error" class="error-message" role="alert" hidden></p>
+      </form>
+    </section>
+
+    <section id="result-view" class="test-card" aria-labelledby="result-title" hidden>
+      <p class="eyebrow">Resultat och återkoppling</p>
+      <h1 id="result-title">Ditt resultat</h1>
+      <div id="result-content"></div>
+      <div class="result-actions">
+        <button id="download-button" class="primary-button" type="button">Ladda ner allt i MD-fil</button>
+        <button id="copy-button" class="secondary-button" type="button">Kopiera sammanfattning</button>
+      </div>
+      <p id="copy-status" role="status"></p>
+    </section>
+  </main>
+
+  <script>
+    "use strict";
+
+    const TEST_ID = "teknik2-kapitel-1-16-r4n8";
+    const ENDPOINT = "https://script.google.com/macros/s/AKfycbz1rjRfNskh1N1Usgfb9ASGy421wF64Q5oXfTy1B45aS2WMLpwuuShZW13Z6S2exGU0/exec";
+    const STORAGE_KEY = `${TEST_ID}-senaste-resultat`;
+    const letters = ["A", "B", "C", "D"];
+
+    const questionBank = [
+  {
+    "id": 1,
+    "chapter": 1,
+    "area": "Behovsanalys",
+    "objective": "Tillämpa och förklara behovsanalys.",
+    "prompt": "En simklubb vill minska köerna vid bokning av träningspass. Vad ger bäst underlag innan gruppen väljer teknisk lösning?",
+    "correct": "Kartlägg hur bokningen fungerar och intervjua medlemmar om problemen",
+    "distractors": [
+      "Välj en databas utifrån vilken som har snyggast logotyp",
+      "Bygg hela appen innan bokningsrutinerna undersöks",
+      "Bestäm alla skärmbilder utan kontakt med medlemmarna"
+    ],
+    "explanation": "Behovsanalys och research visar vilket problem som behöver lösas och för vilka användare.",
+    "activity": "Beskriv ett bokningsproblem och skriv tre intervjufrågor.",
+    "misconception": "Att en viss teknik automatiskt innebär att användarnas behov är kända."
+  },
+  {
+    "id": 2,
+    "chapter": 2,
+    "area": "Iteration och livscykel",
+    "objective": "Tillämpa och förklara iteration och livscykel.",
+    "prompt": "En digital orienteringskarta är publicerad. Nya stigar tillkommer och användare rapporterar otydliga symboler. Vilken plan följer ett livscykelperspektiv?",
+    "correct": "Uppdatera kartdata, förbättra symbolerna och testa ändringarna",
+    "distractors": [
+      "Låt kartan vara oförändrad eftersom lanseringen avslutade arbetet",
+      "Byt hela systemet varje gång en stig tillkommer",
+      "Rätta symbolerna men avstå från att kontrollera resultatet"
+    ],
+    "explanation": "En produkt behöver underhåll och förbättring efter lansering. Ändringar följs av nya tester.",
+    "activity": "Rita en cykel med användaråterkoppling, ändring och test efter lansering.",
+    "misconception": "Att publicering betyder att allt tekniskt arbete är färdigt."
+  },
+  {
+    "id": 3,
+    "chapter": 3,
+    "area": "Uppfinning och innovation",
+    "objective": "Tillämpa och förklara uppfinning och innovation.",
+    "prompt": "Ett nytt sensorkoncept finns bara som laboratorieprototyp. Senare börjar växthus använda det för att minska vattenförbrukningen. Vad visar övergången?",
+    "correct": "En uppfinning blir en innovation när den används och skapar värde",
+    "distractors": [
+      "En innovation upphör att vara innovation när någon använder den",
+      "Alla laboratorieidéer är redan innovationer med praktisk nytta",
+      "Innovation kräver att lösningen saknar tekniska komponenter"
+    ],
+    "explanation": "Kursen skiljer en ny idé eller teknik från en lösning som används i praktiken och skapar värde.",
+    "activity": "Skriv ett eget exempel med stegen idé, prototyp och använd lösning.",
+    "misconception": "Att en ny idé på papper alltid är en innovation."
+  },
+  {
+    "id": 4,
+    "chapter": 4,
+    "area": "Entreprenörskapets villkor",
+    "objective": "Tillämpa och förklara entreprenörskapets villkor.",
+    "prompt": "En grupp har finansiering till en leveransapp men vet inte om småbutiker vill betala för den. Hur minskar gruppen osäkerheten bäst?",
+    "correct": "Undersök butikernas behov och testa ett begränsat erbjudande tidigt",
+    "distractors": [
+      "Lägg hela budgeten på fler funktioner före kontakt med butiker",
+      "Utgå från att finansiering bevisar att efterfrågan finns",
+      "Välj målgrupp först efter att alla utvecklingspengar är slut"
+    ],
+    "explanation": "Finansiering och marknadens behov är olika villkor. Tidiga tester ger underlag innan stora resurser satsas.",
+    "activity": "Gör en enkel plan för att testa ett erbjudande med två tänkta kunder.",
+    "misconception": "Att pengar till utveckling garanterar att produkten har en marknad."
+  },
+  {
+    "id": 5,
+    "chapter": 5,
+    "area": "Orsaksanalys",
+    "objective": "Tillämpa och förklara orsaksanalys.",
+    "prompt": "En biljettjänst kraschar bara när antalet biljetter är noll. Vad bör utvecklaren göra först för att hitta orsaken?",
+    "correct": "Återskapa fallet med noll biljetter och följ värden och loggar",
+    "distractors": [
+      "Ändra samtidigt databas, färger och menystruktur",
+      "Dölj felmeddelandet och anta att felet är löst",
+      "Testa enbart tio biljetter eftersom det brukar fungera"
+    ],
+    "explanation": "Ett reproducerbart fel och spårning av relevanta värden gör orsaksanalysen systematisk.",
+    "activity": "Skriv en felrapport med indata, steg, förväntat och faktiskt resultat.",
+    "misconception": "Att symptom kan lösas genom ändringar utan att orsaken undersöks."
+  },
+  {
+    "id": 6,
+    "chapter": 6,
+    "area": "Implementering och test",
+    "objective": "Tillämpa och förklara implementering och test.",
+    "prompt": "En ändrad mobilmeny löser ett visningsfel på en telefon. Vad bör ingå innan ändringen betraktas som klar?",
+    "correct": "Testa både det ursprungliga fallet och andra relevanta skärmar och funktioner",
+    "distractors": [
+      "Avsluta eftersom ett lyckat försök bevisar att allt fungerar",
+      "Testa bara startsidans färg och hoppa över navigeringen",
+      "Publicera ändringen utan att dokumentera vad som prövats"
+    ],
+    "explanation": "Efter implementering behöver man kontrollera att problemet är löst och att ändringen inte skapat nya fel.",
+    "activity": "Gör en testtabell med mobil, dator, tidigare fel och närliggande funktioner.",
+    "misconception": "Att ett lyckat test innebär att alla användningsfall är kontrollerade."
+  },
+  {
+    "id": 7,
+    "chapter": 7,
+    "area": "Projektplanering",
+    "objective": "Tillämpa och förklara projektplanering.",
+    "prompt": "Två elever bygger samma bokningsfunktion samtidigt medan ingen testar systemet. Vilken åtgärd hjälper gruppen mest?",
+    "correct": "Fördela ansvar för utveckling och test och följ upp en gemensam plan",
+    "distractors": [
+      "Låt alla fortsätta utan avstämning för att spara mötestid",
+      "Lägg till fler funktioner innan ansvar diskuteras",
+      "Vänta med ansvarsfördelning tills projektet är avslutat"
+    ],
+    "explanation": "Tydliga roller, uppgifter och regelbunden kommunikation motverkar dubbelarbete och bortglömda delar.",
+    "activity": "Gör en plan med uppgift, ansvarig, tid och kontrollpunkt.",
+    "misconception": "Att samarbete fungerar utan gemensam ansvarsfördelning."
+  },
+  {
+    "id": 8,
+    "chapter": 8,
+    "area": "Agilt arbete och MVP",
+    "objective": "Tillämpa och förklara agilt arbete och mvp.",
+    "prompt": "En grupp vill prova om besökare använder digital köbokning. Vilket alternativ beskriver bäst en MVP?",
+    "correct": "En enkel fungerande köbokning som riktiga besökare använder och ger återkoppling på",
+    "distractors": [
+      "En pappersskiss som enbart utvecklarna tittar på",
+      "En komplett produkt med alla tänkbara framtida funktioner",
+      "En presentation av idén utan någon bokningsmöjlighet"
+    ],
+    "explanation": "En MVP är en minsta fungerande produktversion hos riktiga användare, som ger återkoppling för fortsatt utveckling.",
+    "activity": "Jämför en pappersprototyp och en MVP för köbokning och ange vad varje version kan testa.",
+    "misconception": "Att en MVP är samma sak som en intern skiss eller en helt färdig produkt."
+  },
+  {
+    "id": 9,
+    "chapter": 9,
+    "area": "Kodförståelse",
+    "objective": "Tillämpa och förklara kodförståelse.",
+    "prompt": "Följ pseudokoden. Vilket värde skrivs ut?",
+    "correct": "2",
+    "distractors": [
+      "1",
+      "3",
+      "4"
+    ],
+    "explanation": "Värdena 8 och 11 är större än 7. Villkoret är falskt för 5 och 7, så räknaren ökas två gånger.",
+    "activity": "Gör en spårningstabell med varje värde, villkorets resultat och räknarens värde.",
+    "misconception": "Att större än även omfattar gränsvärdet.",
+    "material": "Pseudokod:\nantal ← 0\nFÖR VARJE värde I [5, 8, 7, 11]\n    OM värde > 7\n        antal ← antal + 1\nSKRIV antal"
+  },
+  {
+    "id": 10,
+    "chapter": 9,
+    "area": "Planera program",
+    "objective": "Tillämpa och förklara planera program.",
+    "prompt": "Ett program ska beräkna genomsnittlig restid. Vad behöver definieras innan kod skrivs?",
+    "correct": "Vilka restider som läses in, hur snittet beräknas och vad som händer om inga restider finns",
+    "distractors": [
+      "Enbart färgen på knappen som visar resultatet",
+      "Ett fast snittvärde som används oavsett indata",
+      "En loop som alltid kör exakt hundra gånger oavsett underlag"
+    ],
+    "explanation": "En plan behöver indata, bearbetning, utdata och relevanta specialfall. En tom mängd får inte behandlas som vanlig division med antal.",
+    "activity": "Skriv pseudokod för ett snitt och ange hantering av tom indata.",
+    "misconception": "Att kodning kan påbörjas utan bestämd indata och förväntat resultat."
+  },
+  {
+    "id": 11,
+    "chapter": 10,
+    "area": "Logiska fel och förbättring",
+    "objective": "Tillämpa och förklara logiska fel och förbättring.",
+    "prompt": "Pseudokoden ska beräkna totalkostnaden för likadana reservdelar. Vid pris 40 och antal 3 blir resultatet 43. Vilken ändring rättar beräkningen?",
+    "correct": "Byt pris + antal mot pris × antal",
+    "distractors": [
+      "Byt variabelnamnet total men behåll beräkningen",
+      "Lägg alltid till 77 oavsett pris och antal",
+      "Ta bort utskriften så att det felaktiga resultatet inte syns"
+    ],
+    "explanation": "Programmet går att köra men använder fel räknesätt. Total kostnad beräknas som styckpris multiplicerat med antal.",
+    "activity": "Prova den rättade regeln med antal 0, 1 och 4 och skriv förväntade resultat.",
+    "misconception": "Att körbar kod automatiskt är logiskt korrekt.",
+    "material": "Pseudokod:\npris ← 40\nantal ← 3\ntotal ← pris + antal\nSKRIV total"
+  },
+  {
+    "id": 12,
+    "chapter": 11,
+    "area": "Välja testtyp",
+    "objective": "Tillämpa och förklara välja testtyp.",
+    "prompt": "En informationstjänst ger korrekta uppgifter men blir långsam när många ansluter samtidigt. Vilken testtyp undersöker problemet mest direkt?",
+    "correct": "Prestandatest med realistisk samtidig belastning",
+    "distractors": [
+      "Användartest som bara granskar textens ordval",
+      "Funktionstest av en enda uppslagning utan belastning",
+      "Kodgranskning som bara bedömer variabelnamn"
+    ],
+    "explanation": "Prestandatest undersöker snabbhet och stabilitet under belastning. Korrekta svar vid enstaka anrop räcker inte.",
+    "activity": "Planera ett belastningstest med antal samtidiga användare och mätning av svarstid.",
+    "misconception": "Att funktionell korrekthet garanterar god prestanda."
+  },
+  {
+    "id": 13,
+    "chapter": 11,
+    "area": "Riskanalys",
+    "objective": "Tillämpa och förklara riskanalys.",
+    "prompt": "En förenings medlemsregister finns på en enda lagringsenhet. Vilket underlag behövs för att prioritera risken för dataförlust?",
+    "correct": "Bedöm hur sannolik förlusten är och vilka konsekvenser den skulle få",
+    "distractors": [
+      "Räkna enbart antalet bokstäver i filnamnet",
+      "Anta att en ny dator aldrig kan få lagringsfel",
+      "Bedöm bara hur snyggt registrets gränssnitt är"
+    ],
+    "explanation": "Riskanalys identifierar möjliga problem och bedömer hur allvarliga de är för att kunna prioritera förebyggande åtgärder.",
+    "activity": "Beskriv sannolikhet, konsekvens och åtgärd för dataförlust och driftstopp.",
+    "misconception": "Att en risk kan bedömas utan hänsyn till konsekvenser."
+  },
+  {
+    "id": 14,
+    "chapter": 12,
+    "area": "Miljö och arbetsmiljö",
+    "objective": "Tillämpa och förklara miljö och arbetsmiljö.",
+    "prompt": "Ett team kör onödiga nattliga beräkningar och arbetar återkommande utan pauser. Vilken kombination angriper båda problemen?",
+    "correct": "Minska onödiga körningar och planera rimliga arbetspass med pauser",
+    "distractors": [
+      "Köp fler servrar och förläng arbetspassen",
+      "Byt skärmbakgrund och låt alla körningar fortsätta",
+      "Ta bort pauserna för att hinna stänga av servrarna tidigare"
+    ],
+    "explanation": "Resurseffektiv drift minskar onödigt energibehov. Rimlig belastning och pauser förbättrar arbetsförhållandena.",
+    "activity": "Föreslå en mätbar resursbesparing och en konkret förbättring av arbetsplaneringen.",
+    "misconception": "Att digital drift saknar miljöpåverkan eller att arbetsmiljö ligger utanför teknikprojektet."
+  },
+  {
+    "id": 15,
+    "chapter": 13,
+    "area": "Systemkonstruktion",
+    "objective": "Tillämpa och förklara systemkonstruktion.",
+    "prompt": "En utlåningstjänst ska byggas. Vilket beslut hör främst till konstruktionen av systemet?",
+    "correct": "Bestäm hur gränssnitt, server och datalagring ska samverka",
+    "distractors": [
+      "Välj datum för avslutningsfikat",
+      "Räkna antalet deltagare på ett projektmöte",
+      "Byt typsnitt utan att undersöka funktion eller struktur"
+    ],
+    "explanation": "Konstruktion omfattar struktur, tekniska val och hur systemets delar fungerar tillsammans.",
+    "activity": "Rita tjänstens komponenter och beskriv ansvar och informationsutbyte.",
+    "misconception": "Att konstruktion enbart betyder att skriva färdig kod."
+  },
+  {
+    "id": 16,
+    "chapter": 14,
+    "area": "Dimensionering",
+    "objective": "Tillämpa och förklara dimensionering.",
+    "prompt": "Ett arkiv ska lagra 600 ljudfiler på 12 MB vardera. Lägg till 25 procent kapacitetsmarginal. Hur mycket lagringsutrymme ska minst planeras?",
+    "correct": "9 000 MB",
+    "distractors": [
+      "7 200 MB",
+      "7 225 MB",
+      "28 800 MB"
+    ],
+    "explanation": "600 × 12 = 7 200 MB. En marginal på 25 procent ger 7 200 × 1,25 = 9 000 MB.",
+    "activity": "Räkna först grundbehovet och sedan en procentuell marginal för ett eget filarkiv.",
+    "misconception": "Att procentuell marginal är ett fast antal MB eller att grundbehovet räcker."
+  },
+  {
+    "id": 17,
+    "chapter": 14,
+    "area": "Rimlighetsbedömning",
+    "objective": "Tillämpa och förklara rimlighetsbedömning.",
+    "prompt": "Varje överföring innehåller 3 MB. En kalkyl säger att 200 överföringar tillsammans omfattar 60 000 MB. Vilken kontroll är rimlig?",
+    "correct": "200 × 3 ger 600 MB, så kalkylen är hundra gånger för stor",
+    "distractors": [
+      "200 × 3 ger 60 000 MB, så kalkylen stämmer",
+      "Det går inte att uppskatta datamängden utan filernas namn",
+      "3 MB måste först multipliceras med 200 två gånger"
+    ],
+    "explanation": "Antal överföringar gånger datamängd per överföring ger total datamängd. Ett överslag avslöjar storleksfelet.",
+    "activity": "Gör tre överslag med antal × storlek och skriv ut enheterna.",
+    "misconception": "Att en siffra i en kalkyl är trovärdig utan kontroll av enheter och storleksordning."
+  },
+  {
+    "id": 18,
+    "chapter": 15,
+    "area": "Välja modell",
+    "objective": "Tillämpa och förklara välja modell.",
+    "prompt": "En grupp behöver planera tabeller för verktyg, låntagare och lån samt relationerna mellan dem. Vilken modell passar bäst?",
+    "correct": "Ett databasschema",
+    "distractors": [
+      "En tidsplan för veckans möten",
+      "En nivåskiss för ett plattformsspel",
+      "En färgpalett för webbplatsen"
+    ],
+    "explanation": "Ett databasschema beskriver hur information organiseras i tabeller och relationer.",
+    "activity": "Skissa tabeller för verktyg, låntagare och lån och markera hur de kopplas.",
+    "misconception": "Att alla typer av modeller visar samma egenskaper hos ett system."
+  },
+  {
+    "id": 19,
+    "chapter": 16,
+    "area": "Simuleringens begränsningar",
+    "objective": "Tillämpa och förklara simuleringens begränsningar.",
+    "prompt": "En spelsimulering visar att en figur aldrig glider på en ramp. Modellen har dock felaktigt antagit mycket hög friktion. Vilken slutsats är bäst?",
+    "correct": "Rätta friktionsantagandet och jämför nya körningar med ett relevant verkligt beteende",
+    "distractors": [
+      "Godta resultatet eftersom simuleringen är datorberäknad",
+      "Kör samma felaktiga modell fler gånger för att ta bort felet",
+      "Förbättra rampens grafik utan att ändra fysikmodellen"
+    ],
+    "explanation": "Simuleringen beror på modellens antaganden och indata. Felaktiga regler kan ge missvisande resultat även i en avancerad modell.",
+    "activity": "Lista tre antaganden i en fysiksimulering och beskriv hur de kan kontrolleras.",
+    "misconception": "Att många körningar kompenserar för ett systematiskt fel i modellen."
+  },
+  {
+    "id": 20,
+    "chapter": 16,
+    "area": "Digital tvilling",
+    "objective": "Tillämpa och förklara digital tvilling.",
+    "prompt": "En fabrik vill pröva hur service av en maskin påverkar produktionen utan att stoppa den verkliga fabriken. Vilken användning passar en digital tvilling?",
+    "correct": "Simulera service och belastning i en digital representation av fabriken",
+    "distractors": [
+      "Spara en enda bild av fabrikens entré utan systeminformation",
+      "Ersätt alla mätningar med antagandet att maskiner aldrig går sönder",
+      "Ändra den verkliga produktionen först och dokumentera konsekvenser senare"
+    ],
+    "explanation": "En digital tvilling representerar ett fysiskt system och kan användas för att simulera bland annat underhåll, belastning och fel.",
+    "activity": "Beskriv vilka komponenter och driftsdata en digital tvilling av en verkstad behöver.",
+    "misconception": "Att en digital tvilling enbart är en bild utan möjlighet att undersöka systemets beteende."
+  }
+];
+
+    const state = { studentName: "", questions: [], answers: [], current: 0, result: null };
+    const $ = (selector) => document.querySelector(selector);
+
+    function shuffle(items) {
+      const copy = [...items];
+      for (let i = copy.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function prepareQuestions() {
+      const positions = shuffle(letters.flatMap((_, index) => Array(5).fill(index)));
+      return shuffle(questionBank).map((question, index) => {
+        const distractors = shuffle(question.distractors);
+        const options = [...distractors];
+        options.splice(positions[index], 0, question.correct);
+        return { ...question, options, correctIndex: positions[index] };
+      });
+    }
+
+    function showOnly(view) {
+      ["#start-view", "#quiz-view", "#result-view"].forEach((id) => { $(id).hidden = id !== view; });
+      $(view).setAttribute("tabindex", "-1");
+      $(view).focus();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function startTest(event) {
+      event.preventDefault();
+      const name = $("#student-name").value.trim();
+      if (!name) {
+        $("#start-error").textContent = "Skriv ditt förnamn för att starta provet.";
+        $("#start-error").hidden = false;
+        return;
+      }
+      state.studentName = name.slice(0, 50);
+      state.result = null;
+      state.questions = prepareQuestions();
+      state.answers = Array(state.questions.length).fill(null);
+      state.current = 0;
+      showOnly("#quiz-view");
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const question = state.questions[state.current];
+      const number = state.current + 1;
+      $("#progress-text").textContent = `Fråga ${number} av ${state.questions.length} · Kapitel ${question.chapter}`;
+      $("#progress-bar").style.width = `${(number / state.questions.length) * 100}%`;
+      $("#question-text").textContent = `${number}. ${question.prompt}`;
+      $("#question-material").textContent = question.material || "";
+      $("#question-material").hidden = !question.material;
+      $("#options-list").replaceChildren(...question.options.map((option, index) => {
+        const label = document.createElement("label");
+        label.className = "option";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "answer";
+        input.value = String(index);
+        input.checked = state.answers[state.current] === index;
+        const text = document.createElement("span");
+        text.textContent = `${letters[index]}. ${option}`;
+        label.append(input, text);
+        return label;
+      }));
+      $("#previous-button").disabled = state.current === 0;
+      $("#next-button").textContent = number === state.questions.length ? "Lämna in provet" : "Nästa fråga";
+      $("#question-error").hidden = true;
+      $("#question-text").focus?.();
+    }
+
+    function saveVisibleAnswer() {
+      const selected = document.querySelector('input[name="answer"]:checked');
+      if (!selected) return false;
+      state.answers[state.current] = Number(selected.value);
+      return true;
+    }
+
+    function advance(event) {
+      event.preventDefault();
+      if (!saveVisibleAnswer()) {
+        $("#question-error").textContent = "Välj ett svar innan du går vidare.";
+        $("#question-error").hidden = false;
+        return;
+      }
+      if (state.current < state.questions.length - 1) {
+        state.current += 1;
+        renderQuestion();
+      } else {
+        submitTest();
+      }
+    }
+
+    function goBack() {
+      saveVisibleAnswer();
+      if (state.current > 0) {
+        state.current -= 1;
+        renderQuestion();
+      }
+    }
+
+    function buildRecommendations(wrong) {
+      const counts = new Map();
+      wrong.forEach(({ question }) => counts.set(question.chapter, (counts.get(question.chapter) || 0) + 1));
+      if (!counts.size) return [{ chapter: 0, area: "Fördjupning", activity: "Välj ett kapitel och förklara med ett eget exempel hur begreppen används i ett tekniskt projekt." }];
+      return [...counts.entries()]
+        .sort((a, b) => b[1] - a[1] || a[0] - b[0])
+        .slice(0, 3)
+        .map(([chapter]) => {
+          const items = wrong.filter((item) => item.question.chapter === chapter);
+          return { chapter, area: [...new Set(items.map((item) => item.question.area))].join(" och "), activity: items[0].question.activity };
+        });
+    }
+
+    function submitTest() {
+      if (state.result) return;
+      if (state.answers.some((answer) => answer === null)) {
+        const firstMissing = state.answers.findIndex((answer) => answer === null);
+        state.current = firstMissing;
+        renderQuestion();
+        $("#question-error").textContent = "Alla frågor måste besvaras före inlämning.";
+        $("#question-error").hidden = false;
+        return;
+      }
+      const wrong = state.questions.map((question, index) => ({ question, displayNumber: index + 1, selectedIndex: state.answers[index] }))
+        .filter((item) => item.selectedIndex !== item.question.correctIndex);
+      const score = state.questions.length - wrong.length;
+      const percent = Math.round((score / state.questions.length) * 100);
+      const recommendations = buildRecommendations(wrong);
+      state.result = { date: new Date().toISOString(), score, total: state.questions.length, percent, wrong, recommendations };
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ studentName: state.studentName, ...state.result })); } catch (_) { /* Resultatet visas även om lagring blockeras. */ }
+      renderResult();
+      sendSummary();
+    }
+
+    function summaryText() {
+      const r = state.result;
+      const advice = r.recommendations.map((item) => item.chapter ? `Kapitel ${item.chapter}: ${item.area} – ${item.activity}` : `${item.area} – ${item.activity}`).join("; ");
+      return `${state.studentName}: ${r.score} av ${r.total} rätt (${r.percent} %). Rekommenderad repetition: ${advice}`;
+    }
+
+    function renderResult() {
+      const r = state.result;
+      const container = $("#result-content");
+      container.replaceChildren();
+      const summary = document.createElement("p");
+      summary.className = "result-summary";
+      summary.textContent = `${state.studentName}, du fick ${r.score} av ${r.total} rätt (${r.percent} %).`;
+      container.append(summary);
+      const intro = document.createElement("p");
+      intro.textContent = r.wrong.length ? `Felaktiga frågenummer: ${r.wrong.map((item) => item.displayNumber).join(", ")}.` : "Alla svar var rätt. Använd repetitionsförslaget för att fördjupa dina kunskaper.";
+      container.append(intro);
+      const heading = document.createElement("h2");
+      heading.textContent = "Prioriterad repetition";
+      container.append(heading);
+      const list = document.createElement("ol");
+      r.recommendations.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item.chapter ? `Kapitel ${item.chapter} – ${item.area}: ${item.activity}` : `${item.area}: ${item.activity}`;
+        list.append(li);
+      });
+      container.append(list);
+      if (r.wrong.length) {
+        const wrongHeading = document.createElement("h2");
+        wrongHeading.textContent = "Genomgång av felaktiga svar";
+        container.append(wrongHeading);
+        r.wrong.forEach((item) => {
+          const block = document.createElement("section");
+          block.className = "wrong-item";
+          const h3 = document.createElement("h3");
+          h3.textContent = `Fråga ${item.displayNumber} · Kapitel ${item.question.chapter} · ${item.question.area}`;
+          const q = document.createElement("p"); q.textContent = item.question.prompt;
+          const chosen = document.createElement("p"); chosen.textContent = `Ditt svar: ${item.question.options[item.selectedIndex]}`;
+          const right = document.createElement("p"); right.textContent = `Rätt svar: ${item.question.correct}`;
+          const why = document.createElement("p"); why.textContent = `Förklaring: ${item.question.explanation}`;
+          block.append(h3, q);
+          if (item.question.material) { const material = document.createElement("pre"); material.textContent = item.question.material; block.append(material); }
+          block.append(chosen, right, why);
+          container.append(block);
+        });
+      }
+      showOnly("#result-view");
+    }
+
+    function sendSummary() {
+      const r = state.result;
+      const recommendations = r.recommendations.map((item) => item.chapter ? `Kapitel ${item.chapter}: ${item.area}. ${item.activity}` : `${item.area}. ${item.activity}`).join(" | ");
+      fetch(ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain;charset=utf-8" },
+        body: JSON.stringify({ type: "testSummary", testId: TEST_ID, studentName: state.studentName, score: r.score, total: r.total, percent: r.percent, recommendations, pagePath: window.location.pathname })
+      }).catch(() => { /* Elevens lokala resultat ska fungera även om nätverket gör det inte. */ });
+    }
+
+    function markdownResult() {
+      const r = state.result;
+      const date = new Intl.DateTimeFormat("sv-SE", { dateStyle: "long", timeStyle: "short" }).format(new Date(r.date));
+      const lines = [
+        "# Resultat – Teknik 2, kapitel 1–16", "", `- Förnamn: ${state.studentName}`, `- Datum: ${date}`, `- Resultat: ${r.score} av ${r.total} rätt (${r.percent} %)`, "",
+        "## Sammanfattning", "", `${state.studentName} fick ${r.score} av ${r.total} rätt. Resultatet är ett ögonblicksmått och används som stöd för repetition, inte som automatisk betygssättning.`, "",
+        "## Prioriterade områden och aktiviteter", ""
+      ];
+      r.recommendations.forEach((item, index) => lines.push(`${index + 1}. ${item.chapter ? `Kapitel ${item.chapter} – ` : ""}${item.area}: ${item.activity}`));
+      lines.push("", "## Felaktiga frågor", "");
+      if (!r.wrong.length) lines.push("Inga felaktiga svar.");
+      r.wrong.forEach((item) => lines.push(`### Fråga ${item.displayNumber} – Kapitel ${item.question.chapter}: ${item.question.area}`, "", item.question.prompt, "", ...(item.question.material ? ["```text", item.question.material, "```", ""] : []), ...item.question.options.map((option, index) => `${letters[index]}. ${option}`), "", `- Ditt svar: ${item.question.options[item.selectedIndex]}`, `- Rätt svar: ${item.question.correct}`, `- Förklaring: ${item.question.explanation}`, ""));
+      lines.push("## Rekommenderat nästa steg", "", r.recommendations.map((item) => item.activity).join(" "));
+      return lines.join("\n");
+    }
+
+    function safeFileName(name) {
+      return name.toLocaleLowerCase("sv-SE").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "elev";
+    }
+
+    function downloadMarkdown() {
+      const blob = new Blob([markdownResult()], { type: "text/markdown;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `resultat-${safeFileName(state.studentName)}-teknik-2.md`;
+      link.click();
+      URL.revokeObjectURL(url);
+    }
+
+    async function copySummary() {
+      try {
+        await navigator.clipboard.writeText(summaryText());
+        $("#copy-status").textContent = "Sammanfattningen har kopierats.";
+      } catch (_) {
+        $("#copy-status").textContent = "Kopieringen kunde inte genomföras. Markera sammanfattningen och kopiera den manuellt.";
+      }
+    }
+
+    $("#start-form").addEventListener("submit", startTest);
+    $("#question-form").addEventListener("submit", advance);
+    $("#previous-button").addEventListener("click", goBack);
+    $("#download-button").addEventListener("click", downloadMarkdown);
+    $("#copy-button").addEventListener("click", copySummary);
+  </script>
+</body>
+</html>
