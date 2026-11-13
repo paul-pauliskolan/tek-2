@@ -419,6 +419,23 @@ function renderChapterPage(chapterNumber) {
   const content = document.querySelector("#chapter-content");
   if (content) {
     content.innerHTML = chapter.contentHtml || "";
+    const calculator = content.querySelector(".capacity-calculator");
+    if (calculator) {
+      calculator.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const users = Number(calculator.elements.users.value);
+        const data = Number(calculator.elements.data.value);
+        const seconds = Number(calculator.elements.seconds.value);
+        const output = calculator.querySelector("[data-capacity-output]");
+        const totalMB = users * data;
+        const bandwidth = totalMB * 8 / seconds;
+        if (![users, data, seconds, totalMB, bandwidth].every((value) => Number.isFinite(value) && value > 0)) {
+          output.textContent = "Fel: ange positiva värden som ger ett ändligt resultat.";
+          return;
+        }
+        output.textContent = `Total data: ${totalMB.toLocaleString("sv-SE")} MB\nÖverföringstid: ${seconds.toLocaleString("sv-SE")} s\nMinsta teoretiska bandbredd: ${bandwidth.toLocaleString("sv-SE")} Mbit/s\n\nI praktiken behövs marginal för protokoll, variation och topplast.`;
+      });
+    }
     if (chapterNumber === 1) {
       const processHeading = Array.from(content.querySelectorAll("h2")).find((heading) =>
         heading.textContent.trim().toLowerCase().includes("teknikkutvecklingsprocessens steg"),
