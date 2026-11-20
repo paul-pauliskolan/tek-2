@@ -51,6 +51,8 @@
         <p class="slide-kicker">Databasschema</p><h2>Visa data och relationer</h2>
         <div class="database-schema">
           <section class="database-table fragment"><h3>Användare</h3><ul><li><strong>PK</strong> användare_id</li><li>namn</li><li>e_post</li></ul></section>
+        </div>
+      </div></section>
 <section class="slide"><div class="slide-content">
         <p class="slide-kicker">Programmodell</p><h2>Flödesschema och pseudokod</h2>
         <div class="two-column"><div><p class="fragment"><strong>Flödesschema</strong></p><p class="fragment">Visar steg, riktning och beslut visuellt.</p></div><div><p class="fragment"><strong>Pseudokod</strong></p><p class="fragment">Beskriver logiken med strukturerad text.</p></div></div>
@@ -106,30 +108,6 @@ ANNARS
       });
     });
 
-    let gravityTime = 0;
-    let gravityStartHeight = 20;
-    function renderGravity() {
-      const gravity = Number(document.querySelector('#gravity-value').value);
-      const height = Math.max(0, gravityStartHeight - 0.5 * gravity * gravityTime * gravityTime);
-      const ratio = gravityStartHeight > 0 ? height / gravityStartHeight : 0;
-      document.querySelector('[data-simulation-ball]').style.setProperty('--height-ratio', ratio);
-      document.querySelector('[data-gravity-output]').textContent = `Tid: ${gravityTime.toFixed(1)} s\nHöjd: ${height.toFixed(2)} m\n${height === 0 ? 'Objektet har nått marken.' : 'Objektet faller.'}`;
-    }
-    document.querySelector('[data-gravity-start]').addEventListener('click', () => {
-      const height = Number(document.querySelector('#gravity-height').value);
-      const gravity = Number(document.querySelector('#gravity-value').value);
-      if (!(height > 0) || !(gravity > 0)) {
-        document.querySelector('[data-gravity-output]').textContent = 'Fel: höjd och gravitation måste vara större än noll.';
-        return;
-      }
-      gravityStartHeight = height;
-      gravityTime = 0;
-      renderGravity();
-    });
-    document.querySelector('[data-gravity-step]').addEventListener('click', () => {
-      gravityTime += 0.5;
-      renderGravity();
-    });
   </script>
 </body>
 </html>
